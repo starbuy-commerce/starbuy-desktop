@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace Starbuy_Desktop
 {
-    public partial class Login : Form
+    public partial class Registro : Form
     {
-        public Login()
+        public Registro()
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-  
     }
 }
