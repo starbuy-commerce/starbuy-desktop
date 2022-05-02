@@ -110,7 +110,6 @@ namespace Starbuy_Desktop
             this.textBoxLoginUsername.PlaceholderText = "Digite o seu username";
             this.textBoxLoginUsername.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginUsername.TabIndex = 5;
-            this.textBoxLoginUsername.TextChanged += new System.EventHandler(this.textBoxLoginUsername_TextChanged);
             // 
             // textBoxLoginLinha1
             // 

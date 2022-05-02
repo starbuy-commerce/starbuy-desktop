@@ -16,5 +16,15 @@ namespace Starbuy_Desktop
         {
             InitializeComponent();
         }
+
+        private void textBoxLoginLinha1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

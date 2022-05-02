@@ -19,8 +19,7 @@ namespace Starbuy_Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
+                            
 
         private void textBoxLoginUsername_TextChanged(object sender, EventArgs e)
         {
