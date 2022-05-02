@@ -48,7 +48,7 @@ namespace Starbuy_Desktop
             this.ClientSize = new System.Drawing.Size(1178, 638);
             this.Controls.Add(this.label1);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
