@@ -98,6 +98,7 @@ namespace Starbuy_Desktop
             this.labelLoginRegistrese.Size = new System.Drawing.Size(220, 51);
             this.labelLoginRegistrese.TabIndex = 4;
             this.labelLoginRegistrese.Text = "Registre-se!";
+            this.labelLoginRegistrese.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.registerFormsOpen);
             // 
             // textBoxLoginUsername
             // 
@@ -115,6 +116,7 @@ namespace Starbuy_Desktop
             // 
             this.textBoxLoginLinha1.BackColor = System.Drawing.Color.White;
             this.textBoxLoginLinha1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLoginLinha1.Enabled = false;
             this.textBoxLoginLinha1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxLoginLinha1.ForeColor = System.Drawing.Color.Black;
             this.textBoxLoginLinha1.Location = new System.Drawing.Point(45, 474);
@@ -161,7 +163,7 @@ namespace Starbuy_Desktop
             this.labelLoginEsqueceu.AutoSize = true;
             this.labelLoginEsqueceu.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelLoginEsqueceu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(202)))), ((int)(((byte)(0)))));
-            this.labelLoginEsqueceu.Location = new System.Drawing.Point(36, 701);
+            this.labelLoginEsqueceu.Location = new System.Drawing.Point(45, 687);
             this.labelLoginEsqueceu.Name = "labelLoginEsqueceu";
             this.labelLoginEsqueceu.Size = new System.Drawing.Size(336, 51);
             this.labelLoginEsqueceu.TabIndex = 10;
@@ -174,7 +176,7 @@ namespace Starbuy_Desktop
             this.buttonLoginEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoginEntrar.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonLoginEntrar.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginEntrar.Location = new System.Drawing.Point(45, 783);
+            this.buttonLoginEntrar.Location = new System.Drawing.Point(36, 783);
             this.buttonLoginEntrar.Name = "buttonLoginEntrar";
             this.buttonLoginEntrar.Size = new System.Drawing.Size(474, 55);
             this.buttonLoginEntrar.TabIndex = 11;
@@ -189,6 +191,7 @@ namespace Starbuy_Desktop
             this.pictureBoxLoginCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxLoginCross.TabIndex = 12;
             this.pictureBoxLoginCross.TabStop = false;
+            this.pictureBoxLoginCross.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseDoubleClick);
             // 
             // Login
             // 
