@@ -81,7 +81,7 @@ namespace Starbuy_Desktop
             this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(65, 335);
             this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Nome";
+            this.textBox1.PlaceholderText = "Usuário";
             this.textBox1.Size = new System.Drawing.Size(617, 45);
             this.textBox1.TabIndex = 8;
             // 
