@@ -36,13 +36,13 @@ namespace Starbuy_Desktop
             this.labelLoginFacaConta = new System.Windows.Forms.Label();
             this.labelLoginRegistrese = new System.Windows.Forms.Label();
             this.textBoxLoginUsername = new System.Windows.Forms.TextBox();
-            this.textBoxLoginLinha1 = new System.Windows.Forms.TextBox();
             this.textBoxLoginSenha = new System.Windows.Forms.TextBox();
-            this.textBoxLoginLinha2 = new System.Windows.Forms.TextBox();
             this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
             this.labelLoginEsqueceu = new System.Windows.Forms.Label();
             this.buttonLoginEntrar = new System.Windows.Forms.Button();
             this.pictureBoxLoginCross = new System.Windows.Forms.PictureBox();
+            this.labelLinha1 = new System.Windows.Forms.Label();
+            this.labelLinha2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLoginCross)).BeginInit();
             this.SuspendLayout();
@@ -106,24 +106,11 @@ namespace Starbuy_Desktop
             this.textBoxLoginUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLoginUsername.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxLoginUsername.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxLoginUsername.Location = new System.Drawing.Point(45, 459);
+            this.textBoxLoginUsername.Location = new System.Drawing.Point(45, 449);
             this.textBoxLoginUsername.Name = "textBoxLoginUsername";
             this.textBoxLoginUsername.PlaceholderText = "Digite o seu username";
             this.textBoxLoginUsername.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginUsername.TabIndex = 5;
-            // 
-            // textBoxLoginLinha1
-            // 
-            this.textBoxLoginLinha1.BackColor = System.Drawing.Color.White;
-            this.textBoxLoginLinha1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxLoginLinha1.Enabled = false;
-            this.textBoxLoginLinha1.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxLoginLinha1.ForeColor = System.Drawing.Color.Black;
-            this.textBoxLoginLinha1.Location = new System.Drawing.Point(45, 474);
-            this.textBoxLoginLinha1.Name = "textBoxLoginLinha1";
-            this.textBoxLoginLinha1.Size = new System.Drawing.Size(617, 45);
-            this.textBoxLoginLinha1.TabIndex = 6;
-            this.textBoxLoginLinha1.Text = "____________________________________________";
             // 
             // textBoxLoginSenha
             // 
@@ -131,23 +118,11 @@ namespace Starbuy_Desktop
             this.textBoxLoginSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxLoginSenha.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxLoginSenha.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxLoginSenha.Location = new System.Drawing.Point(45, 571);
+            this.textBoxLoginSenha.Location = new System.Drawing.Point(45, 562);
             this.textBoxLoginSenha.Name = "textBoxLoginSenha";
             this.textBoxLoginSenha.PlaceholderText = "Digite a sua senha";
             this.textBoxLoginSenha.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginSenha.TabIndex = 7;
-            // 
-            // textBoxLoginLinha2
-            // 
-            this.textBoxLoginLinha2.BackColor = System.Drawing.Color.White;
-            this.textBoxLoginLinha2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxLoginLinha2.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxLoginLinha2.ForeColor = System.Drawing.Color.Black;
-            this.textBoxLoginLinha2.Location = new System.Drawing.Point(45, 584);
-            this.textBoxLoginLinha2.Name = "textBoxLoginLinha2";
-            this.textBoxLoginLinha2.Size = new System.Drawing.Size(617, 45);
-            this.textBoxLoginLinha2.TabIndex = 8;
-            this.textBoxLoginLinha2.Text = "____________________________________________";
             // 
             // pictureBoxLogin
             // 
@@ -193,6 +168,26 @@ namespace Starbuy_Desktop
             this.pictureBoxLoginCross.TabStop = false;
             this.pictureBoxLoginCross.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseDoubleClick);
             // 
+            // labelLinha1
+            // 
+            this.labelLinha1.AutoSize = true;
+            this.labelLinha1.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha1.Location = new System.Drawing.Point(36, 459);
+            this.labelLinha1.Name = "labelLinha1";
+            this.labelLinha1.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha1.TabIndex = 13;
+            this.labelLinha1.Text = "___________________________________";
+            // 
+            // labelLinha2
+            // 
+            this.labelLinha2.AutoSize = true;
+            this.labelLinha2.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha2.Location = new System.Drawing.Point(36, 571);
+            this.labelLinha2.Name = "labelLinha2";
+            this.labelLinha2.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha2.TabIndex = 14;
+            this.labelLinha2.Text = "___________________________________";
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -210,9 +205,9 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.labelLoginStarbuy);
             this.Controls.Add(this.labelLoginA);
             this.Controls.Add(this.labelLoginBemVindo);
-            this.Controls.Add(this.textBoxLoginLinha1);
-            this.Controls.Add(this.textBoxLoginLinha2);
             this.Controls.Add(this.pictureBoxLogin);
+            this.Controls.Add(this.labelLinha1);
+            this.Controls.Add(this.labelLinha2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
@@ -233,13 +228,13 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelLoginFacaConta;
         private System.Windows.Forms.Label labelLoginRegistrese;
         private System.Windows.Forms.TextBox textBoxLoginUsername;
-        private System.Windows.Forms.TextBox textBoxLoginLinha1;
         private System.Windows.Forms.TextBox textBoxLoginSenha;
-        private System.Windows.Forms.TextBox textBoxLoginLinha2;
         private System.Windows.Forms.PictureBox pictureBoxLogin;
         private System.Windows.Forms.Label labelLoginEsqueceu;
         private System.Windows.Forms.Button buttonLoginEntrar;
         private System.Windows.Forms.PictureBox pictureBoxLoginCross;
+        private System.Windows.Forms.Label labelLinha1;
+        private System.Windows.Forms.Label labelLinha2;
     }
 }
 
