@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class Login
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace Starbuy_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.labelLoginBemVindo = new System.Windows.Forms.Label();
             this.labelLoginA = new System.Windows.Forms.Label();
             this.labelLoginStarbuy = new System.Windows.Forms.Label();
@@ -157,6 +157,7 @@ namespace Starbuy_Desktop
             this.buttonLoginEntrar.TabIndex = 11;
             this.buttonLoginEntrar.Text = "Entrar";
             this.buttonLoginEntrar.UseVisualStyleBackColor = false;
+            this.buttonLoginEntrar.Click += new System.EventHandler(this.buttonLoginEntrar_Click);
             // 
             // pictureBoxLoginCross
             // 

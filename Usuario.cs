@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Starbuy_Desktop
+{
+    public class Usuario
+    {
+        public String username { get; set; }
+        public String email { get; set; }
+        public String name { get; set; }
+        public DateTime aniversario { get; set; }
+        public String city { get; set; }
+        public DateTime registration { get; set; }
+    }
+}
