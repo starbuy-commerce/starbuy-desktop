@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class Registro
+    partial class FormRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Starbuy_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
             this.labelRegistroRegistre = new System.Windows.Forms.Label();
             this.textBoxRegistroNome = new System.Windows.Forms.TextBox();
             this.textBoxRegistroUsuario = new System.Windows.Forms.TextBox();

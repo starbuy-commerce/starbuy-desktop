@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Starbuy_Desktop
 {
-    public partial class Registro : Form
+    public partial class FormRegistro : Form
     {
-        public Registro()
+        public FormRegistro()
         {
             InitializeComponent();
         }

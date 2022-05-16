@@ -4,15 +4,16 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Starbuy_Desktop
 {
-    public partial class Login : Form
+    public partial class FormLogin : Form
     {
-        public Login()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -45,10 +46,22 @@ namespace Starbuy_Desktop
             if (diag == DialogResult.Yes)
             {
                 this.Hide();
-                Registro f2 = new Registro(); //Abrindo forms novo// 
+                FormRegistro f2 = new FormRegistro(); //Abrindo forms novo// 
                 f2.ShowDialog(); // Arranjar jeito de voltar pro forms original  // e // jeito de fechar forms novo!//
             }
         }
 
+        private void buttonLoginEntrar_Click(object sender, EventArgs e)
+        {
+
+            var body = '{"username": "' + textBoxLoginUsername.Text + '", "password": ' + textBoxLoginSenha.Text + "";
+            var requisicaoWeb = WebRequest.CreateHttp("http://jsonplaceholder.typicode.com/posts/");
+            requisicaoWeb.Method = "GET";
+            requisicaoWeb.UserAgent = "RequisicaoWebDemo";
+            using (var resposta = requisicaoWeb.GetResponse())
+            {
+                
+            }
+        }
     }
 }

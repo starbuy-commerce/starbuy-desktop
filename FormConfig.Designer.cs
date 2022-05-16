@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class Config
+    partial class FormConfig
     {
         /// <summary>
         /// Required designer variable.
@@ -29,17 +29,30 @@ namespace Starbuy_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelConfigNome = new System.Windows.Forms.Label();
+            this.labelConfigCantoNome = new System.Windows.Forms.Label();
             this.groupBoxConfigPerfil = new System.Windows.Forms.GroupBox();
+            this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBoxConfigPedidos = new System.Windows.Forms.PictureBox();
+            this.pictureBoxConfigEstoque = new System.Windows.Forms.PictureBox();
+            this.pictureBoxConfigMenu = new System.Windows.Forms.PictureBox();
+            this.labelConfigNome = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelConfigConfig = new System.Windows.Forms.Label();
+            this.labelConfigID = new System.Windows.Forms.Label();
+            this.labelConfigTelefone = new System.Windows.Forms.Label();
+            this.labelConfigCep = new System.Windows.Forms.Label();
+            this.labelConfigConta = new System.Windows.Forms.Label();
+            this.labelConfigEndereco = new System.Windows.Forms.Label();
+            this.labelConfigCpf = new System.Windows.Forms.Label();
+            this.labelConfigInfEndereco = new System.Windows.Forms.Label();
+            this.labelConfigInfTelefone = new System.Windows.Forms.Label();
+            this.labelConfigInfCep = new System.Windows.Forms.Label();
+            this.labelConfigInfConta = new System.Windows.Forms.Label();
             this.labelConfigInfCPF = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxConfigFoto = new System.Windows.Forms.PictureBox();
             this.groupBoxConfigAlterar = new System.Windows.Forms.GroupBox();
+            this.textBoxConfigAlterarEndereco = new System.Windows.Forms.TextBox();
             this.labelConfigAlterarEndereco = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.labelConfigAlterarFoto = new System.Windows.Forms.Label();
@@ -55,98 +68,227 @@ namespace Starbuy_Desktop
             this.textBoxConfigAlterarCpf = new System.Windows.Forms.TextBox();
             this.textBoxConfigAlterarNome = new System.Windows.Forms.TextBox();
             this.labelConfigAlterar = new System.Windows.Forms.Label();
-            this.textBoxConfigAlterarEndereco = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.pictureBoxConfigMenuConfig = new System.Windows.Forms.PictureBox();
             this.groupBoxConfigPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigEstoque)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenu)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigFoto)).BeginInit();
             this.groupBoxConfigAlterar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenuConfig)).BeginInit();
             this.SuspendLayout();
             // 
-            // labelConfigNome
+            // labelConfigCantoNome
             // 
-            this.labelConfigNome.AutoSize = true;
-            this.labelConfigNome.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigNome.Location = new System.Drawing.Point(16, 102);
-            this.labelConfigNome.Name = "labelConfigNome";
-            this.labelConfigNome.Size = new System.Drawing.Size(119, 32);
-            this.labelConfigNome.TabIndex = 4;
-            this.labelConfigNome.Text = "Vendedor";
+            this.labelConfigCantoNome.AutoSize = true;
+            this.labelConfigCantoNome.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigCantoNome.Location = new System.Drawing.Point(16, 102);
+            this.labelConfigCantoNome.Name = "labelConfigCantoNome";
+            this.labelConfigCantoNome.Size = new System.Drawing.Size(119, 32);
+            this.labelConfigCantoNome.TabIndex = 4;
+            this.labelConfigCantoNome.Text = "Vendedor";
             // 
             // groupBoxConfigPerfil
             // 
-            this.groupBoxConfigPerfil.Controls.Add(this.labelConfigNome);
+            this.groupBoxConfigPerfil.Controls.Add(this.pictureBoxConfigCanto);
+            this.groupBoxConfigPerfil.Controls.Add(this.labelConfigCantoNome);
             this.groupBoxConfigPerfil.Location = new System.Drawing.Point(-4, -8);
             this.groupBoxConfigPerfil.Name = "groupBoxConfigPerfil";
             this.groupBoxConfigPerfil.Size = new System.Drawing.Size(229, 149);
             this.groupBoxConfigPerfil.TabIndex = 5;
             this.groupBoxConfigPerfil.TabStop = false;
             // 
+            // pictureBoxConfigCanto
+            // 
+            this.pictureBoxConfigCanto.Location = new System.Drawing.Point(16, 38);
+            this.pictureBoxConfigCanto.Name = "pictureBoxConfigCanto";
+            this.pictureBoxConfigCanto.Size = new System.Drawing.Size(57, 51);
+            this.pictureBoxConfigCanto.TabIndex = 26;
+            this.pictureBoxConfigCanto.TabStop = false;
+            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.pictureBoxConfigMenuConfig);
+            this.groupBox1.Controls.Add(this.pictureBoxConfigPedidos);
+            this.groupBox1.Controls.Add(this.pictureBoxConfigEstoque);
+            this.groupBox1.Controls.Add(this.pictureBoxConfigMenu);
             this.groupBox1.Location = new System.Drawing.Point(-4, 147);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(229, 723);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // label1
+            // pictureBoxConfigPedidos
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(59, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 32);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Vendedor";
+            this.pictureBoxConfigPedidos.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.pedidos;
+            this.pictureBoxConfigPedidos.Location = new System.Drawing.Point(16, 107);
+            this.pictureBoxConfigPedidos.Name = "pictureBoxConfigPedidos";
+            this.pictureBoxConfigPedidos.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxConfigPedidos.TabIndex = 2;
+            this.pictureBoxConfigPedidos.TabStop = false;
+            // 
+            // pictureBoxConfigEstoque
+            // 
+            this.pictureBoxConfigEstoque.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.box;
+            this.pictureBoxConfigEstoque.Location = new System.Drawing.Point(16, 65);
+            this.pictureBoxConfigEstoque.Name = "pictureBoxConfigEstoque";
+            this.pictureBoxConfigEstoque.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxConfigEstoque.TabIndex = 1;
+            this.pictureBoxConfigEstoque.TabStop = false;
+            // 
+            // pictureBoxConfigMenu
+            // 
+            this.pictureBoxConfigMenu.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.home;
+            this.pictureBoxConfigMenu.Location = new System.Drawing.Point(16, 23);
+            this.pictureBoxConfigMenu.Name = "pictureBoxConfigMenu";
+            this.pictureBoxConfigMenu.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxConfigMenu.TabIndex = 0;
+            this.pictureBoxConfigMenu.TabStop = false;
+            // 
+            // labelConfigNome
+            // 
+            this.labelConfigNome.AutoSize = true;
+            this.labelConfigNome.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigNome.Location = new System.Drawing.Point(260, 162);
+            this.labelConfigNome.Name = "labelConfigNome";
+            this.labelConfigNome.Size = new System.Drawing.Size(119, 32);
+            this.labelConfigNome.TabIndex = 4;
+            this.labelConfigNome.Text = "Vendedor";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
+            this.groupBox2.Controls.Add(this.labelConfigConfig);
+            this.groupBox2.Controls.Add(this.labelConfigID);
+            this.groupBox2.Controls.Add(this.labelConfigNome);
+            this.groupBox2.Controls.Add(this.labelConfigTelefone);
+            this.groupBox2.Controls.Add(this.labelConfigCep);
+            this.groupBox2.Controls.Add(this.labelConfigConta);
+            this.groupBox2.Controls.Add(this.labelConfigEndereco);
+            this.groupBox2.Controls.Add(this.labelConfigCpf);
+            this.groupBox2.Controls.Add(this.labelConfigInfEndereco);
+            this.groupBox2.Controls.Add(this.labelConfigInfTelefone);
+            this.groupBox2.Controls.Add(this.labelConfigInfCep);
+            this.groupBox2.Controls.Add(this.labelConfigInfConta);
             this.groupBox2.Controls.Add(this.labelConfigInfCPF);
-            this.groupBox2.Controls.Add(this.pictureBox1);
+            this.groupBox2.Controls.Add(this.pictureBoxConfigFoto);
             this.groupBox2.Location = new System.Drawing.Point(257, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(860, 793);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
-            // label4
+            // labelConfigConfig
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.Location = new System.Drawing.Point(150, 547);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 25);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Telefone:";
+            this.labelConfigConfig.AutoSize = true;
+            this.labelConfigConfig.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigConfig.Location = new System.Drawing.Point(352, 57);
+            this.labelConfigConfig.Name = "labelConfigConfig";
+            this.labelConfigConfig.Size = new System.Drawing.Size(167, 32);
+            this.labelConfigConfig.TabIndex = 27;
+            this.labelConfigConfig.Text = "Configurações";
             // 
-            // label3
+            // labelConfigID
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(188, 483);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 25);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "CEP:";
+            this.labelConfigID.AutoSize = true;
+            this.labelConfigID.Font = new System.Drawing.Font("Ebrima", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigID.Location = new System.Drawing.Point(260, 197);
+            this.labelConfigID.Name = "labelConfigID";
+            this.labelConfigID.Size = new System.Drawing.Size(83, 25);
+            this.labelConfigID.TabIndex = 26;
+            this.labelConfigID.Text = "#200558";
             // 
-            // label2
+            // labelConfigTelefone
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(93, 424);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 25);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Conta Bancaria:";
+            this.labelConfigTelefone.AutoSize = true;
+            this.labelConfigTelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigTelefone.Location = new System.Drawing.Point(243, 514);
+            this.labelConfigTelefone.Name = "labelConfigTelefone";
+            this.labelConfigTelefone.Size = new System.Drawing.Size(137, 25);
+            this.labelConfigTelefone.TabIndex = 25;
+            this.labelConfigTelefone.Text = "(18) 2133-2141";
+            // 
+            // labelConfigCep
+            // 
+            this.labelConfigCep.AutoSize = true;
+            this.labelConfigCep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigCep.Location = new System.Drawing.Point(243, 462);
+            this.labelConfigCep.Name = "labelConfigCep";
+            this.labelConfigCep.Size = new System.Drawing.Size(100, 25);
+            this.labelConfigCep.TabIndex = 24;
+            this.labelConfigCep.Text = "15501-238";
+            // 
+            // labelConfigConta
+            // 
+            this.labelConfigConta.AutoSize = true;
+            this.labelConfigConta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigConta.Location = new System.Drawing.Point(243, 411);
+            this.labelConfigConta.Name = "labelConfigConta";
+            this.labelConfigConta.Size = new System.Drawing.Size(100, 25);
+            this.labelConfigConta.TabIndex = 23;
+            this.labelConfigConta.Text = "1153760-4";
+            // 
+            // labelConfigEndereco
+            // 
+            this.labelConfigEndereco.AutoSize = true;
+            this.labelConfigEndereco.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigEndereco.Location = new System.Drawing.Point(243, 357);
+            this.labelConfigEndereco.Name = "labelConfigEndereco";
+            this.labelConfigEndereco.Size = new System.Drawing.Size(152, 25);
+            this.labelConfigEndereco.TabIndex = 22;
+            this.labelConfigEndereco.Text = "Votuporanga, SP";
+            // 
+            // labelConfigCpf
+            // 
+            this.labelConfigCpf.AutoSize = true;
+            this.labelConfigCpf.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigCpf.Location = new System.Drawing.Point(243, 307);
+            this.labelConfigCpf.Name = "labelConfigCpf";
+            this.labelConfigCpf.Size = new System.Drawing.Size(138, 25);
+            this.labelConfigCpf.TabIndex = 21;
+            this.labelConfigCpf.Text = "552.305.402-23";
+            // 
+            // labelConfigInfEndereco
+            // 
+            this.labelConfigInfEndereco.AutoSize = true;
+            this.labelConfigInfEndereco.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigInfEndereco.Location = new System.Drawing.Point(142, 357);
+            this.labelConfigInfEndereco.Name = "labelConfigInfEndereco";
+            this.labelConfigInfEndereco.Size = new System.Drawing.Size(95, 25);
+            this.labelConfigInfEndereco.TabIndex = 20;
+            this.labelConfigInfEndereco.Text = "Endereço:";
+            // 
+            // labelConfigInfTelefone
+            // 
+            this.labelConfigInfTelefone.AutoSize = true;
+            this.labelConfigInfTelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigInfTelefone.Location = new System.Drawing.Point(150, 514);
+            this.labelConfigInfTelefone.Name = "labelConfigInfTelefone";
+            this.labelConfigInfTelefone.Size = new System.Drawing.Size(87, 25);
+            this.labelConfigInfTelefone.TabIndex = 18;
+            this.labelConfigInfTelefone.Text = "Telefone:";
+            // 
+            // labelConfigInfCep
+            // 
+            this.labelConfigInfCep.AutoSize = true;
+            this.labelConfigInfCep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigInfCep.Location = new System.Drawing.Point(188, 462);
+            this.labelConfigInfCep.Name = "labelConfigInfCep";
+            this.labelConfigInfCep.Size = new System.Drawing.Size(49, 25);
+            this.labelConfigInfCep.TabIndex = 18;
+            this.labelConfigInfCep.Text = "CEP:";
+            // 
+            // labelConfigInfConta
+            // 
+            this.labelConfigInfConta.AutoSize = true;
+            this.labelConfigInfConta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigInfConta.Location = new System.Drawing.Point(93, 411);
+            this.labelConfigInfConta.Name = "labelConfigInfConta";
+            this.labelConfigInfConta.Size = new System.Drawing.Size(144, 25);
+            this.labelConfigInfConta.TabIndex = 18;
+            this.labelConfigInfConta.Text = "Conta Bancaria:";
             // 
             // labelConfigInfCPF
             // 
@@ -158,13 +300,13 @@ namespace Starbuy_Desktop
             this.labelConfigInfCPF.TabIndex = 18;
             this.labelConfigInfCPF.Text = "CPF / CNPJ:";
             // 
-            // pictureBox1
+            // pictureBoxConfigFoto
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(53, 64);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(184, 187);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxConfigFoto.Location = new System.Drawing.Point(72, 107);
+            this.pictureBoxConfigFoto.Name = "pictureBoxConfigFoto";
+            this.pictureBoxConfigFoto.Size = new System.Drawing.Size(165, 162);
+            this.pictureBoxConfigFoto.TabIndex = 0;
+            this.pictureBoxConfigFoto.TabStop = false;
             // 
             // groupBoxConfigAlterar
             // 
@@ -189,6 +331,14 @@ namespace Starbuy_Desktop
             this.groupBoxConfigAlterar.Size = new System.Drawing.Size(244, 793);
             this.groupBoxConfigAlterar.TabIndex = 8;
             this.groupBoxConfigAlterar.TabStop = false;
+            // 
+            // textBoxConfigAlterarEndereco
+            // 
+            this.textBoxConfigAlterarEndereco.Location = new System.Drawing.Point(15, 362);
+            this.textBoxConfigAlterarEndereco.Multiline = true;
+            this.textBoxConfigAlterarEndereco.Name = "textBoxConfigAlterarEndereco";
+            this.textBoxConfigAlterarEndereco.Size = new System.Drawing.Size(209, 40);
+            this.textBoxConfigAlterarEndereco.TabIndex = 19;
             // 
             // labelConfigAlterarEndereco
             // 
@@ -327,33 +477,14 @@ namespace Starbuy_Desktop
             this.labelConfigAlterar.TabIndex = 0;
             this.labelConfigAlterar.Text = "Alterar Dados";
             // 
-            // textBoxConfigAlterarEndereco
+            // pictureBoxConfigMenuConfig
             // 
-            this.textBoxConfigAlterarEndereco.Location = new System.Drawing.Point(15, 362);
-            this.textBoxConfigAlterarEndereco.Multiline = true;
-            this.textBoxConfigAlterarEndereco.Name = "textBoxConfigAlterarEndereco";
-            this.textBoxConfigAlterarEndereco.Size = new System.Drawing.Size(209, 40);
-            this.textBoxConfigAlterarEndereco.TabIndex = 19;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(142, 357);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(95, 25);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "Endereço:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(243, 307);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(162, 40);
-            this.label6.TabIndex = 21;
-            this.label6.Text = "CPF / CNPJ:";
+            this.pictureBoxConfigMenuConfig.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.settings;
+            this.pictureBoxConfigMenuConfig.Location = new System.Drawing.Point(16, 149);
+            this.pictureBoxConfigMenuConfig.Name = "pictureBoxConfigMenuConfig";
+            this.pictureBoxConfigMenuConfig.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxConfigMenuConfig.TabIndex = 3;
+            this.pictureBoxConfigMenuConfig.TabStop = false;
             // 
             // Config
             // 
@@ -370,23 +501,27 @@ namespace Starbuy_Desktop
             this.Text = "Form1";
             this.groupBoxConfigPerfil.ResumeLayout(false);
             this.groupBoxConfigPerfil.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigEstoque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenu)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigFoto)).EndInit();
             this.groupBoxConfigAlterar.ResumeLayout(false);
             this.groupBoxConfigAlterar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenuConfig)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label labelConfigNome;
+        private System.Windows.Forms.Label labelConfigCantoNome;
         private System.Windows.Forms.GroupBox groupBoxConfigPerfil;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelConfigNome;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBoxConfigAlterar;
         private System.Windows.Forms.TextBox textBoxConfigAlterarNome;
@@ -403,14 +538,25 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.TextBox textBoxConfigAlterarCEP;
         private System.Windows.Forms.TextBox textBoxConfigAlterarConta;
         private System.Windows.Forms.TextBox textBoxConfigAlterarCpf;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelConfigInfTelefone;
+        private System.Windows.Forms.Label labelConfigInfCep;
+        private System.Windows.Forms.Label labelConfigInfConta;
         private System.Windows.Forms.Label labelConfigInfCPF;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxConfigFoto;
         private System.Windows.Forms.Label labelConfigAlterarEndereco;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelConfigInfEndereco;
         private System.Windows.Forms.TextBox textBoxConfigAlterarEndereco;
+        private System.Windows.Forms.Label labelConfigCpf;
+        private System.Windows.Forms.Label labelConfigConta;
+        private System.Windows.Forms.Label labelConfigEndereco;
+        private System.Windows.Forms.Label labelConfigTelefone;
+        private System.Windows.Forms.Label labelConfigCep;
+        private System.Windows.Forms.PictureBox pictureBoxConfigCanto;
+        private System.Windows.Forms.Label labelConfigID;
+        private System.Windows.Forms.Label labelConfigConfig;
+        private System.Windows.Forms.PictureBox pictureBoxConfigPedidos;
+        private System.Windows.Forms.PictureBox pictureBoxConfigEstoque;
+        private System.Windows.Forms.PictureBox pictureBoxConfigMenu;
+        private System.Windows.Forms.PictureBox pictureBoxConfigMenuConfig;
     }
 }
