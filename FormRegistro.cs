@@ -17,44 +17,6 @@ namespace Starbuy_Desktop
             InitializeComponent();
         }
 
-        private void textBoxLoginLinha1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Registro_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Registro_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxRegistroNome_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxRegistroUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxRegistroCPF_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }
