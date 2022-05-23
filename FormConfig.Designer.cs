@@ -33,6 +33,7 @@ namespace Starbuy_Desktop
             this.groupBoxConfigPerfil = new System.Windows.Forms.GroupBox();
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBoxConfigMenuConfig = new System.Windows.Forms.PictureBox();
             this.pictureBoxConfigPedidos = new System.Windows.Forms.PictureBox();
             this.pictureBoxConfigEstoque = new System.Windows.Forms.PictureBox();
             this.pictureBoxConfigMenu = new System.Windows.Forms.PictureBox();
@@ -42,13 +43,11 @@ namespace Starbuy_Desktop
             this.labelConfigID = new System.Windows.Forms.Label();
             this.labelConfigTelefone = new System.Windows.Forms.Label();
             this.labelConfigCep = new System.Windows.Forms.Label();
-            this.labelConfigConta = new System.Windows.Forms.Label();
             this.labelConfigEndereco = new System.Windows.Forms.Label();
             this.labelConfigCpf = new System.Windows.Forms.Label();
             this.labelConfigInfEndereco = new System.Windows.Forms.Label();
             this.labelConfigInfTelefone = new System.Windows.Forms.Label();
             this.labelConfigInfCep = new System.Windows.Forms.Label();
-            this.labelConfigInfConta = new System.Windows.Forms.Label();
             this.labelConfigInfCPF = new System.Windows.Forms.Label();
             this.pictureBoxConfigFoto = new System.Windows.Forms.PictureBox();
             this.groupBoxConfigAlterar = new System.Windows.Forms.GroupBox();
@@ -59,26 +58,23 @@ namespace Starbuy_Desktop
             this.textBoxConfigAlterarFoto = new System.Windows.Forms.TextBox();
             this.labelConfigAlterarTelefone = new System.Windows.Forms.Label();
             this.labelConfigAlterarCEP = new System.Windows.Forms.Label();
-            this.labelConfigAlterarConta = new System.Windows.Forms.Label();
             this.labelConfigAlterarCpf = new System.Windows.Forms.Label();
             this.labelConfigAlterarNome = new System.Windows.Forms.Label();
             this.textBoxConfigAlterarTelefone = new System.Windows.Forms.TextBox();
             this.textBoxConfigAlterarCEP = new System.Windows.Forms.TextBox();
-            this.textBoxConfigAlterarConta = new System.Windows.Forms.TextBox();
             this.textBoxConfigAlterarCpf = new System.Windows.Forms.TextBox();
             this.textBoxConfigAlterarNome = new System.Windows.Forms.TextBox();
             this.labelConfigAlterar = new System.Windows.Forms.Label();
-            this.pictureBoxConfigMenuConfig = new System.Windows.Forms.PictureBox();
             this.groupBoxConfigPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenuConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenu)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigFoto)).BeginInit();
             this.groupBoxConfigAlterar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenuConfig)).BeginInit();
             this.SuspendLayout();
             // 
             // labelConfigCantoNome
@@ -120,6 +116,15 @@ namespace Starbuy_Desktop
             this.groupBox1.Size = new System.Drawing.Size(229, 723);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
+            // 
+            // pictureBoxConfigMenuConfig
+            // 
+            this.pictureBoxConfigMenuConfig.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.settings;
+            this.pictureBoxConfigMenuConfig.Location = new System.Drawing.Point(16, 149);
+            this.pictureBoxConfigMenuConfig.Name = "pictureBoxConfigMenuConfig";
+            this.pictureBoxConfigMenuConfig.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxConfigMenuConfig.TabIndex = 3;
+            this.pictureBoxConfigMenuConfig.TabStop = false;
             // 
             // pictureBoxConfigPedidos
             // 
@@ -165,13 +170,11 @@ namespace Starbuy_Desktop
             this.groupBox2.Controls.Add(this.labelConfigNome);
             this.groupBox2.Controls.Add(this.labelConfigTelefone);
             this.groupBox2.Controls.Add(this.labelConfigCep);
-            this.groupBox2.Controls.Add(this.labelConfigConta);
             this.groupBox2.Controls.Add(this.labelConfigEndereco);
             this.groupBox2.Controls.Add(this.labelConfigCpf);
             this.groupBox2.Controls.Add(this.labelConfigInfEndereco);
             this.groupBox2.Controls.Add(this.labelConfigInfTelefone);
             this.groupBox2.Controls.Add(this.labelConfigInfCep);
-            this.groupBox2.Controls.Add(this.labelConfigInfConta);
             this.groupBox2.Controls.Add(this.labelConfigInfCPF);
             this.groupBox2.Controls.Add(this.pictureBoxConfigFoto);
             this.groupBox2.Location = new System.Drawing.Point(257, 30);
@@ -204,7 +207,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigTelefone.AutoSize = true;
             this.labelConfigTelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigTelefone.Location = new System.Drawing.Point(243, 514);
+            this.labelConfigTelefone.Location = new System.Drawing.Point(243, 455);
             this.labelConfigTelefone.Name = "labelConfigTelefone";
             this.labelConfigTelefone.Size = new System.Drawing.Size(137, 25);
             this.labelConfigTelefone.TabIndex = 25;
@@ -214,21 +217,11 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigCep.AutoSize = true;
             this.labelConfigCep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigCep.Location = new System.Drawing.Point(243, 462);
+            this.labelConfigCep.Location = new System.Drawing.Point(243, 403);
             this.labelConfigCep.Name = "labelConfigCep";
             this.labelConfigCep.Size = new System.Drawing.Size(100, 25);
             this.labelConfigCep.TabIndex = 24;
             this.labelConfigCep.Text = "15501-238";
-            // 
-            // labelConfigConta
-            // 
-            this.labelConfigConta.AutoSize = true;
-            this.labelConfigConta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigConta.Location = new System.Drawing.Point(243, 411);
-            this.labelConfigConta.Name = "labelConfigConta";
-            this.labelConfigConta.Size = new System.Drawing.Size(100, 25);
-            this.labelConfigConta.TabIndex = 23;
-            this.labelConfigConta.Text = "1153760-4";
             // 
             // labelConfigEndereco
             // 
@@ -264,7 +257,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigInfTelefone.AutoSize = true;
             this.labelConfigInfTelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfTelefone.Location = new System.Drawing.Point(150, 514);
+            this.labelConfigInfTelefone.Location = new System.Drawing.Point(150, 455);
             this.labelConfigInfTelefone.Name = "labelConfigInfTelefone";
             this.labelConfigInfTelefone.Size = new System.Drawing.Size(87, 25);
             this.labelConfigInfTelefone.TabIndex = 18;
@@ -274,21 +267,11 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigInfCep.AutoSize = true;
             this.labelConfigInfCep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfCep.Location = new System.Drawing.Point(188, 462);
+            this.labelConfigInfCep.Location = new System.Drawing.Point(188, 403);
             this.labelConfigInfCep.Name = "labelConfigInfCep";
             this.labelConfigInfCep.Size = new System.Drawing.Size(49, 25);
             this.labelConfigInfCep.TabIndex = 18;
             this.labelConfigInfCep.Text = "CEP:";
-            // 
-            // labelConfigInfConta
-            // 
-            this.labelConfigInfConta.AutoSize = true;
-            this.labelConfigInfConta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfConta.Location = new System.Drawing.Point(93, 411);
-            this.labelConfigInfConta.Name = "labelConfigInfConta";
-            this.labelConfigInfConta.Size = new System.Drawing.Size(144, 25);
-            this.labelConfigInfConta.TabIndex = 18;
-            this.labelConfigInfConta.Text = "Conta Bancaria:";
             // 
             // labelConfigInfCPF
             // 
@@ -317,12 +300,10 @@ namespace Starbuy_Desktop
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarFoto);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarTelefone);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarCEP);
-            this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarConta);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarCpf);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarNome);
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarTelefone);
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarCEP);
-            this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarConta);
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarCpf);
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarNome);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterar);
@@ -334,7 +315,7 @@ namespace Starbuy_Desktop
             // 
             // textBoxConfigAlterarEndereco
             // 
-            this.textBoxConfigAlterarEndereco.Location = new System.Drawing.Point(15, 362);
+            this.textBoxConfigAlterarEndereco.Location = new System.Drawing.Point(15, 267);
             this.textBoxConfigAlterarEndereco.Multiline = true;
             this.textBoxConfigAlterarEndereco.Name = "textBoxConfigAlterarEndereco";
             this.textBoxConfigAlterarEndereco.Size = new System.Drawing.Size(209, 40);
@@ -344,7 +325,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigAlterarEndereco.AutoSize = true;
             this.labelConfigAlterarEndereco.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigAlterarEndereco.Location = new System.Drawing.Point(15, 334);
+            this.labelConfigAlterarEndereco.Location = new System.Drawing.Point(15, 239);
             this.labelConfigAlterarEndereco.Name = "labelConfigAlterarEndereco";
             this.labelConfigAlterarEndereco.Size = new System.Drawing.Size(95, 25);
             this.labelConfigAlterarEndereco.TabIndex = 18;
@@ -352,7 +333,7 @@ namespace Starbuy_Desktop
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(15, 704);
+            this.button1.Location = new System.Drawing.Point(15, 598);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(209, 69);
             this.button1.TabIndex = 17;
@@ -363,7 +344,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigAlterarFoto.AutoSize = true;
             this.labelConfigAlterarFoto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigAlterarFoto.Location = new System.Drawing.Point(15, 604);
+            this.labelConfigAlterarFoto.Location = new System.Drawing.Point(15, 509);
             this.labelConfigAlterarFoto.Name = "labelConfigAlterarFoto";
             this.labelConfigAlterarFoto.Size = new System.Drawing.Size(128, 25);
             this.labelConfigAlterarFoto.TabIndex = 16;
@@ -371,7 +352,7 @@ namespace Starbuy_Desktop
             // 
             // textBoxConfigAlterarFoto
             // 
-            this.textBoxConfigAlterarFoto.Location = new System.Drawing.Point(15, 632);
+            this.textBoxConfigAlterarFoto.Location = new System.Drawing.Point(15, 537);
             this.textBoxConfigAlterarFoto.Multiline = true;
             this.textBoxConfigAlterarFoto.Name = "textBoxConfigAlterarFoto";
             this.textBoxConfigAlterarFoto.Size = new System.Drawing.Size(209, 40);
@@ -381,7 +362,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigAlterarTelefone.AutoSize = true;
             this.labelConfigAlterarTelefone.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigAlterarTelefone.Location = new System.Drawing.Point(15, 514);
+            this.labelConfigAlterarTelefone.Location = new System.Drawing.Point(15, 419);
             this.labelConfigAlterarTelefone.Name = "labelConfigAlterarTelefone";
             this.labelConfigAlterarTelefone.Size = new System.Drawing.Size(87, 25);
             this.labelConfigAlterarTelefone.TabIndex = 14;
@@ -391,21 +372,11 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigAlterarCEP.AutoSize = true;
             this.labelConfigAlterarCEP.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigAlterarCEP.Location = new System.Drawing.Point(15, 424);
+            this.labelConfigAlterarCEP.Location = new System.Drawing.Point(15, 329);
             this.labelConfigAlterarCEP.Name = "labelConfigAlterarCEP";
             this.labelConfigAlterarCEP.Size = new System.Drawing.Size(49, 25);
             this.labelConfigAlterarCEP.TabIndex = 13;
             this.labelConfigAlterarCEP.Text = "CEP:";
-            // 
-            // labelConfigAlterarConta
-            // 
-            this.labelConfigAlterarConta.AutoSize = true;
-            this.labelConfigAlterarConta.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigAlterarConta.Location = new System.Drawing.Point(15, 244);
-            this.labelConfigAlterarConta.Name = "labelConfigAlterarConta";
-            this.labelConfigAlterarConta.Size = new System.Drawing.Size(144, 25);
-            this.labelConfigAlterarConta.TabIndex = 12;
-            this.labelConfigAlterarConta.Text = "Conta Bancaria:";
             // 
             // labelConfigAlterarCpf
             // 
@@ -429,7 +400,7 @@ namespace Starbuy_Desktop
             // 
             // textBoxConfigAlterarTelefone
             // 
-            this.textBoxConfigAlterarTelefone.Location = new System.Drawing.Point(15, 542);
+            this.textBoxConfigAlterarTelefone.Location = new System.Drawing.Point(15, 447);
             this.textBoxConfigAlterarTelefone.Multiline = true;
             this.textBoxConfigAlterarTelefone.Name = "textBoxConfigAlterarTelefone";
             this.textBoxConfigAlterarTelefone.Size = new System.Drawing.Size(209, 40);
@@ -437,19 +408,11 @@ namespace Starbuy_Desktop
             // 
             // textBoxConfigAlterarCEP
             // 
-            this.textBoxConfigAlterarCEP.Location = new System.Drawing.Point(15, 452);
+            this.textBoxConfigAlterarCEP.Location = new System.Drawing.Point(15, 357);
             this.textBoxConfigAlterarCEP.Multiline = true;
             this.textBoxConfigAlterarCEP.Name = "textBoxConfigAlterarCEP";
             this.textBoxConfigAlterarCEP.Size = new System.Drawing.Size(209, 40);
             this.textBoxConfigAlterarCEP.TabIndex = 8;
-            // 
-            // textBoxConfigAlterarConta
-            // 
-            this.textBoxConfigAlterarConta.Location = new System.Drawing.Point(15, 272);
-            this.textBoxConfigAlterarConta.Multiline = true;
-            this.textBoxConfigAlterarConta.Name = "textBoxConfigAlterarConta";
-            this.textBoxConfigAlterarConta.Size = new System.Drawing.Size(209, 40);
-            this.textBoxConfigAlterarConta.TabIndex = 7;
             // 
             // textBoxConfigAlterarCpf
             // 
@@ -477,16 +440,7 @@ namespace Starbuy_Desktop
             this.labelConfigAlterar.TabIndex = 0;
             this.labelConfigAlterar.Text = "Alterar Dados";
             // 
-            // pictureBoxConfigMenuConfig
-            // 
-            this.pictureBoxConfigMenuConfig.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.settings;
-            this.pictureBoxConfigMenuConfig.Location = new System.Drawing.Point(16, 149);
-            this.pictureBoxConfigMenuConfig.Name = "pictureBoxConfigMenuConfig";
-            this.pictureBoxConfigMenuConfig.Size = new System.Drawing.Size(24, 24);
-            this.pictureBoxConfigMenuConfig.TabIndex = 3;
-            this.pictureBoxConfigMenuConfig.TabStop = false;
-            // 
-            // Config
+            // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -497,12 +451,13 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBoxConfigPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Config";
+            this.Name = "FormConfig";
             this.Text = "Form1";
             this.groupBoxConfigPerfil.ResumeLayout(false);
             this.groupBoxConfigPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenuConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenu)).EndInit();
@@ -511,7 +466,6 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigFoto)).EndInit();
             this.groupBoxConfigAlterar.ResumeLayout(false);
             this.groupBoxConfigAlterar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenuConfig)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -531,23 +485,19 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.TextBox textBoxConfigAlterarFoto;
         private System.Windows.Forms.Label labelConfigAlterarTelefone;
         private System.Windows.Forms.Label labelConfigAlterarCEP;
-        private System.Windows.Forms.Label labelConfigAlterarConta;
         private System.Windows.Forms.Label labelConfigAlterarCpf;
         private System.Windows.Forms.Label labelConfigAlterarNome;
         private System.Windows.Forms.TextBox textBoxConfigAlterarTelefone;
         private System.Windows.Forms.TextBox textBoxConfigAlterarCEP;
-        private System.Windows.Forms.TextBox textBoxConfigAlterarConta;
         private System.Windows.Forms.TextBox textBoxConfigAlterarCpf;
         private System.Windows.Forms.Label labelConfigInfTelefone;
         private System.Windows.Forms.Label labelConfigInfCep;
-        private System.Windows.Forms.Label labelConfigInfConta;
         private System.Windows.Forms.Label labelConfigInfCPF;
         private System.Windows.Forms.PictureBox pictureBoxConfigFoto;
         private System.Windows.Forms.Label labelConfigAlterarEndereco;
         private System.Windows.Forms.Label labelConfigInfEndereco;
         private System.Windows.Forms.TextBox textBoxConfigAlterarEndereco;
         private System.Windows.Forms.Label labelConfigCpf;
-        private System.Windows.Forms.Label labelConfigConta;
         private System.Windows.Forms.Label labelConfigEndereco;
         private System.Windows.Forms.Label labelConfigTelefone;
         private System.Windows.Forms.Label labelConfigCep;

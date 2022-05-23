@@ -10,13 +10,12 @@ using System.Windows.Forms;
 
 namespace Starbuy_Desktop
 {
-    public partial class FormRegistro : Form
+    public partial class FormMenuVendedor : Form
     {
-        public FormRegistro()
+        public FormMenuVendedor()
         {
             InitializeComponent();
         }
 
- 
     }
 }
