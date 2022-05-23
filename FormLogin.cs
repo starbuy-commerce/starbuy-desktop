@@ -62,42 +62,41 @@ namespace Starbuy_Desktop
                 MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else {
-                /* var data = "\"{username\"" + textBoxLoginUsername.Text.ToString() + "\n" + "\"password\"" + textBoxLoginSenha.Text.ToString() + "}\"";
-                
-                var wb = new WebClient();
+                /*var data = "\"{username\"" + textBoxLoginUsername.Text.ToString() + "\n" + "\"password\"" + textBoxLoginSenha.Text.ToString() + "}\"";
+                */
+
+                /* var wb = new WebClient();
                 string url = "https://tcc-web-api.herokuapp.com/login";
-                
+                var data = new NameValueCollection();
+                data["username"] = "vasco2004";
+                data["password"] = "lool";
                 var response = wb.UploadValues(url, "POST", data); */
-                var url = "https://reqbin.com/echo/post/json";
+                
+                
+                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://tcc-web-api.herokuapp.com/login");
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Method = "POST";
 
-                var httpRequest = (HttpWebRequest)WebRequest.Create(url);
-                httpRequest.Method = "POST";
-
-                httpRequest.Headers["Authorization"] = "Bearer mt0dgHmLJMVQhvjpNXDyA83vA_PxH23Y";
-                httpRequest.ContentType = "application/json";
-
-                var data = @"{
-                      ""Id"": 12345,
-                      ""Customer"": ""John Smith"",
-                      ""Quantity"": 1,
-                      ""Price"": 10.00
-                    }";
-
-                using (var str = new StreamWriter(httpRequest.GetRequestStream()))
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    str.Write(data);
+                    string json = "{\"username\":\"vasco2004\"," +
+                                  "\"password\":\"lool\"}";
+
+                    streamWriter.Write(json);
                 }
 
-                var response = (HttpWebResponse)httpRequest.GetResponse();
-                if (response == null)
+                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
-
-                }
+                    var result = streamReader.ReadToEnd();
+                    LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
+                    
+                }/*
                 else
                 {
                     Usuario user = JsonSerializer.Deserialize<Usuario>(response);
                     labelLoginStarbuy.Text = user.city.ToString();
-                }
+                }*/
             }
         }
     }

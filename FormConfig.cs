@@ -18,7 +18,7 @@ namespace Starbuy_Desktop
 public partial class FormConfig : Form
     {
         
-        public FormConfig(String user)
+        public FormConfig(String user,String password)
         {
             InitializeComponent();
             var requisicaoWeb = WebRequest.CreateHttp("http://jsonplaceholder.typicode.com/posts/" + user);

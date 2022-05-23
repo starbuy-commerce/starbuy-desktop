@@ -189,7 +189,7 @@ namespace Starbuy_Desktop
             this.labelLinha2.TabIndex = 14;
             this.labelLinha2.Text = "___________________________________";
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -211,7 +211,8 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.labelLinha2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
+            this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
