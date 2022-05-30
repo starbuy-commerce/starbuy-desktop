@@ -24,5 +24,9 @@ public partial class FormConfig : Form
             
         }
 
+        private void labelMenuMenuConfig_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

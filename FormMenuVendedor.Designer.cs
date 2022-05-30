@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class FormMenuVendedor
+    partial class FormMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -73,7 +73,7 @@ namespace Starbuy_Desktop
             // pictureBoxMenuVendedorCross
             // 
             this.pictureBoxMenuVendedorCross.Image = global::Starbuy_Desktop.Properties.Resources.Cross1;
-            this.pictureBoxMenuVendedorCross.Location = new System.Drawing.Point(1321, 44);
+            this.pictureBoxMenuVendedorCross.Location = new System.Drawing.Point(1326, 29);
             this.pictureBoxMenuVendedorCross.Name = "pictureBoxMenuVendedorCross";
             this.pictureBoxMenuVendedorCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxMenuVendedorCross.TabIndex = 13;
@@ -309,7 +309,7 @@ namespace Starbuy_Desktop
             // 
             // gboxMenuAndam2
             // 
-            this.gboxMenuAndam2.Location = new System.Drawing.Point(20, 182);
+            this.gboxMenuAndam2.Location = new System.Drawing.Point(20, 183);
             this.gboxMenuAndam2.Name = "gboxMenuAndam2";
             this.gboxMenuAndam2.Size = new System.Drawing.Size(243, 73);
             this.gboxMenuAndam2.TabIndex = 24;
@@ -335,7 +335,7 @@ namespace Starbuy_Desktop
             this.labelMenuAndam.TabIndex = 27;
             this.labelMenuAndam.Text = "Em andamento";
             // 
-            // FormMenuVendedor
+            // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -349,7 +349,7 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.gboxConfigPerfil);
             this.Controls.Add(this.pictureBoxMenuVendedorCross);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormMenuVendedor";
+            this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();

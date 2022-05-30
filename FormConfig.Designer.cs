@@ -65,6 +65,7 @@ namespace Starbuy_Desktop
             this.textBoxConfigAlterarCpf = new System.Windows.Forms.TextBox();
             this.textBoxConfigAlterarNome = new System.Windows.Forms.TextBox();
             this.labelConfigAlterar = new System.Windows.Forms.Label();
+            this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
             this.gboxConfigPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.gboxConfigMenu.SuspendLayout();
@@ -75,6 +76,7 @@ namespace Starbuy_Desktop
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigFoto)).BeginInit();
             this.groupBoxConfigAlterar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.SuspendLayout();
             // 
             // labelConfigCantoNome
@@ -179,7 +181,7 @@ namespace Starbuy_Desktop
             this.groupBox2.Controls.Add(this.pictureBoxConfigFoto);
             this.groupBox2.Location = new System.Drawing.Point(257, 30);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(860, 793);
+            this.groupBox2.Size = new System.Drawing.Size(733, 793);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             // 
@@ -187,7 +189,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigConfig.AutoSize = true;
             this.labelConfigConfig.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigConfig.Location = new System.Drawing.Point(352, 57);
+            this.labelConfigConfig.Location = new System.Drawing.Point(323, 57);
             this.labelConfigConfig.Name = "labelConfigConfig";
             this.labelConfigConfig.Size = new System.Drawing.Size(167, 32);
             this.labelConfigConfig.TabIndex = 27;
@@ -307,7 +309,7 @@ namespace Starbuy_Desktop
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarCpf);
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarNome);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterar);
-            this.groupBoxConfigAlterar.Location = new System.Drawing.Point(1134, 30);
+            this.groupBoxConfigAlterar.Location = new System.Drawing.Point(1027, 30);
             this.groupBoxConfigAlterar.Name = "groupBoxConfigAlterar";
             this.groupBoxConfigAlterar.Size = new System.Drawing.Size(244, 793);
             this.groupBoxConfigAlterar.TabIndex = 8;
@@ -335,7 +337,7 @@ namespace Starbuy_Desktop
             // 
             this.button1.Location = new System.Drawing.Point(15, 598);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(209, 69);
+            this.button1.Size = new System.Drawing.Size(209, 33);
             this.button1.TabIndex = 17;
             this.button1.Text = "Atualizar";
             this.button1.UseVisualStyleBackColor = true;
@@ -440,19 +442,30 @@ namespace Starbuy_Desktop
             this.labelConfigAlterar.TabIndex = 0;
             this.labelConfigAlterar.Text = "Alterar Dados";
             // 
+            // pictureBoxMenuVendedorCross
+            // 
+            this.pictureBoxMenuVendedorCross.Image = global::Starbuy_Desktop.Properties.Resources.Cross1;
+            this.pictureBoxMenuVendedorCross.Location = new System.Drawing.Point(1310, 30);
+            this.pictureBoxMenuVendedorCross.Name = "pictureBoxMenuVendedorCross";
+            this.pictureBoxMenuVendedorCross.Size = new System.Drawing.Size(33, 34);
+            this.pictureBoxMenuVendedorCross.TabIndex = 14;
+            this.pictureBoxMenuVendedorCross.TabStop = false;
+            // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1392, 870);
+            this.Controls.Add(this.pictureBoxMenuVendedorCross);
             this.Controls.Add(this.groupBoxConfigAlterar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gboxConfigMenu);
             this.Controls.Add(this.gboxConfigPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormConfig";
-            this.Text = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "            ";
             this.gboxConfigPerfil.ResumeLayout(false);
             this.gboxConfigPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
@@ -466,6 +479,7 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigFoto)).EndInit();
             this.groupBoxConfigAlterar.ResumeLayout(false);
             this.groupBoxConfigAlterar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -508,5 +522,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxConfigEstoque;
         private System.Windows.Forms.PictureBox pictureBoxConfigMenu;
         private System.Windows.Forms.PictureBox pictureBoxConfigMenuConfig;
+        private System.Windows.Forms.PictureBox pictureBoxMenuVendedorCross;
     }
 }
