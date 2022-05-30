@@ -167,7 +167,7 @@ namespace Starbuy_Desktop
             this.pictureBoxLoginCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxLoginCross.TabIndex = 12;
             this.pictureBoxLoginCross.TabStop = false;
-            this.pictureBoxLoginCross.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseDoubleClick);
+            this.pictureBoxLoginCross.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseClick);
             // 
             // labelLinha1
             // 

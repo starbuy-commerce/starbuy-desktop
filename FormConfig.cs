@@ -18,20 +18,10 @@ namespace Starbuy_Desktop
 public partial class FormConfig : Form
     {
         
-        public FormConfig(String user,String password)
+        public FormConfig()
         {
             InitializeComponent();
-            var requisicaoWeb = WebRequest.CreateHttp("http://jsonplaceholder.typicode.com/posts/" + user);
-            requisicaoWeb.Method = "GET";
-            requisicaoWeb.UserAgent = "RequisicaoWebDemo";
-            using (var resposta = requisicaoWeb.GetResponse())
-            {
-                string fileName = "WeatherForecast.json";
-                string jsonString = File.ReadAllText(fileName);
-                Usuario classUsername = JsonSerializer.Deserialize<Usuario>(jsonString)!;
-                labelConfigCantoNome.Text = classUsername.name;
-                labelConfigNome.Text = classUsername.name;
-            }
+            
         }
 
     }

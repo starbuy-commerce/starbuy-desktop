@@ -26,14 +26,8 @@ namespace Starbuy_Desktop
         {
 
         }
-                            
 
-        private void textBoxLoginUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxLoginCross_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void pictureBoxLoginCross_MouseClick(object sender, MouseEventArgs e)
         {
             //Fechar forms!
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -71,16 +65,17 @@ namespace Starbuy_Desktop
                 data["username"] = "vasco2004";
                 data["password"] = "lool";
                 var response = wb.UploadValues(url, "POST", data); */
-                
-                
+
+                string username = textBoxLoginUsername.Text;
+                string password = textBoxLoginSenha.Text;
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://tcc-web-api.herokuapp.com/login");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string json = "{\"username\":\"vasco2004\"," +
-                                  "\"password\":\"lool\"}";
+                    string json = "{\"username\":\""+  username +"\"," +
+                                  "\"password\":\""+ password +"\"}";
 
                     streamWriter.Write(json);
                 }
@@ -90,6 +85,9 @@ namespace Starbuy_Desktop
                 {
                     var result = streamReader.ReadToEnd();
                     LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
+                    this.Hide();
+                    FormConfig fconfig = new 
+                    fconfig.Show();
                     
                 }/*
                 else

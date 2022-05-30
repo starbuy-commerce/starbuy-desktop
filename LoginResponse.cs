@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Starbuy_Desktop
 {
-    class LoginResponse
+    public class LoginResponse
     {
         public Usuario user { get; set; }
         public string jwt { get; set; }
