@@ -24,7 +24,7 @@ namespace Starbuy_Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            textBoxLoginSenha.PasswordChar = '*';
         }
 
         private void pictureBoxLoginCross_MouseClick(object sender, MouseEventArgs e)
@@ -55,17 +55,7 @@ namespace Starbuy_Desktop
             {
                 MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            else {
-                /*var data = "\"{username\"" + textBoxLoginUsername.Text.ToString() + "\n" + "\"password\"" + textBoxLoginSenha.Text.ToString() + "}\"";
-                */
-
-                /* var wb = new WebClient();
-                string url = "https://tcc-web-api.herokuapp.com/login";
-                var data = new NameValueCollection();
-                data["username"] = "vasco2004";
-                data["password"] = "lool";
-                var response = wb.UploadValues(url, "POST", data); */
-
+            else { 
                 string username = textBoxLoginUsername.Text;
                 string password = textBoxLoginSenha.Text;
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://tcc-web-api.herokuapp.com/login");
@@ -85,9 +75,21 @@ namespace Starbuy_Desktop
                 {
                     var result = streamReader.ReadToEnd();
                     LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
-                    this.Hide();
-                    FormConfig fconfig = new 
-                    fconfig.Show();
+                    
+                    if (response.user.seller)
+                    {
+                        this.Hide();
+                        FormMenu fVendedor = new FormMenu(response);
+                        fVendedor.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Teste");
+                        //Abrir forms de Cliente!
+                        this.Hide();
+                        FormConfig fVendedor = new FormConfig(response);
+                        fVendedor.Show();
+                    }
                     
                 }/*
                 else

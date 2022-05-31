@@ -450,6 +450,7 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxMenuVendedorCross.TabIndex = 14;
             this.pictureBoxMenuVendedorCross.TabStop = false;
+            this.pictureBoxMenuVendedorCross.Click += new System.EventHandler(this.pictureBoxMenuVendedorCross_Click);
             // 
             // FormConfig
             // 
@@ -466,6 +467,7 @@ namespace Starbuy_Desktop
             this.Name = "FormConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "            ";
+            this.Load += new System.EventHandler(this.FormConfig_Load);
             this.gboxConfigPerfil.ResumeLayout(false);
             this.gboxConfigPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();

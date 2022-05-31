@@ -17,16 +17,34 @@ namespace Starbuy_Desktop
     
 public partial class FormConfig : Form
     {
-        
-        public FormConfig()
+        private LoginResponse lgResponse;
+        public FormConfig(LoginResponse lg)
         {
             InitializeComponent();
-            
+            lgResponse = lg;
         }
 
         private void labelMenuMenuConfig_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormConfig_Load(object sender, EventArgs e)
+        {
+            labelConfigCantoNome.Text = lgResponse.user.name;
+            labelConfigNome.Text = lgResponse.user.name;
+            labelConfigEndereco.Text = lgResponse.user.city;
+        }
+
+        private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e)
+        {
+            DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (diag == DialogResult.Yes)
+            {
+                this.Hide();
+                FormLogin fm = new FormLogin();
+                fm.Show();
+            }
         }
     }
 }
