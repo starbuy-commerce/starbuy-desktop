@@ -273,6 +273,7 @@ namespace Starbuy_Desktop
             this.pictureBoxRegistroCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxRegistroCross.TabIndex = 31;
             this.pictureBoxRegistroCross.TabStop = false;
+            this.pictureBoxRegistroCross.Click += new System.EventHandler(this.pictureBoxRegistroCross_Click);
             // 
             // pictureBox1
             // 
@@ -298,7 +299,7 @@ namespace Starbuy_Desktop
             this.buttonRegistro.Text = "Registre-se";
             this.buttonRegistro.UseVisualStyleBackColor = false;
             // 
-            // Registro
+            // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -329,7 +330,7 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.labelLinha9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Registro";
+            this.Name = "FormRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CPF";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).EndInit();

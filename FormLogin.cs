@@ -24,16 +24,10 @@ namespace Starbuy_Desktop
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-                            
-
-        private void textBoxLoginUsername_TextChanged(object sender, EventArgs e)
-        {
-
+            textBoxLoginSenha.PasswordChar = '*';
         }
 
-        private void pictureBoxLoginCross_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void pictureBoxLoginCross_MouseClick(object sender, MouseEventArgs e)
         {
             //Fechar forms!
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -61,26 +55,17 @@ namespace Starbuy_Desktop
             {
                 MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
-            else {
-                /*var data = "\"{username\"" + textBoxLoginUsername.Text.ToString() + "\n" + "\"password\"" + textBoxLoginSenha.Text.ToString() + "}\"";
-                */
-
-                /* var wb = new WebClient();
-                string url = "https://tcc-web-api.herokuapp.com/login";
-                var data = new NameValueCollection();
-                data["username"] = "vasco2004";
-                data["password"] = "lool";
-                var response = wb.UploadValues(url, "POST", data); */
-                
-                
+            else { 
+                string username = textBoxLoginUsername.Text;
+                string password = textBoxLoginSenha.Text;
                 var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://tcc-web-api.herokuapp.com/login");
                 httpWebRequest.ContentType = "application/json";
                 httpWebRequest.Method = "POST";
 
                 using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
                 {
-                    string json = "{\"username\":\"vasco2004\"," +
-                                  "\"password\":\"lool\"}";
+                    string json = "{\"username\":\""+  username +"\"," +
+                                  "\"password\":\""+ password +"\"}";
 
                     streamWriter.Write(json);
                 }
@@ -91,12 +76,43 @@ namespace Starbuy_Desktop
                     var result = streamReader.ReadToEnd();
                     LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
                     
+                    if (response.user.seller)
+                    {
+                        this.Hide();
+                        FormMenu fVendedor = new FormMenu(response);
+                        fVendedor.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Teste");
+                        //Abrir forms de Cliente!
+                        this.Hide();
+                        FormConfig fVendedor = new FormConfig(response);
+                        fVendedor.Show();
+                    }
+                    
                 }/*
                 else
                 {
                     Usuario user = JsonSerializer.Deserialize<Usuario>(response);
                     labelLoginStarbuy.Text = user.city.ToString();
                 }*/
+            }
+        }
+
+        private void textBoxLoginUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                textBoxLoginSenha.Focus();
+            }
+        }
+
+        private void textBoxLoginSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                buttonLoginEntrar_Click(sender,e);
             }
         }
     }

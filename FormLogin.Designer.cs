@@ -111,6 +111,7 @@ namespace Starbuy_Desktop
             this.textBoxLoginUsername.PlaceholderText = "Digite o seu username";
             this.textBoxLoginUsername.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginUsername.TabIndex = 5;
+            this.textBoxLoginUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLoginUsername_KeyPress);
             // 
             // textBoxLoginSenha
             // 
@@ -123,6 +124,7 @@ namespace Starbuy_Desktop
             this.textBoxLoginSenha.PlaceholderText = "Digite a sua senha";
             this.textBoxLoginSenha.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginSenha.TabIndex = 7;
+            this.textBoxLoginSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLoginSenha_KeyPress);
             // 
             // pictureBoxLogin
             // 
@@ -167,7 +169,7 @@ namespace Starbuy_Desktop
             this.pictureBoxLoginCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxLoginCross.TabIndex = 12;
             this.pictureBoxLoginCross.TabStop = false;
-            this.pictureBoxLoginCross.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseDoubleClick);
+            this.pictureBoxLoginCross.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseClick);
             // 
             // labelLinha1
             // 

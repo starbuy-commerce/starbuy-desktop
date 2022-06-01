@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Starbuy_Desktop
 {
-    public partial class FormRegistro : Form
+    public partial class FormPedidos : Form
     {
-        public FormRegistro()
+        public FormPedidos()
         {
             InitializeComponent();
         }
 
-        private void pictureBoxRegistroCross_Click(object sender, EventArgs e)
+        private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e)
         {
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (diag == DialogResult.Yes)
