@@ -99,5 +99,21 @@ namespace Starbuy_Desktop
                 }*/
             }
         }
+
+        private void textBoxLoginUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                textBoxLoginSenha.Focus();
+            }
+        }
+
+        private void textBoxLoginSenha_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((Keys)e.KeyChar == Keys.Enter)
+            {
+                buttonLoginEntrar_Click(sender,e);
+            }
+        }
     }
 }

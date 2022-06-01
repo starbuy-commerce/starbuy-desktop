@@ -16,5 +16,16 @@ namespace Starbuy_Desktop
         {
             InitializeComponent();
         }
+
+        private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e)
+        {
+            DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (diag == DialogResult.Yes)
+            {
+                this.Hide();
+                FormLogin fm = new FormLogin();
+                fm.Show();
+            }
+        }
     }
 }

@@ -31,21 +31,21 @@ namespace Starbuy_Desktop
         {
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
             this.gboxPedidosPedidos = new System.Windows.Forms.GroupBox();
+            this.labelPedidos = new System.Windows.Forms.Label();
+            this.gboxPedidos5 = new System.Windows.Forms.GroupBox();
+            this.gboxPedidos4 = new System.Windows.Forms.GroupBox();
+            this.gboxPedidos3 = new System.Windows.Forms.GroupBox();
+            this.gboxPedidos2 = new System.Windows.Forms.GroupBox();
+            this.gboxPedidos1 = new System.Windows.Forms.GroupBox();
             this.gboxConfigMenu = new System.Windows.Forms.GroupBox();
             this.gboxConfigPerfil = new System.Windows.Forms.GroupBox();
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.labelConfigCantoNome = new System.Windows.Forms.Label();
-            this.gboxPedidos1 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos2 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos4 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos3 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos5 = new System.Windows.Forms.GroupBox();
-            this.labelPedidos = new System.Windows.Forms.Label();
             this.gboxPedidosBaixa = new System.Windows.Forms.GroupBox();
+            this.labelPedidosNumero = new System.Windows.Forms.Label();
+            this.btnPedidosAtualizar = new System.Windows.Forms.Button();
             this.labelPedidosBaixa = new System.Windows.Forms.Label();
             this.gboxPedidosBaixa1 = new System.Windows.Forms.GroupBox();
-            this.btnPedidosAtualizar = new System.Windows.Forms.Button();
-            this.labelPedidosNumero = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxPedidosPedidos.SuspendLayout();
             this.gboxConfigPerfil.SuspendLayout();
@@ -61,6 +61,7 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxMenuVendedorCross.TabIndex = 14;
             this.pictureBoxMenuVendedorCross.TabStop = false;
+            this.pictureBoxMenuVendedorCross.Click += new System.EventHandler(this.pictureBoxMenuVendedorCross_Click);
             // 
             // gboxPedidosPedidos
             // 
@@ -75,6 +76,61 @@ namespace Starbuy_Desktop
             this.gboxPedidosPedidos.Size = new System.Drawing.Size(733, 813);
             this.gboxPedidosPedidos.TabIndex = 17;
             this.gboxPedidosPedidos.TabStop = false;
+            // 
+            // labelPedidos
+            // 
+            this.labelPedidos.AutoSize = true;
+            this.labelPedidos.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelPedidos.Location = new System.Drawing.Point(294, 46);
+            this.labelPedidos.Name = "labelPedidos";
+            this.labelPedidos.Size = new System.Drawing.Size(119, 37);
+            this.labelPedidos.TabIndex = 26;
+            this.labelPedidos.Text = "Pedidos";
+            // 
+            // gboxPedidos5
+            // 
+            this.gboxPedidos5.Location = new System.Drawing.Point(36, 646);
+            this.gboxPedidos5.Name = "gboxPedidos5";
+            this.gboxPedidos5.Size = new System.Drawing.Size(657, 112);
+            this.gboxPedidos5.TabIndex = 28;
+            this.gboxPedidos5.TabStop = false;
+            this.gboxPedidos5.Text = "gboxPedidos5";
+            // 
+            // gboxPedidos4
+            // 
+            this.gboxPedidos4.Location = new System.Drawing.Point(36, 510);
+            this.gboxPedidos4.Name = "gboxPedidos4";
+            this.gboxPedidos4.Size = new System.Drawing.Size(657, 112);
+            this.gboxPedidos4.TabIndex = 27;
+            this.gboxPedidos4.TabStop = false;
+            this.gboxPedidos4.Text = "gboxPedidos4";
+            // 
+            // gboxPedidos3
+            // 
+            this.gboxPedidos3.Location = new System.Drawing.Point(36, 380);
+            this.gboxPedidos3.Name = "gboxPedidos3";
+            this.gboxPedidos3.Size = new System.Drawing.Size(657, 112);
+            this.gboxPedidos3.TabIndex = 28;
+            this.gboxPedidos3.TabStop = false;
+            this.gboxPedidos3.Text = "gboxPedidos3";
+            // 
+            // gboxPedidos2
+            // 
+            this.gboxPedidos2.Location = new System.Drawing.Point(36, 245);
+            this.gboxPedidos2.Name = "gboxPedidos2";
+            this.gboxPedidos2.Size = new System.Drawing.Size(657, 112);
+            this.gboxPedidos2.TabIndex = 26;
+            this.gboxPedidos2.TabStop = false;
+            this.gboxPedidos2.Text = "gboxPedidos2";
+            // 
+            // gboxPedidos1
+            // 
+            this.gboxPedidos1.Location = new System.Drawing.Point(36, 115);
+            this.gboxPedidos1.Name = "gboxPedidos1";
+            this.gboxPedidos1.Size = new System.Drawing.Size(657, 112);
+            this.gboxPedidos1.TabIndex = 26;
+            this.gboxPedidos1.TabStop = false;
+            this.gboxPedidos1.Text = "gboxPedidos1";
             // 
             // gboxConfigMenu
             // 
@@ -112,61 +168,6 @@ namespace Starbuy_Desktop
             this.labelConfigCantoNome.TabIndex = 4;
             this.labelConfigCantoNome.Text = "Vendedor";
             // 
-            // gboxPedidos1
-            // 
-            this.gboxPedidos1.Location = new System.Drawing.Point(36, 115);
-            this.gboxPedidos1.Name = "gboxPedidos1";
-            this.gboxPedidos1.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos1.TabIndex = 26;
-            this.gboxPedidos1.TabStop = false;
-            this.gboxPedidos1.Text = "gboxPedidos1";
-            // 
-            // gboxPedidos2
-            // 
-            this.gboxPedidos2.Location = new System.Drawing.Point(36, 245);
-            this.gboxPedidos2.Name = "gboxPedidos2";
-            this.gboxPedidos2.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos2.TabIndex = 26;
-            this.gboxPedidos2.TabStop = false;
-            this.gboxPedidos2.Text = "gboxPedidos2";
-            // 
-            // gboxPedidos4
-            // 
-            this.gboxPedidos4.Location = new System.Drawing.Point(36, 510);
-            this.gboxPedidos4.Name = "gboxPedidos4";
-            this.gboxPedidos4.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos4.TabIndex = 27;
-            this.gboxPedidos4.TabStop = false;
-            this.gboxPedidos4.Text = "gboxPedidos4";
-            // 
-            // gboxPedidos3
-            // 
-            this.gboxPedidos3.Location = new System.Drawing.Point(36, 380);
-            this.gboxPedidos3.Name = "gboxPedidos3";
-            this.gboxPedidos3.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos3.TabIndex = 28;
-            this.gboxPedidos3.TabStop = false;
-            this.gboxPedidos3.Text = "gboxPedidos3";
-            // 
-            // gboxPedidos5
-            // 
-            this.gboxPedidos5.Location = new System.Drawing.Point(36, 646);
-            this.gboxPedidos5.Name = "gboxPedidos5";
-            this.gboxPedidos5.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos5.TabIndex = 28;
-            this.gboxPedidos5.TabStop = false;
-            this.gboxPedidos5.Text = "gboxPedidos5";
-            // 
-            // labelPedidos
-            // 
-            this.labelPedidos.AutoSize = true;
-            this.labelPedidos.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPedidos.Location = new System.Drawing.Point(294, 46);
-            this.labelPedidos.Name = "labelPedidos";
-            this.labelPedidos.Size = new System.Drawing.Size(119, 37);
-            this.labelPedidos.TabIndex = 26;
-            this.labelPedidos.Text = "Pedidos";
-            // 
             // gboxPedidosBaixa
             // 
             this.gboxPedidosBaixa.Controls.Add(this.labelPedidosNumero);
@@ -178,6 +179,25 @@ namespace Starbuy_Desktop
             this.gboxPedidosBaixa.Size = new System.Drawing.Size(282, 268);
             this.gboxPedidosBaixa.TabIndex = 19;
             this.gboxPedidosBaixa.TabStop = false;
+            // 
+            // labelPedidosNumero
+            // 
+            this.labelPedidosNumero.AutoSize = true;
+            this.labelPedidosNumero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelPedidosNumero.Location = new System.Drawing.Point(17, 97);
+            this.labelPedidosNumero.Name = "labelPedidosNumero";
+            this.labelPedidosNumero.Size = new System.Drawing.Size(125, 17);
+            this.labelPedidosNumero.TabIndex = 23;
+            this.labelPedidosNumero.Text = "Número do pedido:";
+            // 
+            // btnPedidosAtualizar
+            // 
+            this.btnPedidosAtualizar.Location = new System.Drawing.Point(17, 204);
+            this.btnPedidosAtualizar.Name = "btnPedidosAtualizar";
+            this.btnPedidosAtualizar.Size = new System.Drawing.Size(243, 33);
+            this.btnPedidosAtualizar.TabIndex = 20;
+            this.btnPedidosAtualizar.Text = "Atualizar";
+            this.btnPedidosAtualizar.UseVisualStyleBackColor = true;
             // 
             // labelPedidosBaixa
             // 
@@ -196,25 +216,6 @@ namespace Starbuy_Desktop
             this.gboxPedidosBaixa1.Size = new System.Drawing.Size(243, 73);
             this.gboxPedidosBaixa1.TabIndex = 1;
             this.gboxPedidosBaixa1.TabStop = false;
-            // 
-            // btnPedidosAtualizar
-            // 
-            this.btnPedidosAtualizar.Location = new System.Drawing.Point(17, 204);
-            this.btnPedidosAtualizar.Name = "btnPedidosAtualizar";
-            this.btnPedidosAtualizar.Size = new System.Drawing.Size(243, 33);
-            this.btnPedidosAtualizar.TabIndex = 20;
-            this.btnPedidosAtualizar.Text = "Atualizar";
-            this.btnPedidosAtualizar.UseVisualStyleBackColor = true;
-            // 
-            // labelPedidosNumero
-            // 
-            this.labelPedidosNumero.AutoSize = true;
-            this.labelPedidosNumero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPedidosNumero.Location = new System.Drawing.Point(17, 97);
-            this.labelPedidosNumero.Name = "labelPedidosNumero";
-            this.labelPedidosNumero.Size = new System.Drawing.Size(125, 17);
-            this.labelPedidosNumero.TabIndex = 23;
-            this.labelPedidosNumero.Text = "Número do pedido:";
             // 
             // FormPedidos
             // 
