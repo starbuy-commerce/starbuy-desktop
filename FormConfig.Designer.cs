@@ -3,7 +3,7 @@ namespace Starbuy_Desktop
 {
     partial class FormConfig
     {
-        /// <summary>
+        /// <summary>  
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
