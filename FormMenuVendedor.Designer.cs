@@ -73,6 +73,7 @@ namespace Starbuy_Desktop
             // 
             // pictureBoxMenuVendedorCross
             // 
+            this.pictureBoxMenuVendedorCross.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuVendedorCross.Image")));
             this.pictureBoxMenuVendedorCross.Location = new System.Drawing.Point(1326, 29);
             this.pictureBoxMenuVendedorCross.Name = "pictureBoxMenuVendedorCross";
             this.pictureBoxMenuVendedorCross.Size = new System.Drawing.Size(33, 34);
