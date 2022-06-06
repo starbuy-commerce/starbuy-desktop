@@ -134,27 +134,30 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigPedidos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigPedidos.Image")));
             this.pictureBoxConfigPedidos.Location = new System.Drawing.Point(0, 97);
             this.pictureBoxConfigPedidos.Name = "pictureBoxConfigPedidos";
-            this.pictureBoxConfigPedidos.Size = new System.Drawing.Size(229, 38);
+            this.pictureBoxConfigPedidos.Size = new System.Drawing.Size(223, 38);
             this.pictureBoxConfigPedidos.TabIndex = 8;
             this.pictureBoxConfigPedidos.TabStop = false;
+            this.pictureBoxConfigPedidos.Click += new System.EventHandler(this.pictureBoxConfigPedidos_Click);
             // 
             // pictureBoxConfigEstoque
             // 
             this.pictureBoxConfigEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigEstoque.Image")));
             this.pictureBoxConfigEstoque.Location = new System.Drawing.Point(0, 53);
             this.pictureBoxConfigEstoque.Name = "pictureBoxConfigEstoque";
-            this.pictureBoxConfigEstoque.Size = new System.Drawing.Size(229, 38);
+            this.pictureBoxConfigEstoque.Size = new System.Drawing.Size(223, 38);
             this.pictureBoxConfigEstoque.TabIndex = 7;
             this.pictureBoxConfigEstoque.TabStop = false;
+            this.pictureBoxConfigEstoque.Click += new System.EventHandler(this.pictureBoxConfigEstoque_Click);
             // 
             // pictureBoxConfigMenu
             // 
             this.pictureBoxConfigMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigMenu.Image")));
             this.pictureBoxConfigMenu.Location = new System.Drawing.Point(0, 9);
             this.pictureBoxConfigMenu.Name = "pictureBoxConfigMenu";
-            this.pictureBoxConfigMenu.Size = new System.Drawing.Size(229, 38);
+            this.pictureBoxConfigMenu.Size = new System.Drawing.Size(223, 38);
             this.pictureBoxConfigMenu.TabIndex = 6;
             this.pictureBoxConfigMenu.TabStop = false;
+            this.pictureBoxConfigMenu.Click += new System.EventHandler(this.pictureBoxConfigMenu_Click);
             // 
             // labelConfigNome
             // 

@@ -32,43 +32,43 @@ namespace Starbuy_Desktop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
             this.gboxMenu = new System.Windows.Forms.GroupBox();
+            this.pictureBoxMenuMenu = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenuConfig = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenuPedidos = new System.Windows.Forms.PictureBox();
+            this.pictureBoxMenuEstoque = new System.Windows.Forms.PictureBox();
             this.gboxConfigPerfil = new System.Windows.Forms.GroupBox();
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.labelConfigCantoNome = new System.Windows.Forms.Label();
             this.gboxMenuQuantidade = new System.Windows.Forms.GroupBox();
             this.labelMenuQuantidade = new System.Windows.Forms.Label();
             this.gboxMenuEstoque = new System.Windows.Forms.GroupBox();
-            this.labelMenuEstoque = new System.Windows.Forms.Label();
-            this.gboxMenuEstoque3 = new System.Windows.Forms.GroupBox();
             this.gboxMenuEstoque2 = new System.Windows.Forms.GroupBox();
+            this.gboxMenuEstoque3 = new System.Windows.Forms.GroupBox();
+            this.labelMenuEstoque = new System.Windows.Forms.Label();
             this.gboxMenuEstoque1 = new System.Windows.Forms.GroupBox();
             this.gboxMenuNovo = new System.Windows.Forms.GroupBox();
-            this.labelMenuNovo = new System.Windows.Forms.Label();
             this.gboxMenuNovo4 = new System.Windows.Forms.GroupBox();
-            this.gboxMenuNovo3 = new System.Windows.Forms.GroupBox();
             this.gboxMenuNovo2 = new System.Windows.Forms.GroupBox();
+            this.labelMenuNovo = new System.Windows.Forms.Label();
+            this.gboxMenuNovo3 = new System.Windows.Forms.GroupBox();
             this.gboxMenuNovo1 = new System.Windows.Forms.GroupBox();
             this.gboxMenuAndam = new System.Windows.Forms.GroupBox();
-            this.labelMenuAndam = new System.Windows.Forms.Label();
+            this.gboxMenuAndam1 = new System.Windows.Forms.GroupBox();
             this.gboxMenuAndam3 = new System.Windows.Forms.GroupBox();
             this.gboxMenuAndam2 = new System.Windows.Forms.GroupBox();
-            this.gboxMenuAndam1 = new System.Windows.Forms.GroupBox();
-            this.pictureBoxMenuMenu = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMenuEstoque = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMenuPedidos = new System.Windows.Forms.PictureBox();
-            this.pictureBoxMenuConfig = new System.Windows.Forms.PictureBox();
+            this.labelMenuAndam = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuConfig)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuEstoque)).BeginInit();
             this.gboxConfigPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.gboxMenuQuantidade.SuspendLayout();
             this.gboxMenuEstoque.SuspendLayout();
             this.gboxMenuNovo.SuspendLayout();
             this.gboxMenuAndam.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuEstoque)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuPedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuConfig)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxMenuVendedorCross
@@ -83,15 +83,54 @@ namespace Starbuy_Desktop
             // 
             // gboxMenu
             // 
+            this.gboxMenu.Controls.Add(this.pictureBoxMenuMenu);
             this.gboxMenu.Controls.Add(this.pictureBoxMenuConfig);
             this.gboxMenu.Controls.Add(this.pictureBoxMenuPedidos);
             this.gboxMenu.Controls.Add(this.pictureBoxMenuEstoque);
-            this.gboxMenu.Controls.Add(this.pictureBoxMenuMenu);
             this.gboxMenu.Location = new System.Drawing.Point(0, 146);
             this.gboxMenu.Name = "gboxMenu";
             this.gboxMenu.Size = new System.Drawing.Size(229, 767);
             this.gboxMenu.TabIndex = 15;
             this.gboxMenu.TabStop = false;
+            // 
+            // pictureBoxMenuMenu
+            // 
+            this.pictureBoxMenuMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuMenu.Image")));
+            this.pictureBoxMenuMenu.Location = new System.Drawing.Point(0, 9);
+            this.pictureBoxMenuMenu.Name = "pictureBoxMenuMenu";
+            this.pictureBoxMenuMenu.Size = new System.Drawing.Size(229, 38);
+            this.pictureBoxMenuMenu.TabIndex = 0;
+            this.pictureBoxMenuMenu.TabStop = false;
+            // 
+            // pictureBoxMenuConfig
+            // 
+            this.pictureBoxMenuConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuConfig.Image")));
+            this.pictureBoxMenuConfig.Location = new System.Drawing.Point(0, 141);
+            this.pictureBoxMenuConfig.Name = "pictureBoxMenuConfig";
+            this.pictureBoxMenuConfig.Size = new System.Drawing.Size(223, 38);
+            this.pictureBoxMenuConfig.TabIndex = 3;
+            this.pictureBoxMenuConfig.TabStop = false;
+            this.pictureBoxMenuConfig.Click += new System.EventHandler(this.pictureBoxMenuConfig_Click);
+            // 
+            // pictureBoxMenuPedidos
+            // 
+            this.pictureBoxMenuPedidos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuPedidos.Image")));
+            this.pictureBoxMenuPedidos.Location = new System.Drawing.Point(0, 97);
+            this.pictureBoxMenuPedidos.Name = "pictureBoxMenuPedidos";
+            this.pictureBoxMenuPedidos.Size = new System.Drawing.Size(223, 38);
+            this.pictureBoxMenuPedidos.TabIndex = 2;
+            this.pictureBoxMenuPedidos.TabStop = false;
+            this.pictureBoxMenuPedidos.Click += new System.EventHandler(this.pictureBoxMenuPedidos_Click);
+            // 
+            // pictureBoxMenuEstoque
+            // 
+            this.pictureBoxMenuEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuEstoque.Image")));
+            this.pictureBoxMenuEstoque.Location = new System.Drawing.Point(0, 53);
+            this.pictureBoxMenuEstoque.Name = "pictureBoxMenuEstoque";
+            this.pictureBoxMenuEstoque.Size = new System.Drawing.Size(223, 38);
+            this.pictureBoxMenuEstoque.TabIndex = 1;
+            this.pictureBoxMenuEstoque.TabStop = false;
+            this.pictureBoxMenuEstoque.Click += new System.EventHandler(this.pictureBoxMenuEstoque_Click);
             // 
             // gboxConfigPerfil
             // 
@@ -154,15 +193,14 @@ namespace Starbuy_Desktop
             this.gboxMenuEstoque.TabStop = false;
             this.gboxMenuEstoque.Text = "gboxMenuEstoque";
             // 
-            // labelMenuEstoque
+            // gboxMenuEstoque2
             // 
-            this.labelMenuEstoque.AutoSize = true;
-            this.labelMenuEstoque.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMenuEstoque.Location = new System.Drawing.Point(306, 28);
-            this.labelMenuEstoque.Name = "labelMenuEstoque";
-            this.labelMenuEstoque.Size = new System.Drawing.Size(119, 37);
-            this.labelMenuEstoque.TabIndex = 21;
-            this.labelMenuEstoque.Text = "Estoque";
+            this.gboxMenuEstoque2.Location = new System.Drawing.Point(34, 265);
+            this.gboxMenuEstoque2.Name = "gboxMenuEstoque2";
+            this.gboxMenuEstoque2.Size = new System.Drawing.Size(642, 91);
+            this.gboxMenuEstoque2.TabIndex = 1;
+            this.gboxMenuEstoque2.TabStop = false;
+            this.gboxMenuEstoque2.Text = "gboxMenuEstoque2";
             // 
             // gboxMenuEstoque3
             // 
@@ -173,14 +211,15 @@ namespace Starbuy_Desktop
             this.gboxMenuEstoque3.TabStop = false;
             this.gboxMenuEstoque3.Text = "gboxMenuEstoque3";
             // 
-            // gboxMenuEstoque2
+            // labelMenuEstoque
             // 
-            this.gboxMenuEstoque2.Location = new System.Drawing.Point(34, 265);
-            this.gboxMenuEstoque2.Name = "gboxMenuEstoque2";
-            this.gboxMenuEstoque2.Size = new System.Drawing.Size(642, 91);
-            this.gboxMenuEstoque2.TabIndex = 1;
-            this.gboxMenuEstoque2.TabStop = false;
-            this.gboxMenuEstoque2.Text = "gboxMenuEstoque2";
+            this.labelMenuEstoque.AutoSize = true;
+            this.labelMenuEstoque.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMenuEstoque.Location = new System.Drawing.Point(306, 28);
+            this.labelMenuEstoque.Name = "labelMenuEstoque";
+            this.labelMenuEstoque.Size = new System.Drawing.Size(119, 37);
+            this.labelMenuEstoque.TabIndex = 21;
+            this.labelMenuEstoque.Text = "Estoque";
             // 
             // gboxMenuEstoque1
             // 
@@ -205,6 +244,24 @@ namespace Starbuy_Desktop
             this.gboxMenuNovo.TabStop = false;
             this.gboxMenuNovo.Text = "gboxMenuNovo";
             // 
+            // gboxMenuNovo4
+            // 
+            this.gboxMenuNovo4.Location = new System.Drawing.Point(20, 306);
+            this.gboxMenuNovo4.Name = "gboxMenuNovo4";
+            this.gboxMenuNovo4.Size = new System.Drawing.Size(243, 62);
+            this.gboxMenuNovo4.TabIndex = 3;
+            this.gboxMenuNovo4.TabStop = false;
+            this.gboxMenuNovo4.Text = "gboxMenuNovo4";
+            // 
+            // gboxMenuNovo2
+            // 
+            this.gboxMenuNovo2.Location = new System.Drawing.Point(20, 238);
+            this.gboxMenuNovo2.Name = "gboxMenuNovo2";
+            this.gboxMenuNovo2.Size = new System.Drawing.Size(243, 62);
+            this.gboxMenuNovo2.TabIndex = 2;
+            this.gboxMenuNovo2.TabStop = false;
+            this.gboxMenuNovo2.Text = "gboxMenuNovo2";
+            // 
             // labelMenuNovo
             // 
             this.labelMenuNovo.AutoSize = true;
@@ -215,15 +272,6 @@ namespace Starbuy_Desktop
             this.labelMenuNovo.TabIndex = 22;
             this.labelMenuNovo.Text = "Novos Pedidos";
             // 
-            // gboxMenuNovo4
-            // 
-            this.gboxMenuNovo4.Location = new System.Drawing.Point(20, 306);
-            this.gboxMenuNovo4.Name = "gboxMenuNovo4";
-            this.gboxMenuNovo4.Size = new System.Drawing.Size(243, 62);
-            this.gboxMenuNovo4.TabIndex = 3;
-            this.gboxMenuNovo4.TabStop = false;
-            this.gboxMenuNovo4.Text = "gboxMenuNovo4";
-            // 
             // gboxMenuNovo3
             // 
             this.gboxMenuNovo3.Location = new System.Drawing.Point(20, 170);
@@ -232,15 +280,6 @@ namespace Starbuy_Desktop
             this.gboxMenuNovo3.TabIndex = 3;
             this.gboxMenuNovo3.TabStop = false;
             this.gboxMenuNovo3.Text = "gboxMenuNovo3";
-            // 
-            // gboxMenuNovo2
-            // 
-            this.gboxMenuNovo2.Location = new System.Drawing.Point(20, 238);
-            this.gboxMenuNovo2.Name = "gboxMenuNovo2";
-            this.gboxMenuNovo2.Size = new System.Drawing.Size(243, 62);
-            this.gboxMenuNovo2.TabIndex = 2;
-            this.gboxMenuNovo2.TabStop = false;
-            this.gboxMenuNovo2.Text = "gboxMenuNovo2";
             // 
             // gboxMenuNovo1
             // 
@@ -264,15 +303,14 @@ namespace Starbuy_Desktop
             this.gboxMenuAndam.TabStop = false;
             this.gboxMenuAndam.Text = "gboxMenuAndam";
             // 
-            // labelMenuAndam
+            // gboxMenuAndam1
             // 
-            this.labelMenuAndam.AutoSize = true;
-            this.labelMenuAndam.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMenuAndam.Location = new System.Drawing.Point(39, 33);
-            this.labelMenuAndam.Name = "labelMenuAndam";
-            this.labelMenuAndam.Size = new System.Drawing.Size(210, 37);
-            this.labelMenuAndam.TabIndex = 27;
-            this.labelMenuAndam.Text = "Em andamento";
+            this.gboxMenuAndam1.Location = new System.Drawing.Point(20, 88);
+            this.gboxMenuAndam1.Name = "gboxMenuAndam1";
+            this.gboxMenuAndam1.Size = new System.Drawing.Size(243, 69);
+            this.gboxMenuAndam1.TabIndex = 23;
+            this.gboxMenuAndam1.TabStop = false;
+            this.gboxMenuAndam1.Text = "gboxMenuAndam1";
             // 
             // gboxMenuAndam3
             // 
@@ -292,50 +330,15 @@ namespace Starbuy_Desktop
             this.gboxMenuAndam2.TabStop = false;
             this.gboxMenuAndam2.Text = "gboxMenuAndam2";
             // 
-            // gboxMenuAndam1
+            // labelMenuAndam
             // 
-            this.gboxMenuAndam1.Location = new System.Drawing.Point(20, 88);
-            this.gboxMenuAndam1.Name = "gboxMenuAndam1";
-            this.gboxMenuAndam1.Size = new System.Drawing.Size(243, 69);
-            this.gboxMenuAndam1.TabIndex = 23;
-            this.gboxMenuAndam1.TabStop = false;
-            this.gboxMenuAndam1.Text = "gboxMenuAndam1";
-            // 
-            // pictureBoxMenuMenu
-            // 
-            this.pictureBoxMenuMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuMenu.Image")));
-            this.pictureBoxMenuMenu.Location = new System.Drawing.Point(0, 9);
-            this.pictureBoxMenuMenu.Name = "pictureBoxMenuMenu";
-            this.pictureBoxMenuMenu.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxMenuMenu.TabIndex = 0;
-            this.pictureBoxMenuMenu.TabStop = false;
-            // 
-            // pictureBoxMenuEstoque
-            // 
-            this.pictureBoxMenuEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuEstoque.Image")));
-            this.pictureBoxMenuEstoque.Location = new System.Drawing.Point(0, 53);
-            this.pictureBoxMenuEstoque.Name = "pictureBoxMenuEstoque";
-            this.pictureBoxMenuEstoque.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxMenuEstoque.TabIndex = 1;
-            this.pictureBoxMenuEstoque.TabStop = false;
-            // 
-            // pictureBoxMenuPedidos
-            // 
-            this.pictureBoxMenuPedidos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuPedidos.Image")));
-            this.pictureBoxMenuPedidos.Location = new System.Drawing.Point(0, 97);
-            this.pictureBoxMenuPedidos.Name = "pictureBoxMenuPedidos";
-            this.pictureBoxMenuPedidos.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxMenuPedidos.TabIndex = 2;
-            this.pictureBoxMenuPedidos.TabStop = false;
-            // 
-            // pictureBoxMenuConfig
-            // 
-            this.pictureBoxMenuConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuConfig.Image")));
-            this.pictureBoxMenuConfig.Location = new System.Drawing.Point(0, 141);
-            this.pictureBoxMenuConfig.Name = "pictureBoxMenuConfig";
-            this.pictureBoxMenuConfig.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxMenuConfig.TabIndex = 3;
-            this.pictureBoxMenuConfig.TabStop = false;
+            this.labelMenuAndam.AutoSize = true;
+            this.labelMenuAndam.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMenuAndam.Location = new System.Drawing.Point(39, 33);
+            this.labelMenuAndam.Name = "labelMenuAndam";
+            this.labelMenuAndam.Size = new System.Drawing.Size(210, 37);
+            this.labelMenuAndam.TabIndex = 27;
+            this.labelMenuAndam.Text = "Em andamento";
             // 
             // FormMenu
             // 
@@ -357,6 +360,10 @@ namespace Starbuy_Desktop
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.gboxMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuEstoque)).EndInit();
             this.gboxConfigPerfil.ResumeLayout(false);
             this.gboxConfigPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
@@ -368,10 +375,6 @@ namespace Starbuy_Desktop
             this.gboxMenuNovo.PerformLayout();
             this.gboxMenuAndam.ResumeLayout(false);
             this.gboxMenuAndam.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuMenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuConfig)).EndInit();
             this.ResumeLayout(false);
 
         }

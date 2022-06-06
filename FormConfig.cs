@@ -23,7 +23,6 @@ public partial class FormConfig : Form
             InitializeComponent();
             lgResponse = lg;
         }
-
         private void labelMenuMenuConfig_Click(object sender, EventArgs e)
         {
 
@@ -45,6 +44,24 @@ public partial class FormConfig : Form
                 FormLogin fm = new FormLogin();
                 fm.Show();
             }
+        }
+
+        private void pictureBoxConfigMenu_Click(object sender, EventArgs e)
+        {
+            FormMenu menu = new FormMenu(lgResponse);
+            menu.Show();
+        }
+
+        private void pictureBoxConfigPedidos_Click(object sender, EventArgs e)
+        {
+            FormPedidos pedidos = new FormPedidos();
+            pedidos.Show();
+        }
+
+        private void pictureBoxConfigEstoque_Click(object sender, EventArgs e)
+        {
+            /*FormEstoque estoque = new FormEstoque();
+            estoque.Show(); //criar forms de estoque */
         }
     }
 }

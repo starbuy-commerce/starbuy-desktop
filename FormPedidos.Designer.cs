@@ -39,6 +39,10 @@ namespace Starbuy_Desktop
             this.gboxPedidos2 = new System.Windows.Forms.GroupBox();
             this.gboxPedidos1 = new System.Windows.Forms.GroupBox();
             this.gboxConfigMenu = new System.Windows.Forms.GroupBox();
+            this.pictureBoxPedidosConfig = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPedidosPedidos = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPedidosEstoque = new System.Windows.Forms.PictureBox();
+            this.pictureBoxPedidosMenu = new System.Windows.Forms.PictureBox();
             this.gboxConfigPerfil = new System.Windows.Forms.GroupBox();
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.labelConfigCantoNome = new System.Windows.Forms.Label();
@@ -47,20 +51,16 @@ namespace Starbuy_Desktop
             this.btnPedidosAtualizar = new System.Windows.Forms.Button();
             this.labelPedidosBaixa = new System.Windows.Forms.Label();
             this.gboxPedidosBaixa1 = new System.Windows.Forms.GroupBox();
-            this.pictureBoxPedidosConfig = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPedidosPedidos = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPedidosEstoque = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPedidosMenu = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxPedidosPedidos.SuspendLayout();
             this.gboxConfigMenu.SuspendLayout();
-            this.gboxConfigPerfil.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
-            this.gboxPedidosBaixa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosMenu)).BeginInit();
+            this.gboxConfigPerfil.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
+            this.gboxPedidosBaixa.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBoxMenuVendedorCross
@@ -150,9 +150,48 @@ namespace Starbuy_Desktop
             this.gboxConfigMenu.Controls.Add(this.pictureBoxPedidosMenu);
             this.gboxConfigMenu.Location = new System.Drawing.Point(0, 145);
             this.gboxConfigMenu.Name = "gboxConfigMenu";
-            this.gboxConfigMenu.Size = new System.Drawing.Size(229, 729);
+            this.gboxConfigMenu.Size = new System.Drawing.Size(223, 729);
             this.gboxConfigMenu.TabIndex = 16;
             this.gboxConfigMenu.TabStop = false;
+            // 
+            // pictureBoxPedidosConfig
+            // 
+            this.pictureBoxPedidosConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosConfig.Image")));
+            this.pictureBoxPedidosConfig.Location = new System.Drawing.Point(0, 141);
+            this.pictureBoxPedidosConfig.Name = "pictureBoxPedidosConfig";
+            this.pictureBoxPedidosConfig.Size = new System.Drawing.Size(217, 38);
+            this.pictureBoxPedidosConfig.TabIndex = 7;
+            this.pictureBoxPedidosConfig.TabStop = false;
+            this.pictureBoxPedidosConfig.Click += new System.EventHandler(this.pictureBoxPedidosConfig_Click);
+            // 
+            // pictureBoxPedidosPedidos
+            // 
+            this.pictureBoxPedidosPedidos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosPedidos.Image")));
+            this.pictureBoxPedidosPedidos.Location = new System.Drawing.Point(0, 97);
+            this.pictureBoxPedidosPedidos.Name = "pictureBoxPedidosPedidos";
+            this.pictureBoxPedidosPedidos.Size = new System.Drawing.Size(229, 38);
+            this.pictureBoxPedidosPedidos.TabIndex = 6;
+            this.pictureBoxPedidosPedidos.TabStop = false;
+            // 
+            // pictureBoxPedidosEstoque
+            // 
+            this.pictureBoxPedidosEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosEstoque.Image")));
+            this.pictureBoxPedidosEstoque.Location = new System.Drawing.Point(0, 53);
+            this.pictureBoxPedidosEstoque.Name = "pictureBoxPedidosEstoque";
+            this.pictureBoxPedidosEstoque.Size = new System.Drawing.Size(217, 38);
+            this.pictureBoxPedidosEstoque.TabIndex = 5;
+            this.pictureBoxPedidosEstoque.TabStop = false;
+            this.pictureBoxPedidosEstoque.Click += new System.EventHandler(this.pictureBoxPedidosEstoque_Click);
+            // 
+            // pictureBoxPedidosMenu
+            // 
+            this.pictureBoxPedidosMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosMenu.Image")));
+            this.pictureBoxPedidosMenu.Location = new System.Drawing.Point(0, 9);
+            this.pictureBoxPedidosMenu.Name = "pictureBoxPedidosMenu";
+            this.pictureBoxPedidosMenu.Size = new System.Drawing.Size(217, 38);
+            this.pictureBoxPedidosMenu.TabIndex = 4;
+            this.pictureBoxPedidosMenu.TabStop = false;
+            this.pictureBoxPedidosMenu.Click += new System.EventHandler(this.pictureBoxPedidosMenu_Click);
             // 
             // gboxConfigPerfil
             // 
@@ -160,7 +199,7 @@ namespace Starbuy_Desktop
             this.gboxConfigPerfil.Controls.Add(this.labelConfigCantoNome);
             this.gboxConfigPerfil.Location = new System.Drawing.Point(0, -8);
             this.gboxConfigPerfil.Name = "gboxConfigPerfil";
-            this.gboxConfigPerfil.Size = new System.Drawing.Size(229, 147);
+            this.gboxConfigPerfil.Size = new System.Drawing.Size(223, 147);
             this.gboxConfigPerfil.TabIndex = 15;
             this.gboxConfigPerfil.TabStop = false;
             // 
@@ -231,42 +270,6 @@ namespace Starbuy_Desktop
             this.gboxPedidosBaixa1.TabIndex = 1;
             this.gboxPedidosBaixa1.TabStop = false;
             // 
-            // pictureBoxPedidosConfig
-            // 
-            this.pictureBoxPedidosConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosConfig.Image")));
-            this.pictureBoxPedidosConfig.Location = new System.Drawing.Point(0, 132);
-            this.pictureBoxPedidosConfig.Name = "pictureBoxPedidosConfig";
-            this.pictureBoxPedidosConfig.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxPedidosConfig.TabIndex = 7;
-            this.pictureBoxPedidosConfig.TabStop = false;
-            // 
-            // pictureBoxPedidosPedidos
-            // 
-            this.pictureBoxPedidosPedidos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosPedidos.Image")));
-            this.pictureBoxPedidosPedidos.Location = new System.Drawing.Point(0, 88);
-            this.pictureBoxPedidosPedidos.Name = "pictureBoxPedidosPedidos";
-            this.pictureBoxPedidosPedidos.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxPedidosPedidos.TabIndex = 6;
-            this.pictureBoxPedidosPedidos.TabStop = false;
-            // 
-            // pictureBoxPedidosEstoque
-            // 
-            this.pictureBoxPedidosEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosEstoque.Image")));
-            this.pictureBoxPedidosEstoque.Location = new System.Drawing.Point(0, 44);
-            this.pictureBoxPedidosEstoque.Name = "pictureBoxPedidosEstoque";
-            this.pictureBoxPedidosEstoque.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxPedidosEstoque.TabIndex = 5;
-            this.pictureBoxPedidosEstoque.TabStop = false;
-            // 
-            // pictureBoxPedidosMenu
-            // 
-            this.pictureBoxPedidosMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxPedidosMenu.Image")));
-            this.pictureBoxPedidosMenu.Location = new System.Drawing.Point(0, 0);
-            this.pictureBoxPedidosMenu.Name = "pictureBoxPedidosMenu";
-            this.pictureBoxPedidosMenu.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxPedidosMenu.TabIndex = 4;
-            this.pictureBoxPedidosMenu.TabStop = false;
-            // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -286,15 +289,15 @@ namespace Starbuy_Desktop
             this.gboxPedidosPedidos.ResumeLayout(false);
             this.gboxPedidosPedidos.PerformLayout();
             this.gboxConfigMenu.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosEstoque)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosMenu)).EndInit();
             this.gboxConfigPerfil.ResumeLayout(false);
             this.gboxConfigPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
             this.gboxPedidosBaixa.ResumeLayout(false);
             this.gboxPedidosBaixa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosConfig)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosEstoque)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosMenu)).EndInit();
             this.ResumeLayout(false);
 
         }
