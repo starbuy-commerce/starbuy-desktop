@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class Registro
+    partial class FormRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace Starbuy_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRegistro));
             this.labelRegistroRegistre = new System.Windows.Forms.Label();
             this.textBoxRegistroNome = new System.Windows.Forms.TextBox();
             this.textBoxRegistroUsuario = new System.Windows.Forms.TextBox();
@@ -78,7 +78,6 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNome.PlaceholderText = "Nome";
             this.textBoxRegistroNome.Size = new System.Drawing.Size(572, 45);
             this.textBoxRegistroNome.TabIndex = 6;
-            this.textBoxRegistroNome.TextChanged += new System.EventHandler(this.textBoxRegistroNome_TextChanged);
             // 
             // textBoxRegistroUsuario
             // 
@@ -91,7 +90,6 @@ namespace Starbuy_Desktop
             this.textBoxRegistroUsuario.PlaceholderText = "Usuário";
             this.textBoxRegistroUsuario.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroUsuario.TabIndex = 8;
-            this.textBoxRegistroUsuario.TextChanged += new System.EventHandler(this.textBoxRegistroUsuario_TextChanged);
             // 
             // textBoxRegistroCPF
             // 
@@ -104,7 +102,6 @@ namespace Starbuy_Desktop
             this.textBoxRegistroCPF.PlaceholderText = "CPF";
             this.textBoxRegistroCPF.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroCPF.TabIndex = 10;
-            this.textBoxRegistroCPF.TextChanged += new System.EventHandler(this.textBoxRegistroCPF_TextChanged);
             // 
             // textBoxRegistroEndereco
             // 
@@ -276,6 +273,7 @@ namespace Starbuy_Desktop
             this.pictureBoxRegistroCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxRegistroCross.TabIndex = 31;
             this.pictureBoxRegistroCross.TabStop = false;
+            this.pictureBoxRegistroCross.Click += new System.EventHandler(this.pictureBoxRegistroCross_Click);
             // 
             // pictureBox1
             // 
@@ -301,7 +299,7 @@ namespace Starbuy_Desktop
             this.buttonRegistro.Text = "Registre-se";
             this.buttonRegistro.UseVisualStyleBackColor = false;
             // 
-            // Registro
+            // FormRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -332,10 +330,9 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.labelLinha9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Registro";
+            this.Name = "FormRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CPF";
-            this.Load += new System.EventHandler(this.Registro_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

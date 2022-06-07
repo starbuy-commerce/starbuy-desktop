@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class Login
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -29,7 +29,7 @@ namespace Starbuy_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.labelLoginBemVindo = new System.Windows.Forms.Label();
             this.labelLoginA = new System.Windows.Forms.Label();
             this.labelLoginStarbuy = new System.Windows.Forms.Label();
@@ -111,6 +111,7 @@ namespace Starbuy_Desktop
             this.textBoxLoginUsername.PlaceholderText = "Digite o seu username";
             this.textBoxLoginUsername.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginUsername.TabIndex = 5;
+            this.textBoxLoginUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLoginUsername_KeyPress);
             // 
             // textBoxLoginSenha
             // 
@@ -123,13 +124,15 @@ namespace Starbuy_Desktop
             this.textBoxLoginSenha.PlaceholderText = "Digite a sua senha";
             this.textBoxLoginSenha.Size = new System.Drawing.Size(617, 45);
             this.textBoxLoginSenha.TabIndex = 7;
+            this.textBoxLoginSenha.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxLoginSenha_KeyPress);
             // 
             // pictureBoxLogin
             // 
-            this.pictureBoxLogin.BackgroundImage = global::Starbuy_Desktop.Properties.Resources.ImagemLogin;
-            this.pictureBoxLogin.Location = new System.Drawing.Point(755, 276);
+            this.pictureBoxLogin.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogin.Image")));
+            this.pictureBoxLogin.Location = new System.Drawing.Point(820, 273);
             this.pictureBoxLogin.Name = "pictureBoxLogin";
-            this.pictureBoxLogin.Size = new System.Drawing.Size(627, 608);
+            this.pictureBoxLogin.Size = new System.Drawing.Size(524, 551);
+            this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogin.TabIndex = 9;
             this.pictureBoxLogin.TabStop = false;
             // 
@@ -138,7 +141,7 @@ namespace Starbuy_Desktop
             this.labelLoginEsqueceu.AutoSize = true;
             this.labelLoginEsqueceu.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelLoginEsqueceu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(202)))), ((int)(((byte)(0)))));
-            this.labelLoginEsqueceu.Location = new System.Drawing.Point(45, 687);
+            this.labelLoginEsqueceu.Location = new System.Drawing.Point(36, 632);
             this.labelLoginEsqueceu.Name = "labelLoginEsqueceu";
             this.labelLoginEsqueceu.Size = new System.Drawing.Size(336, 51);
             this.labelLoginEsqueceu.TabIndex = 10;
@@ -151,22 +154,23 @@ namespace Starbuy_Desktop
             this.buttonLoginEntrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLoginEntrar.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonLoginEntrar.ForeColor = System.Drawing.Color.White;
-            this.buttonLoginEntrar.Location = new System.Drawing.Point(36, 783);
+            this.buttonLoginEntrar.Location = new System.Drawing.Point(45, 698);
             this.buttonLoginEntrar.Name = "buttonLoginEntrar";
             this.buttonLoginEntrar.Size = new System.Drawing.Size(474, 55);
             this.buttonLoginEntrar.TabIndex = 11;
             this.buttonLoginEntrar.Text = "Entrar";
             this.buttonLoginEntrar.UseVisualStyleBackColor = false;
+            this.buttonLoginEntrar.Click += new System.EventHandler(this.buttonLoginEntrar_Click);
             // 
             // pictureBoxLoginCross
             // 
-            this.pictureBoxLoginCross.Image = global::Starbuy_Desktop.Properties.Resources.Cross1;
-            this.pictureBoxLoginCross.Location = new System.Drawing.Point(1349, 41);
+            this.pictureBoxLoginCross.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLoginCross.Image")));
+            this.pictureBoxLoginCross.Location = new System.Drawing.Point(1311, 26);
             this.pictureBoxLoginCross.Name = "pictureBoxLoginCross";
             this.pictureBoxLoginCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxLoginCross.TabIndex = 12;
             this.pictureBoxLoginCross.TabStop = false;
-            this.pictureBoxLoginCross.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseDoubleClick);
+            this.pictureBoxLoginCross.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBoxLoginCross_MouseClick);
             // 
             // labelLinha1
             // 
@@ -188,13 +192,13 @@ namespace Starbuy_Desktop
             this.labelLinha2.TabIndex = 14;
             this.labelLinha2.Text = "___________________________________";
             // 
-            // Login
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(1424, 948);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
             this.Controls.Add(this.pictureBoxLoginCross);
             this.Controls.Add(this.buttonLoginEntrar);
             this.Controls.Add(this.labelLoginEsqueceu);
@@ -210,7 +214,8 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.labelLinha2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Login";
+            this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
