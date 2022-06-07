@@ -34,5 +34,23 @@ namespace Starbuy_Desktop
                 fm.Show();
             }
         }
+
+        private void pictureBoxMenuEstoque_Click(object sender, EventArgs e)
+        {
+            /*FormEstoque estoque = new FormEstoque();
+            estoque.Show(); //criar forms do estoque*/
+        }
+
+        private void pictureBoxMenuPedidos_Click(object sender, EventArgs e)
+        {
+            FormPedidos pedidos = new FormPedidos();
+            pedidos.Show();
+        }
+
+        private void pictureBoxMenuConfig_Click(object sender, EventArgs e)
+        {
+            FormConfig config = new FormConfig(lgresponse);
+            config.Show();
+        }
     }
 }

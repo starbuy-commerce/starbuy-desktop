@@ -84,19 +84,10 @@ namespace Starbuy_Desktop
                     }
                     else
                     {
-                        MessageBox.Show("Teste");
-                        //Abrir forms de Cliente!
-                        this.Hide();
-                        FormConfig fVendedor = new FormConfig(response);
-                        fVendedor.Show();
+                        MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);                        
                     }
                     
-                }/*
-                else
-                {
-                    Usuario user = JsonSerializer.Deserialize<Usuario>(response);
-                    labelLoginStarbuy.Text = user.city.ToString();
-                }*/
+                }
             }
         }
 

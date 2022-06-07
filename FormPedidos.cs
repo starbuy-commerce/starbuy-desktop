@@ -12,6 +12,7 @@ namespace Starbuy_Desktop
 {
     public partial class FormPedidos : Form
     {
+        private LoginResponse lgresponse;
         public FormPedidos()
         {
             InitializeComponent();
@@ -26,6 +27,24 @@ namespace Starbuy_Desktop
                 FormLogin fm = new FormLogin();
                 fm.Show();
             }
+        }
+
+        private void pictureBoxPedidosConfig_Click(object sender, EventArgs e)
+        {
+            FormConfig config = new FormConfig(lgresponse);
+            config.Show();
+        }
+
+        private void pictureBoxPedidosMenu_Click(object sender, EventArgs e)
+        {
+            FormMenu menu = new FormMenu(lgresponse);
+            menu.Show();
+        }
+
+        private void pictureBoxPedidosEstoque_Click(object sender, EventArgs e)
+        {
+            /*FormEstoque estoque = new FormEstoque();
+            estoque.Show(); //criar forms de estoque */
         }
     }
 }
