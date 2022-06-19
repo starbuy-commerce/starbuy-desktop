@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7x++B19pp5MQpp1JFz6gbK2KlUdFsVFr6tmIWDVG5mVaMX1Jyeyo2a/uMjs1qSO6tuBwYYxkJu4gpqDVYQhZgg==",
+  "dgSpecHash": "qMKUI+rKCMR9uNeu1+kJaZ5h43JVZJ1jQ5Alfe2afiWL61jDf0/zpfzN69dS0jdnY2O7s3uGISki+r+cXt0LaA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\aluno\\Documents\\TCC\\starbuy-desktop\\Starbuy_Desktop.csproj",
+  "projectFilePath": "C:\\Users\\Victor Hugo\\Desktop\\starbuy-desktop\\Starbuy_Desktop.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\aluno\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Victor Hugo\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
   "logs": []
 }

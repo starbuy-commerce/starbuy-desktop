@@ -39,7 +39,6 @@ namespace Starbuy_Desktop
 
         private void registerFormsOpen(object sender, MouseEventArgs e)
         {
-            //Fechar forms!
             DialogResult diag = MessageBox.Show("Deseja-se registrar?", "Registro", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (diag == DialogResult.Yes)
             {
@@ -58,35 +57,18 @@ namespace Starbuy_Desktop
             else { 
                 string username = textBoxLoginUsername.Text;
                 string password = textBoxLoginSenha.Text;
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("https://tcc-web-api.herokuapp.com/login");
-                httpWebRequest.ContentType = "application/json";
-                httpWebRequest.Method = "POST";
-
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
-                {
-                    string json = "{\"username\":\""+  username +"\"," +
-                                  "\"password\":\""+ password +"\"}";
-
-                    streamWriter.Write(json);
-                }
-
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
-                    LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
-                    
-                    if (response.user.seller)
-                    {
+                
+                try {
+                    var user = API.login(username, password);
+                    if (user.seller) {
                         this.Hide();
                         FormMenu fVendedor = new FormMenu(response);
                         fVendedor.Show();
+                    } else {
+                        MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }
-                    else
-                    {
-                        MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);                        
-                    }
-                    
+                } catch(AuthException ex) {
+                    MessageBox.Show(ex.Message, "Erro de autenticação", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
             }
         }
