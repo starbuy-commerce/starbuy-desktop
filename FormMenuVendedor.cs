@@ -10,18 +10,15 @@ using System.Windows.Forms;
 
 namespace Starbuy_Desktop
 {
-    public partial class FormMenu : Form
-    {
-        private LoginResponse lgresponse;
-        public FormMenu(LoginResponse lgResp)
-        {
-            lgresponse = lgResp;
+    public partial class FormMenu : Form {
+
+        public FormMenu() {
             InitializeComponent();
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
-            labelConfigCantoNome.Text = lgresponse.user.name;
+            labelConfigCantoNome.Text = Session.getSession().getUser().name;
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e)
@@ -49,7 +46,7 @@ namespace Starbuy_Desktop
 
         private void pictureBoxMenuConfig_Click(object sender, EventArgs e)
         {
-            FormConfig config = new FormConfig(lgresponse);
+            FormConfig config = new FormConfig();
             config.Show();
         }
     }

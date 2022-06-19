@@ -8,12 +8,10 @@ namespace Starbuy_Desktop
 {
     static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
+            API.checkHostIntegrity();
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles(); 
             Application.SetCompatibleTextRenderingDefault(false);
