@@ -22,7 +22,7 @@ namespace Starbuy_Desktop
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (diag == DialogResult.Yes)
             {
-                this.Hide();
+                this.Close();
                 FormLogin fm = new FormLogin();
                 fm.Show();
             }

@@ -31,20 +31,35 @@ namespace Starbuy_Desktop
 
         private void pictureBoxPedidosConfig_Click(object sender, EventArgs e)
         {
-            FormConfig config = new FormConfig(lgresponse);
+            FormConfig config = new FormConfig();
             config.Show();
+            this.Hide();
         }
 
         private void pictureBoxPedidosMenu_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu(lgresponse);
+            FormMenu menu = new FormMenu();
             menu.Show();
+            this.Hide();
         }
 
         private void pictureBoxPedidosEstoque_Click(object sender, EventArgs e)
         {
             /*FormEstoque estoque = new FormEstoque();
             estoque.Show(); //criar forms de estoque */
+        }
+
+        private void FormPedidos_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                MessageBox.Show(Session.getSession().getUser().name.ToString());
+                Produto[] pr = API.getProducts(Session.getSession().getUser().name);
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show(exc.ToString());
+            }
         }
     }
 }

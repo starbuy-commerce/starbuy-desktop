@@ -48,3 +48,29 @@ C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\refint\Sta
 C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.pdb
 C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.genruntimeconfig.cache
 C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\ref\Starbuy_Desktop.dll
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.csproj.AssemblyReference.cache
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.Form1.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormConfig.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormLogin.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormMenu.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormPedidos.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormRegistro.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.Properties.Resources.resources
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.csproj.GenerateResource.cache
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.AssemblyInfoInputs.cache
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.AssemblyInfo.cs
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.csproj.CoreCompileInputs.cache
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.dll
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\ref\Starbuy_Desktop.dll
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.pdb
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_Desktop.exe
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_Desktop.deps.json
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_Desktop.runtimeconfig.json
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_Desktop.runtimeconfig.dev.json
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_Desktop.dll
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\ref\Starbuy_Desktop.dll
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_Desktop.pdb
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.csproj.CopyComplete
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.genruntimeconfig.cache

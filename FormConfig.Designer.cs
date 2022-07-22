@@ -94,9 +94,9 @@ namespace Starbuy_Desktop
             // 
             this.gboxConfigPerfil.Controls.Add(this.pictureBoxConfigCanto);
             this.gboxConfigPerfil.Controls.Add(this.labelConfigCantoNome);
-            this.gboxConfigPerfil.Location = new System.Drawing.Point(-4, -8);
+            this.gboxConfigPerfil.Location = new System.Drawing.Point(0, -7);
             this.gboxConfigPerfil.Name = "gboxConfigPerfil";
-            this.gboxConfigPerfil.Size = new System.Drawing.Size(229, 149);
+            this.gboxConfigPerfil.Size = new System.Drawing.Size(223, 147);
             this.gboxConfigPerfil.TabIndex = 5;
             this.gboxConfigPerfil.TabStop = false;
             // 
@@ -114,9 +114,9 @@ namespace Starbuy_Desktop
             this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigPedidos);
             this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigEstoque);
             this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigMenu);
-            this.gboxConfigMenu.Location = new System.Drawing.Point(-4, 147);
+            this.gboxConfigMenu.Location = new System.Drawing.Point(0, 145);
             this.gboxConfigMenu.Name = "gboxConfigMenu";
-            this.gboxConfigMenu.Size = new System.Drawing.Size(229, 723);
+            this.gboxConfigMenu.Size = new System.Drawing.Size(223, 640);
             this.gboxConfigMenu.TabIndex = 6;
             this.gboxConfigMenu.TabStop = false;
             // 
@@ -134,7 +134,7 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigPedidos.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigPedidos.Image")));
             this.pictureBoxConfigPedidos.Location = new System.Drawing.Point(0, 97);
             this.pictureBoxConfigPedidos.Name = "pictureBoxConfigPedidos";
-            this.pictureBoxConfigPedidos.Size = new System.Drawing.Size(223, 38);
+            this.pictureBoxConfigPedidos.Size = new System.Drawing.Size(217, 38);
             this.pictureBoxConfigPedidos.TabIndex = 8;
             this.pictureBoxConfigPedidos.TabStop = false;
             this.pictureBoxConfigPedidos.Click += new System.EventHandler(this.pictureBoxConfigPedidos_Click);
@@ -144,7 +144,7 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigEstoque.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigEstoque.Image")));
             this.pictureBoxConfigEstoque.Location = new System.Drawing.Point(0, 53);
             this.pictureBoxConfigEstoque.Name = "pictureBoxConfigEstoque";
-            this.pictureBoxConfigEstoque.Size = new System.Drawing.Size(223, 38);
+            this.pictureBoxConfigEstoque.Size = new System.Drawing.Size(217, 38);
             this.pictureBoxConfigEstoque.TabIndex = 7;
             this.pictureBoxConfigEstoque.TabStop = false;
             this.pictureBoxConfigEstoque.Click += new System.EventHandler(this.pictureBoxConfigEstoque_Click);
@@ -154,7 +154,7 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigMenu.Image")));
             this.pictureBoxConfigMenu.Location = new System.Drawing.Point(0, 9);
             this.pictureBoxConfigMenu.Name = "pictureBoxConfigMenu";
-            this.pictureBoxConfigMenu.Size = new System.Drawing.Size(223, 38);
+            this.pictureBoxConfigMenu.Size = new System.Drawing.Size(217, 38);
             this.pictureBoxConfigMenu.TabIndex = 6;
             this.pictureBoxConfigMenu.TabStop = false;
             this.pictureBoxConfigMenu.Click += new System.EventHandler(this.pictureBoxConfigMenu_Click);

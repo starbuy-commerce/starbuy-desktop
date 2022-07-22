@@ -33,18 +33,22 @@ public partial class FormConfig : Form {
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (diag == DialogResult.Yes) {
-                this.Hide();
+                this.Close();
                 FormLogin fm = new FormLogin();
                 fm.Show();
             }
         }
 
-        private void pictureBoxConfigMenu_Click(object sender, EventArgs e) {
+        private void pictureBoxConfigMenu_Click(object sender, EventArgs e)
+        {
+            this.Close();
             FormMenu menu = new FormMenu();
             menu.Show();
         }
 
-        private void pictureBoxConfigPedidos_Click(object sender, EventArgs e) {
+        private void pictureBoxConfigPedidos_Click(object sender, EventArgs e)
+        {
+            this.Close();
             FormPedidos pedidos = new FormPedidos();
             pedidos.Show();
         }

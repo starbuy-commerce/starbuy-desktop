@@ -62,7 +62,7 @@ namespace Starbuy_Desktop
                     var user = API.login(username, password);
                     if (user.seller) {
                         this.Hide();
-                        FormMenu fVendedor = new FormMenu(response);
+                        FormMenu fVendedor = new FormMenu();
                         fVendedor.Show();
                     } else {
                         MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
