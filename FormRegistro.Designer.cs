@@ -47,11 +47,11 @@ namespace Starbuy_Desktop
             this.labelLinha9 = new System.Windows.Forms.Label();
             this.textBoxRegistroConfirmar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBoxRegistroData = new System.Windows.Forms.TextBox();
             this.labelLinha10 = new System.Windows.Forms.Label();
             this.pictureBoxRegistroCross = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRegistro = new System.Windows.Forms.Button();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -147,6 +147,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroSenha.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBoxRegistroSenha.Location = new System.Drawing.Point(399, 626);
             this.textBoxRegistroSenha.Name = "textBoxRegistroSenha";
+            this.textBoxRegistroSenha.PasswordChar = '*';
             this.textBoxRegistroSenha.PlaceholderText = "Senha";
             this.textBoxRegistroSenha.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroSenha.TabIndex = 18;
@@ -229,6 +230,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroConfirmar.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBoxRegistroConfirmar.Location = new System.Drawing.Point(399, 691);
             this.textBoxRegistroConfirmar.Name = "textBoxRegistroConfirmar";
+            this.textBoxRegistroConfirmar.PasswordChar = '*';
             this.textBoxRegistroConfirmar.PlaceholderText = "Confirme a Senha";
             this.textBoxRegistroConfirmar.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroConfirmar.TabIndex = 27;
@@ -243,18 +245,6 @@ namespace Starbuy_Desktop
             this.label1.TabIndex = 28;
             this.label1.Text = "___________________________________";
             // 
-            // textBoxRegistroData
-            // 
-            this.textBoxRegistroData.BackColor = System.Drawing.Color.White;
-            this.textBoxRegistroData.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxRegistroData.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBoxRegistroData.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroData.Location = new System.Drawing.Point(399, 379);
-            this.textBoxRegistroData.Name = "textBoxRegistroData";
-            this.textBoxRegistroData.PlaceholderText = "Data de Nascimento";
-            this.textBoxRegistroData.Size = new System.Drawing.Size(617, 45);
-            this.textBoxRegistroData.TabIndex = 29;
-            // 
             // labelLinha10
             // 
             this.labelLinha10.AutoSize = true;
@@ -267,8 +257,9 @@ namespace Starbuy_Desktop
             // 
             // pictureBoxRegistroCross
             // 
-            this.pictureBoxRegistroCross.Image = global::Starbuy_Desktop.Properties.Resources.Cross1;
-            this.pictureBoxRegistroCross.Location = new System.Drawing.Point(1341, 34);
+            this.pictureBoxRegistroCross.ErrorImage = global::Starbuy_Desktop.Properties.Resources.Cross;
+            this.pictureBoxRegistroCross.Image = global::Starbuy_Desktop.Properties.Resources.Cross;
+            this.pictureBoxRegistroCross.Location = new System.Drawing.Point(1363, 34);
             this.pictureBoxRegistroCross.Name = "pictureBoxRegistroCross";
             this.pictureBoxRegistroCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxRegistroCross.TabIndex = 31;
@@ -298,6 +289,17 @@ namespace Starbuy_Desktop
             this.buttonRegistro.TabIndex = 33;
             this.buttonRegistro.Text = "Registre-se";
             this.buttonRegistro.UseVisualStyleBackColor = false;
+            this.buttonRegistro.Click += new System.EventHandler(this.buttonRegistro_Click);
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBox1.Location = new System.Drawing.Point(399, 379);
+            this.maskedTextBox1.Mask = "00/00/0000";
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.Size = new System.Drawing.Size(572, 16);
+            this.maskedTextBox1.TabIndex = 34;
+            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
             // 
             // FormRegistro
             // 
@@ -306,10 +308,10 @@ namespace Starbuy_Desktop
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1408, 909);
+            this.Controls.Add(this.maskedTextBox1);
             this.Controls.Add(this.buttonRegistro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxRegistroCross);
-            this.Controls.Add(this.textBoxRegistroData);
             this.Controls.Add(this.labelLinha10);
             this.Controls.Add(this.textBoxRegistroConfirmar);
             this.Controls.Add(this.label1);
@@ -359,10 +361,10 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelLinha9;
         private System.Windows.Forms.TextBox textBoxRegistroConfirmar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBoxRegistroData;
         private System.Windows.Forms.Label labelLinha10;
         private System.Windows.Forms.PictureBox pictureBoxRegistroCross;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonRegistro;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
     }
 }

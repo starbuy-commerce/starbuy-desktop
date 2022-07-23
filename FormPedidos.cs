@@ -53,8 +53,11 @@ namespace Starbuy_Desktop
         {
             try
             {
-                MessageBox.Show(Session.getSession().getUser().name.ToString());
-                Produto[] pr = API.getProducts(Session.getSession().getUser().name);
+                String a = Session.getSession().getUser().username.ToString();
+                MessageBox.Show(a);
+                API.getProducts(a);
+                //MessageBox.Show(pr.GetProdutos(1).title.ToString());
+               
             }
             catch (Exception exc)
             {

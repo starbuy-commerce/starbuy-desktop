@@ -82,9 +82,9 @@ namespace Starbuy_Desktop
             }
         }
 
-        public static Produto[] getProducts(String username)
+        public static UsuarioComProdutoRequest getProducts(String username)
         {
-            var req = (HttpWebRequest)WebRequest.Create(host + "/user/vasco2004?includeItems=true");
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/" + username + "?includeItems=true");
             appendHeaders("GET", req);
 
             try
@@ -94,12 +94,14 @@ namespace Starbuy_Desktop
                 using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                 {
                     var result = streamReader.ReadToEnd();
-
                     try
                     {
-                        Produto[] produtos;
-                        produtos = new Produto[] { JsonSerializer.Deserialize<Produto>(result) };
-                        return produtos;
+                        UsuarioComProdutoRequest resposta= JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
+                        MessageBox.Show(resposta.items.Length.ToString());
+                        ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
+                        MessageBox.Show(ItemsResponse.GetItemsResponse().getAllProdutos().Length.ToString());
+                        MessageBox.Show(ItemsResponse.GetItemsResponse().GetProdutos(0).title.ToString());
+                        return resposta;
                     }
                     catch (Exception e)
                     {

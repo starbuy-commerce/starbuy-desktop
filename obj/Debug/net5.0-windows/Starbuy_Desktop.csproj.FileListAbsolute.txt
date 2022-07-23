@@ -49,7 +49,6 @@ C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_De
 C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.genruntimeconfig.cache
 C:\Users\Victor Hugo\Desktop\starbuy-desktop\obj\Debug\net5.0-windows\ref\Starbuy_Desktop.dll
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.csproj.AssemblyReference.cache
-C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.Form1.resources
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormConfig.resources
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormLogin.resources
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormMenu.resources
