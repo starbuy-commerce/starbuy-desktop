@@ -100,7 +100,7 @@ namespace Starbuy_Desktop
                         MessageBox.Show(resposta.items.Length.ToString());
                         ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
                         MessageBox.Show(ItemsResponse.GetItemsResponse().getAllProdutos().Length.ToString());
-                        MessageBox.Show(ItemsResponse.GetItemsResponse().GetProdutos(0).title.ToString());
+                        MessageBox.Show(ItemsResponse.GetItemsResponse().GetProdutos(0).item.title.ToString());
                         return resposta;
                     }
                     catch (Exception e)

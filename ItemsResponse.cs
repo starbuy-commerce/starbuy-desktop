@@ -12,16 +12,13 @@ namespace Starbuy_Desktop
 
         private Usuario user;
         private double rating;
-        private Produto[] produtos;
+        private Produtos[] produtos;
 
-        public ItemsResponse(Usuario user, double rating, Produto[] produtos)
+        public ItemsResponse(Usuario user, double rating, Produtos[] produtos)
         {
             this.user = user;
             this.rating = rating;
-            for(int i = 0; i < produtos.Length; i++) {
-                produtos[i] = produtos[i];
-            }
-
+            this.produtos = produtos;
         }
 
         public Usuario getUser()
@@ -34,12 +31,12 @@ namespace Starbuy_Desktop
             return rating;
         }
 
-        public Produto GetProdutos(int posicao)
+        public Produtos GetProdutos(int posicao)
         {
             return produtos[posicao];
         }
 
-        public Produto[] getAllProdutos()
+        public Produtos[] getAllProdutos()
         {
             return produtos;
         }

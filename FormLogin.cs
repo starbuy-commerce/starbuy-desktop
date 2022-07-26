@@ -63,6 +63,9 @@ namespace Starbuy_Desktop
                     if (user.seller) {
                         this.Hide();
                         FormMenu fVendedor = new FormMenu();
+                        String a = Session.getSession().getUser().username.ToString();
+                        MessageBox.Show(a);
+                        API.getProducts(a);
                         fVendedor.Show();
                     } else {
                         MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -87,6 +90,11 @@ namespace Starbuy_Desktop
             {
                 buttonLoginEntrar_Click(sender,e);
             }
+        }
+
+        private void labelLoginFacaConta_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -48,21 +48,5 @@ namespace Starbuy_Desktop
             /*FormEstoque estoque = new FormEstoque();
             estoque.Show(); //criar forms de estoque */
         }
-
-        private void FormPedidos_Load(object sender, EventArgs e)
-        {
-            try
-            {
-                String a = Session.getSession().getUser().username.ToString();
-                MessageBox.Show(a);
-                API.getProducts(a);
-                //MessageBox.Show(pr.GetProdutos(1).title.ToString());
-               
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.ToString());
-            }
-        }
     }
 }

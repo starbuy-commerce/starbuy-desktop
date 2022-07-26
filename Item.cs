@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace Starbuy_Desktop
 {
-    class Produto
-    {   public String identifier { get; set; }
+    class Item
+    {   
+        public String identifier { get; set; }
         public String title { get; set; }
-        public Boolean seller { get; set; }
+        public class Seller { 
+            public Boolean seller { get; set; }
+        }
         public Double price { get; set; }
         public int stock { get; set; }
         public int category { get; set; }
