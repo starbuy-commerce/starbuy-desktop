@@ -26,9 +26,9 @@ namespace Starbuy_Desktop
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (diag == DialogResult.Yes)
             {
-                this.Hide();
-                FormLogin fm = new FormLogin();
-                fm.Show();
+                this.Close();
+                FormLogin formLogin = new FormLogin();
+                formLogin.Show();
             }
         }
 
@@ -40,12 +40,14 @@ namespace Starbuy_Desktop
 
         private void pictureBoxMenuPedidos_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormPedidos pedidos = new FormPedidos();
             pedidos.Show();
         }
 
         private void pictureBoxMenuConfig_Click(object sender, EventArgs e)
         {
+            this.Close();
             FormConfig config = new FormConfig();
             config.Show();
         }

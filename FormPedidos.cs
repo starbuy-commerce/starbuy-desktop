@@ -31,14 +31,16 @@ namespace Starbuy_Desktop
 
         private void pictureBoxPedidosConfig_Click(object sender, EventArgs e)
         {
-            FormConfig config = new FormConfig(lgresponse);
+            FormConfig config = new FormConfig();
             config.Show();
+            this.Hide();
         }
 
         private void pictureBoxPedidosMenu_Click(object sender, EventArgs e)
         {
-            FormMenu menu = new FormMenu(lgresponse);
+            FormMenu menu = new FormMenu();
             menu.Show();
+            this.Hide();
         }
 
         private void pictureBoxPedidosEstoque_Click(object sender, EventArgs e)

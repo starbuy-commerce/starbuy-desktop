@@ -150,7 +150,7 @@ namespace Starbuy_Desktop
             this.gboxConfigMenu.Controls.Add(this.pictureBoxPedidosMenu);
             this.gboxConfigMenu.Location = new System.Drawing.Point(0, 145);
             this.gboxConfigMenu.Name = "gboxConfigMenu";
-            this.gboxConfigMenu.Size = new System.Drawing.Size(223, 729);
+            this.gboxConfigMenu.Size = new System.Drawing.Size(223, 640);
             this.gboxConfigMenu.TabIndex = 16;
             this.gboxConfigMenu.TabStop = false;
             // 
@@ -197,7 +197,7 @@ namespace Starbuy_Desktop
             // 
             this.gboxConfigPerfil.Controls.Add(this.pictureBoxConfigCanto);
             this.gboxConfigPerfil.Controls.Add(this.labelConfigCantoNome);
-            this.gboxConfigPerfil.Location = new System.Drawing.Point(0, -8);
+            this.gboxConfigPerfil.Location = new System.Drawing.Point(0, -7);
             this.gboxConfigPerfil.Name = "gboxConfigPerfil";
             this.gboxConfigPerfil.Size = new System.Drawing.Size(223, 147);
             this.gboxConfigPerfil.TabIndex = 15;
@@ -285,6 +285,7 @@ namespace Starbuy_Desktop
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPedidos";
+            this.Load += new System.EventHandler(this.FormPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.gboxPedidosPedidos.ResumeLayout(false);
             this.gboxPedidosPedidos.PerformLayout();

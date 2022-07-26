@@ -16,57 +16,104 @@ using System.Text.Json;
 using System.Net.Http;
 using System.IO;
 
-namespace Starbuy_Desktop {
-    internal class API {
+namespace Starbuy_Desktop
+{
+    internal class API
+    {
 
-        private static String heroku_host = "https://tcc-web-api.herokuapp.com";
+        private static String heroku_host = "https://starbuy-api.herokuapp.com";
         private static String railways_host = "https://starbuy.up.railway.app";
         private static String host = heroku_host;
 
         // Vai verificar se a host da Heroku ta de boa. Se ela, por algum motivo,
         // tiver caido, vai usar a host do Railways (uma outra plataforma que eu
         // também hospedei a nossa API que serve de backup).
-        public static void checkHostIntegrity() {
+        public static void checkHostIntegrity()
+        {
             var req = (HttpWebRequest)WebRequest.Create(heroku_host);
             appendHeaders("GET", req);
             var httpResponse = (HttpWebResponse)req.GetResponse();
-            if(httpResponse.StatusCode == HttpStatusCode.ServiceUnavailable) {
+            if (httpResponse.StatusCode == HttpStatusCode.ServiceUnavailable)
+            {
                 host = railways_host;
             }
         }
 
         // Já que toda request vai ter o header ContentType e um método, eu
         // criei essa função só pra ter que escrever menos coisa.
-        private static void appendHeaders(String method, HttpWebRequest request) {
+        private static void appendHeaders(String method, HttpWebRequest request)
+        {
             request.ContentType = "application/json";
             request.Method = method;
         }
 
-        public static Usuario login(String username, String password) {
+        public static Usuario login(String username, String password)
+        {
             var req = (HttpWebRequest)WebRequest.Create(host + "/login");
             appendHeaders("POST", req);
 
-            using (var streamWriter = new StreamWriter(req.GetRequestStream())) {
+            using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+            {
                 streamWriter.Write("{\"username\":\"" + username + "\"," +
                               "\"password\":\"" + password + "\"}");
             }
 
             var httpResponse = (HttpWebResponse)req.GetResponse();
 
-            if(httpResponse.StatusCode == HttpStatusCode.Unauthorized) {
+            if (httpResponse.StatusCode == HttpStatusCode.Unauthorized)
+            {
                 throw new AuthException("Verifique suas credenciais.");
             }
 
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream())) {
+            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+            {
                 var result = streamReader.ReadToEnd();
 
-                try {
+                try
+                {
                     LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
                     Session.setSession(new Session(response.user, response.jwt));
                     return response.user;
-                } catch (Exception ex) {
+                }
+                catch (Exception ex)
+                {
                     return null;
                 }
+            }
+        }
+
+        public static UsuarioComProdutoRequest getProducts(String username)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/" + username + "?includeItems=true");
+            appendHeaders("GET", req);
+
+            try
+            {
+                var httpResponse = (HttpWebResponse)req.GetResponse();
+
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    try
+                    {
+                        UsuarioComProdutoRequest resposta= JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
+                        MessageBox.Show(resposta.items.Length.ToString());
+                        ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
+                        MessageBox.Show(ItemsResponse.GetItemsResponse().getAllProdutos().Length.ToString());
+                        MessageBox.Show(ItemsResponse.GetItemsResponse().GetProdutos(0).item.title.ToString());
+                        return resposta;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        return null;
+                    }
+                }
+            }
+            catch(Exception teste)
+            {
+                MessageBox.Show(teste.ToString());
+                return null;
             }
         }
     }
