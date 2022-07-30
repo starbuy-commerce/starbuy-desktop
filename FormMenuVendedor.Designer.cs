@@ -95,7 +95,6 @@ namespace Starbuy_Desktop
             // 
             // pictureBoxMenuMenu
             // 
-            this.pictureBoxMenuMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuMenu.Image")));
             this.pictureBoxMenuMenu.Location = new System.Drawing.Point(0, 9);
             this.pictureBoxMenuMenu.Name = "pictureBoxMenuMenu";
             this.pictureBoxMenuMenu.Size = new System.Drawing.Size(229, 38);

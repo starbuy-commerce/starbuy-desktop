@@ -73,3 +73,4 @@ C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Starbuy_De
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\bin\Debug\net5.0-windows\Newtonsoft.Json.dll
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.csproj.CopyComplete
 C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.genruntimeconfig.cache
+C:\Users\acbcv\Documents\TCC\starbuy-desktop\obj\Debug\net5.0-windows\Starbuy_Desktop.FormEstoque.resources

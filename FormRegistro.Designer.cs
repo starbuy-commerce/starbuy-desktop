@@ -51,7 +51,7 @@ namespace Starbuy_Desktop
             this.pictureBoxRegistroCross = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRegistro = new System.Windows.Forms.Button();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBoxRegistroNascimento = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -97,9 +97,9 @@ namespace Starbuy_Desktop
             this.textBoxRegistroCPF.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroCPF.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroCPF.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroCPF.Location = new System.Drawing.Point(399, 316);
+            this.textBoxRegistroCPF.Location = new System.Drawing.Point(399, 379);
             this.textBoxRegistroCPF.Name = "textBoxRegistroCPF";
-            this.textBoxRegistroCPF.PlaceholderText = "CPF";
+            this.textBoxRegistroCPF.PlaceholderText = "CEP";
             this.textBoxRegistroCPF.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroCPF.TabIndex = 10;
             // 
@@ -249,7 +249,7 @@ namespace Starbuy_Desktop
             // 
             this.labelLinha10.AutoSize = true;
             this.labelLinha10.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha10.Location = new System.Drawing.Point(389, 388);
+            this.labelLinha10.Location = new System.Drawing.Point(486, 380);
             this.labelLinha10.Name = "labelLinha10";
             this.labelLinha10.Size = new System.Drawing.Size(582, 51);
             this.labelLinha10.TabIndex = 30;
@@ -291,15 +291,22 @@ namespace Starbuy_Desktop
             this.buttonRegistro.UseVisualStyleBackColor = false;
             this.buttonRegistro.Click += new System.EventHandler(this.buttonRegistro_Click);
             // 
-            // maskedTextBox1
+            // maskedTextBoxRegistroNascimento
             // 
-            this.maskedTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.maskedTextBox1.Location = new System.Drawing.Point(399, 379);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(572, 16);
-            this.maskedTextBox1.TabIndex = 34;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxRegistroNascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.maskedTextBoxRegistroNascimento.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.maskedTextBoxRegistroNascimento.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.maskedTextBoxRegistroNascimento.Location = new System.Drawing.Point(399, 313);
+            this.maskedTextBoxRegistroNascimento.Margin = new System.Windows.Forms.Padding(0);
+            this.maskedTextBoxRegistroNascimento.Mask = "00/00/0000";
+            this.maskedTextBoxRegistroNascimento.MaximumSize = new System.Drawing.Size(617, 45);
+            this.maskedTextBoxRegistroNascimento.MinimumSize = new System.Drawing.Size(140, 45);
+            this.maskedTextBoxRegistroNascimento.Name = "maskedTextBoxRegistroNascimento";
+            this.maskedTextBoxRegistroNascimento.PromptChar = '-';
+            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(186, 45);
+            this.maskedTextBoxRegistroNascimento.TabIndex = 34;
+            this.maskedTextBoxRegistroNascimento.ValidatingType = typeof(System.DateTime);
+            this.maskedTextBoxRegistroNascimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBoxRegistroNascimento_KeyDown);
             // 
             // FormRegistro
             // 
@@ -308,7 +315,8 @@ namespace Starbuy_Desktop
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1408, 909);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.textBoxRegistroCPF);
+            this.Controls.Add(this.maskedTextBoxRegistroNascimento);
             this.Controls.Add(this.buttonRegistro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxRegistroCross);
@@ -319,7 +327,6 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.extBoxRegistroEmail);
             this.Controls.Add(this.textBoxRegistroTelefone);
             this.Controls.Add(this.textBoxRegistroEndereco);
-            this.Controls.Add(this.textBoxRegistroCPF);
             this.Controls.Add(this.textBoxRegistroUsuario);
             this.Controls.Add(this.textBoxRegistroNome);
             this.Controls.Add(this.labelRegistroRegistre);
@@ -334,7 +341,7 @@ namespace Starbuy_Desktop
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CPF";
+            this.Load += new System.EventHandler(this.FormRegistro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -365,6 +372,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxRegistroCross;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonRegistro;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxRegistroNascimento;
     }
 }

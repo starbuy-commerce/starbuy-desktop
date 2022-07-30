@@ -15,26 +15,19 @@ using System.Text.Json;
 namespace Starbuy_Desktop
 {
     
-public partial class FormConfig : Form {
+public partial class FormEstoque : Form {
 
         private Usuario user;
 
-        public FormConfig() {
+        public FormEstoque() {
             this.user = Session.getSession().getUser();
             InitializeComponent();
         }
 
-        private void FormConfig_Load(object sender, EventArgs e) {
+        private void FormEstoque_Load(object sender, EventArgs e) {
             labelConfigCantoNome.Text = user.name;
             labelConfigNome.Text = user.name;
-            WebClient wc = new WebClient();
-            byte[] bytes = wc.DownloadData(user.profile_picture);
-            MemoryStream ms = new MemoryStream(bytes);
-            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-            System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
-            pictureBoxConfigCanto.Image = resizeSmall;
-            System.Drawing.Image resizeProfile = (new Bitmap(img, 165, 162));
-            pictureBoxConfigFoto.Image = resizeProfile;
+            labelConfigEndereco.Text = user.city;
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {

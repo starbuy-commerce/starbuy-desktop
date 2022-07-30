@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,10 @@ namespace Starbuy_Desktop
 {
     public partial class FormPedidos : Form
     {
-        private LoginResponse lgresponse;
+        private Usuario user;
         public FormPedidos()
         {
+            this.user = Session.getSession().getUser();
             InitializeComponent();
         }
 
@@ -47,6 +50,16 @@ namespace Starbuy_Desktop
         {
             /*FormEstoque estoque = new FormEstoque();
             estoque.Show(); //criar forms de estoque */
+        }
+
+        private void FormPedidos_Load(object sender, EventArgs e)
+        {
+            WebClient wc = new WebClient();
+            byte[] bytes = wc.DownloadData(user.profile_picture);
+            MemoryStream ms = new MemoryStream(bytes);
+            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+            System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
+            pictureBoxConfigCanto.Image = resizeSmall;
         }
     }
 }

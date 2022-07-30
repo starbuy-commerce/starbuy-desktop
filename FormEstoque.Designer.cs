@@ -1,7 +1,7 @@
 ﻿
 namespace Starbuy_Desktop
 {
-    partial class FormConfig
+    partial class FormEstoque
     {
         /// <summary>  
         /// Required designer variable.
@@ -29,12 +29,12 @@ namespace Starbuy_Desktop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormConfig));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEstoque));
             this.labelConfigCantoNome = new System.Windows.Forms.Label();
             this.gboxConfigPerfil = new System.Windows.Forms.GroupBox();
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.gboxConfigMenu = new System.Windows.Forms.GroupBox();
-            this.pictureBoxConfigConfig = new System.Windows.Forms.PictureBox();
+            this.pictureBoxConfiguracoes = new System.Windows.Forms.PictureBox();
             this.pictureBoxConfigPedidos = new System.Windows.Forms.PictureBox();
             this.pictureBoxConfigEstoque = new System.Windows.Forms.PictureBox();
             this.pictureBoxConfigMenu = new System.Windows.Forms.PictureBox();
@@ -70,7 +70,7 @@ namespace Starbuy_Desktop
             this.gboxConfigPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.gboxConfigMenu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigConfig)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfiguracoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenu)).BeginInit();
@@ -110,7 +110,7 @@ namespace Starbuy_Desktop
             // 
             // gboxConfigMenu
             // 
-            this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigConfig);
+            this.gboxConfigMenu.Controls.Add(this.pictureBoxConfiguracoes);
             this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigPedidos);
             this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigEstoque);
             this.gboxConfigMenu.Controls.Add(this.pictureBoxConfigMenu);
@@ -120,14 +120,13 @@ namespace Starbuy_Desktop
             this.gboxConfigMenu.TabIndex = 6;
             this.gboxConfigMenu.TabStop = false;
             // 
-            // pictureBoxConfigConfig
+            // pictureBoxConfiguracoes
             // 
-            this.pictureBoxConfigConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfigConfig.Image")));
-            this.pictureBoxConfigConfig.Location = new System.Drawing.Point(0, 141);
-            this.pictureBoxConfigConfig.Name = "pictureBoxConfigConfig";
-            this.pictureBoxConfigConfig.Size = new System.Drawing.Size(229, 38);
-            this.pictureBoxConfigConfig.TabIndex = 9;
-            this.pictureBoxConfigConfig.TabStop = false;
+            this.pictureBoxConfiguracoes.Location = new System.Drawing.Point(0, 141);
+            this.pictureBoxConfiguracoes.Name = "pictureBoxConfiguracoes";
+            this.pictureBoxConfiguracoes.Size = new System.Drawing.Size(217, 38);
+            this.pictureBoxConfiguracoes.TabIndex = 9;
+            this.pictureBoxConfiguracoes.TabStop = false;
             // 
             // pictureBoxConfigPedidos
             // 
@@ -245,9 +244,9 @@ namespace Starbuy_Desktop
             this.labelConfigCpf.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelConfigCpf.Location = new System.Drawing.Point(243, 307);
             this.labelConfigCpf.Name = "labelConfigCpf";
-            this.labelConfigCpf.Size = new System.Drawing.Size(105, 25);
+            this.labelConfigCpf.Size = new System.Drawing.Size(138, 25);
             this.labelConfigCpf.TabIndex = 21;
-            this.labelConfigCpf.Text = "Cléber_123";
+            this.labelConfigCpf.Text = "552.305.402-23";
             // 
             // labelConfigInfEndereco
             // 
@@ -283,11 +282,11 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigInfCPF.AutoSize = true;
             this.labelConfigInfCPF.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfCPF.Location = new System.Drawing.Point(156, 307);
+            this.labelConfigInfCPF.Location = new System.Drawing.Point(129, 307);
             this.labelConfigInfCPF.Name = "labelConfigInfCPF";
-            this.labelConfigInfCPF.Size = new System.Drawing.Size(81, 25);
+            this.labelConfigInfCPF.Size = new System.Drawing.Size(108, 25);
             this.labelConfigInfCPF.TabIndex = 18;
-            this.labelConfigInfCPF.Text = "Usuário:";
+            this.labelConfigInfCPF.Text = "CPF / CNPJ:";
             // 
             // pictureBoxConfigFoto
             // 
@@ -456,7 +455,7 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross.TabStop = false;
             this.pictureBoxMenuVendedorCross.Click += new System.EventHandler(this.pictureBoxMenuVendedorCross_Click);
             // 
-            // FormConfig
+            // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -468,15 +467,15 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.gboxConfigMenu);
             this.Controls.Add(this.gboxConfigPerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FormConfig";
+            this.Name = "FormEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "            ";
-            this.Load += new System.EventHandler(this.FormConfig_Load);
+            this.Load += new System.EventHandler(this.FormEstoque_Load);
             this.gboxConfigPerfil.ResumeLayout(false);
             this.gboxConfigPerfil.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
             this.gboxConfigMenu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigConfig)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfiguracoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigMenu)).EndInit();
@@ -527,7 +526,7 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxMenuVendedorCross;
         private System.Windows.Forms.PictureBox pictureBoxConfigEstoque;
         private System.Windows.Forms.PictureBox pictureBoxConfigMenu;
-        private System.Windows.Forms.PictureBox pictureBoxConfigConfig;
         private System.Windows.Forms.PictureBox pictureBoxConfigPedidos;
+        private System.Windows.Forms.PictureBox pictureBoxConfiguracoes;
     }
 }
