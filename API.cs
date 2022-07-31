@@ -105,7 +105,7 @@ namespace Starbuy_Desktop
                     var result = streamReader.ReadToEnd();
                     try
                     {
-                        UsuarioComProdutoRequest resposta= JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
+                        UsuarioComProdutoRequest resposta = JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
                         MessageBox.Show(resposta.items.Length.ToString());
                         ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
                         return resposta;
@@ -124,6 +124,38 @@ namespace Starbuy_Desktop
             }
         }
 
+        public static Address[] getAddress (String jwt)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
+            appendHeaders("GET", req);
+            req.Headers.Add("Authorization", "Bearer " + jwt);
 
+            try
+            {
+                var httpsResponse = (HttpWebResponse)req.GetResponse();
+                using (var streamReader = new StreamReader(httpsResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    try
+                    {
+                        Address[] enderecos = JsonSerializer.Deserialize<Address[]>(result);
+                        //*MessageBox.Show(enderecos.addresses.Length.ToString());
+                        MessageBox.Show(enderecos[0].cep.ToString());
+                        MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
+                        return enderecos;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        return null;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
+                return null;
+            }
+        }
     }
 }
