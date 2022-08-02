@@ -53,9 +53,11 @@ public partial class FormEstoque : Form {
             pedidos.Show();
         }
 
-        private void pictureBoxConfigEstoque_Click(object sender, EventArgs e) {
-            /*FormEstoque estoque = new FormEstoque();
-            estoque.Show(); //criar forms de estoque */
+        private void pictureBoxConfiguracoes_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FormConfig config = new FormConfig();
+            config.Show();
         }
     }
 }

@@ -15,6 +15,11 @@ namespace Starbuy_Desktop
         {
             this.address = address;
         }
+
+        public Address getAddress(int posicao)
+        {
+            return address[posicao];
+        }
         public Address[] getAddresses()
         {
             return address;
@@ -22,6 +27,11 @@ namespace Starbuy_Desktop
         public static void setMultiplosEnderecosResponse(MultiplosEnderecosResponse enderecos)
         {
             multipleAddress = enderecos;
+        }
+
+        public static MultiplosEnderecosResponse getEnderecosResponse()
+        {
+            return multipleAddress;
         }
     }
 }

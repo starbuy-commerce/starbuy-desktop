@@ -38,6 +38,17 @@ namespace Starbuy_Desktop
             {
                 MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            else
+            {
+                if(textBoxRegistroSenha.Text == textBoxRegistroConfirmar.Text)
+                {
+
+                }
+                else
+                {
+                    MessageBox.Show("As senhas não coincidem!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void FormRegistro_Load(object sender, EventArgs e)

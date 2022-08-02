@@ -122,11 +122,13 @@ namespace Starbuy_Desktop
             // 
             // pictureBoxConfiguracoes
             // 
+            this.pictureBoxConfiguracoes.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxConfiguracoes.Image")));
             this.pictureBoxConfiguracoes.Location = new System.Drawing.Point(0, 141);
             this.pictureBoxConfiguracoes.Name = "pictureBoxConfiguracoes";
             this.pictureBoxConfiguracoes.Size = new System.Drawing.Size(217, 38);
             this.pictureBoxConfiguracoes.TabIndex = 9;
             this.pictureBoxConfiguracoes.TabStop = false;
+            this.pictureBoxConfiguracoes.Click += new System.EventHandler(this.pictureBoxConfiguracoes_Click);
             // 
             // pictureBoxConfigPedidos
             // 
@@ -146,7 +148,6 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigEstoque.Size = new System.Drawing.Size(217, 38);
             this.pictureBoxConfigEstoque.TabIndex = 7;
             this.pictureBoxConfigEstoque.TabStop = false;
-            this.pictureBoxConfigEstoque.Click += new System.EventHandler(this.pictureBoxConfigEstoque_Click);
             // 
             // pictureBoxConfigMenu
             // 
@@ -524,9 +525,9 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelConfigID;
         private System.Windows.Forms.Label labelConfigConfig;
         private System.Windows.Forms.PictureBox pictureBoxMenuVendedorCross;
-        private System.Windows.Forms.PictureBox pictureBoxConfigEstoque;
         private System.Windows.Forms.PictureBox pictureBoxConfigMenu;
         private System.Windows.Forms.PictureBox pictureBoxConfigPedidos;
         private System.Windows.Forms.PictureBox pictureBoxConfiguracoes;
+        private System.Windows.Forms.PictureBox pictureBoxConfigEstoque;
     }
 }

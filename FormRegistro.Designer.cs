@@ -249,7 +249,7 @@ namespace Starbuy_Desktop
             // 
             this.labelLinha10.AutoSize = true;
             this.labelLinha10.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha10.Location = new System.Drawing.Point(486, 380);
+            this.labelLinha10.Location = new System.Drawing.Point(389, 380);
             this.labelLinha10.Name = "labelLinha10";
             this.labelLinha10.Size = new System.Drawing.Size(582, 51);
             this.labelLinha10.TabIndex = 30;
@@ -303,7 +303,7 @@ namespace Starbuy_Desktop
             this.maskedTextBoxRegistroNascimento.MinimumSize = new System.Drawing.Size(140, 45);
             this.maskedTextBoxRegistroNascimento.Name = "maskedTextBoxRegistroNascimento";
             this.maskedTextBoxRegistroNascimento.PromptChar = '-';
-            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(186, 45);
+            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(186, 44);
             this.maskedTextBoxRegistroNascimento.TabIndex = 34;
             this.maskedTextBoxRegistroNascimento.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxRegistroNascimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBoxRegistroNascimento_KeyDown);

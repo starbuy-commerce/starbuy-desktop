@@ -44,8 +44,10 @@ namespace Starbuy_Desktop
 
         private void pictureBoxMenuEstoque_Click(object sender, EventArgs e)
         {
-            /*FormEstoque estoque = new FormEstoque();
-            estoque.Show(); //criar forms do estoque*/
+            this.Close();
+
+            FormEstoque estoque = new FormEstoque();
+            estoque.Show();
         }
 
         private void pictureBoxMenuPedidos_Click(object sender, EventArgs e)
