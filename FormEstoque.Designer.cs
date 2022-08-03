@@ -40,6 +40,7 @@ namespace Starbuy_Desktop
             this.pictureBoxEstoqueMenu = new System.Windows.Forms.PictureBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
+            this.labelMenuEstoque = new System.Windows.Forms.Label();
             this.gboxEstoquePerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueCanto)).BeginInit();
             this.gboxEstoqueMenu.SuspendLayout();
@@ -47,6 +48,7 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoquePedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueMenu)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,6 +133,7 @@ namespace Starbuy_Desktop
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelMenuEstoque);
             this.groupBox2.Location = new System.Drawing.Point(256, 30);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1048, 729);
@@ -146,6 +149,16 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross.TabIndex = 14;
             this.pictureBoxMenuVendedorCross.TabStop = false;
             this.pictureBoxMenuVendedorCross.Click += new System.EventHandler(this.pictureBoxEstoqueMenuVendedorCross_Click);
+            // 
+            // labelMenuEstoque
+            // 
+            this.labelMenuEstoque.AutoSize = true;
+            this.labelMenuEstoque.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelMenuEstoque.Location = new System.Drawing.Point(525, 40);
+            this.labelMenuEstoque.Name = "labelMenuEstoque";
+            this.labelMenuEstoque.Size = new System.Drawing.Size(119, 37);
+            this.labelMenuEstoque.TabIndex = 22;
+            this.labelMenuEstoque.Text = "Estoque";
             // 
             // FormEstoque
             // 
@@ -170,6 +183,8 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoquePedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueMenu)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.ResumeLayout(false);
 
@@ -187,5 +202,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxEstoquePedidos;
         private System.Windows.Forms.PictureBox pictureBoxEstoqueConfiguracoes;
         private System.Windows.Forms.PictureBox pictureBoxEstoqueEstoque;
+        private System.Windows.Forms.Label labelMenuEstoque;
     }
 }
