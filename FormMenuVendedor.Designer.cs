@@ -96,9 +96,9 @@ namespace Starbuy_Desktop
             // pictureBoxMenuMenu
             // 
             this.pictureBoxMenuMenu.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuMenu.Image")));
-            this.pictureBoxMenuMenu.Location = new System.Drawing.Point(0, 9);
+            this.pictureBoxMenuMenu.Location = new System.Drawing.Point(0, 10);
             this.pictureBoxMenuMenu.Name = "pictureBoxMenuMenu";
-            this.pictureBoxMenuMenu.Size = new System.Drawing.Size(229, 38);
+            this.pictureBoxMenuMenu.Size = new System.Drawing.Size(223, 38);
             this.pictureBoxMenuMenu.TabIndex = 0;
             this.pictureBoxMenuMenu.TabStop = false;
             // 
@@ -168,7 +168,6 @@ namespace Starbuy_Desktop
             this.gboxMenuQuantidade.Size = new System.Drawing.Size(730, 357);
             this.gboxMenuQuantidade.TabIndex = 16;
             this.gboxMenuQuantidade.TabStop = false;
-            this.gboxMenuQuantidade.Text = "gboxQuantidade";
             // 
             // labelMenuQuantidade
             // 
@@ -191,7 +190,6 @@ namespace Starbuy_Desktop
             this.gboxMenuEstoque.Size = new System.Drawing.Size(730, 384);
             this.gboxMenuEstoque.TabIndex = 17;
             this.gboxMenuEstoque.TabStop = false;
-            this.gboxMenuEstoque.Text = "gboxMenuEstoque";
             // 
             // gboxMenuEstoque2
             // 
@@ -242,7 +240,6 @@ namespace Starbuy_Desktop
             this.gboxMenuNovo.Size = new System.Drawing.Size(282, 397);
             this.gboxMenuNovo.TabIndex = 18;
             this.gboxMenuNovo.TabStop = false;
-            this.gboxMenuNovo.Text = "gboxMenuNovo";
             // 
             // gboxMenuNovo4
             // 
@@ -301,7 +298,6 @@ namespace Starbuy_Desktop
             this.gboxMenuAndam.Size = new System.Drawing.Size(282, 335);
             this.gboxMenuAndam.TabIndex = 19;
             this.gboxMenuAndam.TabStop = false;
-            this.gboxMenuAndam.Text = "gboxMenuAndam";
             // 
             // gboxMenuAndam1
             // 

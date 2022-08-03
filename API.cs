@@ -2,13 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Specialized;
@@ -58,30 +55,42 @@ namespace Starbuy_Desktop
                               "\"password\":\"" + password + "\"}");
             }
 
-            var httpResponse = (HttpWebResponse)req.GetResponse();
-
-            if (httpResponse.StatusCode == HttpStatusCode.Unauthorized)
+            try
             {
-                throw new AuthException("Verifique suas credenciais.");
-            }
+                 var httpResponse = (HttpWebResponse)req.GetResponse();
 
-            using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+
+                    try
+                    {
+                        LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
+                        Session.setSession(new Session(response.user, response.jwt));
+                        return response.user;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString());
+                        return null;
+                    }
+                }
+            }
+            catch (WebException e)
             {
-                var result = streamReader.ReadToEnd();
 
-                try
+                var errorResponse = (HttpWebResponse)e.Response;
+                if(errorResponse.StatusCode == HttpStatusCode.Unauthorized)
                 {
-                    LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
-                    Session.setSession(new Session(response.user, response.jwt));
-                    return response.user;
+                    throw new AuthException("Verifique sua senha!");
                 }
-                catch (Exception ex)
+                if (errorResponse.StatusCode == HttpStatusCode.NotFound)
                 {
-                    return null;
+                    throw new AuthException("Verifique suas credenciais.");
                 }
-            }
+                return null;
+            } 
         }
-
         public static UsuarioComProdutoRequest getProducts(String username)
         {
             var req = (HttpWebRequest)WebRequest.Create(host + "/user/" + username + "?includeItems=true");
@@ -96,11 +105,9 @@ namespace Starbuy_Desktop
                     var result = streamReader.ReadToEnd();
                     try
                     {
-                        UsuarioComProdutoRequest resposta= JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
+                        UsuarioComProdutoRequest resposta = JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
                         MessageBox.Show(resposta.items.Length.ToString());
                         ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
-                        MessageBox.Show(ItemsResponse.GetItemsResponse().getAllProdutos().Length.ToString());
-                        MessageBox.Show(ItemsResponse.GetItemsResponse().GetProdutos(0).item.title.ToString());
                         return resposta;
                     }
                     catch (Exception e)
@@ -113,6 +120,40 @@ namespace Starbuy_Desktop
             catch(Exception teste)
             {
                 MessageBox.Show(teste.ToString());
+                return null;
+            }
+        }
+
+        public static Address[] getAddress (String jwt)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
+            appendHeaders("GET", req);
+            req.Headers.Add("Authorization", "Bearer " + jwt);
+
+            try
+            {
+                var httpsResponse = (HttpWebResponse)req.GetResponse();
+                using (var streamReader = new StreamReader(httpsResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    try
+                    {
+                        Address[] enderecos = JsonSerializer.Deserialize<Address[]>(result);
+                        //*MessageBox.Show(enderecos.addresses.Length.ToString());
+                        MessageBox.Show(enderecos[0].cep.ToString());
+                        MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
+                        return enderecos;
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        return null;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.ToString());
                 return null;
             }
         }
