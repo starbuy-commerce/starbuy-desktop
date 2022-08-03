@@ -25,12 +25,10 @@ public partial class FormEstoque : Form {
         }
 
         private void FormEstoque_Load(object sender, EventArgs e) {
-            labelConfigCantoNome.Text = user.name;
-            labelConfigNome.Text = user.name;
-            labelConfigEndereco.Text = user.city;
+            labelEstoqueCantoNome.Text = user.name;
         }
 
-        private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {
+        private void pictureBoxEstoqueMenuVendedorCross_Click(object sender, EventArgs e) {
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (diag == DialogResult.Yes) {
                 this.Close();
@@ -39,21 +37,21 @@ public partial class FormEstoque : Form {
             }
         }
 
-        private void pictureBoxConfigMenu_Click(object sender, EventArgs e)
+        private void pictureBoxEstoqueMenu_Click(object sender, EventArgs e)
         {
             this.Close();
             FormMenu menu = new FormMenu();
             menu.Show();
         }
 
-        private void pictureBoxConfigPedidos_Click(object sender, EventArgs e)
+        private void pictureBoxEstoquePedidos_Click(object sender, EventArgs e)
         {
             this.Close();
             FormPedidos pedidos = new FormPedidos();
             pedidos.Show();
         }
 
-        private void pictureBoxConfiguracoes_Click(object sender, EventArgs e)
+        private void pictureBoxEstoqueConfiguracoes_Click(object sender, EventArgs e)
         {
             this.Close();
             FormConfig config = new FormConfig();
