@@ -38,9 +38,9 @@ namespace Starbuy_Desktop
             this.pictureBoxEstoquePedidos = new System.Windows.Forms.PictureBox();
             this.pictureBoxEstoqueEstoque = new System.Windows.Forms.PictureBox();
             this.pictureBoxEstoqueMenu = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBoxPainelEstoque = new System.Windows.Forms.GroupBox();
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
-            this.labelMenuEstoque = new System.Windows.Forms.Label();
+            this.labelEstoqueEstoque = new System.Windows.Forms.Label();
             this.gboxEstoquePerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueCanto)).BeginInit();
             this.gboxEstoqueMenu.SuspendLayout();
@@ -48,7 +48,6 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoquePedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueEstoque)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueMenu)).BeginInit();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.SuspendLayout();
             // 
@@ -131,14 +130,14 @@ namespace Starbuy_Desktop
             this.pictureBoxEstoqueMenu.TabStop = false;
             this.pictureBoxEstoqueMenu.Click += new System.EventHandler(this.pictureBoxEstoqueMenu_Click);
             // 
-            // groupBox2
+            // groupBoxPainelEstoque
             // 
-            this.groupBox2.Controls.Add(this.labelMenuEstoque);
-            this.groupBox2.Location = new System.Drawing.Point(256, 30);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1048, 729);
-            this.groupBox2.TabIndex = 7;
-            this.groupBox2.TabStop = false;
+            this.groupBoxPainelEstoque.Location = new System.Drawing.Point(256, 95);
+            this.groupBoxPainelEstoque.Name = "groupBoxPainelEstoque";
+            this.groupBoxPainelEstoque.Size = new System.Drawing.Size(1048, 664);
+            this.groupBoxPainelEstoque.TabIndex = 7;
+            this.groupBoxPainelEstoque.TabStop = false;
+            this.groupBoxPainelEstoque.Enter += new System.EventHandler(this.groupBoxPainelEstoque_Enter);
             // 
             // pictureBoxMenuVendedorCross
             // 
@@ -150,15 +149,16 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross.TabStop = false;
             this.pictureBoxMenuVendedorCross.Click += new System.EventHandler(this.pictureBoxEstoqueMenuVendedorCross_Click);
             // 
-            // labelMenuEstoque
+            // labelEstoqueEstoque
             // 
-            this.labelMenuEstoque.AutoSize = true;
-            this.labelMenuEstoque.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelMenuEstoque.Location = new System.Drawing.Point(525, 40);
-            this.labelMenuEstoque.Name = "labelMenuEstoque";
-            this.labelMenuEstoque.Size = new System.Drawing.Size(119, 37);
-            this.labelMenuEstoque.TabIndex = 22;
-            this.labelMenuEstoque.Text = "Estoque";
+            this.labelEstoqueEstoque.AutoSize = true;
+            this.labelEstoqueEstoque.BackColor = System.Drawing.Color.Transparent;
+            this.labelEstoqueEstoque.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelEstoqueEstoque.Location = new System.Drawing.Point(737, 41);
+            this.labelEstoqueEstoque.Name = "labelEstoqueEstoque";
+            this.labelEstoqueEstoque.Size = new System.Drawing.Size(105, 32);
+            this.labelEstoqueEstoque.TabIndex = 28;
+            this.labelEstoqueEstoque.Text = "Estoque";
             // 
             // FormEstoque
             // 
@@ -166,8 +166,9 @@ namespace Starbuy_Desktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.labelEstoqueEstoque);
             this.Controls.Add(this.pictureBoxMenuVendedorCross);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBoxPainelEstoque);
             this.Controls.Add(this.gboxEstoqueMenu);
             this.Controls.Add(this.gboxEstoquePerfil);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -183,10 +184,9 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoquePedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueEstoque)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueMenu)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -195,13 +195,13 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelEstoqueCantoNome;
         private System.Windows.Forms.GroupBox gboxEstoquePerfil;
         private System.Windows.Forms.GroupBox gboxEstoqueMenu;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBoxPainelEstoque;
         private System.Windows.Forms.PictureBox pictureBoxEstoqueCanto;
         private System.Windows.Forms.PictureBox pictureBoxMenuVendedorCross;
         private System.Windows.Forms.PictureBox pictureBoxEstoqueMenu;
         private System.Windows.Forms.PictureBox pictureBoxEstoquePedidos;
         private System.Windows.Forms.PictureBox pictureBoxEstoqueConfiguracoes;
         private System.Windows.Forms.PictureBox pictureBoxEstoqueEstoque;
-        private System.Windows.Forms.Label labelMenuEstoque;
+        private System.Windows.Forms.Label labelEstoqueEstoque;
     }
 }
