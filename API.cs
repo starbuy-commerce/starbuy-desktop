@@ -57,39 +57,43 @@ namespace Starbuy_Desktop
 
             try
             {
-                 var httpResponse = (HttpWebResponse)req.GetResponse();
+                var httpResponse = (HttpWebResponse)req.GetResponse(); // Lança WebException
 
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                using var streamReader = new StreamReader(httpResponse.GetResponseStream());
+                var result = streamReader.ReadToEnd();
+
+                try
                 {
-                    var result = streamReader.ReadToEnd();
-
-                    try
-                    {
-                        LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
-                        Session.setSession(new Session(response.user, response.jwt));
-                        return response.user;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString());
-                        return null;
-                    }
+                    LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
+                    Session.setSession(new Session(response.user, response.jwt));
+                    return response.user;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString());
+                    return null;
                 }
             }
             catch (WebException e)
             {
-
                 var errorResponse = (HttpWebResponse)e.Response;
-                if(errorResponse.StatusCode == HttpStatusCode.Unauthorized)
-                {
-                    throw new AuthException("Verifique sua senha!");
+
+                switch (errorResponse.StatusCode) {
+                    case HttpStatusCode.Unauthorized:
+                        throw new AuthException("Verifique sua senha!");
+
+                    case HttpStatusCode.NotFound:
+                        throw new AuthException("Usuário não encontrado:  Verifique suas credenciais.");
+
+                    case HttpStatusCode.BadGateway:
+                        throw new AuthException("Bad Gateway");
+
+                    // case HttpStatusCode.
+
+                    default:
+                        throw new AuthException("Resposta não tratada" + errorResponse.StatusDescription);
                 }
-                if (errorResponse.StatusCode == HttpStatusCode.NotFound)
-                {
-                    throw new AuthException("Verifique suas credenciais.");
-                }
-                return null;
-            } 
+            }
         }
         public static UsuarioComProdutoRequest getProducts(String username)
         {
