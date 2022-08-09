@@ -14,6 +14,7 @@ namespace Starbuy_Desktop
     public partial class FormRegistro : Form
     {
         ToolTip toolTipDate = new ToolTip();
+        int verificaData = 0;
 
         public FormRegistro()
         {
@@ -33,8 +34,9 @@ namespace Starbuy_Desktop
 
         private void buttonRegistro_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBoxRegistroNome.Text) || String.IsNullOrEmpty(textBoxRegistroCPF.Text) || String.IsNullOrEmpty(textBoxRegistroUsuario.Text)
-                || !maskedTextBoxRegistroNascimento.MaskCompleted || String.IsNullOrEmpty(textBoxRegistroEndereco.Text) || String.IsNullOrEmpty(textBoxRegistroTelefone.Text))
+            if (String.IsNullOrEmpty(textBoxRegistroNome.Text) || !maskedTextBoxRegistroCEP.MaskCompleted || String.IsNullOrEmpty(textBoxRegistroUsuario.Text) || String.IsNullOrEmpty(textBoxRegistroEmail.Text) || String.IsNullOrEmpty(textBoxRegistroSenha.Text) || String.IsNullOrEmpty(textBoxRegistroConfirmar.Text) 
+                || !maskedTextBoxRegistroNascimento.MaskCompleted || String.IsNullOrEmpty(textBoxRegistroEndereco.Text) || String.IsNullOrEmpty(textBoxRegistroCidade.Text) ||
+                    String.IsNullOrEmpty(textBoxRegistroNumero.Text))
             {
                 MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
@@ -42,7 +44,30 @@ namespace Starbuy_Desktop
             {
                 if(textBoxRegistroSenha.Text == textBoxRegistroConfirmar.Text)
                 {
+                    try
+                    {
+                        if (verificaData == 0)
+                        {
+                            String num = textBoxRegistroNumero.Text.ToString();
+                            int numero;
+                           
+                            if (int.TryParse(num.ToString(), out numero))
+                            {
 
+                                String cep = maskedTextBoxRegistroCEP.Text.ToString();
+                                MessageBox.Show(cep.ToString());
+                            }
+                            else
+                            {
+                                MessageBox.Show("Não pode transformar letras em números!");
+                            }
+                        }
+                        else {MessageBox.Show("A data não está correta, siga as dicas!", "Confirmação", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+                    }
+                    catch(Exception excecao)
+                    {
+                        MessageBox.Show(excecao.Message);
+                    }
                 }
                 else
                 {
@@ -66,6 +91,7 @@ namespace Starbuy_Desktop
             {
                 toolTipDate.ToolTipTitle = "Data inválida";
                 toolTipDate.Show("Você deve digitar um valor dentre os padrões de data!", maskedTextBoxRegistroNascimento, 0, -60, 4000);
+                verificaData = 2;
             }
             else
             {
@@ -77,14 +103,23 @@ namespace Starbuy_Desktop
                     toolTipDate.ToolTipTitle = "Data de nascimento inválida!";
                     toolTipDate.Show("A data deve estar entre 01/01/1900 e " + maximum.ToString(), maskedTextBoxRegistroNascimento,0, -20, 5000);
                     e.Cancel = true;
+                    verificaData = 1;
                 }
-
+                else
+                {
+                    verificaData = 0;
+                }
             }
         }
 
         private void maskedTextBoxRegistroNascimento_KeyDown(object sender, KeyEventArgs e)
         {
             toolTipDate.Hide(maskedTextBoxRegistroNascimento);
+        }
+
+        private void maskedTextBoxRegistroNascimento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
         }
     }
 }

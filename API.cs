@@ -161,5 +161,11 @@ namespace Starbuy_Desktop
                 return null;
             }
         }
+
+        public static void cadastrar(RequestCadastro reqCad)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/register");
+            appendHeaders("POST", req);
+        }
     }
 }
