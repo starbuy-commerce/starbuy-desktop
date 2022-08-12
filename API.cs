@@ -78,7 +78,8 @@ namespace Starbuy_Desktop
             {
                 var errorResponse = (HttpWebResponse)e.Response;
 
-                switch (errorResponse.StatusCode) {
+                switch (errorResponse.StatusCode)
+                {
                     case HttpStatusCode.Unauthorized:
                         throw new AuthException("Verifique sua senha!");
 
@@ -121,14 +122,14 @@ namespace Starbuy_Desktop
                     }
                 }
             }
-            catch(Exception teste)
+            catch (Exception teste)
             {
                 MessageBox.Show(teste.ToString());
                 return null;
             }
         }
 
-        public static Address[] getAddress (String jwt)
+        public static Address[] getAddress(String jwt)
         {
             var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
             appendHeaders("GET", req);
@@ -166,6 +167,36 @@ namespace Starbuy_Desktop
         {
             var req = (HttpWebRequest)WebRequest.Create(host + "/register");
             appendHeaders("POST", req);
+            using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+            {
+                streamWriter.Write("{\"username\":\"" + reqCad.username + "\"," +
+                                "\"name\":\"" + reqCad.name + "\"," +
+                                "\"email\":\"" + reqCad.email + "\"," +
+                                "\"city\":\"" + reqCad.city + "\"," +
+                                "\"birthdate\":\"" + reqCad.birthdate + "\"," +
+                                "\"seller\":\"" + "true" + "\"," +
+                                "\"profile_picture\":\"" + "null" + "\"," +
+                               "\"password\":\"" + reqCad.password + "\"}");
+            }
+            try
+            {
+                var httpResponse = (HttpWebResponse)req.GetResponse(); // Lança WebException
+                using var streamReader = new StreamReader(httpResponse.GetResponseStream());
+                var result = streamReader.ReadToEnd();
+                try
+                {
+                    ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
+                    MessageBox.Show(response.message.ToString());
+                    ResponseCadastro.setResponseCadastro(response);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
+            catch (WebException cadastroException) {
+                MessageBox.Show(cadastroException.Message.ToString());
+            }
         }
     }
 }
