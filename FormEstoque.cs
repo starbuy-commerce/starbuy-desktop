@@ -26,7 +26,16 @@ public partial class FormEstoque : Form {
         }
 
         private void FormEstoque_Load(object sender, EventArgs e) {
-            labelEstoqueCantoNome.Text = user.name; 
+            labelEstoqueCantoNome.Text = user.name;
+            if (!string.IsNullOrEmpty(user.profile_picture))
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(user.profile_picture);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
+                pictureBoxConfigCanto.Image = resizeSmall;
+            }
             //alo! chamar aqui, viu?
         }
 

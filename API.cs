@@ -115,7 +115,7 @@ namespace Starbuy_Desktop
                         ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
                         return resposta;
                     }
-                    catch (Exception e)
+                    catch (NullReferenceException e)
                     {
                         MessageBox.Show(e.ToString());
                         return null;
@@ -144,14 +144,14 @@ namespace Starbuy_Desktop
                     try
                     {
                         Address[] enderecos = JsonSerializer.Deserialize<Address[]>(result);
-                        //*MessageBox.Show(enderecos.addresses.Length.ToString());
+                        MessageBox.Show(enderecos.Length.ToString());
                         MessageBox.Show(enderecos[0].cep.ToString());
                         MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
                         return enderecos;
                     }
-                    catch (Exception e)
+                    catch(System.NullReferenceException e)
                     {
-                        MessageBox.Show(e.ToString());
+                        MessageBox.Show("Não existe endereço!");
                         return null;
                     }
                 }

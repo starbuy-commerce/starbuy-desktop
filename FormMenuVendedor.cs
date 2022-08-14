@@ -23,12 +23,15 @@ namespace Starbuy_Desktop
         private void FormMenu_Load(object sender, EventArgs e)
         {
             labelConfigCantoNome.Text = Session.getSession().getUser().name;
-            WebClient wc = new WebClient();
-            byte[] bytes = wc.DownloadData(user.profile_picture);
-            MemoryStream ms = new MemoryStream(bytes);
-            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-            System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
-            pictureBoxConfigCanto.Image = resizeSmall;
+            if (!string.IsNullOrEmpty(user.profile_picture))
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(user.profile_picture);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
+                pictureBoxConfigCanto.Image = resizeSmall;
+            }
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e)

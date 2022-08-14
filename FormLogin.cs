@@ -66,7 +66,7 @@ namespace Starbuy_Desktop
                         String a = Session.getSession().getUser().username.ToString();
                         MessageBox.Show(a);
                         //API.getProducts(a);
-                        API.getAddress(Session.getSession().getJWT());
+                        //API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
                     } else {
                         MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);

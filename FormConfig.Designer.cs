@@ -44,9 +44,9 @@ namespace Starbuy_Desktop
             this.labelConfigID = new System.Windows.Forms.Label();
             this.labelConfigTelefone = new System.Windows.Forms.Label();
             this.labelConfigCep = new System.Windows.Forms.Label();
-            this.labelConfigEndereco = new System.Windows.Forms.Label();
+            this.labelConfigCidade = new System.Windows.Forms.Label();
             this.labelConfigUsername = new System.Windows.Forms.Label();
-            this.labelConfigInfEndereco = new System.Windows.Forms.Label();
+            this.labelConfigInfCidade = new System.Windows.Forms.Label();
             this.labelConfigInfTelefone = new System.Windows.Forms.Label();
             this.labelConfigInfCep = new System.Windows.Forms.Label();
             this.labelConfigInfUsername = new System.Windows.Forms.Label();
@@ -86,11 +86,11 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigCantoNome.AutoSize = true;
             this.labelConfigCantoNome.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigCantoNome.Location = new System.Drawing.Point(98, 25);
+            this.labelConfigCantoNome.Location = new System.Drawing.Point(12, 101);
             this.labelConfigCantoNome.MaximumSize = new System.Drawing.Size(200, 200);
-            this.labelConfigCantoNome.MinimumSize = new System.Drawing.Size(10, 64);
+            this.labelConfigCantoNome.MinimumSize = new System.Drawing.Size(10, 10);
             this.labelConfigCantoNome.Name = "labelConfigCantoNome";
-            this.labelConfigCantoNome.Size = new System.Drawing.Size(119, 64);
+            this.labelConfigCantoNome.Size = new System.Drawing.Size(119, 32);
             this.labelConfigCantoNome.TabIndex = 4;
             this.labelConfigCantoNome.Text = "Vendedor";
             // 
@@ -181,9 +181,9 @@ namespace Starbuy_Desktop
             this.groupBox2.Controls.Add(this.labelConfigID);
             this.groupBox2.Controls.Add(this.labelConfigTelefone);
             this.groupBox2.Controls.Add(this.labelConfigCep);
-            this.groupBox2.Controls.Add(this.labelConfigEndereco);
+            this.groupBox2.Controls.Add(this.labelConfigCidade);
             this.groupBox2.Controls.Add(this.labelConfigUsername);
-            this.groupBox2.Controls.Add(this.labelConfigInfEndereco);
+            this.groupBox2.Controls.Add(this.labelConfigInfCidade);
             this.groupBox2.Controls.Add(this.labelConfigInfTelefone);
             this.groupBox2.Controls.Add(this.labelConfigInfCep);
             this.groupBox2.Controls.Add(this.labelConfigInfUsername);
@@ -237,15 +237,15 @@ namespace Starbuy_Desktop
             this.labelConfigCep.TabIndex = 24;
             this.labelConfigCep.Text = "15501-238";
             // 
-            // labelConfigEndereco
+            // labelConfigCidade
             // 
-            this.labelConfigEndereco.AutoSize = true;
-            this.labelConfigEndereco.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigEndereco.Location = new System.Drawing.Point(243, 357);
-            this.labelConfigEndereco.Name = "labelConfigEndereco";
-            this.labelConfigEndereco.Size = new System.Drawing.Size(152, 25);
-            this.labelConfigEndereco.TabIndex = 22;
-            this.labelConfigEndereco.Text = "Votuporanga, SP";
+            this.labelConfigCidade.AutoSize = true;
+            this.labelConfigCidade.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigCidade.Location = new System.Drawing.Point(243, 357);
+            this.labelConfigCidade.Name = "labelConfigCidade";
+            this.labelConfigCidade.Size = new System.Drawing.Size(152, 25);
+            this.labelConfigCidade.TabIndex = 22;
+            this.labelConfigCidade.Text = "Votuporanga, SP";
             // 
             // labelConfigUsername
             // 
@@ -257,15 +257,15 @@ namespace Starbuy_Desktop
             this.labelConfigUsername.TabIndex = 21;
             this.labelConfigUsername.Text = "Cléber_123";
             // 
-            // labelConfigInfEndereco
+            // labelConfigInfCidade
             // 
-            this.labelConfigInfEndereco.AutoSize = true;
-            this.labelConfigInfEndereco.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfEndereco.Location = new System.Drawing.Point(162, 357);
-            this.labelConfigInfEndereco.Name = "labelConfigInfEndereco";
-            this.labelConfigInfEndereco.Size = new System.Drawing.Size(75, 25);
-            this.labelConfigInfEndereco.TabIndex = 20;
-            this.labelConfigInfEndereco.Text = "Cidade:";
+            this.labelConfigInfCidade.AutoSize = true;
+            this.labelConfigInfCidade.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelConfigInfCidade.Location = new System.Drawing.Point(162, 357);
+            this.labelConfigInfCidade.Name = "labelConfigInfCidade";
+            this.labelConfigInfCidade.Size = new System.Drawing.Size(75, 25);
+            this.labelConfigInfCidade.TabIndex = 20;
+            this.labelConfigInfCidade.Text = "Cidade:";
             // 
             // labelConfigInfTelefone
             // 
@@ -534,10 +534,10 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelConfigInfUsername;
         private System.Windows.Forms.PictureBox pictureBoxConfigFoto;
         private System.Windows.Forms.Label labelConfigAlterarEndereco;
-        private System.Windows.Forms.Label labelConfigInfEndereco;
+        private System.Windows.Forms.Label labelConfigInfCidade;
         private System.Windows.Forms.TextBox textBoxConfigAlterarEndereco;
         private System.Windows.Forms.Label labelConfigUsername;
-        private System.Windows.Forms.Label labelConfigEndereco;
+        private System.Windows.Forms.Label labelConfigCidade;
         private System.Windows.Forms.Label labelConfigTelefone;
         private System.Windows.Forms.Label labelConfigCep;
         private System.Windows.Forms.PictureBox pictureBoxConfigCanto;
