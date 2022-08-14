@@ -56,7 +56,16 @@ namespace Starbuy_Desktop
 
                                 String cep = maskedTextBoxRegistroCEP.Text.ToString();
                                 MessageBox.Show(cep.ToString());
-                                var rq = new RequestCadastro(textBoxRegistroNome.Text,textBoxRegistroNome.Text.ToString(), textBoxRegistroEmail.Text.ToString(),textBoxRegistroCidade.Text.ToString(),maskedTextBoxRegistroNascimento.Text.ToString(),textBoxRegistroSenha.Text.ToString());
+                                String textBoxNascimento = maskedTextBoxRegistroNascimento.Text.ToString();
+                                String []dataDeNascimento = textBoxNascimento.Split("/");
+                                String requestBirthdate = "";
+                                for (int i = 2; i >= 0; i--){
+                                    if (i == 2){ requestBirthdate = dataDeNascimento[i].ToString(); }
+                                    else { 
+                                    requestBirthdate = requestBirthdate + "-" + dataDeNascimento[i].ToString();}
+                                }
+                                MessageBox.Show(requestBirthdate.ToString());
+                                var rq = new RequestCadastro(textBoxRegistroNome.Text, textBoxRegistroNome.Text.ToString(), textBoxRegistroEmail.Text.ToString(), textBoxRegistroCidade.Text.ToString(), requestBirthdate, textBoxRegistroSenha.Text.ToString()); ;
                                 API.cadastrar(rq);
                                 MessageBox.Show(ResponseCadastro.getResponseCadastro().message);
                             }
