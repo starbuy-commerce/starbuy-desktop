@@ -35,21 +35,29 @@ public partial class FormConfig : Form {
             labelConfigConfig.BackColor = Color.Transparent;
             labelConfigCantoNome.Text = user.name;
             labelConfigNome.Text = user.name;
+            labelConfigUsername.Text = user.username;
+            labelConfigCidade.Text = user.city;
             //Puxando imagem do servidor
-            WebClient wc = new WebClient();
-            byte[] bytes = wc.DownloadData(user.profile_picture);
-            MemoryStream ms = new MemoryStream(bytes);
-            System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-            System.Drawing.Image resizeSmall = (new Bitmap(img, 56, 50));
-            pictureBoxConfigCanto.Image = resizeSmall;
-            pictureBoxConfigCanto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            System.Drawing.Image resizeProfile = (new Bitmap(img, 179, 179));
-            pictureBoxConfigFoto.Image = resizeProfile;
-            pictureBoxConfigFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            ///Adicionando Endereços
-            labelConfigCep.Text = address.getAddress(0).cep.ToString();
-            labelConfigEndereco.Text = user.city.ToString();
-            labelConfigUsername.Text = user.username.ToString(); 
+            if (!string.IsNullOrEmpty(user.profile_picture))
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(user.profile_picture);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 56, 50));
+                pictureBoxConfigCanto.Image = resizeSmall;
+                pictureBoxConfigCanto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+                System.Drawing.Image resizeProfile = (new Bitmap(img, 179, 179));
+                pictureBoxConfigFoto.Image = resizeProfile;
+                pictureBoxConfigFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            }
+            // Adicionar verificação de endereço null//
+
+                /*Adicionando Endereços
+                labelConfigCep.Text = address.getAddress(0).cep.ToString();
+                labelConfigEndereco.Text = user.city.ToString();
+                labelConfigUsername.Text = user.username.ToString();
+                */
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {

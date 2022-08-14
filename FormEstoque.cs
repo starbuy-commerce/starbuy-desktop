@@ -18,6 +18,7 @@ namespace Starbuy_Desktop
 public partial class FormEstoque : Form {
 
         private Usuario user;
+        private ItemsResponse itens;
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
@@ -26,6 +27,16 @@ public partial class FormEstoque : Form {
 
         private void FormEstoque_Load(object sender, EventArgs e) {
             labelEstoqueCantoNome.Text = user.name;
+            if (!string.IsNullOrEmpty(user.profile_picture))
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(user.profile_picture);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
+                pictureBoxConfigCanto.Image = resizeSmall;
+            }
+            //alo! chamar aqui, viu?
         }
 
         private void pictureBoxEstoqueMenuVendedorCross_Click(object sender, EventArgs e) {
@@ -57,26 +68,29 @@ public partial class FormEstoque : Form {
             FormConfig config = new FormConfig();
             config.Show();
         }
-	private void groupBoxPainelEstoque_Enter(object sender, EventArgs e)
+	    private void configPainel()
         {
-            // por algum motivo estruturas como for e if não estão funcionando, vou dar um commit pra salvar as alterãções e continuo investigando isso ai 
-
-            // meu deus oq ta acontecendo aqui
-            // vou comentar as coisas com items só pra conseguir compilar
 
             int i;
-            int a = 5; // valor aleatório pra compilar
+            int a = itens.getAllProdutos().Length;
             int x;
             x = 4; //mudar, tem que ver o tamanho de cada grupBox a ser criado, acho que deve caber uns 4 mas ainda não sei 
-            // a = items.length(); // tem que criar o "items", algo que consiga contar o número de itens que o cliente tem registrado 
+     
 
             for (i = 0; i < a ; i++) {
-                // criarGroupBoxItem(i);
+                criarGroupBoxItem(i);
                 if (i >= x)
                 { // esse número é definido pela quantidade de itens q cabem em um painel
                     // break;
                 }
             }
         }
+
+        private void criarGroupBoxItem(int i)
+        {
+
+        }
     }
 }
+
+

@@ -137,7 +137,7 @@ namespace Starbuy_Desktop
             this.groupBoxPainelEstoque.Size = new System.Drawing.Size(1048, 664);
             this.groupBoxPainelEstoque.TabIndex = 7;
             this.groupBoxPainelEstoque.TabStop = false;
-            this.groupBoxPainelEstoque.Enter += new System.EventHandler(this.groupBoxPainelEstoque_Enter);
+       
             // 
             // pictureBoxMenuVendedorCross
             // 
