@@ -86,9 +86,9 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigCantoNome.AutoSize = true;
             this.labelConfigCantoNome.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigCantoNome.Location = new System.Drawing.Point(12, 101);
-            this.labelConfigCantoNome.MaximumSize = new System.Drawing.Size(200, 200);
-            this.labelConfigCantoNome.MinimumSize = new System.Drawing.Size(10, 10);
+            this.labelConfigCantoNome.Location = new System.Drawing.Point(6, 101);
+            this.labelConfigCantoNome.MaximumSize = new System.Drawing.Size(119, 32);
+            this.labelConfigCantoNome.MinimumSize = new System.Drawing.Size(119, 32);
             this.labelConfigCantoNome.Name = "labelConfigCantoNome";
             this.labelConfigCantoNome.Size = new System.Drawing.Size(119, 32);
             this.labelConfigCantoNome.TabIndex = 4;

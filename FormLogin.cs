@@ -25,6 +25,14 @@ namespace Starbuy_Desktop
         private void Form1_Load(object sender, EventArgs e)
         {
             textBoxLoginSenha.PasswordChar = '*';
+            int formHeight = this.Height;
+            int formWidth = this.Width;
+            new ReSize(formHeight, formWidth);
+            ReSize.pictureCrossBox(pictureBoxLogin);
+            //ReSize.pictureCrossBox(pictureBoxLoginCross);
+            /*pictureBoxLogin.Location = new Point(formWidth * 820 / 1386, formHeight * 273 / 786);
+            pictureBoxLogin.Height = formHeight * 551 / 786;
+            pictureBoxLogin.Width = formWidth* 524/1386; */
         }
 
         private void pictureBoxLoginCross_MouseClick(object sender, MouseEventArgs e)
@@ -94,6 +102,11 @@ namespace Starbuy_Desktop
         }
 
         private void labelLoginFacaConta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxLogin_Click(object sender, EventArgs e)
         {
 
         }

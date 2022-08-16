@@ -34,7 +34,7 @@ public partial class FormEstoque : Form {
                 MemoryStream ms = new MemoryStream(bytes);
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
                 System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
-                pictureBoxConfigCanto.Image = resizeSmall;
+                pictureBoxEstoqueCanto.Image = resizeSmall;
             }
             //alo! chamar aqui, viu?
         }

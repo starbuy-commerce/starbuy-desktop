@@ -175,7 +175,7 @@ namespace Starbuy_Desktop
                                 "\"city\":\"" + reqCad.city + "\"," +
                                 "\"birthdate\":\"" + reqCad.birthdate + "\"," +
                                 "\"seller\":\"" + "true" + "\"," +
-                                "\"profile_picture\":\"" + "null" + "\"," +
+                                "\"profile_picture\":\"" + "https://media.idownloadblog.com/wp-content/uploads/2017/03/Twitter-new-2017-avatar-001.png" + "\"," +
                                "\"password\":\"" + reqCad.password + "\"}");
             }
             try
