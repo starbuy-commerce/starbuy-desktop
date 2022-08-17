@@ -87,9 +87,9 @@ namespace Starbuy_Desktop
             this.gboxMenu.Controls.Add(this.pictureBoxMenuConfig);
             this.gboxMenu.Controls.Add(this.pictureBoxMenuPedidos);
             this.gboxMenu.Controls.Add(this.pictureBoxMenuEstoque);
-            this.gboxMenu.Location = new System.Drawing.Point(0, 145);
+            this.gboxMenu.Location = new System.Drawing.Point(0, 146);
             this.gboxMenu.Name = "gboxMenu";
-            this.gboxMenu.Size = new System.Drawing.Size(223, 640);
+            this.gboxMenu.Size = new System.Drawing.Size(223, 639);
             this.gboxMenu.TabIndex = 15;
             this.gboxMenu.TabStop = false;
             // 
@@ -105,7 +105,7 @@ namespace Starbuy_Desktop
             // pictureBoxMenuConfig
             // 
             this.pictureBoxMenuConfig.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuConfig.Image")));
-            this.pictureBoxMenuConfig.Location = new System.Drawing.Point(0, 141);
+            this.pictureBoxMenuConfig.Location = new System.Drawing.Point(0, 142);
             this.pictureBoxMenuConfig.Name = "pictureBoxMenuConfig";
             this.pictureBoxMenuConfig.Size = new System.Drawing.Size(217, 38);
             this.pictureBoxMenuConfig.TabIndex = 3;
@@ -353,6 +353,7 @@ namespace Starbuy_Desktop
             this.Name = "FormMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.gboxMenu.ResumeLayout(false);

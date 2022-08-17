@@ -29,7 +29,18 @@ namespace Starbuy_Desktop
             int formWidth = this.Width;
             new ReSize(formHeight, formWidth);
             ReSize.pictureCrossBox(pictureBoxLogin);
-            //ReSize.pictureCrossBox(pictureBoxLoginCross);
+            ReSize.pictureCrossBox(pictureBoxLoginCross);
+            ReSize.labelResize(labelLoginA);
+            ReSize.labelResize(labelLinha1);
+            ReSize.labelResize(labelLinha2);
+            ReSize.labelResize(labelLoginBemVindo);
+            ReSize.labelResize(labelLoginEsqueceu);
+            ReSize.labelResize(labelLoginFacaConta);
+            ReSize.labelResize(labelLoginRegistrese);
+            ReSize.labelResize(labelLoginStarbuy);
+            ReSize.textBoxResize(textBoxLoginSenha);
+            ReSize.textBoxResize(textBoxLoginUsername);
+            ReSize.buttonResize(buttonLoginEntrar);
             /*pictureBoxLogin.Location = new Point(formWidth * 820 / 1386, formHeight * 273 / 786);
             pictureBoxLogin.Height = formHeight * 551 / 786;
             pictureBoxLogin.Width = formWidth* 524/1386; */
@@ -71,11 +82,11 @@ namespace Starbuy_Desktop
                     if (user.seller) {
                         this.Hide();
                         FormMenu fVendedor = new FormMenu();
-                        String a = Session.getSession().getUser().username.ToString();
-                        MessageBox.Show(a);
                         //API.getProducts(a);
                         //API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
+                        String a = Session.getSession().getUser().username.ToString();
+                        MessageBox.Show(a);
                     } else {
                         MessageBox.Show("O aplicativo é exclusivo para vendedores", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                     }

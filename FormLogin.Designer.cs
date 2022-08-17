@@ -61,11 +61,11 @@ namespace Starbuy_Desktop
             // 
             this.labelLoginA.AutoSize = true;
             this.labelLoginA.Font = new System.Drawing.Font("Ebrima", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelLoginA.Location = new System.Drawing.Point(21, 150);
+            this.labelLoginA.Location = new System.Drawing.Point(36, 150);
             this.labelLoginA.Name = "labelLoginA";
             this.labelLoginA.Size = new System.Drawing.Size(88, 106);
             this.labelLoginA.TabIndex = 1;
-            this.labelLoginA.Text = "a";
+            this.labelLoginA.Text = "à";
             // 
             // labelLoginStarbuy
             // 

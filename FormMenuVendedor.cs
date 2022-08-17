@@ -18,6 +18,33 @@ namespace Starbuy_Desktop
         public FormMenu() {
             this.user = Session.getSession().getUser();
             InitializeComponent();
+            ReSize.labelResize(labelConfigCantoNome);
+            ReSize.labelResize(labelMenuAndam);
+            ReSize.labelResize(labelMenuEstoque);
+            ReSize.labelResize(labelMenuNovo);
+            ReSize.labelResize(labelMenuQuantidade);
+            ReSize.pictureCrossBox(pictureBoxConfigCanto);
+            ReSize.pictureCrossBox(pictureBoxMenuConfig);
+            ReSize.pictureCrossBox(pictureBoxMenuEstoque);
+            ReSize.pictureCrossBox(pictureBoxMenuMenu);
+            ReSize.pictureCrossBox(pictureBoxMenuPedidos);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
+            ReSize.groupBoxResize(gboxConfigPerfil);
+            ReSize.groupBoxResize(gboxMenu);
+            ReSize.groupBoxResize(gboxMenuAndam);
+            ReSize.groupBoxResize(gboxMenuAndam1);
+            ReSize.groupBoxResize(gboxMenuAndam2);
+            ReSize.groupBoxResize(gboxMenuAndam3);
+            ReSize.groupBoxResize(gboxMenuEstoque);
+            ReSize.groupBoxResize(gboxMenuEstoque1);
+            ReSize.groupBoxResize(gboxMenuEstoque2);
+            ReSize.groupBoxResize(gboxMenuEstoque3);
+            ReSize.groupBoxResize(gboxMenuNovo);
+            ReSize.groupBoxResize(gboxMenuNovo1);
+            ReSize.groupBoxResize(gboxMenuNovo2);
+            ReSize.groupBoxResize(gboxMenuNovo3);
+            ReSize.groupBoxResize(gboxMenuNovo4);
+            ReSize.groupBoxResize(gboxMenuQuantidade);
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
