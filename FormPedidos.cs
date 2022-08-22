@@ -19,6 +19,36 @@ namespace Starbuy_Desktop
         {
             this.user = Session.getSession().getUser();
             InitializeComponent();
+
+            ReSize.buttonResize(btnPedidosAtualizar);
+
+            ReSize.groupBoxResize(gboxConfigMenu);
+            ReSize.groupBoxResize(gboxConfigPerfil);
+            ReSize.groupBoxResize(gboxPedidosBaixa);
+            ReSize.groupBoxResize(gboxPedidosPedidos);
+
+            //Caixas dos pedidos
+            ReSize.groupBoxResize(gboxPedidos1);
+            ReSize.groupBoxResize(gboxPedidos2);
+            ReSize.groupBoxResize(gboxPedidos3);
+            ReSize.groupBoxResize(gboxPedidos4);
+            ReSize.groupBoxResize(gboxPedidos5);
+
+            ReSize.labelResize(labelConfigCantoNome);
+            ReSize.labelResize(labelPedidos);
+            ReSize.labelResize(labelPedidosBaixa);
+            ReSize.labelResize(labelPedidosNumero);
+
+            ReSize.pictureCrossBox(pictureBoxConfigCanto);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
+            ReSize.pictureCrossBox(pictureBoxPedidosConfig);
+            ReSize.pictureCrossBox(pictureBoxPedidosEstoque);
+            ReSize.pictureCrossBox(pictureBoxPedidosMenu);
+            ReSize.pictureCrossBox(pictureBoxPedidosPedidos);
+
+            ReSize.textBoxResize(textBoxBaixa);
+
+
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e)
@@ -55,6 +85,7 @@ namespace Starbuy_Desktop
 
         private void FormPedidos_Load(object sender, EventArgs e)
         {
+            labelConfigCantoNome.Text = user.name;
             if (!string.IsNullOrEmpty(user.profile_picture))
             {
                 WebClient wc = new WebClient();

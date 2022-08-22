@@ -50,7 +50,7 @@ namespace Starbuy_Desktop
             this.labelPedidosNumero = new System.Windows.Forms.Label();
             this.btnPedidosAtualizar = new System.Windows.Forms.Button();
             this.labelPedidosBaixa = new System.Windows.Forms.Label();
-            this.gboxPedidosBaixa1 = new System.Windows.Forms.GroupBox();
+            this.textBoxBaixa = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxPedidosPedidos.SuspendLayout();
             this.gboxConfigMenu.SuspendLayout();
@@ -223,13 +223,13 @@ namespace Starbuy_Desktop
             // 
             // gboxPedidosBaixa
             // 
+            this.gboxPedidosBaixa.Controls.Add(this.textBoxBaixa);
             this.gboxPedidosBaixa.Controls.Add(this.labelPedidosNumero);
             this.gboxPedidosBaixa.Controls.Add(this.btnPedidosAtualizar);
             this.gboxPedidosBaixa.Controls.Add(this.labelPedidosBaixa);
-            this.gboxPedidosBaixa.Controls.Add(this.gboxPedidosBaixa1);
             this.gboxPedidosBaixa.Location = new System.Drawing.Point(1008, 30);
             this.gboxPedidosBaixa.Name = "gboxPedidosBaixa";
-            this.gboxPedidosBaixa.Size = new System.Drawing.Size(282, 268);
+            this.gboxPedidosBaixa.Size = new System.Drawing.Size(282, 229);
             this.gboxPedidosBaixa.TabIndex = 19;
             this.gboxPedidosBaixa.TabStop = false;
             // 
@@ -245,7 +245,7 @@ namespace Starbuy_Desktop
             // 
             // btnPedidosAtualizar
             // 
-            this.btnPedidosAtualizar.Location = new System.Drawing.Point(17, 204);
+            this.btnPedidosAtualizar.Location = new System.Drawing.Point(17, 155);
             this.btnPedidosAtualizar.Name = "btnPedidosAtualizar";
             this.btnPedidosAtualizar.Size = new System.Drawing.Size(243, 33);
             this.btnPedidosAtualizar.TabIndex = 20;
@@ -262,13 +262,12 @@ namespace Starbuy_Desktop
             this.labelPedidosBaixa.TabIndex = 22;
             this.labelPedidosBaixa.Text = "Dar baixa";
             // 
-            // gboxPedidosBaixa1
+            // textBoxBaixa
             // 
-            this.gboxPedidosBaixa1.Location = new System.Drawing.Point(17, 115);
-            this.gboxPedidosBaixa1.Name = "gboxPedidosBaixa1";
-            this.gboxPedidosBaixa1.Size = new System.Drawing.Size(243, 73);
-            this.gboxPedidosBaixa1.TabIndex = 1;
-            this.gboxPedidosBaixa1.TabStop = false;
+            this.textBoxBaixa.Location = new System.Drawing.Point(17, 124);
+            this.textBoxBaixa.Name = "textBoxBaixa";
+            this.textBoxBaixa.Size = new System.Drawing.Size(243, 23);
+            this.textBoxBaixa.TabIndex = 24;
             // 
             // FormPedidos
             // 
@@ -285,6 +284,7 @@ namespace Starbuy_Desktop
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormPedidos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.gboxPedidosPedidos.ResumeLayout(false);
@@ -319,12 +319,12 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelPedidos;
         private System.Windows.Forms.GroupBox gboxPedidosBaixa;
         private System.Windows.Forms.Label labelPedidosBaixa;
-        private System.Windows.Forms.GroupBox gboxPedidosBaixa1;
         private System.Windows.Forms.Label labelPedidosNumero;
         private System.Windows.Forms.Button btnPedidosAtualizar;
         private System.Windows.Forms.PictureBox pictureBoxPedidosConfig;
         private System.Windows.Forms.PictureBox pictureBoxPedidosPedidos;
         private System.Windows.Forms.PictureBox pictureBoxPedidosEstoque;
         private System.Windows.Forms.PictureBox pictureBoxPedidosMenu;
+        private System.Windows.Forms.TextBox textBoxBaixa;
     }
 }

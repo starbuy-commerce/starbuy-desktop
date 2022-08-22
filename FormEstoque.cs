@@ -23,6 +23,20 @@ public partial class FormEstoque : Form {
         public FormEstoque() {
             this.user = Session.getSession().getUser();
             InitializeComponent();
+
+            ReSize.labelResize(labelEstoqueCantoNome);
+            ReSize.labelResize(labelEstoqueEstoque);
+
+            ReSize.groupBoxResize(gboxEstoqueMenu);
+            ReSize.groupBoxResize(gboxEstoquePerfil);
+            ReSize.groupBoxResize(groupBoxPainelEstoque);
+
+            ReSize.pictureCrossBox(pictureBoxEstoqueCanto);
+            ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes);
+            ReSize.pictureCrossBox(pictureBoxEstoqueEstoque);
+            ReSize.pictureCrossBox(pictureBoxEstoqueMenu);
+            ReSize.pictureCrossBox(pictureBoxEstoquePedidos);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
         }
 
         private void FormEstoque_Load(object sender, EventArgs e) {

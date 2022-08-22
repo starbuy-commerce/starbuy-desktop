@@ -137,7 +137,6 @@ namespace Starbuy_Desktop
             this.groupBoxPainelEstoque.Size = new System.Drawing.Size(1048, 664);
             this.groupBoxPainelEstoque.TabIndex = 7;
             this.groupBoxPainelEstoque.TabStop = false;
-       
             // 
             // pictureBoxMenuVendedorCross
             // 
@@ -175,6 +174,7 @@ namespace Starbuy_Desktop
             this.Name = "FormEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "            ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormEstoque_Load);
             this.gboxEstoquePerfil.ResumeLayout(false);
             this.gboxEstoquePerfil.PerformLayout();
