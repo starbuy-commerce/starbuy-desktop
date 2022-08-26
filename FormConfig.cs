@@ -37,6 +37,49 @@ public partial class FormConfig : Form {
             labelConfigNome.Text = user.name;
             labelConfigUsername.Text = user.username;
             labelConfigCidade.Text = user.city;
+            ReSize.buttonResize(button1);
+            ReSize.groupBoxResize(groupBox2);
+            ReSize.groupBoxResize(groupBoxConfigAlterar);
+            ReSize.groupBoxResize(gboxConfigMenu);
+            ReSize.groupBoxResize(gboxConfigPerfil);
+
+            ReSize.labelResize(labelConfigAlterar);
+            ReSize.labelResize(labelConfigAlterarCEP);
+            ReSize.labelResize(labelConfigAlterarCpf);
+            ReSize.labelResize(labelConfigAlterarEndereco);
+            ReSize.labelResize(labelConfigAlterarFoto);
+            ReSize.labelResize(labelConfigAlterarNome);
+            ReSize.labelResize(labelConfigAlterarTelefone);
+            ReSize.labelResize(labelConfigCantoNome);
+            ReSize.labelResize(labelConfigCep);
+            ReSize.labelResize(labelConfigCidade);
+            ReSize.labelResize(labelConfigID);
+            ReSize.labelResize(labelConfigConfig);
+            ReSize.labelResize(labelConfigInfCep);
+            ReSize.labelResize(labelConfigInfCidade);
+            ReSize.labelResize(labelConfigInfTelefone);
+            ReSize.labelResize(labelConfigInfUsername);
+            ReSize.labelResize(labelConfigNome);
+            ReSize.labelResize(labelConfigTelefone);
+            ReSize.labelResize(labelConfigUsername);
+
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
+            ReSize.pictureCrossBox(pictureBoxConfigMenu);
+            ReSize.pictureCrossBox(pictureBoxConfigEstoque);
+            ReSize.pictureCrossBox(pictureBoxConfigFoto);
+            ReSize.pictureCrossBox(pictureBoxConfigPedidos);
+            ReSize.pictureCrossBox(pictureBoxBackground);
+            ReSize.pictureCrossBox(pictureBoxConfigCanto);
+            ReSize.pictureCrossBox(pictureBoxConfigConfig);
+
+            ReSize.textBoxResize(textBoxConfigAlterarCEP);
+            ReSize.textBoxResize(textBoxConfigAlterarCpf);
+            ReSize.textBoxResize(textBoxConfigAlterarEndereco);
+            ReSize.textBoxResize(textBoxConfigAlterarFoto);
+            ReSize.textBoxResize(textBoxConfigAlterarNome);
+            ReSize.textBoxResize(textBoxConfigAlterarTelefone);
+
+
             //Puxando imagem do servidor
             if (!string.IsNullOrEmpty(user.profile_picture))
             {

@@ -36,23 +36,23 @@ namespace Starbuy_Desktop
             this.textBoxRegistroEndereco = new System.Windows.Forms.TextBox();
             this.textBoxRegistroEmail = new System.Windows.Forms.TextBox();
             this.textBoxRegistroSenha = new System.Windows.Forms.TextBox();
+            this.labelLinha1 = new System.Windows.Forms.Label();
             this.labelLinha3 = new System.Windows.Forms.Label();
+            this.labelLinha2 = new System.Windows.Forms.Label();
             this.labelLinha4 = new System.Windows.Forms.Label();
-            this.labelLinha5 = new System.Windows.Forms.Label();
-            this.labelLinha8 = new System.Windows.Forms.Label();
             this.labelLinha9 = new System.Windows.Forms.Label();
             this.textBoxRegistroConfirmar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.labelLinha10 = new System.Windows.Forms.Label();
+            this.labelLinha5 = new System.Windows.Forms.Label();
             this.pictureBoxRegistroCross = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.buttonRegistro = new System.Windows.Forms.Button();
             this.maskedTextBoxRegistroNascimento = new System.Windows.Forms.MaskedTextBox();
-            this.labelLinha6 = new System.Windows.Forms.Label();
             this.labelLinha7 = new System.Windows.Forms.Label();
+            this.labelLinha6 = new System.Windows.Forms.Label();
             this.textBoxRegistroCidade = new System.Windows.Forms.TextBox();
             this.textBoxRegistroNumero = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelLinha8 = new System.Windows.Forms.Label();
             this.maskedTextBoxRegistroCEP = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -130,45 +130,45 @@ namespace Starbuy_Desktop
             this.textBoxRegistroSenha.Size = new System.Drawing.Size(582, 45);
             this.textBoxRegistroSenha.TabIndex = 18;
             // 
+            // labelLinha1
+            // 
+            this.labelLinha1.AutoSize = true;
+            this.labelLinha1.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha1.Location = new System.Drawing.Point(50, 212);
+            this.labelLinha1.Name = "labelLinha1";
+            this.labelLinha1.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha1.TabIndex = 20;
+            this.labelLinha1.Text = "___________________________________";
+            // 
             // labelLinha3
             // 
             this.labelLinha3.AutoSize = true;
             this.labelLinha3.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha3.Location = new System.Drawing.Point(50, 212);
+            this.labelLinha3.Location = new System.Drawing.Point(50, 321);
             this.labelLinha3.Name = "labelLinha3";
             this.labelLinha3.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha3.TabIndex = 20;
+            this.labelLinha3.TabIndex = 21;
             this.labelLinha3.Text = "___________________________________";
+            // 
+            // labelLinha2
+            // 
+            this.labelLinha2.AutoSize = true;
+            this.labelLinha2.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha2.Location = new System.Drawing.Point(658, 212);
+            this.labelLinha2.Name = "labelLinha2";
+            this.labelLinha2.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha2.TabIndex = 22;
+            this.labelLinha2.Text = "___________________________________";
             // 
             // labelLinha4
             // 
             this.labelLinha4.AutoSize = true;
             this.labelLinha4.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha4.Location = new System.Drawing.Point(50, 321);
+            this.labelLinha4.Location = new System.Drawing.Point(658, 320);
             this.labelLinha4.Name = "labelLinha4";
             this.labelLinha4.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha4.TabIndex = 21;
+            this.labelLinha4.TabIndex = 25;
             this.labelLinha4.Text = "___________________________________";
-            // 
-            // labelLinha5
-            // 
-            this.labelLinha5.AutoSize = true;
-            this.labelLinha5.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha5.Location = new System.Drawing.Point(658, 212);
-            this.labelLinha5.Name = "labelLinha5";
-            this.labelLinha5.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha5.TabIndex = 22;
-            this.labelLinha5.Text = "___________________________________";
-            // 
-            // labelLinha8
-            // 
-            this.labelLinha8.AutoSize = true;
-            this.labelLinha8.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha8.Location = new System.Drawing.Point(658, 320);
-            this.labelLinha8.Name = "labelLinha8";
-            this.labelLinha8.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha8.TabIndex = 25;
-            this.labelLinha8.Text = "___________________________________";
             // 
             // labelLinha9
             // 
@@ -193,31 +193,31 @@ namespace Starbuy_Desktop
             this.textBoxRegistroConfirmar.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroConfirmar.TabIndex = 27;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(658, 649);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(582, 51);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "___________________________________";
-            // 
             // labelLinha10
             // 
             this.labelLinha10.AutoSize = true;
             this.labelLinha10.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha10.Location = new System.Drawing.Point(50, 436);
+            this.labelLinha10.Location = new System.Drawing.Point(658, 649);
             this.labelLinha10.Name = "labelLinha10";
             this.labelLinha10.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha10.TabIndex = 30;
+            this.labelLinha10.TabIndex = 28;
             this.labelLinha10.Text = "___________________________________";
+            // 
+            // labelLinha5
+            // 
+            this.labelLinha5.AutoSize = true;
+            this.labelLinha5.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha5.Location = new System.Drawing.Point(50, 436);
+            this.labelLinha5.Name = "labelLinha5";
+            this.labelLinha5.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha5.TabIndex = 30;
+            this.labelLinha5.Text = "___________________________________";
             // 
             // pictureBoxRegistroCross
             // 
             this.pictureBoxRegistroCross.ErrorImage = global::Starbuy_Desktop.Properties.Resources.Cross;
             this.pictureBoxRegistroCross.Image = global::Starbuy_Desktop.Properties.Resources.Cross;
-            this.pictureBoxRegistroCross.Location = new System.Drawing.Point(1363, 34);
+            this.pictureBoxRegistroCross.Location = new System.Drawing.Point(1317, 34);
             this.pictureBoxRegistroCross.Name = "pictureBoxRegistroCross";
             this.pictureBoxRegistroCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxRegistroCross.TabIndex = 31;
@@ -227,7 +227,7 @@ namespace Starbuy_Desktop
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Starbuy_Desktop.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1044, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(1020, 34);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -267,25 +267,25 @@ namespace Starbuy_Desktop
             this.maskedTextBoxRegistroNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxRegistroNascimento_MaskInputRejected);
             this.maskedTextBoxRegistroNascimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBoxRegistroNascimento_KeyDown);
             // 
-            // labelLinha6
-            // 
-            this.labelLinha6.AutoSize = true;
-            this.labelLinha6.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha6.Location = new System.Drawing.Point(50, 540);
-            this.labelLinha6.Name = "labelLinha6";
-            this.labelLinha6.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha6.TabIndex = 23;
-            this.labelLinha6.Text = "___________________________________";
-            // 
             // labelLinha7
             // 
             this.labelLinha7.AutoSize = true;
             this.labelLinha7.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha7.Location = new System.Drawing.Point(658, 435);
+            this.labelLinha7.Location = new System.Drawing.Point(50, 540);
             this.labelLinha7.Name = "labelLinha7";
             this.labelLinha7.Size = new System.Drawing.Size(582, 51);
-            this.labelLinha7.TabIndex = 24;
+            this.labelLinha7.TabIndex = 23;
             this.labelLinha7.Text = "___________________________________";
+            // 
+            // labelLinha6
+            // 
+            this.labelLinha6.AutoSize = true;
+            this.labelLinha6.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha6.Location = new System.Drawing.Point(658, 435);
+            this.labelLinha6.Name = "labelLinha6";
+            this.labelLinha6.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha6.TabIndex = 24;
+            this.labelLinha6.Text = "___________________________________";
             // 
             // textBoxRegistroCidade
             // 
@@ -311,15 +311,15 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNumero.Size = new System.Drawing.Size(617, 45);
             this.textBoxRegistroNumero.TabIndex = 35;
             // 
-            // label2
+            // labelLinha8
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(658, 539);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(582, 51);
-            this.label2.TabIndex = 36;
-            this.label2.Text = "___________________________________";
+            this.labelLinha8.AutoSize = true;
+            this.labelLinha8.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelLinha8.Location = new System.Drawing.Point(658, 539);
+            this.labelLinha8.Name = "labelLinha8";
+            this.labelLinha8.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha8.TabIndex = 36;
+            this.labelLinha8.Text = "___________________________________";
             // 
             // maskedTextBoxRegistroCEP
             // 
@@ -345,14 +345,14 @@ namespace Starbuy_Desktop
             this.ClientSize = new System.Drawing.Size(1408, 909);
             this.Controls.Add(this.maskedTextBoxRegistroCEP);
             this.Controls.Add(this.textBoxRegistroNumero);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelLinha8);
             this.Controls.Add(this.maskedTextBoxRegistroNascimento);
             this.Controls.Add(this.buttonRegistro);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxRegistroCross);
-            this.Controls.Add(this.labelLinha10);
+            this.Controls.Add(this.labelLinha5);
             this.Controls.Add(this.textBoxRegistroConfirmar);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelLinha10);
             this.Controls.Add(this.textBoxRegistroSenha);
             this.Controls.Add(this.textBoxRegistroEmail);
             this.Controls.Add(this.textBoxRegistroCidade);
@@ -360,17 +360,18 @@ namespace Starbuy_Desktop
             this.Controls.Add(this.textBoxRegistroUsuario);
             this.Controls.Add(this.textBoxRegistroNome);
             this.Controls.Add(this.labelRegistroRegistre);
+            this.Controls.Add(this.labelLinha1);
             this.Controls.Add(this.labelLinha3);
-            this.Controls.Add(this.labelLinha4);
-            this.Controls.Add(this.labelLinha5);
-            this.Controls.Add(this.labelLinha6);
+            this.Controls.Add(this.labelLinha2);
             this.Controls.Add(this.labelLinha7);
-            this.Controls.Add(this.labelLinha8);
+            this.Controls.Add(this.labelLinha6);
+            this.Controls.Add(this.labelLinha4);
             this.Controls.Add(this.labelLinha9);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRegistro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormRegistro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -387,23 +388,23 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.TextBox textBoxRegistroEndereco;
         private System.Windows.Forms.TextBox textBoxRegistroEmail;
         private System.Windows.Forms.TextBox textBoxRegistroSenha;
+        private System.Windows.Forms.Label labelLinha1;
         private System.Windows.Forms.Label labelLinha3;
+        private System.Windows.Forms.Label labelLinha2;
         private System.Windows.Forms.Label labelLinha4;
-        private System.Windows.Forms.Label labelLinha5;
-        private System.Windows.Forms.Label labelLinha8;
         private System.Windows.Forms.Label labelLinha9;
         private System.Windows.Forms.TextBox textBoxRegistroConfirmar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label labelLinha10;
+        private System.Windows.Forms.Label labelLinha5;
         private System.Windows.Forms.PictureBox pictureBoxRegistroCross;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button buttonRegistro;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxRegistroNascimento;
-        private System.Windows.Forms.Label labelLinha6;
         private System.Windows.Forms.Label labelLinha7;
+        private System.Windows.Forms.Label labelLinha6;
         private System.Windows.Forms.TextBox textBoxRegistroCidade;
         private System.Windows.Forms.TextBox textBoxRegistroNumero;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelLinha8;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxRegistroCEP;
     }
 }

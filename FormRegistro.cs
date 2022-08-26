@@ -19,6 +19,39 @@ namespace Starbuy_Desktop
         public FormRegistro()
         {
             InitializeComponent();
+            
+            ReSize.buttonResize(buttonRegistro);
+
+            ReSize.labelResize(labelLinha1);
+            ReSize.labelResize(labelLinha2);
+            ReSize.labelResize(labelLinha3);
+            ReSize.labelResize(labelLinha4);
+            ReSize.labelResize(labelLinha5);
+            ReSize.labelResize(labelLinha6);
+            ReSize.labelResize(labelLinha7);
+            ReSize.labelResize(labelLinha8);
+            ReSize.labelResize(labelLinha9);
+            ReSize.labelResize(labelLinha10);
+            ReSize.labelResize(labelRegistroRegistre);
+            /*
+            MessageBox.Show(textBoxRegistroUsuario.height.toString(),)
+            ReSize.textBoxResize(textBoxRegistroUsuario);
+            ReSize.textBoxResize(textBoxRegistroCidade);
+            ReSize.textBoxResize(textBoxRegistroConfirmar);
+            ReSize.textBoxResize(textBoxRegistroEmail);
+            ReSize.textBoxResize(textBoxRegistroEndereco);
+            ReSize.textBoxResize(textBoxRegistroNome);
+            ReSize.textBoxResize(textBoxRegistroNumero);
+            ReSize.textBoxResize(textBoxRegistroSenha);
+            
+
+            ReSize.pictureCrossBox(pictureBox1);
+            ReSize.pictureCrossBox(pictureBoxRegistroCross);
+
+            ReSize.buttonResize(buttonRegistro);
+            ReSize.maskedResize(maskedTextBoxRegistroCEP);
+            ReSize.maskedResize(maskedTextBoxRegistroNascimento);
+            */
         }
 
         private void pictureBoxRegistroCross_Click(object sender, EventArgs e)

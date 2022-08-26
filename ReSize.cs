@@ -24,16 +24,16 @@ namespace Starbuy_Desktop
 
         public static void pictureCrossBox(PictureBox p)
         {
-            MessageBox.Show(height.ToString() + "  " + width.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
+            //MessageBox.Show(height.ToString() + "  " + width.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             int heightOriginal = p.Height;
             int widthOriginal = p.Width;
             p.Height =  p.Height * height / 786;
             p.Width = p.Width * width/1386 ;
             double locationX = p.Location.X * propWidth;// + widthOriginal - p.Width;
             double locationY = p.Location.Y * propHeight;// + heightOriginal - p.Height;
-            MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
+            //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             p.Location = new Point((int)locationX,(int)locationY);
-            MessageBox.Show(p.Location.X.ToString() + "  " + p.Location.Y.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString()); 
+            //MessageBox.Show(p.Location.X.ToString() + "  " + p.Location.Y.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString()); 
         }
 
         public static void labelResize(Label l)
@@ -45,11 +45,14 @@ namespace Starbuy_Desktop
             double novaFonte = (l.Font.Size * propWidth);
             String font = l.Font.FontFamily.ToString();
             l.Font = new Font(font, (int)novaFonte);
+            //
             //MessageBox.Show(l.Font.Size.ToString());
             double locationX = l.Location.X * propWidth;// + widthOriginal - p.Width;
             double locationY = l.Location.Y * propHeight;// + heightOriginal - p.Height;
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + l.Height.ToString() + " " + l.Width.ToString());
             l.Location = new Point((int)locationX, (int)locationY);
+            MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + l.Height.ToString() + " " + l.Width.ToString());
+
         }
 
         public static void textBoxResize(TextBox t)
@@ -93,6 +96,20 @@ namespace Starbuy_Desktop
             double locationY = g.Location.Y * propHeight;// + heightOriginal - p.Height;
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + g.Height.ToString() + " " + g.Width.ToString());
             g.Location = new Point((int)locationX, (int)locationY);
+        }
+
+        public static void maskedResize(MaskedTextBox m)
+        {
+            m.Height = m.Height * height / 786;
+            m.Width = m.Width * width / 1386;
+            //MessageBox.Show(t.Font.Size.ToString());
+            double novaFonte = (m.Font.Size * propWidth);
+            String font = m.Font.FontFamily.ToString();
+            m.Font = new Font(font, (int)novaFonte);
+            //MessageBox.Show(t.Font.Size.ToString());
+            double locationX = m.Location.X * propWidth;// + widthOriginal - p.Width;
+            double locationY = m.Location.Y * propHeight;// + heightOriginal - p.Height;
+            m.Location = new Point((int)locationX, (int)locationY);
         }
     }
 }

@@ -87,8 +87,6 @@ namespace Starbuy_Desktop
             this.labelConfigCantoNome.AutoSize = true;
             this.labelConfigCantoNome.Font = new System.Drawing.Font("Ebrima", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelConfigCantoNome.Location = new System.Drawing.Point(6, 101);
-            this.labelConfigCantoNome.MaximumSize = new System.Drawing.Size(119, 32);
-            this.labelConfigCantoNome.MinimumSize = new System.Drawing.Size(119, 32);
             this.labelConfigCantoNome.Name = "labelConfigCantoNome";
             this.labelConfigCantoNome.Size = new System.Drawing.Size(119, 32);
             this.labelConfigCantoNome.TabIndex = 4;
@@ -489,6 +487,7 @@ namespace Starbuy_Desktop
             this.Name = "FormConfig";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "            ";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormConfig_Load);
             this.gboxConfigPerfil.ResumeLayout(false);
             this.gboxConfigPerfil.PerformLayout();
