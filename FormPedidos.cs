@@ -122,12 +122,13 @@ namespace Starbuy_Desktop
         {
             /*//referênciar cada caracteristica do produto a uma variavel
             // não sei pq ta dando que ela é estática, tipo??? não depende do que ela pegar no banco??
-            string id = Item.identifier;
-            string titleprod = Item.title;
-            double priceprod = Item.price;
-            int stockprod = Item.stock;
-            int categoryprod = Item.category;
-            string descriptionprod = Item.description;
+            // do jeito que tá aqui embaixo não tava dando certo mas vou deixar aqui por enquanto pq nunca se sabe né
+                string id = Item.identifier;
+                string titleprod = Item.title;
+                double priceprod = Item.price;
+                int stockprod = Item.stock;
+                int categoryprod = Item.category;
+                string descriptionprod = Item.description;
             */
             // criar o componente - um groupbox - com as inf do produto dentro 
 
@@ -138,6 +139,7 @@ namespace Starbuy_Desktop
             currentGroupBox.Name = Item.title.ToString();
             // CurrentGroupBoxName = currentGroupBox.Name;
 
+            //testar se realmente ta gerando alguma coisa certa
             var y = 20;
             foreach (var itm in c.Table.Rows)
             {
@@ -166,11 +168,17 @@ namespace Starbuy_Desktop
                 estoque.Location = new Point(8, y+3); //localização do estoque
                 currentGroupBox.Controls.Add(estoque); //
 
-                // atribuindo o id do produto
-                Label id = new Label();
-                id.Text = id.ToString();
-                titulo.Location = new Point(5, y); //localização do titulo
-                currentGroupBox.Controls.Add(titulo); //
+                // atribuindo a categoria do produto
+                Label categoria = new Label();
+                categoria.Text = Item.category.ToString();
+                categoria.Location = new Point(9, y + 4); //localização da categoria
+                currentGroupBox.Controls.Add(categoria); //
+
+                // atribuindo a descrição do produto
+                Label descricao = new Label();
+                descricao.Text = Item.description.ToString();
+                descricao.Location = new Point(10, y + 5); //localização da categoria
+                currentGroupBox.Controls.Add(descricao); //
 
                 y += 20;
             }
