@@ -33,11 +33,6 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
             this.gboxPedidosPedidos = new System.Windows.Forms.GroupBox();
             this.labelPedidos = new System.Windows.Forms.Label();
-            this.gboxPedidos5 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos4 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos3 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos2 = new System.Windows.Forms.GroupBox();
-            this.gboxPedidos1 = new System.Windows.Forms.GroupBox();
             this.gboxConfigMenu = new System.Windows.Forms.GroupBox();
             this.pictureBoxPedidosConfig = new System.Windows.Forms.PictureBox();
             this.pictureBoxPedidosPedidos = new System.Windows.Forms.PictureBox();
@@ -47,10 +42,11 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.labelConfigCantoNome = new System.Windows.Forms.Label();
             this.gboxPedidosBaixa = new System.Windows.Forms.GroupBox();
+            this.textBoxBaixa = new System.Windows.Forms.TextBox();
             this.labelPedidosNumero = new System.Windows.Forms.Label();
             this.btnPedidosAtualizar = new System.Windows.Forms.Button();
             this.labelPedidosBaixa = new System.Windows.Forms.Label();
-            this.textBoxBaixa = new System.Windows.Forms.TextBox();
+            this.panelPedidos = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxPedidosPedidos.SuspendLayout();
             this.gboxConfigMenu.SuspendLayout();
@@ -75,12 +71,8 @@ namespace Starbuy_Desktop
             // 
             // gboxPedidosPedidos
             // 
+            this.gboxPedidosPedidos.Controls.Add(this.panelPedidos);
             this.gboxPedidosPedidos.Controls.Add(this.labelPedidos);
-            this.gboxPedidosPedidos.Controls.Add(this.gboxPedidos5);
-            this.gboxPedidosPedidos.Controls.Add(this.gboxPedidos4);
-            this.gboxPedidosPedidos.Controls.Add(this.gboxPedidos3);
-            this.gboxPedidosPedidos.Controls.Add(this.gboxPedidos2);
-            this.gboxPedidosPedidos.Controls.Add(this.gboxPedidos1);
             this.gboxPedidosPedidos.Location = new System.Drawing.Point(256, 30);
             this.gboxPedidosPedidos.Name = "gboxPedidosPedidos";
             this.gboxPedidosPedidos.Size = new System.Drawing.Size(732, 735);
@@ -96,51 +88,6 @@ namespace Starbuy_Desktop
             this.labelPedidos.Size = new System.Drawing.Size(119, 37);
             this.labelPedidos.TabIndex = 26;
             this.labelPedidos.Text = "Pedidos";
-            // 
-            // gboxPedidos5
-            // 
-            this.gboxPedidos5.Location = new System.Drawing.Point(36, 598);
-            this.gboxPedidos5.Name = "gboxPedidos5";
-            this.gboxPedidos5.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos5.TabIndex = 28;
-            this.gboxPedidos5.TabStop = false;
-            this.gboxPedidos5.Text = "gboxPedidos5";
-            // 
-            // gboxPedidos4
-            // 
-            this.gboxPedidos4.Location = new System.Drawing.Point(36, 468);
-            this.gboxPedidos4.Name = "gboxPedidos4";
-            this.gboxPedidos4.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos4.TabIndex = 27;
-            this.gboxPedidos4.TabStop = false;
-            this.gboxPedidos4.Text = "gboxPedidos4";
-            // 
-            // gboxPedidos3
-            // 
-            this.gboxPedidos3.Location = new System.Drawing.Point(36, 337);
-            this.gboxPedidos3.Name = "gboxPedidos3";
-            this.gboxPedidos3.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos3.TabIndex = 28;
-            this.gboxPedidos3.TabStop = false;
-            this.gboxPedidos3.Text = "gboxPedidos3";
-            // 
-            // gboxPedidos2
-            // 
-            this.gboxPedidos2.Location = new System.Drawing.Point(36, 204);
-            this.gboxPedidos2.Name = "gboxPedidos2";
-            this.gboxPedidos2.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos2.TabIndex = 26;
-            this.gboxPedidos2.TabStop = false;
-            this.gboxPedidos2.Text = "gboxPedidos2";
-            // 
-            // gboxPedidos1
-            // 
-            this.gboxPedidos1.Location = new System.Drawing.Point(36, 76);
-            this.gboxPedidos1.Name = "gboxPedidos1";
-            this.gboxPedidos1.Size = new System.Drawing.Size(657, 112);
-            this.gboxPedidos1.TabIndex = 26;
-            this.gboxPedidos1.TabStop = false;
-            this.gboxPedidos1.Text = "gboxPedidos1";
             // 
             // gboxConfigMenu
             // 
@@ -233,6 +180,13 @@ namespace Starbuy_Desktop
             this.gboxPedidosBaixa.TabIndex = 19;
             this.gboxPedidosBaixa.TabStop = false;
             // 
+            // textBoxBaixa
+            // 
+            this.textBoxBaixa.Location = new System.Drawing.Point(17, 124);
+            this.textBoxBaixa.Name = "textBoxBaixa";
+            this.textBoxBaixa.Size = new System.Drawing.Size(243, 23);
+            this.textBoxBaixa.TabIndex = 24;
+            // 
             // labelPedidosNumero
             // 
             this.labelPedidosNumero.AutoSize = true;
@@ -262,12 +216,12 @@ namespace Starbuy_Desktop
             this.labelPedidosBaixa.TabIndex = 22;
             this.labelPedidosBaixa.Text = "Dar baixa";
             // 
-            // textBoxBaixa
+            // panelPedidos
             // 
-            this.textBoxBaixa.Location = new System.Drawing.Point(17, 124);
-            this.textBoxBaixa.Name = "textBoxBaixa";
-            this.textBoxBaixa.Size = new System.Drawing.Size(243, 23);
-            this.textBoxBaixa.TabIndex = 24;
+            this.panelPedidos.Location = new System.Drawing.Point(21, 72);
+            this.panelPedidos.Name = "panelPedidos";
+            this.panelPedidos.Size = new System.Drawing.Size(691, 640);
+            this.panelPedidos.TabIndex = 27;
             // 
             // FormPedidos
             // 
@@ -311,11 +265,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.GroupBox gboxConfigPerfil;
         private System.Windows.Forms.PictureBox pictureBoxConfigCanto;
         private System.Windows.Forms.Label labelConfigCantoNome;
-        private System.Windows.Forms.GroupBox gboxPedidos5;
-        private System.Windows.Forms.GroupBox gboxPedidos4;
-        private System.Windows.Forms.GroupBox gboxPedidos3;
-        private System.Windows.Forms.GroupBox gboxPedidos2;
-        private System.Windows.Forms.GroupBox gboxPedidos1;
         private System.Windows.Forms.Label labelPedidos;
         private System.Windows.Forms.GroupBox gboxPedidosBaixa;
         private System.Windows.Forms.Label labelPedidosBaixa;
@@ -326,5 +275,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxPedidosEstoque;
         private System.Windows.Forms.PictureBox pictureBoxPedidosMenu;
         private System.Windows.Forms.TextBox textBoxBaixa;
+        private System.Windows.Forms.Panel panelPedidos;
     }
 }
