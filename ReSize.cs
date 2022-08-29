@@ -51,7 +51,7 @@ namespace Starbuy_Desktop
             double locationY = l.Location.Y * propHeight;// + heightOriginal - p.Height;
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + l.Height.ToString() + " " + l.Width.ToString());
             l.Location = new Point((int)locationX, (int)locationY);
-            MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + l.Height.ToString() + " " + l.Width.ToString());
+           // MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + l.Height.ToString() + " " + l.Width.ToString());
 
         }
 
