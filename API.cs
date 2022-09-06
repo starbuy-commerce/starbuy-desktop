@@ -66,7 +66,7 @@ namespace Starbuy_Desktop
                 {
                     LoginResponse response = JsonSerializer.Deserialize<LoginResponse>(result);
                     Session.setSession(new Session(response.user, response.jwt));
-                    return response.user;
+                    return response.user; 
                 }
                 catch (Exception ex)
                 {
@@ -111,9 +111,18 @@ namespace Starbuy_Desktop
                     try
                     {
                         UsuarioComProdutoRequest resposta = JsonSerializer.Deserialize<UsuarioComProdutoRequest>(result);
-                        MessageBox.Show(resposta.items.Length.ToString());
-                        ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
-                        return resposta;
+                        if (resposta.items != null)
+                        {
+                            MessageBox.Show(resposta.items.Length.ToString());
+                            ItemsResponse.setItemsResponse(new ItemsResponse(resposta.user, resposta.rating, resposta.items));
+                            return resposta;
+                        }
+                        else
+                        {
+                            MessageBox.Show("teste!");
+                            ItemsResponse.setItemsResponse(new ItemsResponse(null, 0, null));
+                            return null;
+                        }
                     }
                     catch (NullReferenceException e)
                     {

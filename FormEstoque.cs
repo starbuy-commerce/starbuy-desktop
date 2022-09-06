@@ -22,6 +22,7 @@ public partial class FormEstoque : Form {
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
+            this.itens = ItemsResponse.GetItemsResponse();
             InitializeComponent();
 
             ReSize.labelResize(labelEstoqueCantoNome);
