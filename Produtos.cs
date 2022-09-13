@@ -10,5 +10,9 @@ namespace Starbuy_Desktop
     {
         public Item item { get; set; }
         public String[] asset { get; set; }
+        public String GetAsset(int posicao)
+        {
+            return asset[posicao];
+        }
     }
 }

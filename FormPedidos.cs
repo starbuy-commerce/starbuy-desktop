@@ -99,93 +99,88 @@ namespace Starbuy_Desktop
                 System.Drawing.Image resizeSmall = (new Bitmap(img, 57, 51));
                 pictureBoxConfigCanto.Image = resizeSmall;
             }
-                /* gerar os pedidos
-                
-                foreach( referenciar o "Produtos GetProdutos" do ItemResponse) // assim vai passar pelo loop para cada produto que o usuário tiver
-                {
-                    GerarPedidos();
+
+            //gerar os pedidos
+            if (items.getAllProdutos() == null)
+            {
+                //Mostrar tela zero pedidos
+                MessageBox.Show("a");
+            }
+            else
+            {
+                MessageBox.Show("b");
+                int i = 0;
+                foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
+                { 
+                    //GetGroupBox(product,i);
+                    i++;
                 }
 
                 // algo assim:
-                foreach (DataRow itm in data.Rows)
+                /* foreach (DataRow itm in data.Rows)
                 {
                     if (itm["CategoryName"].ToString() != CurrentGroupBoxName)
                     {
                         flpRedMarks.Controls.Add(GetGroupBox(itm, 200, 100));
                     }
-                }
-               // */
-        }
-
-        private GroupBox GetGroupBox(DataRow c, int width, int height)
-        {
-            //Nao li o codigo ainda, mas antes de passar os parametros para a criacao de groupbox e necessario verificar se ItemsResponse.items != Null;
-            
-            /*//referênciar cada caracteristica do produto a uma variavel
-            // não sei pq ta dando que ela é estática, tipo??? não depende do que ela pegar no banco??
-            // do jeito que tá aqui embaixo não tava dando certo mas vou deixar aqui por enquanto pq nunca se sabe né
-                string id = Item.identifier;
-                string titleprod = Item.title;
-                double priceprod = Item.price;
-                int stockprod = Item.stock;
-                int categoryprod = Item.category;
-                string descriptionprod = Item.description;
-            */
-            // criar o componente - um groupbox - com as inf do produto dentro 
-
-            GroupBox currentGroupBox = new GroupBox();
-            currentGroupBox.Size = new Size(width, height); // tamanho do groupbox
-
-            //currentGroupBox.Text = Item.title.ToString();
-            //currentGroupBox.Name = Item.title.ToString();
-            // CurrentGroupBoxName = currentGroupBox.Name;
-
-            //testar se realmente ta gerando alguma coisa certa
-            var y = 20;
-            foreach (var itm in c.Table.Rows)
-            {
-                // atribuindo o título do produto
-                Label titulo = new Label();
-                //titulo.Text = Item.title.ToString();
-                titulo.Location = new Point(5, y); //localização do titulo
-                currentGroupBox.Controls.Add(titulo); // 
-
-                // atribuindo o id do produto
-                Label id = new Label();
-                //id.Text = Item.identifier.ToString();
-                id.Location = new Point(6, y+1); //localização do id
-                currentGroupBox.Controls.Add(id); //
-
-                // atribuindo o preço do produto
-                Label preco = new Label();
-                //preco.Text = Item.price.ToString();
-                preco.Location = new Point(7, y+2); //localização do preço
-                currentGroupBox.Controls.Add(preco); //
-
-
-                // atribuindo a quantidade em estoque do produto
-                Label estoque = new Label();
-                //estoque.Text = Item.stock.ToString();
-                estoque.Location = new Point(8, y+3); //localização do estoque
-                currentGroupBox.Controls.Add(estoque); //
-
-                // atribuindo a categoria do produto
-                Label categoria = new Label();
-                //categoria.Text = Item.category.ToString();
-                categoria.Location = new Point(9, y + 4); //localização da categoria
-                currentGroupBox.Controls.Add(categoria); //
-
-                // atribuindo a descrição do produto
-                Label descricao = new Label();
-                //descricao.Text = Item.description.ToString();
-                descricao.Location = new Point(10, y + 5); //localização da categoria
-                currentGroupBox.Controls.Add(descricao); //
-
-                y += 20;
+                } */
             }
-
-            return currentGroupBox;
-
         }
+
+        /*private void GetGroupBox(Produtos p,int i)
+        {
+            //referênciar cada caracteristica do produto a uma variavel
+            string id = p.item.identifier.ToString();
+            string titleprod = p.item.title;
+            string  priceprod = p.item.price.ToString();
+            string stockprod = p.item.stock.ToString();
+            string categoryprod = p.item.category.ToString();
+            string descriptionprod = p.item.description;
+
+            GroupBox currentGroupBox = new GroupBox(); 
+            currentGroupBox.Size = new Size(684, 135); // definir tamanho do groupbox
+            currentGroupBox.Location = new Point(3, 4 + i * 50 + i * 135);
+
+            // arrumar as localizações dos itens
+            // atribuindo o título do produto
+            Label titulo = new Label();
+            titulo.Text = titleprod;
+            titulo.Location = new Point(127, 24); //localização do titulo
+            currentGroupBox.Controls.Add(titulo); 
+
+            // atribuindo o id do produto
+            Label ident = new Label();
+            ident.Text = id;
+            ident.Location = new Point(6, 1); //localização do id
+            currentGroupBox.Controls.Add(ident); 
+
+            // atribuindo o preço do produto
+            Label preco = new Label();
+            preco.Text = priceprod;
+            preco.Location = new Point(127, 55); //localização do preço
+            currentGroupBox.Controls.Add(preco);
+
+
+            // atribuindo a quantidade em estoque do produto
+            Label estoque = new Label();
+            estoque.Text = stockprod;
+            estoque.Location = new Point(8, 1); //localização do estoque
+            currentGroupBox.Controls.Add(estoque);
+
+            // atribuindo a categoria do produto
+            Label categoria = new Label();
+            categoria.Text = categoryprod;
+            categoria.Location = new Point(9, 1); //localização da categoria
+            currentGroupBox.Controls.Add(categoria); 
+
+            // atribuindo a descrição do produto
+            Label descricao = new Label();
+            descricao.Text = descriptionprod;
+            descricao.Location = new Point(10, 1); //localização da categoria
+            currentGroupBox.Controls.Add(descricao);
+            currentGroupBox.Visible = true;
+            panelPedidos.Controls.Add(currentGroupBox);
+
+        }*/
     }
 }
