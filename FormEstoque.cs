@@ -25,18 +25,36 @@ public partial class FormEstoque : Form {
             this.items = ItemsResponse.GetItemsResponse();
             InitializeComponent();
 
+            ReSize.buttonResize(button1);
+            
             ReSize.labelResize(labelEstoqueCantoNome);
             ReSize.labelResize(labelEstoqueEstoque);
+            ReSize.labelResize(labelConfigAlterar);
+            ReSize.labelResize(labelConfigAlterarCEP);
+            ReSize.labelResize(labelConfigAlterarCpf);
+            ReSize.labelResize(labelConfigAlterarEndereco);
+            ReSize.labelResize(labelConfigAlterarFoto);
+            ReSize.labelResize(labelConfigAlterarNome);
+            ReSize.labelResize(labelConfigAlterarTelefone);
 
             ReSize.groupBoxResize(gboxEstoqueMenu);
             ReSize.groupBoxResize(gboxEstoquePerfil);
+            ReSize.groupBoxResize(groupBoxConfigAlterar);
+            ReSize.panelResize(panel1);
 
-            ReSize.pictureCrossBox(pictureBoxEstoqueCanto);
-            ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes);
-            ReSize.pictureCrossBox(pictureBoxEstoqueEstoque);
-            ReSize.pictureCrossBox(pictureBoxEstoqueMenu);
-            ReSize.pictureCrossBox(pictureBoxEstoquePedidos);
-            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
+            ReSize.pictureCrossBox(pictureBoxEstoqueCanto, pictureBoxEstoqueCanto.Image);
+            ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes, pictureBoxEstoqueConfiguracoes.Image);
+            ReSize.pictureCrossBox(pictureBoxEstoqueEstoque, pictureBoxEstoqueEstoque.Image);
+            ReSize.pictureCrossBox(pictureBoxEstoqueMenu, pictureBoxEstoqueMenu.Image);
+            ReSize.pictureCrossBox(pictureBoxEstoquePedidos, pictureBoxEstoquePedidos.Image);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
+            ReSize.textBoxResize(textBoxConfigAlterarCEP);
+            ReSize.textBoxResize(textBoxConfigAlterarCpf);
+            ReSize.textBoxResize(textBoxConfigAlterarEndereco);
+            ReSize.textBoxResize(textBoxConfigAlterarFoto);
+            ReSize.textBoxResize(textBoxConfigAlterarNome);
+            ReSize.textBoxResize(textBoxConfigAlterarTelefone);
+
         }
 
         private void FormEstoque_Load(object sender, EventArgs e) {
@@ -129,14 +147,15 @@ public partial class FormEstoque : Form {
             else
             {
                 WebClient wc = new WebClient();
-                byte[] bytes = wc.DownloadData(p.asset[0]);
+                byte[] bytes = wc.DownloadData(p.assets[0]);
                 MemoryStream ms = new MemoryStream(bytes);
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-                System.Drawing.Image resizeSmall = (new Bitmap(img, 104, 106));
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 104, 120));
                 PictureBox imagemProduto = new PictureBox();
                 imagemProduto.Location = new Point(17, 22);
                 imagemProduto.Image = resizeSmall;
                 currentGroupBox.Controls.Add(imagemProduto);
+                ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
             }
 
             // arrumar as localizações dos itens
@@ -177,7 +196,15 @@ public partial class FormEstoque : Form {
             descricao.Location = new Point(127, 91); //localização da categoria
             currentGroupBox.Controls.Add(descricao);
             currentGroupBox.Visible = true;
+            ReSize.labelResize(titulo);
+            ReSize.labelResize(preco);
+            ReSize.labelResize(descricao);
+            ReSize.labelResize(estoque);
+            ReSize.labelResize(categoria);
+            ReSize.groupBoxResize(currentGroupBox);
+
             panel1.Controls.Add(currentGroupBox);
+
 
         }
     }

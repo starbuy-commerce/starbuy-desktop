@@ -63,14 +63,14 @@ public partial class FormConfig : Form {
             ReSize.labelResize(labelConfigTelefone);
             ReSize.labelResize(labelConfigUsername);
 
-            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
-            ReSize.pictureCrossBox(pictureBoxConfigMenu);
-            ReSize.pictureCrossBox(pictureBoxConfigEstoque);
-            ReSize.pictureCrossBox(pictureBoxConfigFoto);
-            ReSize.pictureCrossBox(pictureBoxConfigPedidos);
-            ReSize.pictureCrossBox(pictureBoxBackground);
-            ReSize.pictureCrossBox(pictureBoxConfigCanto);
-            ReSize.pictureCrossBox(pictureBoxConfigConfig);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigMenu, pictureBoxConfigMenu.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigEstoque, pictureBoxConfigEstoque.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigFoto, pictureBoxConfigFoto.Image) ;
+            ReSize.pictureCrossBox(pictureBoxConfigPedidos, pictureBoxConfigPedidos.Image);
+            ReSize.pictureCrossBox(pictureBoxBackground, pictureBoxBackground.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigConfig, pictureBoxConfigConfig.Image);
 
             ReSize.textBoxResize(textBoxConfigAlterarCEP);
             ReSize.textBoxResize(textBoxConfigAlterarCpf);
