@@ -28,8 +28,8 @@ namespace Starbuy_Desktop
             int formHeight = this.Height;
             int formWidth = this.Width;
             new ReSize(formHeight, formWidth);
-            ReSize.pictureCrossBox(pictureBoxLogin);
-            ReSize.pictureCrossBox(pictureBoxLoginCross);
+            ReSize.pictureCrossBox(pictureBoxLogin, pictureBoxLogin.Image);
+            ReSize.pictureCrossBox(pictureBoxLoginCross, pictureBoxLoginCross.Image);
             ReSize.labelResize(labelLoginA);
             ReSize.labelResize(labelLinha1);
             ReSize.labelResize(labelLinha2);
@@ -82,7 +82,7 @@ namespace Starbuy_Desktop
                     if (user.seller) {
                         this.Hide();
                         FormMenu fVendedor = new FormMenu();
-                        //API.getProducts(a);
+                        API.getProducts(user.username);
                         //API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
                         String a = Session.getSession().getUser().username.ToString();

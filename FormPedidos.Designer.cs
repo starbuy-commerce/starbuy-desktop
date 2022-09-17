@@ -32,6 +32,7 @@ namespace Starbuy_Desktop
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
             this.gboxPedidosPedidos = new System.Windows.Forms.GroupBox();
+            this.panelPedidos = new System.Windows.Forms.Panel();
             this.labelPedidos = new System.Windows.Forms.Label();
             this.gboxConfigMenu = new System.Windows.Forms.GroupBox();
             this.pictureBoxPedidosConfig = new System.Windows.Forms.PictureBox();
@@ -46,9 +47,16 @@ namespace Starbuy_Desktop
             this.labelPedidosNumero = new System.Windows.Forms.Label();
             this.btnPedidosAtualizar = new System.Windows.Forms.Button();
             this.labelPedidosBaixa = new System.Windows.Forms.Label();
-            this.panelPedidos = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxPedidosPedidos.SuspendLayout();
+            this.panelPedidos.SuspendLayout();
             this.gboxConfigMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosPedidos)).BeginInit();
@@ -57,6 +65,8 @@ namespace Starbuy_Desktop
             this.gboxConfigPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.gboxPedidosBaixa.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxMenuVendedorCross
@@ -78,6 +88,14 @@ namespace Starbuy_Desktop
             this.gboxPedidosPedidos.Size = new System.Drawing.Size(732, 735);
             this.gboxPedidosPedidos.TabIndex = 17;
             this.gboxPedidosPedidos.TabStop = false;
+            // 
+            // panelPedidos
+            // 
+            this.panelPedidos.Controls.Add(this.groupBox1);
+            this.panelPedidos.Location = new System.Drawing.Point(21, 97);
+            this.panelPedidos.Name = "panelPedidos";
+            this.panelPedidos.Size = new System.Drawing.Size(691, 615);
+            this.panelPedidos.TabIndex = 27;
             // 
             // labelPedidos
             // 
@@ -216,12 +234,74 @@ namespace Starbuy_Desktop
             this.labelPedidosBaixa.TabIndex = 22;
             this.labelPedidosBaixa.Text = "Dar baixa";
             // 
-            // panelPedidos
+            // groupBox1
             // 
-            this.panelPedidos.Location = new System.Drawing.Point(21, 72);
-            this.panelPedidos.Name = "panelPedidos";
-            this.panelPedidos.Size = new System.Drawing.Size(691, 640);
-            this.panelPedidos.TabIndex = 27;
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Location = new System.Drawing.Point(0, 3);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(684, 135);
+            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "groupBox1";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(127, 24);
+            this.label1.MaximumSize = new System.Drawing.Size(38, 80);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(17, 22);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(104, 106);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(127, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(38, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "label2";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(276, 55);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(38, 15);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(487, 55);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(38, 15);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "label4";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(127, 91);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(38, 15);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "label5";
             // 
             // FormPedidos
             // 
@@ -243,6 +323,7 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.gboxPedidosPedidos.ResumeLayout(false);
             this.gboxPedidosPedidos.PerformLayout();
+            this.panelPedidos.ResumeLayout(false);
             this.gboxConfigMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosConfig)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosPedidos)).EndInit();
@@ -253,6 +334,9 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).EndInit();
             this.gboxPedidosBaixa.ResumeLayout(false);
             this.gboxPedidosBaixa.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -276,5 +360,12 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxPedidosMenu;
         private System.Windows.Forms.TextBox textBoxBaixa;
         private System.Windows.Forms.Panel panelPedidos;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
     }
 }

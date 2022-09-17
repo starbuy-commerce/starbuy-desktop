@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Starbuy_Desktop;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace Starbuy_Desktop
 {
@@ -22,17 +24,39 @@ namespace Starbuy_Desktop
             propHeight = (double)height / 786;
         }
 
-        public static void pictureCrossBox(PictureBox p)
+        public static Image pictureCrossBox(PictureBox p,Image i)
         {
             //MessageBox.Show(height.ToString() + "  " + width.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             int heightOriginal = p.Height;
             int widthOriginal = p.Width;
-            p.Height =  p.Height * height / 786;
+            p.Height =  p.Height * height/786;
             p.Width = p.Width * width/1386 ;
             double locationX = p.Location.X * propWidth;// + widthOriginal - p.Width;
             double locationY = p.Location.Y * propHeight;// + heightOriginal - p.Height;
+           /* var destRect = new Rectangle((int)locationX, (int)locationY, p.Width, p.Height);
+            var destImage = new Bitmap(width, height);
+
+                destImage.SetResolution(1080,1920);
+
+                using (var graphics = Graphics.FromImage(destImage))
+                {
+                    graphics.CompositingMode = CompositingMode.SourceCopy;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                    using (var wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.DrawImage(, destRect, 0, 0, p.Image.Width, p.Image.Height, GraphicsUnit.Pixel, wrapMode);
+                    }
+                }
+
+                */
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             p.Location = new Point((int)locationX,(int)locationY);
+            return destImage;
             //MessageBox.Show(p.Location.X.ToString() + "  " + p.Location.Y.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString()); 
         }
 
@@ -110,6 +134,16 @@ namespace Starbuy_Desktop
             double locationX = m.Location.X * propWidth;// + widthOriginal - p.Width;
             double locationY = m.Location.Y * propHeight;// + heightOriginal - p.Height;
             m.Location = new Point((int)locationX, (int)locationY);
+        }
+
+        public static void panelResize(Panel p)
+        {
+            p.Height = p.Height * height / 786;
+            p.Width = p.Width * width / 1386;
+            double locationX = p.Location.X * propWidth;// + widthOriginal - p.Width;
+            double locationY = p.Location.Y * propHeight;// + heightOriginal - p.Height;
+            //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + g.Height.ToString() + " " + g.Width.ToString());
+            p.Location = new Point((int)locationX, (int)locationY);
         }
     }
 }
