@@ -24,7 +24,7 @@ namespace Starbuy_Desktop
             propHeight = (double)height / 786;
         }
 
-        public static Image pictureCrossBox(PictureBox p,Image i)
+        public static void pictureCrossBox(PictureBox p,Image i)
         {
             //MessageBox.Show(height.ToString() + "  " + width.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             int heightOriginal = p.Height;
@@ -56,7 +56,7 @@ namespace Starbuy_Desktop
                 */
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             p.Location = new Point((int)locationX,(int)locationY);
-            return destImage;
+            //return destImage;
             //MessageBox.Show(p.Location.X.ToString() + "  " + p.Location.Y.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString()); 
         }
 

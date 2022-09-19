@@ -19,23 +19,27 @@ public partial class FormEstoque : Form {
 
         private Usuario user;
         private ItemsResponse items;
+        private Session session;
+
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
             this.items = ItemsResponse.GetItemsResponse();
+            this.session = Session.getSession();
             InitializeComponent();
+            
 
-            ReSize.buttonResize(button1);
+            ReSize.buttonResize(btnAdicionar);
             
             ReSize.labelResize(labelEstoqueCantoNome);
             ReSize.labelResize(labelEstoqueEstoque);
-            ReSize.labelResize(labelConfigAlterar);
-            ReSize.labelResize(labelConfigAlterarCEP);
-            ReSize.labelResize(labelConfigAlterarCpf);
-            ReSize.labelResize(labelConfigAlterarEndereco);
-            ReSize.labelResize(labelConfigAlterarFoto);
-            ReSize.labelResize(labelConfigAlterarNome);
-            ReSize.labelResize(labelConfigAlterarTelefone);
+            ReSize.labelResize(labelEstoqueAdicionar);
+            ReSize.labelResize(labelAdicionarDescricao);
+            ReSize.labelResize(labelAdicionarQuant);
+            ReSize.labelResize(labelAdicionarValor);
+            ReSize.labelResize(labelAdicionarFoto);
+            ReSize.labelResize(labelAdicionarNome);
+            ReSize.labelResize(labelAdicionarCategoria);
 
             ReSize.groupBoxResize(gboxEstoqueMenu);
             ReSize.groupBoxResize(gboxEstoquePerfil);
@@ -48,12 +52,12 @@ public partial class FormEstoque : Form {
             ReSize.pictureCrossBox(pictureBoxEstoqueMenu, pictureBoxEstoqueMenu.Image);
             ReSize.pictureCrossBox(pictureBoxEstoquePedidos, pictureBoxEstoquePedidos.Image);
             ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
-            ReSize.textBoxResize(textBoxConfigAlterarCEP);
-            ReSize.textBoxResize(textBoxConfigAlterarCpf);
-            ReSize.textBoxResize(textBoxConfigAlterarEndereco);
-            ReSize.textBoxResize(textBoxConfigAlterarFoto);
-            ReSize.textBoxResize(textBoxConfigAlterarNome);
-            ReSize.textBoxResize(textBoxConfigAlterarTelefone);
+            ReSize.textBoxResize(txtAdicionarDescricao);
+            ReSize.textBoxResize(txtAdicionarQuant);
+            ReSize.textBoxResize(txtAdicionarValor);
+            ReSize.textBoxResize(txtAdicionarFoto);
+            ReSize.textBoxResize(txtAdicionarNome);
+            ReSize.textBoxResize(txtAdicionarCategoria);
 
         }
 
@@ -206,6 +210,16 @@ public partial class FormEstoque : Form {
             panel1.Controls.Add(currentGroupBox);
 
 
+        }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+            Usuario user = new Usuario(this.user.username, this.user.seller);
+            Item item = new Item(txtAdicionarNome.Text, user,  int.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
+            String[] assets = { txtAdicionarFoto.Text };
+            Produtos produto = new Produtos(item,  assets );
+            API.cadastrarNovoProduto(this.session.getJWT(), produto);
         }
     }
 }
