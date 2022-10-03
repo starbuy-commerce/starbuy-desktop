@@ -69,9 +69,9 @@ namespace Starbuy_Desktop
 
         private void buttonLoginEntrar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBoxLoginUsername.Text) || String.IsNullOrEmpty(textBoxLoginSenha.Text))
+            if (String.IsNullOrWhiteSpace(textBoxLoginUsername.Text) || String.IsNullOrWhiteSpace(textBoxLoginSenha.Text))
             {
-                MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                MessageBox.Show("Preencha todos os valores, não deixe nenhum campo vazio ou com apenas espaços!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else { 
                 string username = textBoxLoginUsername.Text;

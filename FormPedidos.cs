@@ -19,7 +19,7 @@ namespace Starbuy_Desktop
         public FormPedidos()
         {
             this.user = Session.getSession().getUser();
-            this.items = ItemsResponse.GetItemsResponse();
+            this.items = ItemsResponse.GetItemsResponse(); // alterar para recieved Orders + criar classe
             InitializeComponent();
 
             ReSize.buttonResize(btnPedidosAtualizar);
@@ -101,7 +101,7 @@ namespace Starbuy_Desktop
             }
 
             //gerar os pedidos
-            if (items.getAllProdutos() == null)
+            if (items == null)
             {
                 //Mostrar tela zero pedidos
                 MessageBox.Show("a");

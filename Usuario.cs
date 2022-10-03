@@ -13,9 +13,9 @@ namespace Starbuy_Desktop
         public String email { get; set; }
         public String name { get; set; }
         public DateTime birthdate { get; set; }
+        public Boolean seller { get; set; }
         public String profile_picture { get; set; }
         public String city { get; set; }
         public DateTime registration { get; set; }
-        public Boolean seller { get; set; }
     } 
 }

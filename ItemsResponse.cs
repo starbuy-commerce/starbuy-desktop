@@ -36,6 +36,10 @@ namespace Starbuy_Desktop
             return produtos[posicao];
         }
 
+        public String GetAsset(int index,int posicao)
+        {
+            return produtos[index].assets[posicao];
+        }
         public Produtos[] getAllProdutos()
         {
             return produtos;
@@ -50,5 +54,6 @@ namespace Starbuy_Desktop
         {
             return itemsResponse;
         }
+
     }
 }
