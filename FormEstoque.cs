@@ -73,7 +73,7 @@ public partial class FormEstoque : Form {
                 pictureBoxEstoqueCanto.Image = resizeSmall;
             }
             //gerar os pedidos
-            if (items.getAllProdutos() == null)
+            if (items == null)
             {
                 //Mostrar tela zero pedidos
                 MessageBox.Show("a");
@@ -144,7 +144,7 @@ public partial class FormEstoque : Form {
             currentGroupBox.Size = new Size(756, 135); // definir tamanho do groupbox
             currentGroupBox.Location = new Point(3, 4 + i * 50 + i * 135);
             //adicionando imagens
-            if (p.GetAsset(0) == null)
+            if (p.assets[0] == null)
             {
                 //não tem imagem
             }
@@ -177,20 +177,20 @@ public partial class FormEstoque : Form {
 
             // atribuindo o preço do produto
             Label preco = new Label();
-            preco.Text = priceprod;
+            preco.Text = "Preço: " + priceprod;
             preco.Location = new Point(127, 55); //localização do preço
             currentGroupBox.Controls.Add(preco);
 
 
             // atribuindo a quantidade em estoque do produto
             Label estoque = new Label();
-            estoque.Text = stockprod;
+            estoque.Text = "Quantidade em estoque: " + stockprod;
             estoque.Location = new Point(276, 55); //localização do estoque
             currentGroupBox.Controls.Add(estoque);
 
             // atribuindo a categoria do produto
             Label categoria = new Label();
-            categoria.Text = "Categoria " + categoryprod;
+            categoria.Text = "Categoria: " + categoryprod;
             categoria.Location = new Point(487, 55); //localização da categoria
             currentGroupBox.Controls.Add(categoria);
 
@@ -206,20 +206,28 @@ public partial class FormEstoque : Form {
             ReSize.labelResize(estoque);
             ReSize.labelResize(categoria);
             ReSize.groupBoxResize(currentGroupBox);
-
             panel1.Controls.Add(currentGroupBox);
-
-
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-
-            Usuario user = new Usuario(this.user.username, this.user.seller);
-            Item item = new Item(txtAdicionarNome.Text, user,  int.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
-            String[] assets = { txtAdicionarFoto.Text };
-            Produtos produto = new Produtos(item,  assets );
-            API.cadastrarNovoProduto(this.session.getJWT(), produto);
+            if (String.IsNullOrWhiteSpace(txtAdicionarNome.Text) || String.IsNullOrWhiteSpace(txtAdicionarValor.Text) || String.IsNullOrWhiteSpace(txtAdicionarQuant.Text) || String.IsNullOrWhiteSpace(txtAdicionarCategoria.Text) || String.IsNullOrWhiteSpace(txtAdicionarDescricao.Text))
+            {
+                MessageBox.Show("Preencha todos os valores, não deixe nenhum campo vazio ou com apenas espaços!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else {
+                try
+                {
+                    int value = int.Parse(txtAdicionarValor.Text);
+                    double quant = double.Parse(txtAdicionarQuant.Text);
+                    CadastroNovoProduto prod = new CadastroNovoProduto(txtAdicionarNome.Text, this.user, int.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
+                    Image assets = null; /*Atribuir a imagem pega do file
+                    API.cadastrarNovoProduto(this.session.getJWT(), prod, assets);*/
+                }
+                catch(FormatException) {
+                    MessageBox.Show("Os campos Quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

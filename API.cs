@@ -21,7 +21,6 @@ namespace Starbuy_Desktop
         private static String heroku_host = "https://starbuy-api.herokuapp.com";
         private static String railways_host = "https://starbuy.up.railway.app";
         private static String host = heroku_host;
-
         // Vai verificar se a host da Heroku ta de boa. Se ela, por algum motivo,
         // tiver caido, vai usar a host do Railways (uma outra plataforma que eu
         // também hospedei a nossa API que serve de backup).
@@ -204,6 +203,46 @@ namespace Starbuy_Desktop
                 }
             }
             catch (WebException cadastroException) {
+                MessageBox.Show(cadastroException.Message.ToString());
+            }
+        }
+        public static void cadastrarNovoProduto(String jwt, Produtos produto)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/item");
+            appendHeaders("POST", req);
+            req.Headers.Add("Authorization", "Bearer " + jwt);
+
+            /* using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+            {
+                streamWriter.Write("{\"item\":\"{" +
+                                        "\"title\":\"" + produto.item.title + "\"," +
+                                        "\"seller\":\"" + produto.item.Seller.username + "\"," +
+                                        "\"price\":\"" + produto.item.price + "," +
+                                        "\"stock\":\"" + produto.item.stock + "," +
+                                        "\"category\":\"" + produto.item.category + "\"," +
+                                        "\"seller\":\"" + produto.item.Seller.seller + "\"," +
+                                        "\"description\":\"" + produto.item.description +
+                                       "\"}," +
+                                    "\"assets\":\"[" + produto.GetAsset(0) + "\"]\"}");
+            } */
+            try
+            {
+                var httpResponse = (HttpWebResponse)req.GetResponse(); // Lança WebException
+                using var streamReader = new StreamReader(httpResponse.GetResponseStream());
+                var result = streamReader.ReadToEnd();
+                try
+                {
+                    ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
+                    MessageBox.Show(response.message.ToString());
+                    ResponseCadastro.setResponseCadastro(response);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
+            catch (WebException cadastroException)
+            {
                 MessageBox.Show(cadastroException.Message.ToString());
             }
         }

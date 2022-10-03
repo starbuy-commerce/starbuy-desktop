@@ -54,6 +54,8 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNumero = new System.Windows.Forms.TextBox();
             this.labelLinha8 = new System.Windows.Forms.Label();
             this.maskedTextBoxRegistroCEP = new System.Windows.Forms.MaskedTextBox();
+            this.btnArquivo = new System.Windows.Forms.Button();
+            this.lblEscolhaImagem = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRegistroCross)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace Starbuy_Desktop
             this.labelRegistroRegistre.AutoSize = true;
             this.labelRegistroRegistre.Font = new System.Drawing.Font("Ebrima", 85F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.labelRegistroRegistre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(124)))), ((int)(((byte)(58)))), ((int)(((byte)(237)))));
-            this.labelRegistroRegistre.Location = new System.Drawing.Point(31, 34);
+            this.labelRegistroRegistre.Location = new System.Drawing.Point(12, -1);
             this.labelRegistroRegistre.Name = "labelRegistroRegistre";
             this.labelRegistroRegistre.Size = new System.Drawing.Size(662, 152);
             this.labelRegistroRegistre.TabIndex = 3;
@@ -75,10 +77,10 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroNome.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroNome.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroNome.Location = new System.Drawing.Point(60, 203);
+            this.textBoxRegistroNome.Location = new System.Drawing.Point(31, 154);
             this.textBoxRegistroNome.Name = "textBoxRegistroNome";
             this.textBoxRegistroNome.PlaceholderText = "Nome";
-            this.textBoxRegistroNome.Size = new System.Drawing.Size(572, 45);
+            this.textBoxRegistroNome.Size = new System.Drawing.Size(449, 45);
             this.textBoxRegistroNome.TabIndex = 6;
             // 
             // textBoxRegistroUsuario
@@ -87,10 +89,10 @@ namespace Starbuy_Desktop
             this.textBoxRegistroUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroUsuario.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroUsuario.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroUsuario.Location = new System.Drawing.Point(60, 311);
+            this.textBoxRegistroUsuario.Location = new System.Drawing.Point(31, 236);
             this.textBoxRegistroUsuario.Name = "textBoxRegistroUsuario";
             this.textBoxRegistroUsuario.PlaceholderText = "Usuário";
-            this.textBoxRegistroUsuario.Size = new System.Drawing.Size(562, 45);
+            this.textBoxRegistroUsuario.Size = new System.Drawing.Size(449, 45);
             this.textBoxRegistroUsuario.TabIndex = 8;
             // 
             // textBoxRegistroEndereco
@@ -99,7 +101,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroEndereco.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroEndereco.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroEndereco.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroEndereco.Location = new System.Drawing.Point(60, 529);
+            this.textBoxRegistroEndereco.Location = new System.Drawing.Point(31, 423);
             this.textBoxRegistroEndereco.Name = "textBoxRegistroEndereco";
             this.textBoxRegistroEndereco.PlaceholderText = "Endereço";
             this.textBoxRegistroEndereco.Size = new System.Drawing.Size(582, 45);
@@ -111,10 +113,10 @@ namespace Starbuy_Desktop
             this.textBoxRegistroEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroEmail.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroEmail.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroEmail.Location = new System.Drawing.Point(668, 311);
+            this.textBoxRegistroEmail.Location = new System.Drawing.Point(723, 236);
             this.textBoxRegistroEmail.Name = "textBoxRegistroEmail";
             this.textBoxRegistroEmail.PlaceholderText = "E-mail";
-            this.textBoxRegistroEmail.Size = new System.Drawing.Size(617, 45);
+            this.textBoxRegistroEmail.Size = new System.Drawing.Size(582, 45);
             this.textBoxRegistroEmail.TabIndex = 16;
             // 
             // textBoxRegistroSenha
@@ -123,7 +125,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroSenha.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroSenha.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroSenha.Location = new System.Drawing.Point(60, 637);
+            this.textBoxRegistroSenha.Location = new System.Drawing.Point(31, 520);
             this.textBoxRegistroSenha.Name = "textBoxRegistroSenha";
             this.textBoxRegistroSenha.PasswordChar = '*';
             this.textBoxRegistroSenha.PlaceholderText = "Senha";
@@ -134,51 +136,51 @@ namespace Starbuy_Desktop
             // 
             this.labelLinha1.AutoSize = true;
             this.labelLinha1.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha1.Location = new System.Drawing.Point(50, 212);
+            this.labelLinha1.Location = new System.Drawing.Point(21, 163);
             this.labelLinha1.Name = "labelLinha1";
-            this.labelLinha1.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha1.Size = new System.Drawing.Size(518, 51);
             this.labelLinha1.TabIndex = 20;
-            this.labelLinha1.Text = "___________________________________";
+            this.labelLinha1.Text = "_______________________________";
             // 
             // labelLinha3
             // 
             this.labelLinha3.AutoSize = true;
             this.labelLinha3.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha3.Location = new System.Drawing.Point(50, 321);
+            this.labelLinha3.Location = new System.Drawing.Point(21, 246);
             this.labelLinha3.Name = "labelLinha3";
-            this.labelLinha3.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha3.Size = new System.Drawing.Size(518, 51);
             this.labelLinha3.TabIndex = 21;
-            this.labelLinha3.Text = "___________________________________";
+            this.labelLinha3.Text = "_______________________________";
             // 
             // labelLinha2
             // 
             this.labelLinha2.AutoSize = true;
             this.labelLinha2.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha2.Location = new System.Drawing.Point(658, 212);
+            this.labelLinha2.Location = new System.Drawing.Point(723, 163);
             this.labelLinha2.Name = "labelLinha2";
-            this.labelLinha2.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha2.Size = new System.Drawing.Size(518, 51);
             this.labelLinha2.TabIndex = 22;
-            this.labelLinha2.Text = "___________________________________";
+            this.labelLinha2.Text = "_______________________________";
             // 
             // labelLinha4
             // 
             this.labelLinha4.AutoSize = true;
             this.labelLinha4.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha4.Location = new System.Drawing.Point(658, 320);
+            this.labelLinha4.Location = new System.Drawing.Point(723, 246);
             this.labelLinha4.Name = "labelLinha4";
-            this.labelLinha4.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha4.Size = new System.Drawing.Size(518, 51);
             this.labelLinha4.TabIndex = 25;
-            this.labelLinha4.Text = "___________________________________";
+            this.labelLinha4.Text = "_______________________________";
             // 
             // labelLinha9
             // 
             this.labelLinha9.AutoSize = true;
             this.labelLinha9.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha9.Location = new System.Drawing.Point(50, 649);
+            this.labelLinha9.Location = new System.Drawing.Point(21, 532);
             this.labelLinha9.Name = "labelLinha9";
-            this.labelLinha9.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha9.Size = new System.Drawing.Size(518, 51);
             this.labelLinha9.TabIndex = 26;
-            this.labelLinha9.Text = "___________________________________";
+            this.labelLinha9.Text = "_______________________________";
             // 
             // textBoxRegistroConfirmar
             // 
@@ -186,32 +188,32 @@ namespace Starbuy_Desktop
             this.textBoxRegistroConfirmar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroConfirmar.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroConfirmar.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroConfirmar.Location = new System.Drawing.Point(668, 637);
+            this.textBoxRegistroConfirmar.Location = new System.Drawing.Point(723, 520);
             this.textBoxRegistroConfirmar.Name = "textBoxRegistroConfirmar";
             this.textBoxRegistroConfirmar.PasswordChar = '*';
             this.textBoxRegistroConfirmar.PlaceholderText = "Confirme a Senha";
-            this.textBoxRegistroConfirmar.Size = new System.Drawing.Size(617, 45);
+            this.textBoxRegistroConfirmar.Size = new System.Drawing.Size(582, 45);
             this.textBoxRegistroConfirmar.TabIndex = 27;
             // 
             // labelLinha10
             // 
             this.labelLinha10.AutoSize = true;
             this.labelLinha10.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha10.Location = new System.Drawing.Point(658, 649);
+            this.labelLinha10.Location = new System.Drawing.Point(723, 532);
             this.labelLinha10.Name = "labelLinha10";
-            this.labelLinha10.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha10.Size = new System.Drawing.Size(518, 51);
             this.labelLinha10.TabIndex = 28;
-            this.labelLinha10.Text = "___________________________________";
+            this.labelLinha10.Text = "_______________________________";
             // 
             // labelLinha5
             // 
             this.labelLinha5.AutoSize = true;
             this.labelLinha5.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha5.Location = new System.Drawing.Point(50, 436);
+            this.labelLinha5.Location = new System.Drawing.Point(21, 334);
             this.labelLinha5.Name = "labelLinha5";
-            this.labelLinha5.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha5.Size = new System.Drawing.Size(518, 51);
             this.labelLinha5.TabIndex = 30;
-            this.labelLinha5.Text = "___________________________________";
+            this.labelLinha5.Text = "_______________________________";
             // 
             // pictureBoxRegistroCross
             // 
@@ -227,7 +229,7 @@ namespace Starbuy_Desktop
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Starbuy_Desktop.Properties.Resources.Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(1020, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(1020, 9);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 82);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -241,7 +243,7 @@ namespace Starbuy_Desktop
             this.buttonRegistro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegistro.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.buttonRegistro.ForeColor = System.Drawing.Color.White;
-            this.buttonRegistro.Location = new System.Drawing.Point(435, 770);
+            this.buttonRegistro.Location = new System.Drawing.Point(420, 696);
             this.buttonRegistro.Name = "buttonRegistro";
             this.buttonRegistro.Size = new System.Drawing.Size(474, 55);
             this.buttonRegistro.TabIndex = 33;
@@ -254,14 +256,14 @@ namespace Starbuy_Desktop
             this.maskedTextBoxRegistroNascimento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBoxRegistroNascimento.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maskedTextBoxRegistroNascimento.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBoxRegistroNascimento.Location = new System.Drawing.Point(668, 200);
+            this.maskedTextBoxRegistroNascimento.Location = new System.Drawing.Point(723, 154);
             this.maskedTextBoxRegistroNascimento.Margin = new System.Windows.Forms.Padding(0);
             this.maskedTextBoxRegistroNascimento.Mask = "00/00/0000";
             this.maskedTextBoxRegistroNascimento.MaximumSize = new System.Drawing.Size(617, 45);
             this.maskedTextBoxRegistroNascimento.MinimumSize = new System.Drawing.Size(140, 45);
             this.maskedTextBoxRegistroNascimento.Name = "maskedTextBoxRegistroNascimento";
             this.maskedTextBoxRegistroNascimento.PromptChar = '-';
-            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(186, 44);
+            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(572, 45);
             this.maskedTextBoxRegistroNascimento.TabIndex = 34;
             this.maskedTextBoxRegistroNascimento.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxRegistroNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxRegistroNascimento_MaskInputRejected);
@@ -271,21 +273,21 @@ namespace Starbuy_Desktop
             // 
             this.labelLinha7.AutoSize = true;
             this.labelLinha7.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha7.Location = new System.Drawing.Point(50, 540);
+            this.labelLinha7.Location = new System.Drawing.Point(21, 434);
             this.labelLinha7.Name = "labelLinha7";
-            this.labelLinha7.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha7.Size = new System.Drawing.Size(518, 51);
             this.labelLinha7.TabIndex = 23;
-            this.labelLinha7.Text = "___________________________________";
+            this.labelLinha7.Text = "_______________________________";
             // 
             // labelLinha6
             // 
             this.labelLinha6.AutoSize = true;
             this.labelLinha6.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha6.Location = new System.Drawing.Point(658, 435);
+            this.labelLinha6.Location = new System.Drawing.Point(723, 334);
             this.labelLinha6.Name = "labelLinha6";
-            this.labelLinha6.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha6.Size = new System.Drawing.Size(518, 51);
             this.labelLinha6.TabIndex = 24;
-            this.labelLinha6.Text = "___________________________________";
+            this.labelLinha6.Text = "_______________________________";
             // 
             // textBoxRegistroCidade
             // 
@@ -293,10 +295,10 @@ namespace Starbuy_Desktop
             this.textBoxRegistroCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroCidade.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroCidade.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroCidade.Location = new System.Drawing.Point(668, 425);
+            this.textBoxRegistroCidade.Location = new System.Drawing.Point(723, 323);
             this.textBoxRegistroCidade.Name = "textBoxRegistroCidade";
             this.textBoxRegistroCidade.PlaceholderText = "Cidade";
-            this.textBoxRegistroCidade.Size = new System.Drawing.Size(617, 45);
+            this.textBoxRegistroCidade.Size = new System.Drawing.Size(582, 45);
             this.textBoxRegistroCidade.TabIndex = 14;
             // 
             // textBoxRegistroNumero
@@ -305,36 +307,60 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxRegistroNumero.Font = new System.Drawing.Font("Segoe UI", 25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.textBoxRegistroNumero.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxRegistroNumero.Location = new System.Drawing.Point(668, 529);
+            this.textBoxRegistroNumero.Location = new System.Drawing.Point(723, 423);
             this.textBoxRegistroNumero.Name = "textBoxRegistroNumero";
             this.textBoxRegistroNumero.PlaceholderText = "Número";
-            this.textBoxRegistroNumero.Size = new System.Drawing.Size(617, 45);
+            this.textBoxRegistroNumero.Size = new System.Drawing.Size(582, 45);
             this.textBoxRegistroNumero.TabIndex = 35;
             // 
             // labelLinha8
             // 
             this.labelLinha8.AutoSize = true;
             this.labelLinha8.Font = new System.Drawing.Font("Ebrima", 28F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelLinha8.Location = new System.Drawing.Point(658, 539);
+            this.labelLinha8.Location = new System.Drawing.Point(723, 434);
             this.labelLinha8.Name = "labelLinha8";
-            this.labelLinha8.Size = new System.Drawing.Size(582, 51);
+            this.labelLinha8.Size = new System.Drawing.Size(518, 51);
             this.labelLinha8.TabIndex = 36;
-            this.labelLinha8.Text = "___________________________________";
+            this.labelLinha8.Text = "_______________________________";
             // 
             // maskedTextBoxRegistroCEP
             // 
             this.maskedTextBoxRegistroCEP.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.maskedTextBoxRegistroCEP.Font = new System.Drawing.Font("Segoe UI", 24.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.maskedTextBoxRegistroCEP.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.maskedTextBoxRegistroCEP.Location = new System.Drawing.Point(60, 425);
+            this.maskedTextBoxRegistroCEP.Location = new System.Drawing.Point(31, 323);
             this.maskedTextBoxRegistroCEP.Margin = new System.Windows.Forms.Padding(0);
             this.maskedTextBoxRegistroCEP.Mask = "00000-000";
             this.maskedTextBoxRegistroCEP.MaximumSize = new System.Drawing.Size(640, 45);
             this.maskedTextBoxRegistroCEP.MinimumSize = new System.Drawing.Size(140, 45);
             this.maskedTextBoxRegistroCEP.Name = "maskedTextBoxRegistroCEP";
-            this.maskedTextBoxRegistroCEP.Size = new System.Drawing.Size(160, 44);
+            this.maskedTextBoxRegistroCEP.Size = new System.Drawing.Size(582, 45);
             this.maskedTextBoxRegistroCEP.TabIndex = 37;
             this.maskedTextBoxRegistroCEP.ValidatingType = typeof(int);
+            // 
+            // btnArquivo
+            // 
+            this.btnArquivo.BackColor = System.Drawing.Color.White;
+            this.btnArquivo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnArquivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnArquivo.Location = new System.Drawing.Point(619, 615);
+            this.btnArquivo.Name = "btnArquivo";
+            this.btnArquivo.Size = new System.Drawing.Size(518, 44);
+            this.btnArquivo.TabIndex = 38;
+            this.btnArquivo.Text = "Selecionar arquivo";
+            this.btnArquivo.UseVisualStyleBackColor = false;
+            this.btnArquivo.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblEscolhaImagem
+            // 
+            this.lblEscolhaImagem.AutoSize = true;
+            this.lblEscolhaImagem.Font = new System.Drawing.Font("Ebrima", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblEscolhaImagem.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblEscolhaImagem.Location = new System.Drawing.Point(180, 615);
+            this.lblEscolhaImagem.Name = "lblEscolhaImagem";
+            this.lblEscolhaImagem.Size = new System.Drawing.Size(433, 37);
+            this.lblEscolhaImagem.TabIndex = 39;
+            this.lblEscolhaImagem.Text = "Escolha uma imagem para perfil ->";
             // 
             // FormRegistro
             // 
@@ -342,7 +368,9 @@ namespace Starbuy_Desktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(1408, 909);
+            this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.lblEscolhaImagem);
+            this.Controls.Add(this.btnArquivo);
             this.Controls.Add(this.maskedTextBoxRegistroCEP);
             this.Controls.Add(this.textBoxRegistroNumero);
             this.Controls.Add(this.labelLinha8);
@@ -406,5 +434,7 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.TextBox textBoxRegistroNumero;
         private System.Windows.Forms.Label labelLinha8;
         private System.Windows.Forms.MaskedTextBox maskedTextBoxRegistroCEP;
+        private System.Windows.Forms.Button btnArquivo;
+        private System.Windows.Forms.Label lblEscolhaImagem;
     }
 }

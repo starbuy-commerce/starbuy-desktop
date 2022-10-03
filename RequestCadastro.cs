@@ -8,7 +8,7 @@ namespace Starbuy_Desktop
 {
     class RequestCadastro
     {
-        public RequestCadastro (String username, String name, String email, String city, String birthdate, String password)
+        public RequestCadastro(String username, String name, String email, String city, String birthdate, String password)
         {
             this.username = username;
             this.name = name;
@@ -26,6 +26,7 @@ namespace Starbuy_Desktop
         {
             public Boolean seller = true;
         }
+        public String profilePicture { get; set; }
         public String password{ get; set; }
     }
 }

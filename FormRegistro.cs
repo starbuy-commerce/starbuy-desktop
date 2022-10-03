@@ -15,13 +15,14 @@ namespace Starbuy_Desktop
     {
         ToolTip toolTipDate = new ToolTip();
         int verificaData = 0;
-
+        String path;
         public FormRegistro()
         {
             InitializeComponent();
-            
+            ReSize.buttonResize(btnArquivo);
             ReSize.buttonResize(buttonRegistro);
 
+            ReSize.labelResize(lblEscolhaImagem);
             ReSize.labelResize(labelLinha1);
             ReSize.labelResize(labelLinha2);
             ReSize.labelResize(labelLinha3);
@@ -33,8 +34,6 @@ namespace Starbuy_Desktop
             ReSize.labelResize(labelLinha9);
             ReSize.labelResize(labelLinha10);
             ReSize.labelResize(labelRegistroRegistre);
-            /*
-            MessageBox.Show(textBoxRegistroUsuario.height.toString(),)
             ReSize.textBoxResize(textBoxRegistroUsuario);
             ReSize.textBoxResize(textBoxRegistroCidade);
             ReSize.textBoxResize(textBoxRegistroConfirmar);
@@ -43,15 +42,8 @@ namespace Starbuy_Desktop
             ReSize.textBoxResize(textBoxRegistroNome);
             ReSize.textBoxResize(textBoxRegistroNumero);
             ReSize.textBoxResize(textBoxRegistroSenha);
-            
-
-            ReSize.pictureCrossBox(pictureBox1);
-            ReSize.pictureCrossBox(pictureBoxRegistroCross);
-
-            ReSize.buttonResize(buttonRegistro);
             ReSize.maskedResize(maskedTextBoxRegistroCEP);
             ReSize.maskedResize(maskedTextBoxRegistroNascimento);
-            */
         }
 
         private void pictureBoxRegistroCross_Click(object sender, EventArgs e)
@@ -69,7 +61,7 @@ namespace Starbuy_Desktop
         {
             if (String.IsNullOrEmpty(textBoxRegistroNome.Text) || !maskedTextBoxRegistroCEP.MaskCompleted || String.IsNullOrEmpty(textBoxRegistroUsuario.Text) || String.IsNullOrEmpty(textBoxRegistroEmail.Text) || String.IsNullOrEmpty(textBoxRegistroSenha.Text) || String.IsNullOrEmpty(textBoxRegistroConfirmar.Text) 
                 || !maskedTextBoxRegistroNascimento.MaskCompleted || String.IsNullOrEmpty(textBoxRegistroEndereco.Text) || String.IsNullOrEmpty(textBoxRegistroCidade.Text) ||
-                    String.IsNullOrEmpty(textBoxRegistroNumero.Text))
+                    String.IsNullOrEmpty(textBoxRegistroNumero.Text) || String.IsNullOrEmpty(path))
             {
                 MessageBox.Show("Preencha todos os valores!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
@@ -86,7 +78,6 @@ namespace Starbuy_Desktop
                            
                             if (int.TryParse(num.ToString(), out numero))
                             {
-
                                 String cep = maskedTextBoxRegistroCEP.Text.ToString();
                                 MessageBox.Show(cep.ToString());
                                 String textBoxNascimento = maskedTextBoxRegistroNascimento.Text.ToString();
@@ -100,7 +91,7 @@ namespace Starbuy_Desktop
                                 MessageBox.Show(requestBirthdate.ToString());
                                 var rq = new RequestCadastro(textBoxRegistroNome.Text, textBoxRegistroNome.Text.ToString(), textBoxRegistroEmail.Text.ToString(), textBoxRegistroCidade.Text.ToString(), requestBirthdate, textBoxRegistroSenha.Text.ToString()); ;
                                 API.cadastrar(rq);
-                                MessageBox.Show(ResponseCadastro.getResponseCadastro().message);
+                                //MessageBox.Show(ResponseCadastro.getResponseCadastro().message);
                             }
                             else
                             {
@@ -165,6 +156,26 @@ namespace Starbuy_Desktop
         private void maskedTextBoxRegistroNascimento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "Achar foto!";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    var image = dialog.OpenFile();
+                    path = dialog.FileName;
+                    MessageBox.Show(path);
+                }
+                catch (Exception er)
+                {
+
+                }
+            }
         }
     }
 }
