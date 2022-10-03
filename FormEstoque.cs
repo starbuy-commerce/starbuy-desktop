@@ -27,10 +27,12 @@ public partial class FormEstoque : Form {
             this.items = ItemsResponse.GetItemsResponse();
             this.session = Session.getSession();
             InitializeComponent();
-            
 
+            ReSize.buttonResize(btnAnterior);
+            ReSize.buttonResize(btnProxima);
             ReSize.buttonResize(btnAdicionar);
-            
+
+            ReSize.labelResize(labelPagina);
             ReSize.labelResize(labelEstoqueCantoNome);
             ReSize.labelResize(labelEstoqueEstoque);
             ReSize.labelResize(labelEstoqueAdicionar);
@@ -138,6 +140,27 @@ public partial class FormEstoque : Form {
             string priceprod = p.item.price.ToString();
             string stockprod = p.item.stock.ToString();
             string categoryprod = p.item.category.ToString();
+            int cat = Int32.Parse(categoryprod);
+
+            switch (cat)
+            {
+                case 1:
+                    categoryprod = "Eletrônico";
+                    break;
+                case 2:
+                    categoryprod = "Vestuário";
+                    break;
+                case 3:
+                    categoryprod = "Casa";
+                    break;
+                case 4:
+                    categoryprod = "Livros";
+                    break;
+                case 7:
+                    categoryprod = "Música";
+                    break;
+            }
+
             string descriptionprod = p.item.description;
 
             GroupBox currentGroupBox = new GroupBox();
@@ -154,7 +177,7 @@ public partial class FormEstoque : Form {
                 byte[] bytes = wc.DownloadData(p.assets[0]);
                 MemoryStream ms = new MemoryStream(bytes);
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-                System.Drawing.Image resizeSmall = (new Bitmap(img, 104, 120));
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 104, 106));
                 PictureBox imagemProduto = new PictureBox();
                 imagemProduto.Location = new Point(17, 22);
                 imagemProduto.Image = resizeSmall;
