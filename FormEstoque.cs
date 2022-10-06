@@ -178,6 +178,7 @@ public partial class FormEstoque : Form {
             currentGroupBox.Size = new Size(756, 135); // definir tamanho do groupbox
             currentGroupBox.Location = new Point(3, 4 + i * 50 + i * 135);
             //adicionando imagens
+            //REVER LÓGICA DE IMAGENS NULAS
             if (p.assets[0] == null)
             {
                 //não tem imagem
