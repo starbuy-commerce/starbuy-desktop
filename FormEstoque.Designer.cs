@@ -68,7 +68,6 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.groupBoxConfigAlterar.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelEstoqueCantoNome
@@ -323,36 +322,35 @@ namespace Starbuy_Desktop
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnProxima);
-            this.panel1.Controls.Add(this.btnAnterior);
-            this.panel1.Controls.Add(this.labelPagina);
             this.panel1.Location = new System.Drawing.Point(246, 84);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 676);
+            this.panel1.Size = new System.Drawing.Size(784, 648);
             this.panel1.TabIndex = 30;
             // 
             // btnProxima
             // 
-            this.btnProxima.Location = new System.Drawing.Point(706, 650);
+            this.btnProxima.Location = new System.Drawing.Point(955, 737);
             this.btnProxima.Name = "btnProxima";
             this.btnProxima.Size = new System.Drawing.Size(75, 23);
             this.btnProxima.TabIndex = 2;
             this.btnProxima.Text = "Próxima";
             this.btnProxima.UseVisualStyleBackColor = true;
+            this.btnProxima.Click += new System.EventHandler(this.btnProxima_Click);
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(479, 650);
+            this.btnAnterior.Location = new System.Drawing.Point(728, 737);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(77, 23);
             this.btnAnterior.TabIndex = 1;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // labelPagina
             // 
             this.labelPagina.AutoSize = true;
-            this.labelPagina.Location = new System.Drawing.Point(562, 654);
+            this.labelPagina.Location = new System.Drawing.Point(811, 741);
             this.labelPagina.Name = "labelPagina";
             this.labelPagina.Size = new System.Drawing.Size(46, 15);
             this.labelPagina.TabIndex = 0;
@@ -364,7 +362,10 @@ namespace Starbuy_Desktop
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.btnProxima);
+            this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelPagina);
             this.Controls.Add(this.groupBoxConfigAlterar);
             this.Controls.Add(this.labelEstoqueEstoque);
             this.Controls.Add(this.pictureBoxMenuVendedorCross);
@@ -387,8 +388,6 @@ namespace Starbuy_Desktop
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).EndInit();
             this.groupBoxConfigAlterar.ResumeLayout(false);
             this.groupBoxConfigAlterar.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -20,7 +20,8 @@ public partial class FormEstoque : Form {
         private Usuario user;
         private ItemsResponse items;
         private Session session;
-
+        private int currentGroupProducts = 0;
+        private int ultPag = 0;
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
@@ -82,8 +83,18 @@ public partial class FormEstoque : Form {
             }
             else
             {
-                MessageBox.Show("b");
+                MessageBox.Show((items.getAllProdutos().Length % 3).ToString());
                 int i = 0;
+                
+                if((items.getAllProdutos().Length)%3 == 0)
+                {
+                    ultPag = (items.getAllProdutos().Length) / 3;
+                }
+                else
+                {
+                    ultPag = (items.getAllProdutos().Length / 3) + 1;
+                }
+                labelPagina.Text = labelPagina.Text + "1 de " + ultPag.ToString(); //ver maneira de verificar q pág tá
                 foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
                 {
                     GetGroupBox(product, i);
@@ -177,7 +188,7 @@ public partial class FormEstoque : Form {
                 byte[] bytes = wc.DownloadData(p.assets[0]);
                 MemoryStream ms = new MemoryStream(bytes);
                 System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-                System.Drawing.Image resizeSmall = (new Bitmap(img, 104, 106));
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 106 , 106));
                 PictureBox imagemProduto = new PictureBox();
                 imagemProduto.Location = new Point(17, 22);
                 imagemProduto.Image = resizeSmall;
@@ -249,6 +260,69 @@ public partial class FormEstoque : Form {
                 }
                 catch(FormatException) {
                     MessageBox.Show("Os campos Quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnProxima_Click(object sender, EventArgs e)
+        {
+            if (((currentGroupProducts+1)* 3) >= items.getAllProdutos().Length) {
+                MessageBox.Show("Você já está na última página!", null);
+            }
+            else
+            {
+                currentGroupProducts++;
+                labelPagina.Text = "Página: " + (currentGroupProducts+1) + " de " + ultPag;
+                panel1.Controls.Clear();
+                int i = 0;
+                foreach (Produtos product in this.items.getAllProdutos())
+                {
+                    if ((currentGroupProducts * 3 - 1) > i)
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        GetGroupBox(product, (i - (currentGroupProducts * 3)));
+
+                        if (i - (currentGroupProducts * 3 - 1) > 2)
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                }
+            }
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (currentGroupProducts == 0)
+            {
+                MessageBox.Show("Você já está na primeira página!", null);
+            }
+            else
+            {
+                currentGroupProducts--;
+                labelPagina.Text = "Página: " + (currentGroupProducts + 1) + " de " + ultPag;
+                panel1.Controls.Clear();
+                int i = 0;
+                foreach (Produtos product in this.items.getAllProdutos())
+                {
+                    if ((currentGroupProducts * 3 - 1) > i)
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        GetGroupBox(product, (i - (currentGroupProducts * 3 )));
+                        
+                        if (i - (currentGroupProducts * 3 - 1) > 2)
+                        {
+                            break;
+                        }
+                        i++;
+                    }
                 }
             }
         }
