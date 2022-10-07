@@ -248,5 +248,47 @@ namespace Starbuy_Desktop
                 MessageBox.Show(cadastroException.Message.ToString());
             }
         }
+        public static ReceivedOrders getPedidos(String jwt)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/received_orders");
+            appendHeaders("GET", req);
+            req.Headers.Add("Authorization", "Bearer " + jwt);
+
+            try
+            {
+                var httpResponse = (HttpWebResponse)req.GetResponse();
+
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    try
+                    {
+                        ReceivedOrders resposta = JsonSerializer.Deserialize<ReceivedOrders>(result);
+                        if (resposta.order != null)
+                        {
+                            MessageBox.Show(resposta.order.Length.ToString());
+                            OrdersResponse.setOrdersResponse(new OrdersResponse(resposta.order));
+                            return resposta;
+                        }
+                        else
+                        {
+                            MessageBox.Show("teste!");
+                            OrdersResponse.setOrdersResponse(new OrdersResponse(null));
+                            return null;
+                        }
+                    }
+                    catch (NullReferenceException e)
+                    {
+                        MessageBox.Show(e.ToString());
+                        return null;
+                    }
+                }
+            }
+            catch (Exception teste)
+            {
+                MessageBox.Show(teste.ToString());
+                return null;
+            }
+        }
     }
 }

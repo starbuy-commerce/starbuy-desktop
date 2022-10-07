@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Starbuy_Desktop
 {
-    class RecievedOrders
+    class ReceivedOrders
     {
-        private Order[] order { get; set; }
+        public Order[] order { get; set; }
+
     }
 }

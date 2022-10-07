@@ -16,6 +16,10 @@ namespace Starbuy_Desktop
     {
         private Usuario user;
         private ItemsResponse items;
+        private OrdersResponse orders;
+        private int currentGroupProducts = 0;
+        private int ultPag = 0;
+
         public FormPedidos()
         {
             this.user = Session.getSession().getUser();
@@ -27,7 +31,6 @@ namespace Starbuy_Desktop
             ReSize.groupBoxResize(gboxConfigMenu);
             ReSize.groupBoxResize(gboxConfigPerfil);
             ReSize.groupBoxResize(gboxPedidosBaixa);
-            ReSize.groupBoxResize(gboxPedidosPedidos);
 
             /*Caixas dos pedidos
             ReSize.groupBoxResize(gboxPedidos1);
@@ -39,7 +42,6 @@ namespace Starbuy_Desktop
             // FAZER O RESIZE DO PANEL!!!! - se der certo fazer o treco lá com ele
 
             ReSize.labelResize(labelConfigCantoNome);
-            ReSize.labelResize(labelPedidos);
             ReSize.labelResize(labelPedidosBaixa);
             ReSize.labelResize(labelPedidosNumero);
 
@@ -101,7 +103,7 @@ namespace Starbuy_Desktop
             }
 
             //gerar os pedidos
-            if (items == null)
+            if (orders == null)
             {
                 //Mostrar tela zero pedidos
                 MessageBox.Show("a");
@@ -110,9 +112,9 @@ namespace Starbuy_Desktop
             {
                 MessageBox.Show("b");
                 int i = 0;
-                foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
+                foreach (Produtos product in this.orders.getAllProdutosFromOrder(0)) // assim vai passar pelo loop para cada produto que o usuário tiver
                 { 
-                    //GetGroupBox(product,i);
+                    GetGroupBox(product,i);
                     i++;
                 }
 
@@ -126,61 +128,166 @@ namespace Starbuy_Desktop
                 } */
             }
         }
-
-        /*private void GetGroupBox(Produtos p,int i)
+        private void GetGroupBox(Produtos p, int i)
         {
             //referênciar cada caracteristica do produto a uma variavel
             string id = p.item.identifier.ToString();
             string titleprod = p.item.title;
-            string  priceprod = p.item.price.ToString();
+            string priceprod = p.item.price.ToString();
             string stockprod = p.item.stock.ToString();
             string categoryprod = p.item.category.ToString();
+            int cat = Int32.Parse(categoryprod);
+
+            switch (cat)
+            {
+                case 1:
+                    categoryprod = "Eletrônico";
+                    break;
+                case 2:
+                    categoryprod = "Vestuário";
+                    break;
+                case 3:
+                    categoryprod = "Casa";
+                    break;
+                case 4:
+                    categoryprod = "Livros";
+                    break;
+                case 7:
+                    categoryprod = "Música";
+                    break;
+            }
+
             string descriptionprod = p.item.description;
 
-            GroupBox currentGroupBox = new GroupBox(); 
-            currentGroupBox.Size = new Size(684, 135); // definir tamanho do groupbox
+            GroupBox currentGroupBox = new GroupBox();
+            currentGroupBox.Size = new Size(756, 135); // definir tamanho do groupbox
             currentGroupBox.Location = new Point(3, 4 + i * 50 + i * 135);
+            //adicionando imagens
+            //REVER LÓGICA DE IMAGENS NULAS
+            if (p.assets[0] == null)
+            {
+                //não tem imagem
+            }
+            else
+            {
+                WebClient wc = new WebClient();
+                byte[] bytes = wc.DownloadData(p.assets[0]);
+                MemoryStream ms = new MemoryStream(bytes);
+                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                System.Drawing.Image resizeSmall = (new Bitmap(img, 106, 106));
+                PictureBox imagemProduto = new PictureBox();
+                imagemProduto.Location = new Point(17, 22);
+                imagemProduto.Image = resizeSmall;
+                imagemProduto.Width = 98;
+                imagemProduto.Height = 98;
+                currentGroupBox.Controls.Add(imagemProduto);
+                ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
+            }
 
             // arrumar as localizações dos itens
             // atribuindo o título do produto
             Label titulo = new Label();
             titulo.Text = titleprod;
             titulo.Location = new Point(127, 24); //localização do titulo
-            currentGroupBox.Controls.Add(titulo); 
-
-            // atribuindo o id do produto
-            Label ident = new Label();
-            ident.Text = id;
-            ident.Location = new Point(6, 1); //localização do id
-            currentGroupBox.Controls.Add(ident); 
+            currentGroupBox.Controls.Add(titulo);
 
             // atribuindo o preço do produto
             Label preco = new Label();
-            preco.Text = priceprod;
+            preco.Text = "Preço: " + priceprod;
             preco.Location = new Point(127, 55); //localização do preço
             currentGroupBox.Controls.Add(preco);
 
 
             // atribuindo a quantidade em estoque do produto
             Label estoque = new Label();
-            estoque.Text = stockprod;
-            estoque.Location = new Point(8, 1); //localização do estoque
+            estoque.Text = "Quantidade em estoque: " + stockprod;
+            estoque.Location = new Point(276, 55); //localização do estoque
             currentGroupBox.Controls.Add(estoque);
 
             // atribuindo a categoria do produto
             Label categoria = new Label();
-            categoria.Text = categoryprod;
-            categoria.Location = new Point(9, 1); //localização da categoria
-            currentGroupBox.Controls.Add(categoria); 
+            categoria.Text = "Categoria: " + categoryprod;
+            categoria.Location = new Point(487, 55); //localização da categoria
+            currentGroupBox.Controls.Add(categoria);
 
             // atribuindo a descrição do produto
             Label descricao = new Label();
             descricao.Text = descriptionprod;
-            descricao.Location = new Point(10, 1); //localização da categoria
+            descricao.Location = new Point(127, 91); //localização da categoria
             currentGroupBox.Controls.Add(descricao);
             currentGroupBox.Visible = true;
-            panelPedidos.Controls.Add(currentGroupBox);
+            ReSize.labelResize(titulo);
+            ReSize.labelResize(preco);
+            ReSize.labelResize(descricao);
+            ReSize.labelResize(estoque);
+            ReSize.labelResize(categoria);
+            ReSize.groupBoxResize(currentGroupBox);
+            panel1.Controls.Add(currentGroupBox);
+        }
 
-        }*/
+
+        private void btnProxima_Click(object sender, EventArgs e)
+        {
+            if (((currentGroupProducts + 1) * 3) >= items.getAllProdutos().Length)
+            {
+                MessageBox.Show("Você já está na última página!", null);
+            }
+            else
+            {
+                currentGroupProducts++;
+                labelPagina.Text = "Página: " + (currentGroupProducts + 1) + " de " + ultPag;
+                panel1.Controls.Clear();
+                int i = 0;
+                foreach (Produtos product in this.orders.getAllProdutosFromOrder(0))
+                {
+                    if ((currentGroupProducts * 3 - 1) > i)
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        GetGroupBox(product, (i - (currentGroupProducts * 3)));
+
+                        if (i - (currentGroupProducts * 3 - 1) > 2)
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                }
+            }
+        }
+
+        private void btnAnterior_Click(object sender, EventArgs e)
+        {
+            if (currentGroupProducts == 0)
+            {
+                MessageBox.Show("Você já está na primeira página!", null);
+            }
+            else
+            {
+                currentGroupProducts--;
+                labelPagina.Text = "Página: " + (currentGroupProducts + 1) + " de " + ultPag;
+                panel1.Controls.Clear();
+                int i = 0;
+                foreach (Produtos product in this.orders.getAllProdutosFromOrder(0))
+                {
+                    if ((currentGroupProducts * 3 - 1) > i)
+                    {
+                        i++;
+                    }
+                    else
+                    {
+                        GetGroupBox(product, (i - (currentGroupProducts * 3)));
+
+                        if (i - (currentGroupProducts * 3 - 1) > 2)
+                        {
+                            break;
+                        }
+                        i++;
+                    }
+                }
+            }
+        }
     }
 }

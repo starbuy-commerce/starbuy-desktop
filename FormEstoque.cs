@@ -193,22 +193,18 @@ public partial class FormEstoque : Form {
                 PictureBox imagemProduto = new PictureBox();
                 imagemProduto.Location = new Point(17, 22);
                 imagemProduto.Image = resizeSmall;
+                imagemProduto.Width = 98;
+                imagemProduto.Height = 98;
                 currentGroupBox.Controls.Add(imagemProduto);
                 ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
             }
-
+            
             // arrumar as localizações dos itens
             // atribuindo o título do produto
             Label titulo = new Label();
             titulo.Text = titleprod;
             titulo.Location = new Point(127, 24); //localização do titulo
             currentGroupBox.Controls.Add(titulo);
-
-            // atribuindo o id do produto
-            /*Label ident = new Label();
-            ident.Text = id;
-            ident.Location = new Point(6, 1); //localização do id
-            currentGroupBox.Controls.Add(ident); */
 
             // atribuindo o preço do produto
             Label preco = new Label();

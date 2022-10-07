@@ -11,7 +11,8 @@ namespace Starbuy_Desktop
         private String identifier { get; set; }
         private Usuario costumer { get; set; }
         private Usuario seller { get; set; }
-        private Item[] items { get; set; }
+        
+        private Venda[] sell { get; set; }
 
     }
 }
