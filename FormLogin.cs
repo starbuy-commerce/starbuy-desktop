@@ -83,6 +83,7 @@ namespace Starbuy_Desktop
                         this.Hide();
                         FormMenu fVendedor = new FormMenu();
                         API.getProducts(user.username);
+                        API.getPedidos(Session.getSession().getJWT());
                         //API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
                         String a = Session.getSession().getUser().username.ToString();
