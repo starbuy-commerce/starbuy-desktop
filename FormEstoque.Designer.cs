@@ -59,6 +59,7 @@ namespace Starbuy_Desktop
             this.btnProxima = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.labelPagina = new System.Windows.Forms.Label();
+            this.comboBoxAdicionarAtualizar = new System.Windows.Forms.ComboBox();
             this.gboxEstoquePerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueCanto)).BeginInit();
             this.gboxEstoqueMenu.SuspendLayout();
@@ -152,7 +153,7 @@ namespace Starbuy_Desktop
             // pictureBoxMenuVendedorCross
             // 
             this.pictureBoxMenuVendedorCross.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxMenuVendedorCross.Image")));
-            this.pictureBoxMenuVendedorCross.Location = new System.Drawing.Point(1310, 30);
+            this.pictureBoxMenuVendedorCross.Location = new System.Drawing.Point(1316, 28);
             this.pictureBoxMenuVendedorCross.Name = "pictureBoxMenuVendedorCross";
             this.pictureBoxMenuVendedorCross.Size = new System.Drawing.Size(33, 34);
             this.pictureBoxMenuVendedorCross.TabIndex = 14;
@@ -186,9 +187,9 @@ namespace Starbuy_Desktop
             this.groupBoxConfigAlterar.Controls.Add(this.txtAdicionarQuant);
             this.groupBoxConfigAlterar.Controls.Add(this.txtAdicionarNome);
             this.groupBoxConfigAlterar.Controls.Add(this.labelEstoqueAdicionar);
-            this.groupBoxConfigAlterar.Location = new System.Drawing.Point(1048, 65);
+            this.groupBoxConfigAlterar.Location = new System.Drawing.Point(1048, 84);
             this.groupBoxConfigAlterar.Name = "groupBoxConfigAlterar";
-            this.groupBoxConfigAlterar.Size = new System.Drawing.Size(262, 695);
+            this.groupBoxConfigAlterar.Size = new System.Drawing.Size(262, 648);
             this.groupBoxConfigAlterar.TabIndex = 29;
             this.groupBoxConfigAlterar.TabStop = false;
             // 
@@ -356,12 +357,25 @@ namespace Starbuy_Desktop
             this.labelPagina.TabIndex = 0;
             this.labelPagina.Text = "Página:";
             // 
+            // comboBoxAdicionarAtualizar
+            // 
+            this.comboBoxAdicionarAtualizar.FormattingEnabled = true;
+            this.comboBoxAdicionarAtualizar.Items.AddRange(new object[] {
+            "Adicionar Produto",
+            "Atualizar Produto"});
+            this.comboBoxAdicionarAtualizar.Location = new System.Drawing.Point(1048, 55);
+            this.comboBoxAdicionarAtualizar.Name = "comboBoxAdicionarAtualizar";
+            this.comboBoxAdicionarAtualizar.Size = new System.Drawing.Size(262, 23);
+            this.comboBoxAdicionarAtualizar.TabIndex = 31;
+            this.comboBoxAdicionarAtualizar.SelectedIndexChanged += new System.EventHandler(this.comboBoxAdicionarAtualizar_SelectedIndexChanged);
+            // 
             // FormEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1386, 788);
+            this.Controls.Add(this.comboBoxAdicionarAtualizar);
             this.Controls.Add(this.btnProxima);
             this.Controls.Add(this.btnAnterior);
             this.Controls.Add(this.panel1);
@@ -424,5 +438,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Button btnProxima;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Label labelPagina;
+        private System.Windows.Forms.ComboBox comboBoxAdicionarAtualizar;
     }
 }
