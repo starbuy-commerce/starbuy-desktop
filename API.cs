@@ -159,7 +159,7 @@ namespace Starbuy_Desktop
                     }
                     catch(System.NullReferenceException e)
                     {
-                        MessageBox.Show("Não existe endereço!");
+                        MessageBox.Show("Não existe endereço! " + e.ToString());
                         return null;
                     }
                 }

@@ -19,6 +19,7 @@ public partial class FormConfig : Form {
 
         private Usuario user;
         private MultiplosEnderecosResponse address;
+        int controller = 0;
         public FormConfig() {
             this.user = Session.getSession().getUser();
             this.address = MultiplosEnderecosResponse.getEnderecosResponse();
@@ -51,17 +52,23 @@ public partial class FormConfig : Form {
             ReSize.labelResize(labelConfigAlterarNome);
             ReSize.labelResize(labelConfigAlterarTelefone);
             ReSize.labelResize(labelConfigCantoNome);
-            ReSize.labelResize(labelConfigCep);
+            ReSize.labelResize(lblCep);
             ReSize.labelResize(labelConfigCidade);
             ReSize.labelResize(labelConfigID);
             ReSize.labelResize(labelConfigConfig);
-            ReSize.labelResize(labelConfigInfCep);
+            ReSize.labelResize(lblEmail);
+            ReSize.labelResize(lblNum);
             ReSize.labelResize(labelConfigInfCidade);
-            ReSize.labelResize(labelConfigInfTelefone);
+            ReSize.labelResize(lblComplemento);
             ReSize.labelResize(labelConfigInfUsername);
             ReSize.labelResize(labelConfigNome);
-            ReSize.labelResize(labelConfigTelefone);
             ReSize.labelResize(labelConfigUsername);
+            ReSize.labelResize(lblRespCep);
+            ReSize.labelResize(lblRespComplemento);
+            ReSize.labelResize(lblResultEmail);
+            ReSize.labelResize(lblRespNum);
+            ReSize.labelResize(label1);
+            ReSize.comboBoxResise(comboBoxEndereco);
 
             ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
             ReSize.pictureCrossBox(pictureBoxConfigMenu, pictureBoxConfigMenu.Image);
@@ -94,13 +101,21 @@ public partial class FormConfig : Form {
                 pictureBoxConfigFoto.Image = resizeProfile;
                 pictureBoxConfigFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             }
-            // Adicionar verificação de endereço null//
-
-                /*Adicionando Endereços
-                labelConfigCep.Text = address.getAddress(0).cep.ToString();
-                labelConfigEndereco.Text = user.city.ToString();
-                labelConfigUsername.Text = user.username.ToString();
-                */
+            if (MultiplosEnderecosResponse.getEnderecosResponse() == null)
+            {
+                MessageBox.Show("A");
+            }
+            else
+            {
+                lblRespCep.Text = address.getAddress(0).cep;
+                lblRespComplemento.Text = address.getAddress(0).complement;
+                lblRespNum.Text = address.getAddress(0).number.ToString();
+                comboBoxEndereco.Items.Clear(); 
+                foreach(Address ad in address.getAddresses())
+                {
+                    comboBoxEndereco.Items.Add(ad.cep);
+                }
+            }
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {
@@ -131,6 +146,15 @@ public partial class FormConfig : Form {
             this.Close();
             FormEstoque estoque = new FormEstoque();
             estoque.Show();
+        }
+
+        private void comboBoxEndereco_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int buscar = comboBoxEndereco.SelectedIndex;
+            lblRespCep.Text = address.getAddress(buscar).cep;
+            lblRespComplemento.Text = address.getAddress(buscar
+                ).complement;
+            lblRespNum.Text = address.getAddress(buscar).number.ToString();
         }
     }
 }
