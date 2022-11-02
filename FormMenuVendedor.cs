@@ -19,10 +19,8 @@ namespace Starbuy_Desktop
             this.user = Session.getSession().getUser();
             InitializeComponent();
             ReSize.labelResize(labelConfigCantoNome);
-            ReSize.labelResize(labelMenuAndam);
             ReSize.labelResize(labelMenuEstoque);
-            ReSize.labelResize(labelMenuNovo);
-            ReSize.labelResize(labelMenuQuantidade);
+            ReSize.labelResize(labelMenuPedidos);
             ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
             ReSize.pictureCrossBox(pictureBoxMenuConfig, pictureBoxMenuConfig.Image);
             ReSize.pictureCrossBox(pictureBoxMenuEstoque, pictureBoxMenuEstoque.Image);
@@ -31,20 +29,8 @@ namespace Starbuy_Desktop
             ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
             ReSize.groupBoxResize(gboxConfigPerfil);
             ReSize.groupBoxResize(gboxMenu);
-            ReSize.groupBoxResize(gboxMenuAndam);
-            ReSize.groupBoxResize(gboxMenuAndam1);
-            ReSize.groupBoxResize(gboxMenuAndam2);
-            ReSize.groupBoxResize(gboxMenuAndam3);
             ReSize.groupBoxResize(gboxMenuEstoque);
-            ReSize.groupBoxResize(gboxMenuEstoque1);
-            ReSize.groupBoxResize(gboxMenuEstoque2);
-            ReSize.groupBoxResize(gboxMenuEstoque3);
-            ReSize.groupBoxResize(gboxMenuNovo);
-            ReSize.groupBoxResize(gboxMenuNovo1);
-            ReSize.groupBoxResize(gboxMenuNovo2);
-            ReSize.groupBoxResize(gboxMenuNovo3);
-            ReSize.groupBoxResize(gboxMenuNovo4);
-            ReSize.groupBoxResize(gboxMenuQuantidade);
+            ReSize.groupBoxResize(gboxMenuPedidos);
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
@@ -93,5 +79,7 @@ namespace Starbuy_Desktop
             FormConfig config = new FormConfig();
             config.Show();
         }
+
+
     }
 }

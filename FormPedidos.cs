@@ -44,7 +44,6 @@ namespace Starbuy_Desktop
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(labelPedidosBaixa);
             ReSize.labelResize(labelPedidosNumero);
-
             ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
             ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
             ReSize.pictureCrossBox(pictureBoxPedidosConfig, pictureBoxPedidosConfig.Image);

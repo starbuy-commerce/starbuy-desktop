@@ -22,6 +22,7 @@ public partial class FormEstoque : Form {
         private Session session;
         private int currentGroupProducts = 0;
         private int ultPag = 0;
+        private ComboBox itens;
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
@@ -49,6 +50,7 @@ public partial class FormEstoque : Form {
             ReSize.groupBoxResize(groupBoxConfigAlterar);
             ReSize.panelResize(panel1);
 
+            ReSize.comboxResize(comboBoxAdicionarAtualizar);
             ReSize.pictureCrossBox(pictureBoxEstoqueCanto, pictureBoxEstoqueCanto.Image);
             ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes, pictureBoxEstoqueConfiguracoes.Image);
             ReSize.pictureCrossBox(pictureBoxEstoqueEstoque, pictureBoxEstoqueEstoque.Image);
@@ -65,6 +67,21 @@ public partial class FormEstoque : Form {
         }
 
         private void FormEstoque_Load(object sender, EventArgs e) {
+            comboBoxAdicionarAtualizar.SelectedIndex = 0;
+            /*
+
+            int locationX = txtAdicionarNome.Location.X;
+            int locationY = txtAdicionarNome.Location.Y;
+            int height = txtAdicionarNome.Size.Height;
+            int width = txtAdicionarNome.Size.Width;
+
+            itens = new ComboBox();
+            itens.Location = new Point(locationX, locationY);
+            itens.Height = height;
+            itens.Width = width;
+            itens.Visible = false;
+           */
+
             labelEstoqueCantoNome.Text = user.name;
             if (!string.IsNullOrEmpty(user.profile_picture))
             {
@@ -97,6 +114,7 @@ public partial class FormEstoque : Form {
                 labelPagina.Text = labelPagina.Text + "1 de " + ultPag.ToString(); //ver maneira de verificar q pág tá
                 foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
                 {
+                    //itens.Items.Add(i);
                     GetGroupBox(product, i);
                     i++;
                     if (i > 2) { break; }
@@ -111,6 +129,7 @@ public partial class FormEstoque : Form {
                     }
                 } */
             }
+            
         }
 
         private void pictureBoxEstoqueMenuVendedorCross_Click(object sender, EventArgs e) {
@@ -229,7 +248,7 @@ public partial class FormEstoque : Form {
             Label descricao = new Label();
             descricao.Text = descriptionprod;
             descricao.Location = new Point(127, 91); //localização da categoria
-            currentGroupBox.Controls.Add(descricao);
+                
             currentGroupBox.Visible = true;
             ReSize.labelResize(titulo);
             ReSize.labelResize(preco);
@@ -256,7 +275,7 @@ public partial class FormEstoque : Form {
                     API.cadastrarNovoProduto(this.session.getJWT(), prod, assets);*/
                 }
                 catch(FormatException) {
-                    MessageBox.Show("Os campos Quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Os campos quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -321,6 +340,48 @@ public partial class FormEstoque : Form {
                         i++;
                     }
                 }
+            }
+        }
+
+        private void comboBoxAdicionarAtualizar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxAdicionarAtualizar.SelectedIndex == 0)
+            {
+                labelEstoqueAdicionar.Text = "Adicionar Produto";
+            }
+            else if (comboBoxAdicionarAtualizar.SelectedIndex == 1)
+            {
+                labelEstoqueAdicionar.Text = "Atualizar Produto";
+                labelAdicionarNome.Text = "Produto";
+                txtAdicionarNome.Visible = false;
+                
+                int locationX = txtAdicionarNome.Location.X;
+                int locationY = txtAdicionarNome.Location.Y;
+                int height = txtAdicionarNome.Size.Height;
+                int width = txtAdicionarNome.Size.Width;  
+
+                itens = new ComboBox();
+                itens.Location = new Point(locationX, locationY);
+                itens.Visible = false;
+                if (items == null)
+                {
+                    MessageBox.Show("a");
+                }
+                else
+                {
+                    foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
+                    {
+                        itens.Items.Add(product.item.title);
+                    }
+                    itens.Visible = true;
+                    txtAdicionarNome.Hide();
+                }
+                
+                comboBoxAdicionarAtualizar.Controls.Add(itens);
+                itens.Height = height;
+                itens.Width = width;
+
+                MessageBox.Show(itens.Width.ToString() + " " + itens.Height.ToString() + " " + itens.Location.X.ToString() + " " + itens.Location.Y.ToString());
             }
         }
     }
