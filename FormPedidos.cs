@@ -44,7 +44,6 @@ namespace Starbuy_Desktop
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(labelPedidosBaixa);
             ReSize.labelResize(labelPedidosNumero);
-
             ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
             ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
             ReSize.pictureCrossBox(pictureBoxPedidosConfig, pictureBoxPedidosConfig.Image);
@@ -112,11 +111,11 @@ namespace Starbuy_Desktop
             {
                 MessageBox.Show("b");
                 int i = 0;
-                foreach (Produtos product in this.orders.getAllProdutosFromOrder(0)) // assim vai passar pelo loop para cada produto que o usuário tiver
+                /*foreach (Produtos product in this.orders.getAllProdutosFromOrder(0)) // assim vai passar pelo loop para cada produto que o usuário tiver
                 { 
                     GetGroupBox(product,i);
                     i++;
-                }
+                }*/
 
                 // algo assim:
                 /* foreach (DataRow itm in data.Rows)
@@ -238,7 +237,7 @@ namespace Starbuy_Desktop
                 labelPagina.Text = "Página: " + (currentGroupProducts + 1) + " de " + ultPag;
                 panel1.Controls.Clear();
                 int i = 0;
-                foreach (Produtos product in this.orders.getAllProdutosFromOrder(0))
+                /*foreach (Produtos product in this.orders.getAllProdutosFromOrder(0))
                 {
                     if ((currentGroupProducts * 3 - 1) > i)
                     {
@@ -254,7 +253,7 @@ namespace Starbuy_Desktop
                         }
                         i++;
                     }
-                }
+                }*/
             }
         }
 
@@ -270,7 +269,7 @@ namespace Starbuy_Desktop
                 labelPagina.Text = "Página: " + (currentGroupProducts + 1) + " de " + ultPag;
                 panel1.Controls.Clear();
                 int i = 0;
-                foreach (Produtos product in this.orders.getAllProdutosFromOrder(0))
+                /*foreach (Produtos product in this.orders.getAllProdutosFromOrder(0))
                 {
                     if ((currentGroupProducts * 3 - 1) > i)
                     {
@@ -286,7 +285,7 @@ namespace Starbuy_Desktop
                         }
                         i++;
                     }
-                }
+                }*/
             }
         }
     }

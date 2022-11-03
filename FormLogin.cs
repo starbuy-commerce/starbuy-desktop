@@ -62,8 +62,8 @@ namespace Starbuy_Desktop
             if (diag == DialogResult.Yes)
             {
                 this.Hide();
-                FormRegistro f2 = new FormRegistro(); //Abrindo forms novo// 
-                f2.ShowDialog(); // Arranjar jeito de voltar pro forms original  // e // jeito de fechar forms novo!//
+                FormRegistro f2 = new FormRegistro();
+                f2.ShowDialog();
             }
         }
 
@@ -84,7 +84,7 @@ namespace Starbuy_Desktop
                         FormMenu fVendedor = new FormMenu();
                         API.getProducts(user.username);
                         API.getPedidos(Session.getSession().getJWT());
-                        //API.getAddress(Session.getSession().getJWT());
+                        API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
                         String a = Session.getSession().getUser().username.ToString();
                         MessageBox.Show(a);

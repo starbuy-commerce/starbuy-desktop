@@ -145,5 +145,19 @@ namespace Starbuy_Desktop
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + g.Height.ToString() + " " + g.Width.ToString());
             p.Location = new Point((int)locationX, (int)locationY);
         }
+
+
+        public static void comboBoxResise(ComboBox c)
+        {
+            c.Height = c.Height * height / 786;
+            c.Width = c.Width * width / 1386;
+            double locationX = c.Location.X * propWidth;// + widthOriginal - p.Width;
+            double locationY = c.Location.Y * propHeight;// + heightOriginal - p.Height;
+            double novaFonte = (c.Font.Size * propWidth);
+            String font = c.Font.FontFamily.ToString();
+            c.Font = new Font(font, (int)novaFonte);
+            //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + g.Height.ToString() + " " + g.Width.ToString());
+            c.Location = new Point((int)locationX, (int)locationY);
+        }
     }
 }
