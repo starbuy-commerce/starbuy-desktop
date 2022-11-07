@@ -152,10 +152,18 @@ namespace Starbuy_Desktop
                     try
                     {
                         Address[] enderecos = JsonSerializer.Deserialize<Address[]>(result);
-                        MessageBox.Show(enderecos.Length.ToString());
-                        MessageBox.Show(enderecos[0].cep.ToString());
-                        MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
-                        return enderecos;
+                        if (enderecos != null)
+                        {
+
+                            MessageBox.Show(enderecos.Length.ToString());
+                            MessageBox.Show(enderecos[0].cep.ToString());
+                            MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
+                            return enderecos;
+                        }
+                        else
+                        {
+                            return null;
+                        }
                     }
                     catch(System.NullReferenceException e)
                     {
@@ -206,26 +214,30 @@ namespace Starbuy_Desktop
                 MessageBox.Show(cadastroException.Message.ToString());
             }
         }
-        public static void cadastrarNovoProduto(String jwt, Produtos produto, Usuario user,String path)
+        public static void cadastrarNovoProduto(String jwt, Item item, Usuario user,String image)
         {
             var req = (HttpWebRequest)WebRequest.Create(host + "/item");
             appendHeaders("POST", req);
             req.Headers.Add("Authorization", "Bearer " + jwt);
-            Byte[] bytes = File.ReadAllBytes(path);
-            String file = Convert.ToBase64String(bytes);
 
             using (var streamWriter = new StreamWriter(req.GetRequestStream()))
             {
                 streamWriter.Write("{\"item\":\"{" +
-                                        "\"title\":\"" + produto.item.title + "\"," +
-                                        "\"seller\":\"" + user.seller + "\"," +
-                                        "\"price\":\"" + produto.item.price + "," +
-                                        "\"stock\":\"" + produto.item.stock + "," +
-                                        "\"category\":\"" + produto.item.category + "\"," +
+                                        "\"title\":\"" + item.title + "\"," +
+                                        "\"seller\":\"{\"username\":\"" + user.username + "\"," +
+                                                        "\"name\":\"" + user.name + "\"," +
+                                                        "\"email\":\"" + user.email + "\"," +
+                                                        "\"city\":\"" + user.city + "\"," +
+                                                        "\"birthdate\":\"" + user.birthdate + "\"," +
+                                                        "\"seller\":\"" + "true" + "\"," +
+                                                        "\"profile_picture\":\"" + "" + "\"," +"\"}" + "\"," +
+                                        "\"price\":\"" + item.price + "," +
+                                        "\"stock\":\"" + item.stock + "," +
+                                        "\"category\":\"" + item.category + "\"," +
                                         "\"seller\":\"" + user.username + "\"," +
-                                        "\"description\":\"" + produto.item.description +
+                                        "\"description\":\"" + item.description +
                                        "\"}," +
-                                    "\"assets\":\"[" +  file + "\"]\"}");
+                                    "\"assets\":\"[" +  image + "\"]\"}");
             } 
             try
             {
@@ -264,7 +276,7 @@ namespace Starbuy_Desktop
                     try
                     {
                         ReceivedOrders resposta = JsonSerializer.Deserialize<ReceivedOrders>(result);
-                        if (resposta.order != null)
+                        if (resposta != null)
                         {
                             MessageBox.Show(resposta.order.Length.ToString());
                             OrdersResponse.setOrdersResponse(new OrdersResponse(resposta.order));

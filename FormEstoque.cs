@@ -22,7 +22,9 @@ public partial class FormEstoque : Form {
         private Session session;
         private int currentGroupProducts = 0;
         private int ultPag = 0;
-        private ComboBox itens;
+        private ComboBox Comboitens;
+        private string path;
+        private Image ImagemEnviar;
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
@@ -50,7 +52,7 @@ public partial class FormEstoque : Form {
             ReSize.groupBoxResize(groupBoxConfigAlterar);
             ReSize.panelResize(panel1);
 
-            ReSize.comboxResize(comboBoxAdicionarAtualizar);
+            ReSize.comboBoxResise(comboBoxAdicionarAtualizar);
             ReSize.pictureCrossBox(pictureBoxEstoqueCanto, pictureBoxEstoqueCanto.Image);
             ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes, pictureBoxEstoqueConfiguracoes.Image);
             ReSize.pictureCrossBox(pictureBoxEstoqueEstoque, pictureBoxEstoqueEstoque.Image);
@@ -60,7 +62,7 @@ public partial class FormEstoque : Form {
             ReSize.textBoxResize(txtAdicionarDescricao);
             ReSize.textBoxResize(txtAdicionarQuant);
             ReSize.textBoxResize(txtAdicionarValor);
-            ReSize.textBoxResize(txtAdicionarFoto);
+            ReSize.buttonResize(btnAdicionarFoto);
             ReSize.textBoxResize(txtAdicionarNome);
             ReSize.textBoxResize(txtAdicionarCategoria);
 
@@ -98,7 +100,7 @@ public partial class FormEstoque : Form {
                 //Mostrar tela zero pedidos
                 MessageBox.Show("a");
             }
-            else
+            else if (items.getAllProdutos() != null)
             {
                 MessageBox.Show((items.getAllProdutos().Length % 3).ToString());
                 int i = 0;
@@ -198,11 +200,28 @@ public partial class FormEstoque : Form {
             currentGroupBox.Location = new Point(3, 4 + i * 50 + i * 135);
             //adicionando imagens
             //REVER LÓGICA DE IMAGENS NULAS
-            if (p.assets[0] == null)
+            if (p == null)
             {
-                //não tem imagem
+                try { 
+                    WebClient wc = new WebClient();
+                    byte[] bytes = wc.DownloadData(p.assets[0]);
+                    MemoryStream ms = new MemoryStream(bytes);
+                    System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
+                    System.Drawing.Image resizeSmall = (new Bitmap(img, 106, 106));
+                    PictureBox imagemProduto = new PictureBox();
+                    imagemProduto.Location = new Point(17, 22);
+                    imagemProduto.Image = resizeSmall;
+                    imagemProduto.Width = 98;
+                    imagemProduto.Height = 98;
+                    currentGroupBox.Controls.Add(imagemProduto);
+                    ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Não tem imagem!");
+                }
             }
-            else
+            /*else if(p.assets[0] != null)
             {
                 WebClient wc = new WebClient();
                 byte[] bytes = wc.DownloadData(p.assets[0]);
@@ -216,7 +235,7 @@ public partial class FormEstoque : Form {
                 imagemProduto.Height = 98;
                 currentGroupBox.Controls.Add(imagemProduto);
                 ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
-            }
+            }*/
             
             // arrumar as localizações dos itens
             // atribuindo o título do produto
@@ -270,9 +289,20 @@ public partial class FormEstoque : Form {
                 {
                     int value = int.Parse(txtAdicionarValor.Text);
                     double quant = double.Parse(txtAdicionarQuant.Text);
-                    CadastroNovoProduto prod = new CadastroNovoProduto(txtAdicionarNome.Text, this.user, int.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
-                    Image assets = null; /*Atribuir a imagem pega do file
-                    API.cadastrarNovoProduto(this.session.getJWT(), prod, assets);*/
+                    Item prod = new Item(txtAdicionarNome.Text, double.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
+                    string base64String;
+                    using (Image image = ImagemEnviar)
+                    {
+                        using (MemoryStream m = new MemoryStream())
+                        {
+                            image.Save(m, image.RawFormat);
+                            byte[] imageBytes = m.ToArray();
+
+                            // Convert byte[] to Base64 String
+                            base64String = Convert.ToBase64String(imageBytes);
+                        }
+                    }
+                    API.cadastrarNovoProduto(this.session.getJWT(), prod, user, base64String);
                 }
                 catch(FormatException) {
                     MessageBox.Show("Os campos quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -348,6 +378,8 @@ public partial class FormEstoque : Form {
             if(comboBoxAdicionarAtualizar.SelectedIndex == 0)
             {
                 labelEstoqueAdicionar.Text = "Adicionar Produto";
+                txtAdicionarNome.Visible = true;
+
             }
             else if (comboBoxAdicionarAtualizar.SelectedIndex == 1)
             {
@@ -360,9 +392,9 @@ public partial class FormEstoque : Form {
                 int height = txtAdicionarNome.Size.Height;
                 int width = txtAdicionarNome.Size.Width;  
 
-                itens = new ComboBox();
-                itens.Location = new Point(locationX, locationY);
-                itens.Visible = false;
+                Comboitens = new ComboBox();
+                Comboitens.Location = new Point(locationX, locationY);
+                Comboitens.Visible = false;
                 if (items == null)
                 {
                     MessageBox.Show("a");
@@ -371,17 +403,37 @@ public partial class FormEstoque : Form {
                 {
                     foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
                     {
-                        itens.Items.Add(product.item.title);
+                        Comboitens.Items.Add(product.item.title);
                     }
-                    itens.Visible = true;
+                    Comboitens.Visible = true;
                     txtAdicionarNome.Hide();
                 }
                 
-                comboBoxAdicionarAtualizar.Controls.Add(itens);
-                itens.Height = height;
-                itens.Width = width;
+                groupBoxConfigAlterar.Controls.Add(Comboitens);
+                Comboitens.Height = height;
+                Comboitens.Width = width;
 
-                MessageBox.Show(itens.Width.ToString() + " " + itens.Height.ToString() + " " + itens.Location.X.ToString() + " " + itens.Location.Y.ToString());
+                MessageBox.Show(Comboitens.Width.ToString() + " " + Comboitens.Height.ToString() + " " + Comboitens.Location.X.ToString() + " " + Comboitens.Location.Y.ToString());
+            }
+        }
+
+        private void btnAdicionarFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "Achar foto!";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImagemEnviar = new Bitmap(dialog.OpenFile());
+                    path = dialog.FileName;
+                    MessageBox.Show(path);
+                }
+                catch (Exception er)
+                {
+
+                }
             }
         }
     }

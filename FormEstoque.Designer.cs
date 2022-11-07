@@ -45,7 +45,6 @@ namespace Starbuy_Desktop
             this.labelAdicionarValor = new System.Windows.Forms.Label();
             this.btnAdicionar = new System.Windows.Forms.Button();
             this.labelAdicionarFoto = new System.Windows.Forms.Label();
-            this.txtAdicionarFoto = new System.Windows.Forms.TextBox();
             this.labelAdicionarCategoria = new System.Windows.Forms.Label();
             this.labelAdicionarDescricao = new System.Windows.Forms.Label();
             this.labelAdicionarQuant = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@ namespace Starbuy_Desktop
             this.btnProxima = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.labelPagina = new System.Windows.Forms.Label();
+            this.btnAdicionarFoto = new System.Windows.Forms.Button();
             this.comboBoxAdicionarAtualizar = new System.Windows.Forms.ComboBox();
             this.gboxEstoquePerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueCanto)).BeginInit();
@@ -173,11 +173,11 @@ namespace Starbuy_Desktop
             // 
             // groupBoxConfigAlterar
             // 
+            this.groupBoxConfigAlterar.Controls.Add(this.btnAdicionarFoto);
             this.groupBoxConfigAlterar.Controls.Add(this.txtAdicionarValor);
             this.groupBoxConfigAlterar.Controls.Add(this.labelAdicionarValor);
             this.groupBoxConfigAlterar.Controls.Add(this.btnAdicionar);
             this.groupBoxConfigAlterar.Controls.Add(this.labelAdicionarFoto);
-            this.groupBoxConfigAlterar.Controls.Add(this.txtAdicionarFoto);
             this.groupBoxConfigAlterar.Controls.Add(this.labelAdicionarCategoria);
             this.groupBoxConfigAlterar.Controls.Add(this.labelAdicionarDescricao);
             this.groupBoxConfigAlterar.Controls.Add(this.labelAdicionarQuant);
@@ -217,7 +217,7 @@ namespace Starbuy_Desktop
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(209, 33);
             this.btnAdicionar.TabIndex = 17;
-            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.Text = "Enviar ";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
@@ -230,14 +230,6 @@ namespace Starbuy_Desktop
             this.labelAdicionarFoto.Size = new System.Drawing.Size(153, 25);
             this.labelAdicionarFoto.TabIndex = 16;
             this.labelAdicionarFoto.Text = "Foto do produto:";
-            // 
-            // txtAdicionarFoto
-            // 
-            this.txtAdicionarFoto.Location = new System.Drawing.Point(15, 537);
-            this.txtAdicionarFoto.Multiline = true;
-            this.txtAdicionarFoto.Name = "txtAdicionarFoto";
-            this.txtAdicionarFoto.Size = new System.Drawing.Size(227, 40);
-            this.txtAdicionarFoto.TabIndex = 15;
             // 
             // labelAdicionarCategoria
             // 
@@ -357,6 +349,18 @@ namespace Starbuy_Desktop
             this.labelPagina.TabIndex = 0;
             this.labelPagina.Text = "Página:";
             // 
+            // btnAdicionarFoto
+            // 
+            this.btnAdicionarFoto.BackColor = System.Drawing.Color.White;
+            this.btnAdicionarFoto.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarFoto.Location = new System.Drawing.Point(15, 538);
+            this.btnAdicionarFoto.Name = "btnAdicionarFoto";
+            this.btnAdicionarFoto.Size = new System.Drawing.Size(227, 27);
+            this.btnAdicionarFoto.TabIndex = 20;
+            this.btnAdicionarFoto.Text = "Adicionar foto";
+            this.btnAdicionarFoto.UseVisualStyleBackColor = false;
+            this.btnAdicionarFoto.Click += new System.EventHandler(this.btnAdicionarFoto_Click);
+            // 
             // comboBoxAdicionarAtualizar
             // 
             this.comboBoxAdicionarAtualizar.FormattingEnabled = true;
@@ -431,13 +435,13 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.TextBox txtAdicionarNome;
         private System.Windows.Forms.Label labelEstoqueAdicionar;
         private System.Windows.Forms.Label labelAdicionarFoto;
-        private System.Windows.Forms.TextBox txtAdicionarFoto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtAdicionarValor;
         private System.Windows.Forms.TextBox txtAdicionarQuant;
         private System.Windows.Forms.Button btnProxima;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Label labelPagina;
+        private System.Windows.Forms.Button btnAdicionarFoto;
         private System.Windows.Forms.ComboBox comboBoxAdicionarAtualizar;
     }
 }
