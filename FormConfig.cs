@@ -20,6 +20,8 @@ public partial class FormConfig : Form {
         private Usuario user;
         private MultiplosEnderecosResponse address;
         int controller = 0;
+        private Image ImgEnviar;
+        private String path;
         public FormConfig() {
             this.user = Session.getSession().getUser();
             this.address = MultiplosEnderecosResponse.getEnderecosResponse();
@@ -43,6 +45,7 @@ public partial class FormConfig : Form {
             ReSize.groupBoxResize(groupBoxConfigAlterar);
             ReSize.groupBoxResize(gboxConfigMenu);
             ReSize.groupBoxResize(gboxConfigPerfil);
+            ReSize.buttonResize(btnAdicionarFoto);
 
             ReSize.labelResize(labelConfigAlterar);
             ReSize.labelResize(labelConfigAlterarCEP);
@@ -82,7 +85,6 @@ public partial class FormConfig : Form {
             ReSize.textBoxResize(textBoxConfigAlterarCEP);
             ReSize.textBoxResize(textBoxConfigAlterarCpf);
             ReSize.textBoxResize(textBoxConfigAlterarEndereco);
-            ReSize.textBoxResize(textBoxConfigAlterarFoto);
             ReSize.textBoxResize(textBoxConfigAlterarNome);
             ReSize.textBoxResize(textBoxConfigAlterarTelefone);
 
@@ -155,6 +157,33 @@ public partial class FormConfig : Form {
             lblRespComplemento.Text = address.getAddress(buscar
                 ).complement;
             lblRespNum.Text = address.getAddress(buscar).number.ToString();
+            textBoxConfigAlterarCEP.Text = address.getAddress(buscar).cep;
+        }
+
+        private void btnAdicionarFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "Achar foto!";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImgEnviar = new Bitmap(dialog.OpenFile());
+                    path = dialog.FileName;
+                    MessageBox.Show(path);
+                }
+                catch (Exception er)
+                {
+
+                }
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
         }
     }
-}
+    }
+

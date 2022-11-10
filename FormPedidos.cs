@@ -31,6 +31,10 @@ namespace Starbuy_Desktop
             ReSize.groupBoxResize(gboxConfigMenu);
             ReSize.groupBoxResize(gboxConfigPerfil);
             ReSize.groupBoxResize(gboxPedidosBaixa);
+            ReSize.panelResize(panel1);
+            ReSize.buttonResize(btnAnterior);
+            ReSize.buttonResize(btnProxima);
+            ReSize.labelResize(labelPagina);
 
             /*Caixas dos pedidos
             ReSize.groupBoxResize(gboxPedidos1);
@@ -50,7 +54,6 @@ namespace Starbuy_Desktop
             ReSize.pictureCrossBox(pictureBoxPedidosEstoque, pictureBoxPedidosEstoque.Image);
             ReSize.pictureCrossBox(pictureBoxPedidosMenu, pictureBoxPedidosMenu.Image);
             ReSize.pictureCrossBox(pictureBoxPedidosPedidos, pictureBoxPedidosPedidos.Image);
-
             ReSize.textBoxResize(textBoxBaixa);
 
             

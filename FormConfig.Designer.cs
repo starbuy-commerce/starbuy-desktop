@@ -40,6 +40,8 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigMenu = new System.Windows.Forms.PictureBox();
             this.labelConfigNome = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
             this.lblRespComplemento = new System.Windows.Forms.Label();
             this.lblRespNum = new System.Windows.Forms.Label();
             this.lblNum = new System.Windows.Forms.Label();
@@ -57,11 +59,11 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigFoto = new System.Windows.Forms.PictureBox();
             this.pictureBoxBackground = new System.Windows.Forms.PictureBox();
             this.groupBoxConfigAlterar = new System.Windows.Forms.GroupBox();
+            this.btnAdicionarFoto = new System.Windows.Forms.Button();
             this.textBoxConfigAlterarEndereco = new System.Windows.Forms.TextBox();
             this.labelConfigAlterarEndereco = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.labelConfigAlterarFoto = new System.Windows.Forms.Label();
-            this.textBoxConfigAlterarFoto = new System.Windows.Forms.TextBox();
             this.labelConfigAlterarTelefone = new System.Windows.Forms.Label();
             this.labelConfigAlterarCEP = new System.Windows.Forms.Label();
             this.labelConfigAlterarCpf = new System.Windows.Forms.Label();
@@ -72,8 +74,6 @@ namespace Starbuy_Desktop
             this.textBoxConfigAlterarNome = new System.Windows.Forms.TextBox();
             this.labelConfigAlterar = new System.Windows.Forms.Label();
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
-            this.comboBoxEndereco = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.gboxConfigPerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxConfigCanto)).BeginInit();
             this.gboxConfigMenu.SuspendLayout();
@@ -204,32 +204,50 @@ namespace Starbuy_Desktop
             this.groupBox2.Size = new System.Drawing.Size(734, 729);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(75, 447);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(178, 25);
+            this.label1.TabIndex = 38;
+            this.label1.Text = "Selecionar Enderço:";
+            // 
+            // comboBoxEndereco
+            // 
+            this.comboBoxEndereco.FormattingEnabled = true;
+            this.comboBoxEndereco.Location = new System.Drawing.Point(75, 475);
+            this.comboBoxEndereco.Name = "comboBoxEndereco";
+            this.comboBoxEndereco.Size = new System.Drawing.Size(255, 23);
+            this.comboBoxEndereco.TabIndex = 37;
+            this.comboBoxEndereco.SelectedIndexChanged += new System.EventHandler(this.comboBoxEndereco_SelectedIndexChanged);
             // 
             // lblRespComplemento
             // 
             this.lblRespComplemento.AutoSize = true;
             this.lblRespComplemento.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRespComplemento.Location = new System.Drawing.Point(199, 537);
+            this.lblRespComplemento.Location = new System.Drawing.Point(225, 565);
             this.lblRespComplemento.Name = "lblRespComplemento";
-            this.lblRespComplemento.Size = new System.Drawing.Size(311, 25);
+            this.lblRespComplemento.Size = new System.Drawing.Size(0, 25);
             this.lblRespComplemento.TabIndex = 36;
-            this.lblRespComplemento.Text = "Localizada atrás da sede da Starbuy";
             // 
             // lblRespNum
             // 
             this.lblRespNum.AutoSize = true;
             this.lblRespNum.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRespNum.Location = new System.Drawing.Point(149, 509);
+            this.lblRespNum.Location = new System.Drawing.Point(175, 537);
             this.lblRespNum.Name = "lblRespNum";
-            this.lblRespNum.Size = new System.Drawing.Size(42, 25);
+            this.lblRespNum.Size = new System.Drawing.Size(0, 25);
             this.lblRespNum.TabIndex = 35;
-            this.lblRespNum.Text = "809";
             // 
             // lblNum
             // 
             this.lblNum.AutoSize = true;
             this.lblNum.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblNum.Location = new System.Drawing.Point(58, 509);
+            this.lblNum.Location = new System.Drawing.Point(75, 537);
             this.lblNum.Name = "lblNum";
             this.lblNum.Size = new System.Drawing.Size(85, 25);
             this.lblNum.TabIndex = 34;
@@ -239,7 +257,7 @@ namespace Starbuy_Desktop
             // 
             this.lblComplemento.AutoSize = true;
             this.lblComplemento.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblComplemento.Location = new System.Drawing.Point(58, 537);
+            this.lblComplemento.Location = new System.Drawing.Point(75, 565);
             this.lblComplemento.Name = "lblComplemento";
             this.lblComplemento.Size = new System.Drawing.Size(135, 25);
             this.lblComplemento.TabIndex = 33;
@@ -249,17 +267,16 @@ namespace Starbuy_Desktop
             // 
             this.lblRespCep.AutoSize = true;
             this.lblRespCep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblRespCep.Location = new System.Drawing.Point(113, 480);
+            this.lblRespCep.Location = new System.Drawing.Point(139, 508);
             this.lblRespCep.Name = "lblRespCep";
-            this.lblRespCep.Size = new System.Drawing.Size(90, 25);
+            this.lblRespCep.Size = new System.Drawing.Size(0, 25);
             this.lblRespCep.TabIndex = 32;
-            this.lblRespCep.Text = "0000-000";
             // 
             // lblCep
             // 
             this.lblCep.AutoSize = true;
             this.lblCep.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCep.Location = new System.Drawing.Point(58, 480);
+            this.lblCep.Location = new System.Drawing.Point(75, 509);
             this.lblCep.Name = "lblCep";
             this.lblCep.Size = new System.Drawing.Size(49, 25);
             this.lblCep.TabIndex = 31;
@@ -269,17 +286,16 @@ namespace Starbuy_Desktop
             // 
             this.lblResultEmail.AutoSize = true;
             this.lblResultEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblResultEmail.Location = new System.Drawing.Point(137, 342);
+            this.lblResultEmail.Location = new System.Drawing.Point(154, 333);
             this.lblResultEmail.Name = "lblResultEmail";
-            this.lblResultEmail.Size = new System.Drawing.Size(274, 25);
+            this.lblResultEmail.Size = new System.Drawing.Size(0, 25);
             this.lblResultEmail.TabIndex = 30;
-            this.lblResultEmail.Text = "vendedor@starbuy.ecommerce";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblEmail.Location = new System.Drawing.Point(58, 342);
+            this.lblEmail.Location = new System.Drawing.Point(75, 333);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(62, 25);
             this.lblEmail.TabIndex = 29;
@@ -311,27 +327,25 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigCidade.AutoSize = true;
             this.labelConfigCidade.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigCidade.Location = new System.Drawing.Point(139, 381);
+            this.labelConfigCidade.Location = new System.Drawing.Point(156, 372);
             this.labelConfigCidade.Name = "labelConfigCidade";
-            this.labelConfigCidade.Size = new System.Drawing.Size(152, 25);
+            this.labelConfigCidade.Size = new System.Drawing.Size(0, 25);
             this.labelConfigCidade.TabIndex = 22;
-            this.labelConfigCidade.Text = "Votuporanga, SP";
             // 
             // labelConfigUsername
             // 
             this.labelConfigUsername.AutoSize = true;
             this.labelConfigUsername.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigUsername.Location = new System.Drawing.Point(145, 306);
+            this.labelConfigUsername.Location = new System.Drawing.Point(162, 297);
             this.labelConfigUsername.Name = "labelConfigUsername";
-            this.labelConfigUsername.Size = new System.Drawing.Size(105, 25);
+            this.labelConfigUsername.Size = new System.Drawing.Size(0, 25);
             this.labelConfigUsername.TabIndex = 21;
-            this.labelConfigUsername.Text = "Cléber_123";
             // 
             // labelConfigInfCidade
             // 
             this.labelConfigInfCidade.AutoSize = true;
             this.labelConfigInfCidade.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfCidade.Location = new System.Drawing.Point(58, 381);
+            this.labelConfigInfCidade.Location = new System.Drawing.Point(75, 372);
             this.labelConfigInfCidade.Name = "labelConfigInfCidade";
             this.labelConfigInfCidade.Size = new System.Drawing.Size(75, 25);
             this.labelConfigInfCidade.TabIndex = 20;
@@ -341,7 +355,7 @@ namespace Starbuy_Desktop
             // 
             this.labelConfigInfUsername.AutoSize = true;
             this.labelConfigInfUsername.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelConfigInfUsername.Location = new System.Drawing.Point(58, 306);
+            this.labelConfigInfUsername.Location = new System.Drawing.Point(75, 297);
             this.labelConfigInfUsername.Name = "labelConfigInfUsername";
             this.labelConfigInfUsername.Size = new System.Drawing.Size(81, 25);
             this.labelConfigInfUsername.TabIndex = 18;
@@ -367,11 +381,11 @@ namespace Starbuy_Desktop
             // 
             // groupBoxConfigAlterar
             // 
+            this.groupBoxConfigAlterar.Controls.Add(this.btnAdicionarFoto);
             this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarEndereco);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarEndereco);
             this.groupBoxConfigAlterar.Controls.Add(this.button1);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarFoto);
-            this.groupBoxConfigAlterar.Controls.Add(this.textBoxConfigAlterarFoto);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarTelefone);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarCEP);
             this.groupBoxConfigAlterar.Controls.Add(this.labelConfigAlterarCpf);
@@ -386,6 +400,18 @@ namespace Starbuy_Desktop
             this.groupBoxConfigAlterar.Size = new System.Drawing.Size(244, 729);
             this.groupBoxConfigAlterar.TabIndex = 8;
             this.groupBoxConfigAlterar.TabStop = false;
+            // 
+            // btnAdicionarFoto
+            // 
+            this.btnAdicionarFoto.BackColor = System.Drawing.Color.White;
+            this.btnAdicionarFoto.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarFoto.Location = new System.Drawing.Point(15, 537);
+            this.btnAdicionarFoto.Name = "btnAdicionarFoto";
+            this.btnAdicionarFoto.Size = new System.Drawing.Size(209, 27);
+            this.btnAdicionarFoto.TabIndex = 21;
+            this.btnAdicionarFoto.Text = "Adicionar foto";
+            this.btnAdicionarFoto.UseVisualStyleBackColor = false;
+            this.btnAdicionarFoto.Click += new System.EventHandler(this.btnAdicionarFoto_Click);
             // 
             // textBoxConfigAlterarEndereco
             // 
@@ -423,14 +449,6 @@ namespace Starbuy_Desktop
             this.labelConfigAlterarFoto.Size = new System.Drawing.Size(128, 25);
             this.labelConfigAlterarFoto.TabIndex = 16;
             this.labelConfigAlterarFoto.Text = "Foto de perfil:";
-            // 
-            // textBoxConfigAlterarFoto
-            // 
-            this.textBoxConfigAlterarFoto.Location = new System.Drawing.Point(15, 537);
-            this.textBoxConfigAlterarFoto.Multiline = true;
-            this.textBoxConfigAlterarFoto.Name = "textBoxConfigAlterarFoto";
-            this.textBoxConfigAlterarFoto.Size = new System.Drawing.Size(209, 40);
-            this.textBoxConfigAlterarFoto.TabIndex = 15;
             // 
             // labelConfigAlterarTelefone
             // 
@@ -524,25 +542,6 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross.TabStop = false;
             this.pictureBoxMenuVendedorCross.Click += new System.EventHandler(this.pictureBoxMenuVendedorCross_Click);
             // 
-            // comboBoxEndereco
-            // 
-            this.comboBoxEndereco.FormattingEnabled = true;
-            this.comboBoxEndereco.Location = new System.Drawing.Point(156, 444);
-            this.comboBoxEndereco.Name = "comboBoxEndereco";
-            this.comboBoxEndereco.Size = new System.Drawing.Size(255, 23);
-            this.comboBoxEndereco.TabIndex = 37;
-            this.comboBoxEndereco.SelectedIndexChanged += new System.EventHandler(this.comboBoxEndereco_SelectedIndexChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ebrima", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(5, 444);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 21);
-            this.label1.TabIndex = 38;
-            this.label1.Text = "Selecionar Enderço:";
-            // 
             // FormConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -591,7 +590,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelConfigAlterar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label labelConfigAlterarFoto;
-        private System.Windows.Forms.TextBox textBoxConfigAlterarFoto;
         private System.Windows.Forms.Label labelConfigAlterarTelefone;
         private System.Windows.Forms.Label labelConfigAlterarCEP;
         private System.Windows.Forms.Label labelConfigAlterarCpf;
@@ -625,5 +623,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label lblRespNum;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxEndereco;
+        private System.Windows.Forms.Button btnAdicionarFoto;
     }
 }
