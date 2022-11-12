@@ -48,12 +48,12 @@ namespace Starbuy_Desktop
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(labelPedidosBaixa);
             ReSize.labelResize(labelPedidosNumero);
-            ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
-            ReSize.pictureCrossBox(pictureBoxPedidosConfig, pictureBoxPedidosConfig.Image);
-            ReSize.pictureCrossBox(pictureBoxPedidosEstoque, pictureBoxPedidosEstoque.Image);
-            ReSize.pictureCrossBox(pictureBoxPedidosMenu, pictureBoxPedidosMenu.Image);
-            ReSize.pictureCrossBox(pictureBoxPedidosPedidos, pictureBoxPedidosPedidos.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigCanto);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
+            ReSize.pictureCrossBox(pictureBoxPedidosConfig);
+            ReSize.pictureCrossBox(pictureBoxPedidosEstoque);
+            ReSize.pictureCrossBox(pictureBoxPedidosMenu);
+            ReSize.pictureCrossBox(pictureBoxPedidosPedidos);
             ReSize.textBoxResize(textBoxBaixa);
 
             
@@ -183,7 +183,7 @@ namespace Starbuy_Desktop
                 imagemProduto.Width = 98;
                 imagemProduto.Height = 98;
                 currentGroupBox.Controls.Add(imagemProduto);
-                ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
+                ReSize.pictureCrossBox(imagemProduto);
             }
 
             // arrumar as localizações dos itens

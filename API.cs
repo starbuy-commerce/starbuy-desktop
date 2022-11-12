@@ -191,7 +191,7 @@ namespace Starbuy_Desktop
                                 "\"city\":\"" + reqCad.city + "\"," +
                                 "\"birthdate\":\"" + reqCad.birthdate + "\"," +
                                 "\"seller\":\"" + "true" + "\"," +
-                                "\"profile_picture\":\"" + "" + "\"," +
+                                "\"profile_picture\":\""  + "\"," +
                                "\"password\":\"" + reqCad.password + "\"}");
             }
             try

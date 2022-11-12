@@ -21,12 +21,12 @@ namespace Starbuy_Desktop
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(labelMenuEstoque);
             ReSize.labelResize(labelMenuPedidos);
-            ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuConfig, pictureBoxMenuConfig.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuEstoque, pictureBoxMenuEstoque.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuMenu, pictureBoxMenuMenu.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuPedidos, pictureBoxMenuPedidos.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
+            ReSize.pictureCrossBox(pictureBoxConfigCanto);
+            ReSize.pictureCrossBox(pictureBoxMenuConfig);
+            ReSize.pictureCrossBox(pictureBoxMenuEstoque);
+            ReSize.pictureCrossBox(pictureBoxMenuMenu);
+            ReSize.pictureCrossBox(pictureBoxMenuPedidos);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
             ReSize.groupBoxResize(gboxConfigPerfil);
             ReSize.groupBoxResize(gboxMenu);
             ReSize.groupBoxResize(gboxMenuEstoque);

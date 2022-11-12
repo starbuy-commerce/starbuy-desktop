@@ -28,8 +28,8 @@ namespace Starbuy_Desktop
             int formHeight = this.Height;
             int formWidth = this.Width;
             new ReSize(formHeight, formWidth);
-            ReSize.pictureCrossBox(pictureBoxLogin, pictureBoxLogin.Image);
-            ReSize.pictureCrossBox(pictureBoxLoginCross, pictureBoxLoginCross.Image);
+            ReSize.pictureCrossBox(pictureBoxLogin);
+            ReSize.pictureCrossBox(pictureBoxLoginCross);
             ReSize.labelResize(labelLoginA);
             ReSize.labelResize(labelLinha1);
             ReSize.labelResize(labelLinha2);

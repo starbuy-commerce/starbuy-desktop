@@ -14,7 +14,8 @@ namespace Starbuy_Desktop
 {
     class ReSize
     {
-        static int height, width;
+        static int height { get; set; }
+        static int width { get; set; }
         static double propWidth, propHeight;
         public ReSize(int h, int w)
         {
@@ -24,7 +25,7 @@ namespace Starbuy_Desktop
             propHeight = (double)height / 786;
         }
 
-        public static void pictureCrossBox(PictureBox p,Image i)
+        public static void pictureCrossBox(PictureBox p)
         {
             //MessageBox.Show(height.ToString() + "  " + width.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             int heightOriginal = p.Height;
@@ -33,30 +34,8 @@ namespace Starbuy_Desktop
             p.Width = p.Width * width/1386 ;
             double locationX = p.Location.X * propWidth;// + widthOriginal - p.Width;
             double locationY = p.Location.Y * propHeight;// + heightOriginal - p.Height;
-           /* var destRect = new Rectangle((int)locationX, (int)locationY, p.Width, p.Height);
-            var destImage = new Bitmap(width, height);
-
-                destImage.SetResolution(1080,1920);
-
-                using (var graphics = Graphics.FromImage(destImage))
-                {
-                    graphics.CompositingMode = CompositingMode.SourceCopy;
-                    graphics.CompositingQuality = CompositingQuality.HighQuality;
-                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    graphics.SmoothingMode = SmoothingMode.HighQuality;
-                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-
-                    using (var wrapMode = new ImageAttributes())
-                    {
-                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
-                        graphics.DrawImage(, destRect, 0, 0, p.Image.Width, p.Image.Height, GraphicsUnit.Pixel, wrapMode);
-                    }
-                }
-
-                */
             //MessageBox.Show(height.ToString() + " " + locationX.ToString() + "  " + locationY.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString());
             p.Location = new Point((int)locationX,(int)locationY);
-            //return destImage;
             //MessageBox.Show(p.Location.X.ToString() + "  " + p.Location.Y.ToString() + " " + p.Height.ToString() + " " + p.Width.ToString()); 
         }
 

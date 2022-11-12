@@ -10,7 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
-
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace Starbuy_Desktop
 {
@@ -22,9 +23,10 @@ public partial class FormEstoque : Form {
         private Session session;
         private int currentGroupProducts = 0;
         private int ultPag = 0;
-        private ComboBox Comboitens;
         private string path;
         private Image ImagemEnviar;
+        static int height, width;
+        static double propWidth, propHeight;
 
         public FormEstoque() {
             this.user = Session.getSession().getUser();
@@ -53,19 +55,20 @@ public partial class FormEstoque : Form {
             ReSize.panelResize(panel1);
 
             ReSize.comboBoxResise(comboBoxAdicionarAtualizar);
-            ReSize.pictureCrossBox(pictureBoxEstoqueCanto, pictureBoxEstoqueCanto.Image);
-            ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes, pictureBoxEstoqueConfiguracoes.Image);
-            ReSize.pictureCrossBox(pictureBoxEstoqueEstoque, pictureBoxEstoqueEstoque.Image);
-            ReSize.pictureCrossBox(pictureBoxEstoqueMenu, pictureBoxEstoqueMenu.Image);
-            ReSize.pictureCrossBox(pictureBoxEstoquePedidos, pictureBoxEstoquePedidos.Image);
-            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
+            ReSize.comboBoxResise(comboBoxAtualizarItem);
+
+            ReSize.pictureCrossBox(pictureBoxEstoqueCanto);
+            ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes);
+            ReSize.pictureCrossBox(pictureBoxEstoqueEstoque);
+            ReSize.pictureCrossBox(pictureBoxEstoqueMenu);
+            ReSize.pictureCrossBox(pictureBoxEstoquePedidos);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
             ReSize.textBoxResize(txtAdicionarDescricao);
             ReSize.textBoxResize(txtAdicionarQuant);
             ReSize.textBoxResize(txtAdicionarValor);
             ReSize.buttonResize(btnAdicionarFoto);
             ReSize.textBoxResize(txtAdicionarNome);
             ReSize.textBoxResize(txtAdicionarCategoria);
-
         }
 
         private void FormEstoque_Load(object sender, EventArgs e) {
@@ -83,6 +86,11 @@ public partial class FormEstoque : Form {
             itens.Width = width;
             itens.Visible = false;
            */
+
+            height = this.Height;
+            width = this.Width;
+            propWidth = (double)width / 1386;
+            propHeight = (double)height / 786;
 
             labelEstoqueCantoNome.Text = user.name;
             if (!string.IsNullOrEmpty(user.profile_picture))
@@ -104,8 +112,13 @@ public partial class FormEstoque : Form {
             {
                 MessageBox.Show((items.getAllProdutos().Length % 3).ToString());
                 int i = 0;
-                
-                if((items.getAllProdutos().Length)%3 == 0)
+                comboBoxAtualizarItem.Items.Clear();
+                foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
+                {
+                    comboBoxAtualizarItem.Items.Add(product.item.title);
+                }
+
+                if ((items.getAllProdutos().Length)%3 == 0)
                 {
                     ultPag = (items.getAllProdutos().Length) / 3;
                 }
@@ -131,10 +144,47 @@ public partial class FormEstoque : Form {
                     }
                 } */
             }
-            
+
+            pictureBoxEstoqueCanto.Image = ResizeImage(pictureBoxEstoqueCanto.Image);
+            pictureBoxEstoqueConfiguracoes.Image = ResizeImage(pictureBoxEstoqueConfiguracoes.Image);
+            pictureBoxEstoqueEstoque.Image = ResizeImage(pictureBoxEstoqueEstoque.Image);
+            pictureBoxEstoqueMenu.Image = ResizeImage(pictureBoxEstoqueMenu.Image);
+            pictureBoxEstoquePedidos.Image = ResizeImage(pictureBoxEstoquePedidos.Image);
+            pictureBoxMenuVendedorCross.Image = ResizeImage(pictureBoxMenuVendedorCross.Image);
         }
 
-        private void pictureBoxEstoqueMenuVendedorCross_Click(object sender, EventArgs e) {
+        public static Bitmap ResizeImage(Image image)
+        {
+                int heightOriginal = image.Height;
+                int widthOriginal = image.Width;
+                var newHeight = image.Height * height / 786;
+                var newWidth = image.Width * width / 1386;
+                /*double locationX = inage.Location.X * propWidth;// + widthOriginal - p.Width;
+                double locationY = p.Location.Y * propHeight;// + heightOriginal - p.Height;*/
+                var destRect = new Rectangle(0, 0, newWidth, newHeight);
+                var destImage = new Bitmap(newWidth, newHeight);
+
+                destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+                using (var graphics = Graphics.FromImage(destImage))
+                {
+                    graphics.CompositingMode = CompositingMode.SourceCopy;
+                    graphics.CompositingQuality = CompositingQuality.HighQuality;
+                    graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                    graphics.SmoothingMode = SmoothingMode.HighQuality;
+                    graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                    using (var wrapMode = new ImageAttributes())
+                    {
+                        wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                        graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                    }
+                }
+
+            return destImage;
+        }
+
+            private void pictureBoxEstoqueMenuVendedorCross_Click(object sender, EventArgs e) {
             DialogResult diag = MessageBox.Show("Deseja fechar o aplicativo e retornar a tela de login?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (diag == DialogResult.Yes) {
                 this.Close();
@@ -214,27 +264,27 @@ public partial class FormEstoque : Form {
                     imagemProduto.Width = 98;
                     imagemProduto.Height = 98;
                     currentGroupBox.Controls.Add(imagemProduto);
-                    ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
+                    ReSize.pictureCrossBox(imagemProduto );
                 }
                 catch(Exception ex)
                 {
                     MessageBox.Show("Não tem imagem!");
                 }
-            }
-            /*else if(p.assets[0] != null)
+            }/*
+            else if(p.assets[0] != null)
             {
                 WebClient wc = new WebClient();
                 byte[] bytes = wc.DownloadData(p.assets[0]);
                 MemoryStream ms = new MemoryStream(bytes);
-                System.Drawing.Image img = System.Drawing.Image.FromStream(ms);
-                System.Drawing.Image resizeSmall = (new Bitmap(img, 106 , 106));
+                Image img = Image.FromStream(ms);
+                Image resizeSmall = (new Bitmap(img, 106 , 106));
                 PictureBox imagemProduto = new PictureBox();
                 imagemProduto.Location = new Point(17, 22);
                 imagemProduto.Image = resizeSmall;
                 imagemProduto.Width = 98;
                 imagemProduto.Height = 98;
                 currentGroupBox.Controls.Add(imagemProduto);
-                ReSize.pictureCrossBox(imagemProduto, imagemProduto.Image);
+                ReSize.pictureCrossBox(imagemProduto);
             }*/
             
             // arrumar as localizações dos itens
@@ -291,11 +341,12 @@ public partial class FormEstoque : Form {
                     double quant = double.Parse(txtAdicionarQuant.Text);
                     Item prod = new Item(txtAdicionarNome.Text, double.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
                     string base64String;
-                    using (Image image = ImagemEnviar)
+                    Image img = ImagemEnviar;
+                    using (img)
                     {
                         using (MemoryStream m = new MemoryStream())
                         {
-                            image.Save(m, image.RawFormat);
+                            img.Save(m, img.RawFormat);
                             byte[] imageBytes = m.ToArray();
 
                             // Convert byte[] to Base64 String
@@ -386,34 +437,7 @@ public partial class FormEstoque : Form {
                 labelEstoqueAdicionar.Text = "Atualizar Produto";
                 labelAdicionarNome.Text = "Produto";
                 txtAdicionarNome.Visible = false;
-                
-                int locationX = txtAdicionarNome.Location.X;
-                int locationY = txtAdicionarNome.Location.Y;
-                int height = txtAdicionarNome.Size.Height;
-                int width = txtAdicionarNome.Size.Width;  
-
-                Comboitens = new ComboBox();
-                Comboitens.Location = new Point(locationX, locationY);
-                Comboitens.Visible = false;
-                if (items == null)
-                {
-                    MessageBox.Show("a");
-                }
-                else
-                {
-                    foreach (Produtos product in this.items.getAllProdutos()) // assim vai passar pelo loop para cada produto que o usuário tiver
-                    {
-                        Comboitens.Items.Add(product.item.title);
-                    }
-                    Comboitens.Visible = true;
-                    txtAdicionarNome.Hide();
-                }
-                
-                groupBoxConfigAlterar.Controls.Add(Comboitens);
-                Comboitens.Height = height;
-                Comboitens.Width = width;
-
-                MessageBox.Show(Comboitens.Width.ToString() + " " + Comboitens.Height.ToString() + " " + Comboitens.Location.X.ToString() + " " + Comboitens.Location.Y.ToString());
+                comboBoxAtualizarItem.Visible = true;
             }
         }
 
@@ -435,6 +459,11 @@ public partial class FormEstoque : Form {
 
                 }
             }
+        }
+
+        private void changeComboBoxProducts()
+        {
+
         }
     }
 }

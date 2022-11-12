@@ -34,6 +34,7 @@ namespace Starbuy_Desktop
             ReSize.labelResize(labelLinha9);
             ReSize.labelResize(labelLinha10);
             ReSize.labelResize(labelRegistroRegistre);
+
             ReSize.textBoxResize(textBoxRegistroUsuario);
             ReSize.textBoxResize(textBoxRegistroCidade);
             ReSize.textBoxResize(textBoxRegistroConfirmar);
@@ -42,6 +43,7 @@ namespace Starbuy_Desktop
             ReSize.textBoxResize(textBoxRegistroNome);
             ReSize.textBoxResize(textBoxRegistroNumero);
             ReSize.textBoxResize(textBoxRegistroSenha);
+
             ReSize.maskedResize(maskedTextBoxRegistroCEP);
             ReSize.maskedResize(maskedTextBoxRegistroNascimento);
         }

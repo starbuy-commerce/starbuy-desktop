@@ -41,6 +41,8 @@ namespace Starbuy_Desktop
             this.pictureBoxMenuVendedorCross = new System.Windows.Forms.PictureBox();
             this.labelEstoqueEstoque = new System.Windows.Forms.Label();
             this.groupBoxConfigAlterar = new System.Windows.Forms.GroupBox();
+            this.comboBoxAtualizarItem = new System.Windows.Forms.ComboBox();
+            this.btnAdicionarFoto = new System.Windows.Forms.Button();
             this.txtAdicionarValor = new System.Windows.Forms.TextBox();
             this.labelAdicionarValor = new System.Windows.Forms.Label();
             this.btnAdicionar = new System.Windows.Forms.Button();
@@ -58,7 +60,6 @@ namespace Starbuy_Desktop
             this.btnProxima = new System.Windows.Forms.Button();
             this.btnAnterior = new System.Windows.Forms.Button();
             this.labelPagina = new System.Windows.Forms.Label();
-            this.btnAdicionarFoto = new System.Windows.Forms.Button();
             this.comboBoxAdicionarAtualizar = new System.Windows.Forms.ComboBox();
             this.gboxEstoquePerfil.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEstoqueCanto)).BeginInit();
@@ -173,6 +174,7 @@ namespace Starbuy_Desktop
             // 
             // groupBoxConfigAlterar
             // 
+            this.groupBoxConfigAlterar.Controls.Add(this.comboBoxAtualizarItem);
             this.groupBoxConfigAlterar.Controls.Add(this.btnAdicionarFoto);
             this.groupBoxConfigAlterar.Controls.Add(this.txtAdicionarValor);
             this.groupBoxConfigAlterar.Controls.Add(this.labelAdicionarValor);
@@ -192,6 +194,30 @@ namespace Starbuy_Desktop
             this.groupBoxConfigAlterar.Size = new System.Drawing.Size(262, 648);
             this.groupBoxConfigAlterar.TabIndex = 29;
             this.groupBoxConfigAlterar.TabStop = false;
+            // 
+            // comboBoxAtualizarItem
+            // 
+            this.comboBoxAtualizarItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.comboBoxAtualizarItem.FormattingEnabled = true;
+            this.comboBoxAtualizarItem.Items.AddRange(new object[] {
+            ""});
+            this.comboBoxAtualizarItem.Location = new System.Drawing.Point(15, 98);
+            this.comboBoxAtualizarItem.Name = "comboBoxAtualizarItem";
+            this.comboBoxAtualizarItem.Size = new System.Drawing.Size(227, 25);
+            this.comboBoxAtualizarItem.TabIndex = 32;
+            this.comboBoxAtualizarItem.Visible = false;
+            // 
+            // btnAdicionarFoto
+            // 
+            this.btnAdicionarFoto.BackColor = System.Drawing.Color.White;
+            this.btnAdicionarFoto.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnAdicionarFoto.Location = new System.Drawing.Point(15, 538);
+            this.btnAdicionarFoto.Name = "btnAdicionarFoto";
+            this.btnAdicionarFoto.Size = new System.Drawing.Size(227, 27);
+            this.btnAdicionarFoto.TabIndex = 20;
+            this.btnAdicionarFoto.Text = "Adicionar foto";
+            this.btnAdicionarFoto.UseVisualStyleBackColor = false;
+            this.btnAdicionarFoto.Click += new System.EventHandler(this.btnAdicionarFoto_Click);
             // 
             // txtAdicionarValor
             // 
@@ -297,6 +323,7 @@ namespace Starbuy_Desktop
             // 
             // txtAdicionarNome
             // 
+            this.txtAdicionarNome.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.txtAdicionarNome.Location = new System.Drawing.Point(15, 98);
             this.txtAdicionarNome.Multiline = true;
             this.txtAdicionarNome.Name = "txtAdicionarNome";
@@ -348,18 +375,6 @@ namespace Starbuy_Desktop
             this.labelPagina.Size = new System.Drawing.Size(46, 15);
             this.labelPagina.TabIndex = 0;
             this.labelPagina.Text = "Página:";
-            // 
-            // btnAdicionarFoto
-            // 
-            this.btnAdicionarFoto.BackColor = System.Drawing.Color.White;
-            this.btnAdicionarFoto.Font = new System.Drawing.Font("Segoe UI", 12.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionarFoto.Location = new System.Drawing.Point(15, 538);
-            this.btnAdicionarFoto.Name = "btnAdicionarFoto";
-            this.btnAdicionarFoto.Size = new System.Drawing.Size(227, 27);
-            this.btnAdicionarFoto.TabIndex = 20;
-            this.btnAdicionarFoto.Text = "Adicionar foto";
-            this.btnAdicionarFoto.UseVisualStyleBackColor = false;
-            this.btnAdicionarFoto.Click += new System.EventHandler(this.btnAdicionarFoto_Click);
             // 
             // comboBoxAdicionarAtualizar
             // 
@@ -443,5 +458,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelPagina;
         private System.Windows.Forms.Button btnAdicionarFoto;
         private System.Windows.Forms.ComboBox comboBoxAdicionarAtualizar;
+        private System.Windows.Forms.ComboBox comboBoxAtualizarItem;
     }
 }
