@@ -83,7 +83,7 @@ namespace Starbuy_Desktop
                         this.Hide();
                         FormMenu fVendedor = new FormMenu();
                         API.getProducts(user.username);
-                        API.getPedidos(Session.getSession().getJWT());
+                        //API.getPedidos(Session.getSession().getJWT());
                         API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
                         String a = Session.getSession().getUser().username.ToString();
@@ -111,16 +111,6 @@ namespace Starbuy_Desktop
             {
                 buttonLoginEntrar_Click(sender,e);
             }
-        }
-
-        private void labelLoginFacaConta_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxLogin_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

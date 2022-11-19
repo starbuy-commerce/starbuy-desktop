@@ -20,18 +20,18 @@ namespace Starbuy_Desktop
 
         private static String heroku_host = "https://starbuy-api.herokuapp.com";
         private static String railways_host = "https://starbuy.up.railway.app";
-        private static String host = heroku_host;
+        private static String host = railways_host;
         // Vai verificar se a host da Heroku ta de boa. Se ela, por algum motivo,
         // tiver caido, vai usar a host do Railways (uma outra plataforma que eu
         // também hospedei a nossa API que serve de backup).
         public static void checkHostIntegrity()
         {
-            var req = (HttpWebRequest)WebRequest.Create(heroku_host);
+            var req = (HttpWebRequest)WebRequest.Create(railways_host);
             appendHeaders("GET", req);
             var httpResponse = (HttpWebResponse)req.GetResponse();
             if (httpResponse.StatusCode == HttpStatusCode.ServiceUnavailable)
             {
-                host = railways_host;
+                host = heroku_host;
             }
         }
 
@@ -139,7 +139,7 @@ namespace Starbuy_Desktop
 
         public static Address[] getAddress(String jwt)
         {
-            var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/ address");
             appendHeaders("GET", req);
             req.Headers.Add("Authorization", "Bearer " + jwt);
 
@@ -186,10 +186,10 @@ namespace Starbuy_Desktop
             using (var streamWriter = new StreamWriter(req.GetRequestStream()))
             {
                 streamWriter.Write("{\"username\":\"" + reqCad.username + "\"," +
-                                "\"name\":\"" + reqCad.name + "\"," +
-                                "\"email\":\"" + reqCad.email + "\"," +
-                                "\"city\":\"" + reqCad.city + "\"," +
-                                "\"birthdate\":\"" + reqCad.birthdate + "\"," +
+                                "\"name\":\" " + reqCad.name + "\"," +
+                                "\"email\":\" " + reqCad.email + "\"," +
+                                "\"city\":\" " + reqCad.city + "\"," +
+                                "\"birthdate\":\" " + reqCad.birthdate + "\"," +
                                 "\"seller\":\"" + "true" + "\"," +
                                 "\"profile_picture\":\""  + "\"," +
                                "\"password\":\"" + reqCad.password + "\"}");
@@ -214,51 +214,49 @@ namespace Starbuy_Desktop
                 MessageBox.Show(cadastroException.Message.ToString());
             }
         }
-        public static void cadastrarNovoProduto(String jwt, Item item, Usuario user,String image)
+        public static void cadastrarNovoProduto(String jwt, Item item,  String image)
         {
-            var req = (HttpWebRequest)WebRequest.Create(host + "/item");
+            var req = (HttpWebRequest)WebRequest.Create("https://starbuy.up.railway.app/item");
             appendHeaders("POST", req);
-            req.Headers.Add("Authorization", "Bearer " + jwt);
+            var autorizacao = "Bearer " + jwt;
+            req.ContentType = "application/json; charset=UTF-8";
+            req.Headers.Add("Authorization", autorizacao);
 
             using (var streamWriter = new StreamWriter(req.GetRequestStream()))
             {
-                streamWriter.Write("{\"item\":\"{" +
-                                        "\"title\":\"" + item.title + "\"," +
-                                        "\"seller\":\"{\"username\":\"" + user.username + "\"," +
-                                                        "\"name\":\"" + user.name + "\"," +
-                                                        "\"email\":\"" + user.email + "\"," +
-                                                        "\"city\":\"" + user.city + "\"," +
-                                                        "\"birthdate\":\"" + user.birthdate + "\"," +
-                                                        "\"seller\":\"" + "true" + "\"," +
-                                                        "\"profile_picture\":\"" + "" + "\"," +"\"}" + "\"," +
-                                        "\"price\":\"" + item.price + "," +
-                                        "\"stock\":\"" + item.stock + "," +
-                                        "\"category\":\"" + item.category + "\"," +
-                                        "\"seller\":\"" + user.username + "\"," +
-                                        "\"description\":\"" + item.description +
-                                       "\"}," +
-                                    "\"assets\":\"[" +  image + "\"]\"}");
-            } 
+                string sla = "{\"item\":{" +
+                                        "\"identifier\":\" " + "\"," +
+                                        "\"title\": \"" + item.title + "\"," +
+                                        "\"seller\": \"" + "\"," +
+                                        "\"price\": " + item.price + "," +
+                                        "\"stock\": " + item.stock + "," +
+                                        "\"category\": " + item.category + "," +
+                                        "\"description\": \"" + item.description + "\"}," +
+                                   "\"assets\": [\"" + "data:image/jpeg;base64," + image + "\"]}";
+                MessageBox.Show(sla);
+                System.Windows.Forms.Clipboard.SetText(sla);
+                streamWriter.Write(sla);
+            }
             try
             {
-                var httpResponse = (HttpWebResponse)req.GetResponse(); // Lança WebException
-                using var streamReader = new StreamReader(httpResponse.GetResponseStream());
-                var result = streamReader.ReadToEnd();
-                try
-                {
-                    ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
-                    MessageBox.Show(response.message.ToString());
-                    ResponseCadastro.setResponseCadastro(response);
+                    var httpResponse = (HttpWebResponse)req.GetResponse(); // Lança WebException
+                    using var streamReader = new StreamReader(httpResponse.GetResponseStream());
+                    var result = streamReader.ReadToEnd();
+                    try
+                    {
+                        ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
+                        MessageBox.Show(response.message.ToString());
+                        ResponseCadastro.setResponseCadastro(response);
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.ToString());
+                    }
                 }
-                catch (Exception e)
+                catch (WebException cadastroException)
                 {
-                    MessageBox.Show(e.ToString());
+                    MessageBox.Show(cadastroException.Message.ToString());
                 }
-            }
-            catch (WebException cadastroException)
-            {
-                MessageBox.Show(cadastroException.Message.ToString());
-            }
         }
         public static ReceivedOrders getPedidos(String jwt)
         {
@@ -270,31 +268,31 @@ namespace Starbuy_Desktop
             {
                 var httpResponse = (HttpWebResponse)req.GetResponse();
 
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
-                    try
+                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
                     {
-                        ReceivedOrders resposta = JsonSerializer.Deserialize<ReceivedOrders>(result);
-                        if (resposta != null)
+                        var result = streamReader.ReadToEnd();
+                        try
                         {
-                            MessageBox.Show(resposta.order.Length.ToString());
-                            OrdersResponse.setOrdersResponse(new OrdersResponse(resposta.order));
-                            return resposta;
+                            ReceivedOrders resposta = JsonSerializer.Deserialize<ReceivedOrders>(result);
+                            if (resposta != null)
+                            {
+                                MessageBox.Show(resposta.order.Length.ToString());
+                                OrdersResponse.setOrdersResponse(new OrdersResponse(resposta.order));
+                                return resposta;
+                            }
+                            else
+                            {
+                                MessageBox.Show("teste!");
+                                OrdersResponse.setOrdersResponse(new OrdersResponse(null));
+                                return null;
+                            }
                         }
-                        else
+                        catch (NullReferenceException e)
                         {
-                            MessageBox.Show("teste!");
-                            OrdersResponse.setOrdersResponse(new OrdersResponse(null));
+                            MessageBox.Show(e.ToString());
                             return null;
                         }
                     }
-                    catch (NullReferenceException e)
-                    {
-                        MessageBox.Show(e.ToString());
-                        return null;
-                    }
-                }
             }
             catch (Exception teste)
             {

@@ -135,7 +135,6 @@ namespace Starbuy_Desktop
             this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogin.TabIndex = 9;
             this.pictureBoxLogin.TabStop = false;
-            this.pictureBoxLogin.Click += new System.EventHandler(this.pictureBoxLogin_Click);
             // 
             // labelLoginEsqueceu
             // 

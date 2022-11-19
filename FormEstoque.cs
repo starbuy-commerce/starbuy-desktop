@@ -337,8 +337,6 @@ public partial class FormEstoque : Form {
             else {
                 try
                 {
-                    int value = int.Parse(txtAdicionarValor.Text);
-                    double quant = double.Parse(txtAdicionarQuant.Text);
                     Item prod = new Item(txtAdicionarNome.Text, double.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
                     string base64String;
                     Image img = ImagemEnviar;
@@ -351,12 +349,19 @@ public partial class FormEstoque : Form {
 
                             // Convert byte[] to Base64 String
                             base64String = Convert.ToBase64String(imageBytes);
+                            
                         }
+                        base64String = "data:image/jpeg;base64," + base64String;
                     }
-                    API.cadastrarNovoProduto(this.session.getJWT(), prod, user, base64String);
+                    API.cadastrarNovoProduto(this.session.getJWT(), prod,
+                        base64String);
                 }
                 catch(FormatException) {
                     MessageBox.Show("Os campos quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch(Exception teste)
+                {
+                    MessageBox.Show(teste.ToString());
                 }
             }
         }
