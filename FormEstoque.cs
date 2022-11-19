@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Text.Json;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Globalization;
 
 namespace Starbuy_Desktop
 {
@@ -252,7 +253,12 @@ public partial class FormEstoque : Form {
             //REVER LÓGICA DE IMAGENS NULAS
             if (p == null)
             {
-                try { 
+                
+            }
+            else if(p.assets[0] != null)
+            {
+                try
+                {
                     WebClient wc = new WebClient();
                     byte[] bytes = wc.DownloadData(p.assets[0]);
                     MemoryStream ms = new MemoryStream(bytes);
@@ -264,28 +270,13 @@ public partial class FormEstoque : Form {
                     imagemProduto.Width = 98;
                     imagemProduto.Height = 98;
                     currentGroupBox.Controls.Add(imagemProduto);
-                    ReSize.pictureCrossBox(imagemProduto );
+                    ReSize.pictureCrossBox(imagemProduto);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Não tem imagem!");
+                    MessageBox.Show(ex.ToString());
                 }
-            }/*
-            else if(p.assets[0] != null)
-            {
-                WebClient wc = new WebClient();
-                byte[] bytes = wc.DownloadData(p.assets[0]);
-                MemoryStream ms = new MemoryStream(bytes);
-                Image img = Image.FromStream(ms);
-                Image resizeSmall = (new Bitmap(img, 106 , 106));
-                PictureBox imagemProduto = new PictureBox();
-                imagemProduto.Location = new Point(17, 22);
-                imagemProduto.Image = resizeSmall;
-                imagemProduto.Width = 98;
-                imagemProduto.Height = 98;
-                currentGroupBox.Controls.Add(imagemProduto);
-                ReSize.pictureCrossBox(imagemProduto);
-            }*/
+            }
             
             // arrumar as localizações dos itens
             // atribuindo o título do produto
@@ -330,39 +321,50 @@ public partial class FormEstoque : Form {
 
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrWhiteSpace(txtAdicionarNome.Text) || String.IsNullOrWhiteSpace(txtAdicionarValor.Text) || String.IsNullOrWhiteSpace(txtAdicionarQuant.Text) || String.IsNullOrWhiteSpace(txtAdicionarCategoria.Text) || String.IsNullOrWhiteSpace(txtAdicionarDescricao.Text))
+            if (comboBoxAdicionarAtualizar.SelectedIndex == 0)
             {
-                MessageBox.Show("Preencha todos os valores, não deixe nenhum campo vazio ou com apenas espaços!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            else {
-                try
+                if (String.IsNullOrWhiteSpace(txtAdicionarNome.Text) || String.IsNullOrWhiteSpace(txtAdicionarValor.Text) || String.IsNullOrWhiteSpace(txtAdicionarQuant.Text) || String.IsNullOrWhiteSpace(txtAdicionarCategoria.Text) || String.IsNullOrWhiteSpace(txtAdicionarDescricao.Text))
                 {
-                    Item prod = new Item(txtAdicionarNome.Text, double.Parse(txtAdicionarValor.Text), int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
-                    string base64String;
-                    Image img = ImagemEnviar;
-                    using (img)
+                    MessageBox.Show("Preencha todos os valores, não deixe nenhum campo vazio ou com apenas espaços!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
+                else
+                {
+                    try
                     {
-                        using (MemoryStream m = new MemoryStream())
+                        double preco = double.Parse(txtAdicionarValor.Text);
+                        Item prod = new Item(txtAdicionarNome.Text, preco, int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
+                        string base64String;
+                        Image img = ImagemEnviar;
+                        using (img)
                         {
-                            img.Save(m, img.RawFormat);
-                            byte[] imageBytes = m.ToArray();
+                            using (MemoryStream m = new MemoryStream())
+                            {
+                                img.Save(m, img.RawFormat);
+                                byte[] imageBytes = m.ToArray();
 
-                            // Convert byte[] to Base64 String
-                            base64String = Convert.ToBase64String(imageBytes);
-                            
+                                // Convert byte[] to Base64 String
+                                base64String = Convert.ToBase64String(imageBytes);
+
+                            }
+                            base64String = "data:image/jpeg;base64," + base64String;
                         }
-                        base64String = "data:image/jpeg;base64," + base64String;
+                        MessageBox.Show(prod.price.ToString());
+                        API.cadastrarNovoProduto(this.session.getJWT(), prod, base64String);
+
                     }
-                    API.cadastrarNovoProduto(this.session.getJWT(), prod,
-                        base64String);
+                    catch (FormatException)
+                    {
+                        MessageBox.Show("Os campos quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    catch (Exception teste)
+                    {
+                        MessageBox.Show(teste.ToString());
+                    }
                 }
-                catch(FormatException) {
-                    MessageBox.Show("Os campos quantidade e valor exigem valores numéricos, sendo o valor sendo escrito 9999.99", "Aviso!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                catch(Exception teste)
-                {
-                    MessageBox.Show(teste.ToString());
-                }
+            }
+            else if(comboBoxAdicionarAtualizar.SelectedIndex == 1)
+            {
+
             }
         }
 
@@ -435,6 +437,7 @@ public partial class FormEstoque : Form {
             {
                 labelEstoqueAdicionar.Text = "Adicionar Produto";
                 txtAdicionarNome.Visible = true;
+                comboBoxAtualizarItem.Visible = false;
 
             }
             else if (comboBoxAdicionarAtualizar.SelectedIndex == 1)
@@ -444,6 +447,18 @@ public partial class FormEstoque : Form {
                 txtAdicionarNome.Visible = false;
                 comboBoxAtualizarItem.Visible = true;
             }
+        }
+
+        private void comboBoxAtualizarItem_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtAdicionarQuant.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.stock.ToString();
+            txtAdicionarValor.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.price.ToString();
+            txtAdicionarCategoria.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.category.ToString();
+            txtAdicionarDescricao.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.description.ToString();
+            WebClient wc = new WebClient();
+            byte[] bytes = wc.DownloadData(items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).assets[0]);
+            MemoryStream ms = new MemoryStream(bytes);
+            ImagemEnviar = System.Drawing.Image.FromStream(ms);
         }
 
         private void btnAdicionarFoto_Click(object sender, EventArgs e)

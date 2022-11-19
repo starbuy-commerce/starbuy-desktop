@@ -12,6 +12,7 @@ using System.Collections.Specialized;
 using System.Text.Json;
 using System.Net.Http;
 using System.IO;
+using System.Globalization;
 
 namespace Starbuy_Desktop
 {
@@ -200,10 +201,9 @@ namespace Starbuy_Desktop
                 using var streamReader = new StreamReader(httpResponse.GetResponseStream());
                 var result = streamReader.ReadToEnd();
                 try
-                {
-                    ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
-                    MessageBox.Show(response.message.ToString());
-                    ResponseCadastro.setResponseCadastro(response);
+                {//change after
+                    ResponseCadastroProduto response = JsonSerializer.Deserialize<ResponseCadastroProduto>(result);
+                    ResponseCadastroProduto.setResponseCadastroProduto(response);
                 }
                 catch (Exception e)
                 {
@@ -235,7 +235,15 @@ namespace Starbuy_Desktop
                                    "\"assets\": [\"" + "data:image/jpeg;base64," + image + "\"]}";
                 MessageBox.Show(sla);
                 System.Windows.Forms.Clipboard.SetText(sla);
-                streamWriter.Write(sla);
+                streamWriter.Write("{\"item\":{" +
+                                        "\"identifier\":\" " + "\"," +
+                                        "\"title\": \"" + item.title + "\"," +
+                                        "\"seller\": \"" + "\"," +
+                                        "\"price\": " + item.price + "," +
+                                        "\"stock\": " + item.stock + "," +
+                                        "\"category\": " + item.category + "," +
+                                        "\"description\": \"" + item.description + "\"}," +
+                                   "\"assets\": [\"" + "data:image/jpeg;base64," + image + "\"]}");
             }
             try
             {
@@ -244,9 +252,8 @@ namespace Starbuy_Desktop
                     var result = streamReader.ReadToEnd();
                     try
                     {
-                        ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
-                        MessageBox.Show(response.message.ToString());
-                        ResponseCadastro.setResponseCadastro(response);
+                        ResponseCadastroProduto response = JsonSerializer.Deserialize<ResponseCadastroProduto>(result);
+                        ResponseCadastroProduto.setResponseCadastroProduto(response);
                     }
                     catch (Exception e)
                     {

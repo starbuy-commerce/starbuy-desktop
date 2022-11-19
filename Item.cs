@@ -12,7 +12,7 @@ namespace Starbuy_Desktop
         public class Seller { 
             public Boolean seller { get; set; }
         } 
-        public Double price { get; set; }
+        public double price { get; set; }
         public int stock { get; set; }
         public int category { get; set; }
         public string description { get; set; }

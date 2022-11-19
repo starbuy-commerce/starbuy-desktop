@@ -206,6 +206,7 @@ namespace Starbuy_Desktop
             this.comboBoxAtualizarItem.Size = new System.Drawing.Size(227, 25);
             this.comboBoxAtualizarItem.TabIndex = 32;
             this.comboBoxAtualizarItem.Visible = false;
+            this.comboBoxAtualizarItem.SelectedIndexChanged += new System.EventHandler(this.comboBoxAtualizarItem_SelectedIndexChanged);
             // 
             // btnAdicionarFoto
             // 
@@ -451,7 +452,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Label labelEstoqueAdicionar;
         private System.Windows.Forms.Label labelAdicionarFoto;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtAdicionarValor;
         private System.Windows.Forms.TextBox txtAdicionarQuant;
         private System.Windows.Forms.Button btnProxima;
         private System.Windows.Forms.Button btnAnterior;
@@ -459,5 +459,6 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.Button btnAdicionarFoto;
         private System.Windows.Forms.ComboBox comboBoxAdicionarAtualizar;
         private System.Windows.Forms.ComboBox comboBoxAtualizarItem;
+        private System.Windows.Forms.TextBox txtAdicionarValor;
     }
 }

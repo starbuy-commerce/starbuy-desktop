@@ -54,11 +54,11 @@ public partial class FormConfig : Form {
 
             ReSize.labelResize(labelConfigAlterar);
             ReSize.labelResize(labelConfigAlterarCEP);
-            ReSize.labelResize(labelConfigAlterarCpf);
+            ReSize.labelResize(labelConfigAlterarEmail);
             ReSize.labelResize(labelConfigAlterarEndereco);
             ReSize.labelResize(labelConfigAlterarFoto);
             ReSize.labelResize(labelConfigAlterarNome);
-            ReSize.labelResize(labelConfigAlterarTelefone);
+            ReSize.labelResize(labelConfigAlterarCidade);
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(lblCep);
             ReSize.labelResize(labelConfigCidade);
@@ -88,7 +88,7 @@ public partial class FormConfig : Form {
             ReSize.pictureCrossBox(pictureBoxConfigConfig);
 
             ReSize.textBoxResize(textBoxConfigAlterarCEP);
-            ReSize.textBoxResize(textBoxConfigAlterarCpf);
+            ReSize.textBoxResize(textBoxConfigAlterarEmail);
             ReSize.textBoxResize(textBoxConfigAlterarEndereco);
             ReSize.textBoxResize(textBoxConfigAlterarNome);
             ReSize.textBoxResize(textBoxConfigAlterarTelefone);
@@ -191,6 +191,21 @@ public partial class FormConfig : Form {
         {
 
         }
+
+        private void comboBoxDadosEnderecos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(comboBoxDadosEnderecos.SelectedIndex == 1)
+            {
+
+            }
+            else
+            {
+                textBoxConfigAlterarNome.Text = user.name;
+                textBoxConfigAlterarEmail.Text = user.email;
+
+            }
+        }
+
         public static Bitmap ResizeImage(Image image) { 
             var newHeight = image.Height * height / 786;
             var newWidth = image.Width * width / 1386;
