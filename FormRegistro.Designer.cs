@@ -81,7 +81,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNome.Name = "textBoxRegistroNome";
             this.textBoxRegistroNome.PlaceholderText = "Nome";
             this.textBoxRegistroNome.Size = new System.Drawing.Size(449, 45);
-            this.textBoxRegistroNome.TabIndex = 6;
+            this.textBoxRegistroNome.TabIndex = 0;
             // 
             // textBoxRegistroUsuario
             // 
@@ -93,7 +93,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroUsuario.Name = "textBoxRegistroUsuario";
             this.textBoxRegistroUsuario.PlaceholderText = "Usuário";
             this.textBoxRegistroUsuario.Size = new System.Drawing.Size(449, 45);
-            this.textBoxRegistroUsuario.TabIndex = 8;
+            this.textBoxRegistroUsuario.TabIndex = 2;
             // 
             // textBoxRegistroEndereco
             // 
@@ -105,7 +105,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroEndereco.Name = "textBoxRegistroEndereco";
             this.textBoxRegistroEndereco.PlaceholderText = "Endereço";
             this.textBoxRegistroEndereco.Size = new System.Drawing.Size(582, 45);
-            this.textBoxRegistroEndereco.TabIndex = 12;
+            this.textBoxRegistroEndereco.TabIndex = 6;
             // 
             // textBoxRegistroEmail
             // 
@@ -117,7 +117,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroEmail.Name = "textBoxRegistroEmail";
             this.textBoxRegistroEmail.PlaceholderText = "E-mail";
             this.textBoxRegistroEmail.Size = new System.Drawing.Size(582, 45);
-            this.textBoxRegistroEmail.TabIndex = 16;
+            this.textBoxRegistroEmail.TabIndex = 3;
             // 
             // textBoxRegistroSenha
             // 
@@ -130,7 +130,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroSenha.PasswordChar = '*';
             this.textBoxRegistroSenha.PlaceholderText = "Senha";
             this.textBoxRegistroSenha.Size = new System.Drawing.Size(582, 45);
-            this.textBoxRegistroSenha.TabIndex = 18;
+            this.textBoxRegistroSenha.TabIndex = 8;
             // 
             // labelLinha1
             // 
@@ -193,7 +193,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroConfirmar.PasswordChar = '*';
             this.textBoxRegistroConfirmar.PlaceholderText = "Confirme a Senha";
             this.textBoxRegistroConfirmar.Size = new System.Drawing.Size(582, 45);
-            this.textBoxRegistroConfirmar.TabIndex = 27;
+            this.textBoxRegistroConfirmar.TabIndex = 9;
             // 
             // labelLinha10
             // 
@@ -246,7 +246,7 @@ namespace Starbuy_Desktop
             this.buttonRegistro.Location = new System.Drawing.Point(420, 696);
             this.buttonRegistro.Name = "buttonRegistro";
             this.buttonRegistro.Size = new System.Drawing.Size(474, 55);
-            this.buttonRegistro.TabIndex = 33;
+            this.buttonRegistro.TabIndex = 11;
             this.buttonRegistro.Text = "Registre-se";
             this.buttonRegistro.UseVisualStyleBackColor = false;
             this.buttonRegistro.Click += new System.EventHandler(this.buttonRegistro_Click);
@@ -263,8 +263,8 @@ namespace Starbuy_Desktop
             this.maskedTextBoxRegistroNascimento.MinimumSize = new System.Drawing.Size(140, 45);
             this.maskedTextBoxRegistroNascimento.Name = "maskedTextBoxRegistroNascimento";
             this.maskedTextBoxRegistroNascimento.PromptChar = '-';
-            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(572, 45);
-            this.maskedTextBoxRegistroNascimento.TabIndex = 34;
+            this.maskedTextBoxRegistroNascimento.Size = new System.Drawing.Size(572, 44);
+            this.maskedTextBoxRegistroNascimento.TabIndex = 1;
             this.maskedTextBoxRegistroNascimento.ValidatingType = typeof(System.DateTime);
             this.maskedTextBoxRegistroNascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBoxRegistroNascimento_MaskInputRejected);
             this.maskedTextBoxRegistroNascimento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.maskedTextBoxRegistroNascimento_KeyDown);
@@ -299,7 +299,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroCidade.Name = "textBoxRegistroCidade";
             this.textBoxRegistroCidade.PlaceholderText = "Cidade";
             this.textBoxRegistroCidade.Size = new System.Drawing.Size(582, 45);
-            this.textBoxRegistroCidade.TabIndex = 14;
+            this.textBoxRegistroCidade.TabIndex = 5;
             // 
             // textBoxRegistroNumero
             // 
@@ -311,7 +311,7 @@ namespace Starbuy_Desktop
             this.textBoxRegistroNumero.Name = "textBoxRegistroNumero";
             this.textBoxRegistroNumero.PlaceholderText = "Número";
             this.textBoxRegistroNumero.Size = new System.Drawing.Size(582, 45);
-            this.textBoxRegistroNumero.TabIndex = 35;
+            this.textBoxRegistroNumero.TabIndex = 7;
             // 
             // labelLinha8
             // 
@@ -334,8 +334,8 @@ namespace Starbuy_Desktop
             this.maskedTextBoxRegistroCEP.MaximumSize = new System.Drawing.Size(640, 45);
             this.maskedTextBoxRegistroCEP.MinimumSize = new System.Drawing.Size(140, 45);
             this.maskedTextBoxRegistroCEP.Name = "maskedTextBoxRegistroCEP";
-            this.maskedTextBoxRegistroCEP.Size = new System.Drawing.Size(582, 45);
-            this.maskedTextBoxRegistroCEP.TabIndex = 37;
+            this.maskedTextBoxRegistroCEP.Size = new System.Drawing.Size(582, 44);
+            this.maskedTextBoxRegistroCEP.TabIndex = 4;
             this.maskedTextBoxRegistroCEP.ValidatingType = typeof(int);
             // 
             // btnArquivo
@@ -343,10 +343,10 @@ namespace Starbuy_Desktop
             this.btnArquivo.BackColor = System.Drawing.Color.White;
             this.btnArquivo.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnArquivo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnArquivo.Location = new System.Drawing.Point(619, 615);
+            this.btnArquivo.Location = new System.Drawing.Point(644, 615);
             this.btnArquivo.Name = "btnArquivo";
-            this.btnArquivo.Size = new System.Drawing.Size(518, 44);
-            this.btnArquivo.TabIndex = 38;
+            this.btnArquivo.Size = new System.Drawing.Size(493, 44);
+            this.btnArquivo.TabIndex = 10;
             this.btnArquivo.Text = "Selecionar arquivo";
             this.btnArquivo.UseVisualStyleBackColor = false;
             this.btnArquivo.Click += new System.EventHandler(this.button1_Click);

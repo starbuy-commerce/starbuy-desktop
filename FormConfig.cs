@@ -10,7 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.Json;
-
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 
 namespace Starbuy_Desktop
 {
@@ -20,6 +21,9 @@ public partial class FormConfig : Form {
         private Usuario user;
         private MultiplosEnderecosResponse address;
         int controller = 0;
+        private Image ImgEnviar;
+        private String path;
+        static int height, width;
         public FormConfig() {
             this.user = Session.getSession().getUser();
             this.address = MultiplosEnderecosResponse.getEnderecosResponse();
@@ -27,6 +31,9 @@ public partial class FormConfig : Form {
         }
 
         private void FormConfig_Load(object sender, EventArgs e) {
+
+            height = this.Height;
+            width = this.Width;
             ///Deixando os label transparentes!
             labelConfigNome.Parent = pictureBoxBackground;
             labelConfigNome.BackColor = Color.Transparent;
@@ -43,6 +50,7 @@ public partial class FormConfig : Form {
             ReSize.groupBoxResize(groupBoxConfigAlterar);
             ReSize.groupBoxResize(gboxConfigMenu);
             ReSize.groupBoxResize(gboxConfigPerfil);
+            ReSize.buttonResize(btnAdicionarFoto);
 
             ReSize.labelResize(labelConfigAlterar);
             ReSize.labelResize(labelConfigAlterarCEP);
@@ -70,19 +78,18 @@ public partial class FormConfig : Form {
             ReSize.labelResize(label1);
             ReSize.comboBoxResise(comboBoxEndereco);
 
-            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross, pictureBoxMenuVendedorCross.Image);
-            ReSize.pictureCrossBox(pictureBoxConfigMenu, pictureBoxConfigMenu.Image);
-            ReSize.pictureCrossBox(pictureBoxConfigEstoque, pictureBoxConfigEstoque.Image);
-            ReSize.pictureCrossBox(pictureBoxConfigFoto, pictureBoxConfigFoto.Image) ;
-            ReSize.pictureCrossBox(pictureBoxConfigPedidos, pictureBoxConfigPedidos.Image);
-            ReSize.pictureCrossBox(pictureBoxBackground, pictureBoxBackground.Image);
-            ReSize.pictureCrossBox(pictureBoxConfigCanto, pictureBoxConfigCanto.Image);
-            ReSize.pictureCrossBox(pictureBoxConfigConfig, pictureBoxConfigConfig.Image);
+            ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
+            ReSize.pictureCrossBox(pictureBoxConfigMenu);
+            ReSize.pictureCrossBox(pictureBoxConfigEstoque);
+            ReSize.pictureCrossBox(pictureBoxConfigFoto) ;
+            ReSize.pictureCrossBox(pictureBoxConfigPedidos);
+            ReSize.pictureCrossBox(pictureBoxBackground);
+            ReSize.pictureCrossBox(pictureBoxConfigCanto);
+            ReSize.pictureCrossBox(pictureBoxConfigConfig);
 
             ReSize.textBoxResize(textBoxConfigAlterarCEP);
             ReSize.textBoxResize(textBoxConfigAlterarCpf);
             ReSize.textBoxResize(textBoxConfigAlterarEndereco);
-            ReSize.textBoxResize(textBoxConfigAlterarFoto);
             ReSize.textBoxResize(textBoxConfigAlterarNome);
             ReSize.textBoxResize(textBoxConfigAlterarTelefone);
 
@@ -116,6 +123,8 @@ public partial class FormConfig : Form {
                     comboBoxEndereco.Items.Add(ad.cep);
                 }
             }
+
+            pictureBoxConfigFoto.Image = ResizeImage(pictureBoxConfigFoto.Image);
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {
@@ -155,6 +164,60 @@ public partial class FormConfig : Form {
             lblRespComplemento.Text = address.getAddress(buscar
                 ).complement;
             lblRespNum.Text = address.getAddress(buscar).number.ToString();
+            textBoxConfigAlterarCEP.Text = address.getAddress(buscar).cep;
+        }
+
+        private void btnAdicionarFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+            dialog.Title = "Achar foto!";
+            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                try
+                {
+                    ImgEnviar = new Bitmap(dialog.OpenFile());
+                    path = dialog.FileName;
+                    MessageBox.Show(path);
+                }
+                catch (Exception er)
+                {
+
+                }
+            }
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+        public static Bitmap ResizeImage(Image image) { 
+            var newHeight = image.Height * height / 786;
+            var newWidth = image.Width * width / 1386;
+            /*double locationX = inage.Location.X * propWidth;// + widthOriginal - p.Width;
+            double locationY = p.Location.Y * propHeight;// + heightOriginal - p.Height;*/
+            var destRect = new Rectangle(0, 0, newWidth, newHeight);
+            var destImage = new Bitmap(newWidth, newHeight);
+
+            destImage.SetResolution(image.HorizontalResolution, image.VerticalResolution);
+
+            using (var graphics = Graphics.FromImage(destImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.HighQuality;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(image, destRect, 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, wrapMode);
+                }
+            }
+
+            return destImage;
         }
     }
-}
+    }
+
