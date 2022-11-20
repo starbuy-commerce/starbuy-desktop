@@ -13,5 +13,6 @@ namespace Starbuy_Desktop
         public String cep { get; set; }
         public int number { get; set; }
         public String complement { get; set; }
+        public String name { get; set; }
     }
 }

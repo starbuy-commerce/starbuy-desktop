@@ -28,8 +28,10 @@ public partial class FormEstoque : Form {
         private Image ImagemEnviar;
         static int height, width;
         static double propWidth, propHeight;
+        private Categorias categorias = new Categorias();
 
-        public FormEstoque() {
+        public FormEstoque()
+        {
             this.user = Session.getSession().getUser();
             this.items = ItemsResponse.GetItemsResponse();
             this.session = Session.getSession();
@@ -57,6 +59,7 @@ public partial class FormEstoque : Form {
 
             ReSize.comboBoxResise(comboBoxAdicionarAtualizar);
             ReSize.comboBoxResise(comboBoxAtualizarItem);
+            ReSize.comboBoxResise(comboBoxCategorias);
 
             ReSize.pictureCrossBox(pictureBoxEstoqueCanto);
             ReSize.pictureCrossBox(pictureBoxEstoqueConfiguracoes);
@@ -69,24 +72,14 @@ public partial class FormEstoque : Form {
             ReSize.textBoxResize(txtAdicionarValor);
             ReSize.buttonResize(btnAdicionarFoto);
             ReSize.textBoxResize(txtAdicionarNome);
-            ReSize.textBoxResize(txtAdicionarCategoria);
-        }
 
+        }
         private void FormEstoque_Load(object sender, EventArgs e) {
             comboBoxAdicionarAtualizar.SelectedIndex = 0;
-            /*
-
-            int locationX = txtAdicionarNome.Location.X;
-            int locationY = txtAdicionarNome.Location.Y;
-            int height = txtAdicionarNome.Size.Height;
-            int width = txtAdicionarNome.Size.Width;
-
-            itens = new ComboBox();
-            itens.Location = new Point(locationX, locationY);
-            itens.Height = height;
-            itens.Width = width;
-            itens.Visible = false;
-           */
+            for(int i = 0; categorias.getTodasCategorias().Length > i; i++)
+            {
+                comboBoxCategorias.Items.Add(categorias.getCategoria(i));
+            }
 
             height = this.Height;
             width = this.Width;
@@ -221,28 +214,7 @@ public partial class FormEstoque : Form {
             string id = p.item.identifier.ToString();
             string titleprod = p.item.title;
             string priceprod = p.item.price.ToString();
-            string stockprod = p.item.stock.ToString();
-            string categoryprod = p.item.category.ToString();
-            int cat = Int32.Parse(categoryprod);
-
-            switch (cat)
-            {
-                case 1:
-                    categoryprod = "Eletrônico";
-                    break;
-                case 2:
-                    categoryprod = "Vestuário";
-                    break;
-                case 3:
-                    categoryprod = "Casa";
-                    break;
-                case 4:
-                    categoryprod = "Livros";
-                    break;
-                case 7:
-                    categoryprod = "Música";
-                    break;
-            }
+            int categoryprod = p.item.category;
 
             string descriptionprod = p.item.description;
 
@@ -294,21 +266,25 @@ public partial class FormEstoque : Form {
 
             // atribuindo a quantidade em estoque do produto
             Label estoque = new Label();
-            estoque.Text = "Quantidade em estoque: " + stockprod;
+            estoque.Text = "Quantidade em estoque: " + p.item.stock.ToString();
+            estoque.Size = new Size(190, 15);
             estoque.Location = new Point(276, 55); //localização do estoque
             currentGroupBox.Controls.Add(estoque);
 
             // atribuindo a categoria do produto
             Label categoria = new Label();
-            categoria.Text = "Categoria: " + categoryprod;
+            categoria.Text = "Categoria: " + categorias.getCategoria(categoryprod);
+            categoria.Size = new Size(190, 15);
             categoria.Location = new Point(487, 55); //localização da categoria
             currentGroupBox.Controls.Add(categoria);
 
             // atribuindo a descrição do produto
             Label descricao = new Label();
             descricao.Text = descriptionprod;
-            descricao.Location = new Point(127, 91); //localização da categoria
-                
+            descricao.Location = new Point(127, 80); //localização da categoria
+            descricao.Size = new Size(580, 45);
+            currentGroupBox.Controls.Add(descricao);
+
             currentGroupBox.Visible = true;
             ReSize.labelResize(titulo);
             ReSize.labelResize(preco);
@@ -323,7 +299,7 @@ public partial class FormEstoque : Form {
         {
             if (comboBoxAdicionarAtualizar.SelectedIndex == 0)
             {
-                if (String.IsNullOrWhiteSpace(txtAdicionarNome.Text) || String.IsNullOrWhiteSpace(txtAdicionarValor.Text) || String.IsNullOrWhiteSpace(txtAdicionarQuant.Text) || String.IsNullOrWhiteSpace(txtAdicionarCategoria.Text) || String.IsNullOrWhiteSpace(txtAdicionarDescricao.Text))
+                if (String.IsNullOrWhiteSpace(txtAdicionarNome.Text) || String.IsNullOrWhiteSpace(txtAdicionarValor.Text) || String.IsNullOrWhiteSpace(txtAdicionarQuant.Text) || comboBoxCategorias.SelectedIndex == 0 || String.IsNullOrWhiteSpace(txtAdicionarDescricao.Text))
                 {
                     MessageBox.Show("Preencha todos os valores, não deixe nenhum campo vazio ou com apenas espaços!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 }
@@ -332,7 +308,7 @@ public partial class FormEstoque : Form {
                     try
                     {
                         double preco = double.Parse(txtAdicionarValor.Text);
-                        Item prod = new Item(txtAdicionarNome.Text, preco, int.Parse(txtAdicionarQuant.Text), int.Parse(txtAdicionarCategoria.Text), txtAdicionarDescricao.Text);
+                        Item prod = new Item(txtAdicionarNome.Text, preco, int.Parse(txtAdicionarQuant.Text), comboBoxCategorias.SelectedIndex, txtAdicionarDescricao.Text);
                         string base64String;
                         Image img = ImagemEnviar;
                         using (img)
@@ -453,7 +429,7 @@ public partial class FormEstoque : Form {
         {
             txtAdicionarQuant.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.stock.ToString();
             txtAdicionarValor.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.price.ToString();
-            txtAdicionarCategoria.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.category.ToString();
+            comboBoxCategorias.SelectedIndex = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.category;
             txtAdicionarDescricao.Text = items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).item.description.ToString();
             WebClient wc = new WebClient();
             byte[] bytes = wc.DownloadData(items.GetProdutos(comboBoxAdicionarAtualizar.SelectedIndex).assets[0]);

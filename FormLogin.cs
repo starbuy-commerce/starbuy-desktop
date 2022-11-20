@@ -41,9 +41,6 @@ namespace Starbuy_Desktop
             ReSize.textBoxResize(textBoxLoginSenha);
             ReSize.textBoxResize(textBoxLoginUsername);
             ReSize.buttonResize(buttonLoginEntrar);
-            /*pictureBoxLogin.Location = new Point(formWidth * 820 / 1386, formHeight * 273 / 786);
-            pictureBoxLogin.Height = formHeight * 551 / 786;
-            pictureBoxLogin.Width = formWidth* 524/1386; */
         }
 
         private void pictureBoxLoginCross_MouseClick(object sender, MouseEventArgs e)
@@ -83,7 +80,7 @@ namespace Starbuy_Desktop
                         this.Hide();
                         FormMenu fVendedor = new FormMenu();
                         API.getProducts(user.username);
-                        //API.getPedidos(Session.getSession().getJWT());
+                        API.getPedidos(Session.getSession().getJWT());
                         API.getAddress(Session.getSession().getJWT());
                         fVendedor.Show();
                         String a = Session.getSession().getUser().username.ToString();

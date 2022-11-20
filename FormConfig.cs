@@ -45,20 +45,17 @@ public partial class FormConfig : Form {
             labelConfigNome.Text = user.name;
             labelConfigUsername.Text = user.username;
             labelConfigCidade.Text = user.city;
-            ReSize.buttonResize(button1);
+            ReSize.buttonResize(btnAdicionarEndereco);
             ReSize.groupBoxResize(groupBox2);
             ReSize.groupBoxResize(groupBoxConfigAlterar);
             ReSize.groupBoxResize(gboxConfigMenu);
             ReSize.groupBoxResize(gboxConfigPerfil);
-            ReSize.buttonResize(btnAdicionarFoto);
 
-            ReSize.labelResize(labelConfigAlterar);
-            ReSize.labelResize(labelConfigAlterarCEP);
-            ReSize.labelResize(labelConfigAlterarEmail);
-            ReSize.labelResize(labelConfigAlterarEndereco);
-            ReSize.labelResize(labelConfigAlterarFoto);
-            ReSize.labelResize(labelConfigAlterarNome);
+            ReSize.labelResize(labelConfigAdicionarEndereco);
+            ReSize.labelResize(labelConfigAlterarNúmero);
             ReSize.labelResize(labelConfigAlterarCidade);
+            ReSize.labelResize(labelConfigCep);
+            ReSize.labelResize(labelConfigAlterarTeste);
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(lblCep);
             ReSize.labelResize(labelConfigCidade);
@@ -88,10 +85,9 @@ public partial class FormConfig : Form {
             ReSize.pictureCrossBox(pictureBoxConfigConfig);
 
             ReSize.textBoxResize(textBoxConfigAlterarCEP);
-            ReSize.textBoxResize(textBoxConfigAlterarEmail);
-            ReSize.textBoxResize(textBoxConfigAlterarEndereco);
-            ReSize.textBoxResize(textBoxConfigAlterarNome);
-            ReSize.textBoxResize(textBoxConfigAlterarTelefone);
+            ReSize.textBoxResize(textBoxConfigAlterarCidade);
+            ReSize.textBoxResize(textBoxConfigAdicionarComplemento);
+            ReSize.textBoxResize(textBoxConfigAdicionarRua);
 
 
             //Puxando imagem do servidor
@@ -194,16 +190,17 @@ public partial class FormConfig : Form {
 
         private void comboBoxDadosEnderecos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(comboBoxDadosEnderecos.SelectedIndex == 1)
-            {
+            
+        }
 
-            }
-            else
-            {
-                textBoxConfigAlterarNome.Text = user.name;
-                textBoxConfigAlterarEmail.Text = user.email;
+        private void groupBoxConfigAlterar_Enter(object sender, EventArgs e)
+        {
 
-            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
 
         public static Bitmap ResizeImage(Image image) { 
