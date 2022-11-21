@@ -9,9 +9,9 @@ namespace Starbuy_Desktop
     class MultiplosEnderecosResponse
     {
         private static MultiplosEnderecosResponse multipleAddress;
-         private Address[] address { get; set; }
+         private List<Address> address { get; set; }
 
-        public MultiplosEnderecosResponse(Address[] address)
+        public MultiplosEnderecosResponse(List<Address> address)
         {
             this.address = address;
         }
@@ -20,7 +20,7 @@ namespace Starbuy_Desktop
         {
             return address[posicao];
         }
-        public Address[] getAddresses()
+        public List<Address> getAddresses()
         {
             return address;
         }

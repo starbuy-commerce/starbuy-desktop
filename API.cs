@@ -12,6 +12,7 @@ using System.Collections.Specialized;
 using System.Text.Json;
 using System.Net.Http;
 using System.IO;
+using System.Globalization;
 
 namespace Starbuy_Desktop
 {
@@ -20,18 +21,18 @@ namespace Starbuy_Desktop
 
         private static String heroku_host = "https://starbuy-api.herokuapp.com";
         private static String railways_host = "https://starbuy.up.railway.app";
-        private static String host = railways_host;
+        private static String host = heroku_host;
         // Vai verificar se a host da Heroku ta de boa. Se ela, por algum motivo,
         // tiver caido, vai usar a host do Railways (uma outra plataforma que eu
         // também hospedei a nossa API que serve de backup).
         public static void checkHostIntegrity()
         {
-            var req = (HttpWebRequest)WebRequest.Create(railways_host);
+            var req = (HttpWebRequest)WebRequest.Create(heroku_host);
             appendHeaders("GET", req);
             var httpResponse = (HttpWebResponse)req.GetResponse();
             if (httpResponse.StatusCode == HttpStatusCode.ServiceUnavailable)
             {
-                host = heroku_host;
+                host = railways_host;
             }
         }
 
@@ -137,37 +138,42 @@ namespace Starbuy_Desktop
             }
         }
 
-        public static Address[] getAddress(String jwt)
+        public static List<Address> getAddress(String jwt)
         {
-            var req = (HttpWebRequest)WebRequest.Create(host + "/user/ address");
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
             appendHeaders("GET", req);
             req.Headers.Add("Authorization", "Bearer " + jwt);
-
             try
             {
                 var httpsResponse = (HttpWebResponse)req.GetResponse();
                 using (var streamReader = new StreamReader(httpsResponse.GetResponseStream()))
                 {
-                    var result = streamReader.ReadToEnd();
-                    try
+                    if (streamReader != null)
                     {
-                        Address[] enderecos = JsonSerializer.Deserialize<Address[]>(result);
-                        if (enderecos != null)
+                        var result = streamReader.ReadToEnd();
+                        try
                         {
-
-                            MessageBox.Show(enderecos.Length.ToString());
-                            MessageBox.Show(enderecos[0].cep.ToString());
-                            MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
-                            return enderecos;
+                            List<Address> enderecos = JsonSerializer.Deserialize<List<Address>>(result);
+                            if (enderecos != null)
+                            {
+                                MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
+                                return enderecos;
+                            }
+                            else
+                            {
+                                MultiplosEnderecosResponse.setMultiplosEnderecosResponse(null);
+                                return null;
+                            }
                         }
-                        else
+                        catch (System.NullReferenceException e)
                         {
+                            MessageBox.Show("Não existe endereço! " + e.ToString());
                             return null;
                         }
                     }
-                    catch(System.NullReferenceException e)
+                    else
                     {
-                        MessageBox.Show("Não existe endereço! " + e.ToString());
+                        MultiplosEnderecosResponse.setMultiplosEnderecosResponse(null);
                         return null;
                     }
                 }
@@ -200,10 +206,9 @@ namespace Starbuy_Desktop
                 using var streamReader = new StreamReader(httpResponse.GetResponseStream());
                 var result = streamReader.ReadToEnd();
                 try
-                {
-                    ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
-                    MessageBox.Show(response.message.ToString());
-                    ResponseCadastro.setResponseCadastro(response);
+                {//change after
+                    ResponseCadastroProduto response = JsonSerializer.Deserialize<ResponseCadastroProduto>(result);
+                    ResponseCadastroProduto.setResponseCadastroProduto(response);
                 }
                 catch (Exception e)
                 {
@@ -235,7 +240,15 @@ namespace Starbuy_Desktop
                                    "\"assets\": [\"" + "data:image/jpeg;base64," + image + "\"]}";
                 MessageBox.Show(sla);
                 System.Windows.Forms.Clipboard.SetText(sla);
-                streamWriter.Write(sla);
+                streamWriter.Write("{\"item\":{" +
+                                        "\"identifier\":\" " + "\"," +
+                                        "\"title\": \"" + item.title + "\"," +
+                                        "\"seller\": \"" + "\"," +
+                                        "\"price\": " + item.price + "," +
+                                        "\"stock\": " + item.stock + "," +
+                                        "\"category\": " + item.category + "," +
+                                        "\"description\": \"" + item.description + "\"}," +
+                                   "\"assets\": [\"" + "data:image/jpeg;base64," + image + "\"]}");
             }
             try
             {
@@ -244,9 +257,8 @@ namespace Starbuy_Desktop
                     var result = streamReader.ReadToEnd();
                     try
                     {
-                        ResponseCadastro response = JsonSerializer.Deserialize<ResponseCadastro>(result);
-                        MessageBox.Show(response.message.ToString());
-                        ResponseCadastro.setResponseCadastro(response);
+                        ResponseCadastroProduto response = JsonSerializer.Deserialize<ResponseCadastroProduto>(result);
+                        ResponseCadastroProduto.setResponseCadastroProduto(response);
                     }
                     catch (Exception e)
                     {
@@ -258,46 +270,73 @@ namespace Starbuy_Desktop
                     MessageBox.Show(cadastroException.Message.ToString());
                 }
         }
-        public static ReceivedOrders getPedidos(String jwt)
+
+        public static void getPedidos(String jwt)
         {
             var req = (HttpWebRequest)WebRequest.Create(host + "/received_orders");
             appendHeaders("GET", req);
             req.Headers.Add("Authorization", "Bearer " + jwt);
-
             try
             {
                 var httpResponse = (HttpWebResponse)req.GetResponse();
-
-                    using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
+                {
+                    var result = streamReader.ReadToEnd();
+                    try
                     {
-                        var result = streamReader.ReadToEnd();
-                        try
+                        List<Order> resposta = JsonSerializer.Deserialize<List<Order>>(result);
+                        if (resposta != null)
                         {
-                            ReceivedOrders resposta = JsonSerializer.Deserialize<ReceivedOrders>(result);
-                            if (resposta != null)
-                            {
-                                MessageBox.Show(resposta.order.Length.ToString());
-                                OrdersResponse.setOrdersResponse(new OrdersResponse(resposta.order));
-                                return resposta;
-                            }
-                            else
-                            {
-                                MessageBox.Show("teste!");
-                                OrdersResponse.setOrdersResponse(new OrdersResponse(null));
-                                return null;
-                            }
+                            OrdersResponse.setOrdersResponse(new OrdersResponse(resposta));
                         }
-                        catch (NullReferenceException e)
+                        else
                         {
-                            MessageBox.Show(e.ToString());
-                            return null;
+                            OrdersResponse.setOrdersResponse(new OrdersResponse(null));
                         }
                     }
+                    catch (NullReferenceException e)
+                    {
+                        MessageBox.Show(e.ToString());
+                    }
+                }
             }
             catch (Exception teste)
             {
                 MessageBox.Show(teste.ToString());
-                return null;
+            }
+        }
+
+        public static void adicionarEndereco(String jwt, Endereco endereco)
+        {
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
+            appendHeaders("POST", req);
+            req.Headers.Add("Authorization", "Bearer " + jwt);
+            using (var streamWriter = new StreamWriter(req.GetRequestStream()))
+            {
+                streamWriter.Write("{\"name\":\" "+ endereco.name + "\"," +
+                                     "\"cep\": \"" + endereco.cep + "\"," +
+                                     "\"number\": \"" + endereco.number + "\"," +
+                                     "\"complement\": " + endereco.complement + "," +
+                                        "}");
+            }
+            try
+            {
+                var httpResponse = (HttpWebResponse)req.GetResponse(); 
+                using var streamReader = new StreamReader(httpResponse.GetResponseStream());
+                var result = streamReader.ReadToEnd();
+                try
+                {
+                    EnderecoResponse resposta = JsonSerializer.Deserialize<EnderecoResponse>(result);
+                    MessageBox.Show(resposta.message);
+                }
+                catch (Exception e)
+                {
+                    MessageBox.Show(e.ToString());
+                }
+            }
+            catch (WebException cadastroException)
+            {
+                MessageBox.Show(cadastroException.Message.ToString());
             }
         }
     }

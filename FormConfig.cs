@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Text.Json;
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
+using System.Text.RegularExpressions;
 
 namespace Starbuy_Desktop
 {
@@ -20,7 +21,6 @@ public partial class FormConfig : Form {
 
         private Usuario user;
         private MultiplosEnderecosResponse address;
-        int controller = 0;
         private Image ImgEnviar;
         private String path;
         static int height, width;
@@ -45,20 +45,19 @@ public partial class FormConfig : Form {
             labelConfigNome.Text = user.name;
             labelConfigUsername.Text = user.username;
             labelConfigCidade.Text = user.city;
-            ReSize.buttonResize(button1);
-            ReSize.groupBoxResize(groupBox2);
+            lblEmail.Text = lblEmail.Text + " " + user.email;
+            labelData.Text = labelData.Text + " " + user.registration;
+            ReSize.buttonResize(btnAdicionarEndereco);
+            ReSize.groupBoxResize(groupBoxConfig);
             ReSize.groupBoxResize(groupBoxConfigAlterar);
             ReSize.groupBoxResize(gboxConfigMenu);
             ReSize.groupBoxResize(gboxConfigPerfil);
-            ReSize.buttonResize(btnAdicionarFoto);
 
-            ReSize.labelResize(labelConfigAlterar);
-            ReSize.labelResize(labelConfigAlterarCEP);
-            ReSize.labelResize(labelConfigAlterarCpf);
-            ReSize.labelResize(labelConfigAlterarEndereco);
-            ReSize.labelResize(labelConfigAlterarFoto);
-            ReSize.labelResize(labelConfigAlterarNome);
-            ReSize.labelResize(labelConfigAlterarTelefone);
+            ReSize.labelResize(labelConfigAdicionarEndereco);
+            ReSize.labelResize(labelConfigAlterarNúmero);
+            ReSize.labelResize(labelConfigAlterarCidade);
+            ReSize.labelResize(labelConfigCep);
+            ReSize.labelResize(labelConfigAlterarTeste);
             ReSize.labelResize(labelConfigCantoNome);
             ReSize.labelResize(lblCep);
             ReSize.labelResize(labelConfigCidade);
@@ -75,7 +74,10 @@ public partial class FormConfig : Form {
             ReSize.labelResize(lblRespComplemento);
             ReSize.labelResize(lblResultEmail);
             ReSize.labelResize(lblRespNum);
-            ReSize.labelResize(label1);
+            ReSize.labelResize(labelSelecionarEndereco);
+            ReSize.labelResize(labelConfigAdicionarComplemento);
+            ReSize.labelResize(labelAdicionarNome);
+            ReSize.labelResize(labelData);
             ReSize.comboBoxResise(comboBoxEndereco);
 
             ReSize.pictureCrossBox(pictureBoxMenuVendedorCross);
@@ -87,11 +89,15 @@ public partial class FormConfig : Form {
             ReSize.pictureCrossBox(pictureBoxConfigCanto);
             ReSize.pictureCrossBox(pictureBoxConfigConfig);
 
+            ReSize.textBoxResize(textBoxAdicionarNome);
             ReSize.textBoxResize(textBoxConfigAlterarCEP);
-            ReSize.textBoxResize(textBoxConfigAlterarCpf);
-            ReSize.textBoxResize(textBoxConfigAlterarEndereco);
-            ReSize.textBoxResize(textBoxConfigAlterarNome);
-            ReSize.textBoxResize(textBoxConfigAlterarTelefone);
+            ReSize.textBoxResize(textBoxConfigAlterarCidade);
+            ReSize.textBoxResize(textBoxConfigAdicionarComplemento);
+            ReSize.textBoxResize(textBoxConfigAdicionarRua);
+            ReSize.maskedResize(maskedTextBoxAdicionarCEP);
+
+            labelConfigConfig.Font = new Font(labelConfigConfig.Font, FontStyle.Bold);
+            labelConfigNome.Font = new Font(labelConfigNome.Font, FontStyle.Bold);
 
 
             //Puxando imagem do servidor
@@ -124,7 +130,16 @@ public partial class FormConfig : Form {
                 }
             }
 
+            //pictureBoxConfigFoto.Image = ResizeImage(pictureBoxConfigFoto.Image);
+            pictureBoxConfigCanto.Image = ResizeImage(pictureBoxConfigCanto.Image);
+            pictureBoxConfigConfig.Image = ResizeImage(pictureBoxConfigConfig.Image);
+            pictureBoxConfigEstoque.Image = ResizeImage(pictureBoxConfigEstoque.Image);
             pictureBoxConfigFoto.Image = ResizeImage(pictureBoxConfigFoto.Image);
+            pictureBoxConfigMenu.Image = ResizeImage(pictureBoxConfigMenu.Image);
+            pictureBoxConfigPedidos.Image = ResizeImage(pictureBoxConfigPedidos.Image);
+            pictureBoxMenuVendedorCross.Image = ResizeImage(pictureBoxMenuVendedorCross.Image);
+
+            comboBoxEndereco.SelectedIndex = 0;
         }
 
         private void pictureBoxMenuVendedorCross_Click(object sender, EventArgs e) {
@@ -161,36 +176,20 @@ public partial class FormConfig : Form {
         {
             int buscar = comboBoxEndereco.SelectedIndex;
             lblRespCep.Text = address.getAddress(buscar).cep;
-            lblRespComplemento.Text = address.getAddress(buscar
-                ).complement;
+            lblRespComplemento.Text = address.getAddress(buscar).complement;
             lblRespNum.Text = address.getAddress(buscar).number.ToString();
-            textBoxConfigAlterarCEP.Text = address.getAddress(buscar).cep;
         }
 
-        private void btnAdicionarFoto_Click(object sender, EventArgs e)
+
+        private void maskedTextBoxAdicionarCEP_TypeValidationCompleted(object sender, TypeValidationEventArgs e)
         {
-            OpenFileDialog dialog = new OpenFileDialog();
-            dialog.Title = "Achar foto!";
-            dialog.Filter = "JPG (*.jpg)|*.jpg" + "|All files (*.*)|*.*";
-            if (dialog.ShowDialog() == DialogResult.OK)
-            {
-                try
-                {
-                    ImgEnviar = new Bitmap(dialog.OpenFile());
-                    path = dialog.FileName;
-                    MessageBox.Show(path);
-                }
-                catch (Exception er)
-                {
-
-                }
-            }
+            LocalizarCEP();
         }
-
-        private void groupBox2_Enter(object sender, EventArgs e)
+        private void LocalizarCEP()
         {
 
         }
+
         public static Bitmap ResizeImage(Image image) { 
             var newHeight = image.Height * height / 786;
             var newWidth = image.Width * width / 1386;

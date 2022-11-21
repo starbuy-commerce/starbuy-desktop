@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Starbuy_Desktop
 {
-    class ReceivedOrders
+    class ItemWithAssets
     {
-        public Order[] order { get; set; }
+        public Item item { get; set; }
 
+        public String[] assets { get; set; }
     }
 }
