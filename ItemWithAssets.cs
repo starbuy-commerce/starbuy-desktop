@@ -8,8 +8,8 @@ namespace Starbuy_Desktop
 {
     class ItemWithAssets
     {
-        private Item item { get; set; }
-        
-        private String[] assets { get; set; }
+        public Item item { get; set; }
+
+        public String[] assets { get; set; }
     }
 }

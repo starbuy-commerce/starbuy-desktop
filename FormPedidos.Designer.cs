@@ -40,7 +40,6 @@ namespace Starbuy_Desktop
             this.pictureBoxConfigCanto = new System.Windows.Forms.PictureBox();
             this.labelConfigCantoNome = new System.Windows.Forms.Label();
             this.gboxPedidosBaixa = new System.Windows.Forms.GroupBox();
-            this.textBoxBaixa = new System.Windows.Forms.TextBox();
             this.labelPedidosNumero = new System.Windows.Forms.Label();
             this.btnPedidosAtualizar = new System.Windows.Forms.Button();
             this.labelPedidosBaixa = new System.Windows.Forms.Label();
@@ -49,6 +48,7 @@ namespace Starbuy_Desktop
             this.panel1 = new System.Windows.Forms.Panel();
             this.labelPagina = new System.Windows.Forms.Label();
             this.labelEstoqueEstoque = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxMenuVendedorCross)).BeginInit();
             this.gboxConfigMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPedidosConfig)).BeginInit();
@@ -151,28 +151,21 @@ namespace Starbuy_Desktop
             // 
             // gboxPedidosBaixa
             // 
-            this.gboxPedidosBaixa.Controls.Add(this.textBoxBaixa);
+            this.gboxPedidosBaixa.Controls.Add(this.comboBox1);
             this.gboxPedidosBaixa.Controls.Add(this.labelPedidosNumero);
             this.gboxPedidosBaixa.Controls.Add(this.btnPedidosAtualizar);
             this.gboxPedidosBaixa.Controls.Add(this.labelPedidosBaixa);
-            this.gboxPedidosBaixa.Location = new System.Drawing.Point(1046, 41);
+            this.gboxPedidosBaixa.Location = new System.Drawing.Point(1036, 84);
             this.gboxPedidosBaixa.Name = "gboxPedidosBaixa";
-            this.gboxPedidosBaixa.Size = new System.Drawing.Size(262, 229);
+            this.gboxPedidosBaixa.Size = new System.Drawing.Size(262, 203);
             this.gboxPedidosBaixa.TabIndex = 19;
             this.gboxPedidosBaixa.TabStop = false;
-            // 
-            // textBoxBaixa
-            // 
-            this.textBoxBaixa.Location = new System.Drawing.Point(17, 124);
-            this.textBoxBaixa.Name = "textBoxBaixa";
-            this.textBoxBaixa.Size = new System.Drawing.Size(243, 23);
-            this.textBoxBaixa.TabIndex = 24;
             // 
             // labelPedidosNumero
             // 
             this.labelPedidosNumero.AutoSize = true;
             this.labelPedidosNumero.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.labelPedidosNumero.Location = new System.Drawing.Point(17, 97);
+            this.labelPedidosNumero.Location = new System.Drawing.Point(13, 91);
             this.labelPedidosNumero.Name = "labelPedidosNumero";
             this.labelPedidosNumero.Size = new System.Drawing.Size(125, 17);
             this.labelPedidosNumero.TabIndex = 23;
@@ -180,7 +173,7 @@ namespace Starbuy_Desktop
             // 
             // btnPedidosAtualizar
             // 
-            this.btnPedidosAtualizar.Location = new System.Drawing.Point(17, 155);
+            this.btnPedidosAtualizar.Location = new System.Drawing.Point(13, 158);
             this.btnPedidosAtualizar.Name = "btnPedidosAtualizar";
             this.btnPedidosAtualizar.Size = new System.Drawing.Size(243, 33);
             this.btnPedidosAtualizar.TabIndex = 20;
@@ -191,7 +184,7 @@ namespace Starbuy_Desktop
             // 
             this.labelPedidosBaixa.AutoSize = true;
             this.labelPedidosBaixa.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.labelPedidosBaixa.Location = new System.Drawing.Point(66, 46);
+            this.labelPedidosBaixa.Location = new System.Drawing.Point(56, 28);
             this.labelPedidosBaixa.Name = "labelPedidosBaixa";
             this.labelPedidosBaixa.Size = new System.Drawing.Size(140, 37);
             this.labelPedidosBaixa.TabIndex = 22;
@@ -199,21 +192,23 @@ namespace Starbuy_Desktop
             // 
             // btnProxima
             // 
-            this.btnProxima.Location = new System.Drawing.Point(944, 729);
+            this.btnProxima.Location = new System.Drawing.Point(946, 733);
             this.btnProxima.Name = "btnProxima";
             this.btnProxima.Size = new System.Drawing.Size(75, 23);
             this.btnProxima.TabIndex = 33;
             this.btnProxima.Text = "Próxima";
             this.btnProxima.UseVisualStyleBackColor = true;
+            this.btnProxima.Click += new System.EventHandler(this.btnProxima_Click);
             // 
             // btnAnterior
             // 
-            this.btnAnterior.Location = new System.Drawing.Point(717, 729);
+            this.btnAnterior.Location = new System.Drawing.Point(717, 733);
             this.btnAnterior.Name = "btnAnterior";
             this.btnAnterior.Size = new System.Drawing.Size(77, 23);
             this.btnAnterior.TabIndex = 32;
             this.btnAnterior.Text = "Anterior";
             this.btnAnterior.UseVisualStyleBackColor = true;
+            this.btnAnterior.Click += new System.EventHandler(this.btnAnterior_Click);
             // 
             // panel1
             // 
@@ -225,7 +220,7 @@ namespace Starbuy_Desktop
             // labelPagina
             // 
             this.labelPagina.AutoSize = true;
-            this.labelPagina.Location = new System.Drawing.Point(800, 733);
+            this.labelPagina.Location = new System.Drawing.Point(800, 737);
             this.labelPagina.Name = "labelPagina";
             this.labelPagina.Size = new System.Drawing.Size(46, 15);
             this.labelPagina.TabIndex = 31;
@@ -240,7 +235,15 @@ namespace Starbuy_Desktop
             this.labelEstoqueEstoque.Name = "labelEstoqueEstoque";
             this.labelEstoqueEstoque.Size = new System.Drawing.Size(105, 32);
             this.labelEstoqueEstoque.TabIndex = 35;
-            this.labelEstoqueEstoque.Text = "Estoque";
+            this.labelEstoqueEstoque.Text = "Pedidos";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(13, 114);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(243, 23);
+            this.comboBox1.TabIndex = 24;
             // 
             // FormPedidos
             // 
@@ -294,11 +297,11 @@ namespace Starbuy_Desktop
         private System.Windows.Forms.PictureBox pictureBoxPedidosPedidos;
         private System.Windows.Forms.PictureBox pictureBoxPedidosEstoque;
         private System.Windows.Forms.PictureBox pictureBoxPedidosMenu;
-        private System.Windows.Forms.TextBox textBoxBaixa;
         private System.Windows.Forms.Button btnProxima;
         private System.Windows.Forms.Button btnAnterior;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labelPagina;
         private System.Windows.Forms.Label labelEstoqueEstoque;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

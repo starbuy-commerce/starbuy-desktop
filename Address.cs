@@ -9,10 +9,10 @@ namespace Starbuy_Desktop
     class Address
     {
         public String identifier { get; set; }
+        public String name { get; set; }
         public String user { get; set; }
         public String cep { get; set; }
         public int number { get; set; }
         public String complement { get; set; }
-        public String name { get; set; }
     }
 }

@@ -8,15 +8,15 @@ namespace Starbuy_Desktop
 {
     class Order
     {
-        private String identifier { get; set; }
-        private Usuario costumer { get; set; }
-        private Usuario seller { get; set; }
-        private ItemWithAssets item_with_assets { get; set; }
-        private double price { get; set; }
-        private int quantity { get; set; }
-        private int status { get; set; }
-        private LugarPedido send_to { get; set; }
-        private DateTime date { get; set; }
+        public String identifier { get; set; }
+        public Usuario costumer { get; set; }
+        public Usuario seller { get; set; }
+        public ItemWithAssets item_with_assets { get; set; }
+        public double price { get; set; }
+        public int quantity { get; set; }
+        public int status { get; set; }
+        public LugarPedido send_to { get; set; }
+        public DateTime date { get; set; }
 
     }
 }

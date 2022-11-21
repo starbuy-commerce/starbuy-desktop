@@ -21,18 +21,18 @@ namespace Starbuy_Desktop
 
         private static String heroku_host = "https://starbuy-api.herokuapp.com";
         private static String railways_host = "https://starbuy.up.railway.app";
-        private static String host = railways_host;
+        private static String host = heroku_host;
         // Vai verificar se a host da Heroku ta de boa. Se ela, por algum motivo,
         // tiver caido, vai usar a host do Railways (uma outra plataforma que eu
         // também hospedei a nossa API que serve de backup).
         public static void checkHostIntegrity()
         {
-            var req = (HttpWebRequest)WebRequest.Create(railways_host);
+            var req = (HttpWebRequest)WebRequest.Create(heroku_host);
             appendHeaders("GET", req);
             var httpResponse = (HttpWebResponse)req.GetResponse();
             if (httpResponse.StatusCode == HttpStatusCode.ServiceUnavailable)
             {
-                host = heroku_host;
+                host = railways_host;
             }
         }
 
@@ -138,12 +138,11 @@ namespace Starbuy_Desktop
             }
         }
 
-        public static Address[] getAddress(String jwt)
+        public static List<Address> getAddress(String jwt)
         {
-            var req = (HttpWebRequest)WebRequest.Create(host + "/user/ address");
+            var req = (HttpWebRequest)WebRequest.Create(host + "/user/address");
             appendHeaders("GET", req);
             req.Headers.Add("Authorization", "Bearer " + jwt);
-
             try
             {
                 var httpsResponse = (HttpWebResponse)req.GetResponse();
@@ -154,16 +153,15 @@ namespace Starbuy_Desktop
                         var result = streamReader.ReadToEnd();
                         try
                         {
-                            Address[] enderecos = JsonSerializer.Deserialize<Address[]>(result);
+                            List<Address> enderecos = JsonSerializer.Deserialize<List<Address>>(result);
                             if (enderecos != null)
                             {
-                                MessageBox.Show(enderecos.Length.ToString());
-                                MessageBox.Show(enderecos[0].cep.ToString());
                                 MultiplosEnderecosResponse.setMultiplosEnderecosResponse(new MultiplosEnderecosResponse(enderecos));
                                 return enderecos;
                             }
                             else
                             {
+                                MultiplosEnderecosResponse.setMultiplosEnderecosResponse(null);
                                 return null;
                             }
                         }
@@ -175,6 +173,7 @@ namespace Starbuy_Desktop
                     }
                     else
                     {
+                        MultiplosEnderecosResponse.setMultiplosEnderecosResponse(null);
                         return null;
                     }
                 }
@@ -285,11 +284,10 @@ namespace Starbuy_Desktop
                     var result = streamReader.ReadToEnd();
                     try
                     {
-                        ReceivedOrders resposta = JsonSerializer.Deserialize<ReceivedOrders>(result);
+                        List<Order> resposta = JsonSerializer.Deserialize<List<Order>>(result);
                         if (resposta != null)
                         {
-                            MessageBox.Show(resposta.order.Length.ToString());
-                            OrdersResponse.setOrdersResponse(new OrdersResponse(resposta.order));
+                            OrdersResponse.setOrdersResponse(new OrdersResponse(resposta));
                         }
                         else
                         {

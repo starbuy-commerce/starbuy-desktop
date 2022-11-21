@@ -1,0 +1,20 @@
+{
+  "ExtendedData": {
+    "inputs": [
+      "https://apps.correios.com.br/SigepMasterJPA/AtendeClienteService/AtendeCliente?wsdl"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, WSCorreios"
+    ],
+    "references": [
+      "Correios.Net, {Correios.CEP.Net, 1.1.6}",
+      "Newtonsoft.Json, {Newtonsoft.Json, 13.0.1}"
+    ],
+    "targetFramework": "net5.0",
+    "typeReuseMode": "All"
+  }
+}

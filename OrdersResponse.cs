@@ -9,11 +9,11 @@ namespace Starbuy_Desktop
     class OrdersResponse
     {
         private static OrdersResponse ordersResponse;
-        private Order[] order;
+        private static List<Order> order;
 
-        public OrdersResponse(Order[]ord)
+        public OrdersResponse(List<Order> ord)
         {
-            this.order = ord;
+            order = ord;
         }
 
         public static void setOrdersResponse(OrdersResponse or)
@@ -21,26 +21,19 @@ namespace Starbuy_Desktop
             ordersResponse = or;
         }
 
-        /*
-        public Produtos getProduto(int pedido,int posicao)
+        public Order getOrder(int posicao)
         {
-            return order[pedido].getProduto(posicao);
+            return order[posicao];
         }
 
-        public Produtos[] getAllProdutosFromOrder(int posicao)
+        public Order[] getOrders()
         {
-            return order[posicao].getAllProdutos();
-        }
-        */
-        /*
-        public Produtos getProduto(int posicao)
-        {
-            return sell.getProduto(posicao);
+            return order.ToArray();
         }
 
-        public Produtos[] getAllProdutos()
+        public static OrdersResponse GetOrdersResponse()
         {
-            return sell.getAllProdutos();
-        }*/
+            return ordersResponse;
+        }
     }
 }
